@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="Registrations" Height="450" Width="800">
     <Grid>
-        
+        <GroupBox Header="GroupBox" HorizontalAlignment="Left" Height="400" Margin="10,10,0,0" VerticalAlignment="Top" Width="772"/>
+
     </Grid>
 </Window>
