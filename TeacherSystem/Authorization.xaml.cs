@@ -33,5 +33,10 @@ namespace TeacherSystem
         {
             new Registrations().ShowDialog();
         }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            new Registrations().ShowDialog();
+        }
     }
 }
