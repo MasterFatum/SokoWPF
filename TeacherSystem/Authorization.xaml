@@ -5,13 +5,31 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TeacherSystem"
         mc:Ignorable="d"
-        Title="Авторизация пользователя" Height="379.188" Width="501.903">
+        Title="Авторизация пользователя" Height="343.782" Width="501.903" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow">
     <Grid>
-        <TextBox HorizontalAlignment="Left" Height="36" Margin="177,138,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="307" FontSize="18"/>
+        <TextBox Name="TxbxLogin" HorizontalAlignment="Left" Height="36" Margin="178,134,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="286" FontSize="18"/>
         <Label Content="Имя пользователя" HorizontalAlignment="Left" Margin="10,136,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <TextBox HorizontalAlignment="Left" Height="36" Margin="177,181,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="307" FontSize="18"/>
+        <TextBox Name="TxbxPassword" HorizontalAlignment="Left" Height="36" Margin="178,177,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="286" FontSize="18"/>
         <Label Content="Пароль" HorizontalAlignment="Left" Margin="10,179,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <Button Content="Войти" HorizontalAlignment="Left" Margin="187,256,0,0" VerticalAlignment="Top" Width="132" Height="57" FontSize="18"/>
+        <Button Name="BtnAuthorize" Content="Войти" HorizontalAlignment="Left" Margin="197,235,0,0" VerticalAlignment="Top" Width="132" Height="57" FontSize="18">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <GroupBox Header="Войти как..." HorizontalAlignment="Left" Height="92" Margin="68,10,0,0" VerticalAlignment="Top" Width="374" FontSize="18">
+            <ComboBox Name="CbxAuthorizeAs" HorizontalAlignment="Left" Margin="84,10,0,0" VerticalAlignment="Top" Width="208">
+                <ComboBox.Effect>
+                    <DropShadowEffect/>
+                </ComboBox.Effect>
+                <ComboBoxItem>Учитель</ComboBoxItem>
+                <ComboBoxItem>Администратор</ComboBoxItem>
+            </ComboBox>
+        </GroupBox>
+        <Button x:Name="BtnAuthorizeExit" Content="Закрыть" HorizontalAlignment="Left" Margin="10,235,0,0" VerticalAlignment="Top" Width="132" Height="57" FontSize="18">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
 
     </Grid>
 </Window>
