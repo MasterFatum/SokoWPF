@@ -5,18 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TeacherSystem"
         mc:Ignorable="d"
-        Title="Авторизация пользователя" Height="398.366" Width="495.448" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow" ResizeMode="NoResize">
+        Title="Авторизация пользователя" Height="398.366" Width="406.589" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow" ResizeMode="NoResize">
   <Grid>
-    <TextBox Name="TxbxLogin" HorizontalAlignment="Left" Height="36" Margin="180,143,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="286" FontSize="18" FontWeight="Bold" TextAlignment="Left"/>
-    <Label Content="Имя пользователя" HorizontalAlignment="Left" Margin="12,145,0,0" VerticalAlignment="Top" FontSize="18"/>
+    <TextBox Name="TxbxLogin" HorizontalAlignment="Left" Height="36" Margin="89,143,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="286" FontSize="18" FontWeight="Bold" TextAlignment="Left"/>
+    <Label Content="E-mail" HorizontalAlignment="Left" Margin="12,145,0,0" VerticalAlignment="Top" FontSize="18"/>
     <Label Content="Пароль" HorizontalAlignment="Left" Margin="12,188,0,0" VerticalAlignment="Top" FontSize="18"/>
-    <Button Name="BtnAuthorize" Content="Войти" HorizontalAlignment="Left" Margin="334,292,0,0" VerticalAlignment="Top" Width="132" Height="57" FontSize="18">
+    <Button Name="BtnAuthorize" Content="Войти" HorizontalAlignment="Left" Margin="243,292,0,0" VerticalAlignment="Top" Width="132" Height="57" FontSize="18">
       <Button.Effect>
         <DropShadowEffect/>
       </Button.Effect>
     </Button>
-    <GroupBox Header="Войти как..." HorizontalAlignment="Left" Height="92" Margin="82,32,0,0" VerticalAlignment="Top" Width="330" FontSize="18">
-      <ComboBox Name="CbxAuthorizeAs" HorizontalAlignment="Left" Margin="59,10,0,0" VerticalAlignment="Top" Width="208">
+    <GroupBox Header="Войти как..." HorizontalAlignment="Left" Height="92" Margin="89,32,0,0" VerticalAlignment="Top" Width="286" FontSize="18">
+      <ComboBox Name="CbxAuthorizeAs" HorizontalAlignment="Left" Margin="32,10,0,0" VerticalAlignment="Top" Width="208">
         <ComboBox.Effect>
           <DropShadowEffect/>
         </ComboBox.Effect>
@@ -29,8 +29,8 @@
         <DropShadowEffect/>
       </Button.Effect>
     </Button>
-    <CheckBox x:Name="ChkBoxSaveUser" Content="Запомнить пользователя" Margin="147,243,127,0" VerticalAlignment="Top" FontSize="16"/>
-    <PasswordBox x:Name="TxbxPassword" HorizontalAlignment="Left" Margin="180,188,0,0" VerticalAlignment="Top" Width="286" Height="34" FontSize="18"/>
+    <CheckBox x:Name="ChkBoxSaveUser" Content="Запомнить пользователя" Margin="122,243,68,0" VerticalAlignment="Top" FontSize="16"/>
+    <PasswordBox x:Name="TxbxPassword" HorizontalAlignment="Left" Margin="89,188,0,0" VerticalAlignment="Top" Width="286" Height="34" FontSize="18"/>
     <Menu HorizontalAlignment="Left" Height="22" Margin="10,10,0,0" VerticalAlignment="Top" Width="48">
       <MenuItem Header="Меню">
         <MenuItem Header="Регистрация нового пользователя" Click="MenuItem_Click"/>
