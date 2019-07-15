@@ -31,7 +31,14 @@ namespace TeacherSystem
 
         private void CbxAuthorizeAs_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            if (CbxAuthorizeAs.Text == "Администратор")
+            {
+                BtnRegistration.IsEnabled = true;
+            }
+            else if (CbxAuthorizeAs.Text == "Учитель")
+            {
+                BtnRegistration.IsEnabled = false;
+            }
         }
     }
 }
