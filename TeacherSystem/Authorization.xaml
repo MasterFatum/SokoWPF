@@ -30,7 +30,7 @@
             </Button.Effect>
         </Button>
         <CheckBox x:Name="ChkBoxSaveUser" Content="Запомнить пользователя" Margin="145,226,140,0" VerticalAlignment="Top" FontSize="16"/>
-        <Button x:Name="BtnRegistration" Content="Регистрация" HorizontalAlignment="Left" Margin="345,22,0,0" VerticalAlignment="Top" Width="119" Height="26" FontSize="14">
+        <Button x:Name="BtnRegistration" Content="Регистрация" HorizontalAlignment="Left" Margin="345,22,0,0" VerticalAlignment="Top" Width="119" Height="26" FontSize="14" Click="BtnRegistration_Click">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>

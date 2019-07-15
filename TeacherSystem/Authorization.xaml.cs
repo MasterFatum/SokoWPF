@@ -40,5 +40,10 @@ namespace TeacherSystem
                 BtnRegistration.IsEnabled = false;
             }
         }
+
+        private void BtnRegistration_Click(object sender, RoutedEventArgs e)
+        {
+            new Message().ShowDialog();
+        }
     }
 }
