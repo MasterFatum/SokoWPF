@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Авторизация пользователя" Height="375.403" Width="495.448" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow" ResizeMode="NoResize">
     <Grid>
-        <TextBox Name="TxbxLogin" HorizontalAlignment="Left" Height="36" Margin="178,126,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="286" FontSize="18" FontWeight="Bold" TextAlignment="Center"/>
+        <TextBox Name="TxbxLogin" HorizontalAlignment="Left" Height="36" Margin="178,126,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="286" FontSize="18" FontWeight="Bold" TextAlignment="Left"/>
         <Label Content="Имя пользователя" HorizontalAlignment="Left" Margin="10,128,0,0" VerticalAlignment="Top" FontSize="18"/>
         <Label Content="Пароль" HorizontalAlignment="Left" Margin="10,171,0,0" VerticalAlignment="Top" FontSize="18"/>
         <Button Name="BtnAuthorize" Content="Войти" HorizontalAlignment="Left" Margin="332,271,0,0" VerticalAlignment="Top" Width="132" Height="57" FontSize="18">
