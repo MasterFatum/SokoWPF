@@ -5,9 +5,36 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TeacherSystem"
         mc:Ignorable="d"
-        Title="Registrations" Height="450" Width="800">
+        Title="Регистрация нового пользователя" Height="489.631" Width="549.432" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="ToolWindow">
     <Grid>
-        <GroupBox Header="GroupBox" HorizontalAlignment="Left" Height="400" Margin="10,10,0,0" VerticalAlignment="Top" Width="772"/>
+        <Button x:Name="BtnRegistration" Content="Регистрация" HorizontalAlignment="Left" Margin="384,391,0,0" VerticalAlignment="Top" Width="135" Height="53" FontSize="18">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button x:Name="BtnClose" Content="Закрыть" HorizontalAlignment="Left" Margin="10,391,0,0" VerticalAlignment="Top" Width="135" Height="53" FontSize="18" Click="BtnClose_Click">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Label Content="Имя" HorizontalAlignment="Left" Margin="10,94,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <Label Content="Фамилия" HorizontalAlignment="Left" Margin="10,49,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <Label Content="Отчество" HorizontalAlignment="Left" Margin="10,139,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <TextBox x:Name="TxbxLastname" HorizontalAlignment="Left" Height="40" Margin="158,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="361" FontSize="18" TextAlignment="Center"/>
+        <TextBox x:Name="TxbxFirstname" HorizontalAlignment="Left" Height="40" Margin="158,94,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="361" FontSize="18" TextAlignment="Center"/>
+        <TextBox x:Name="TxbxMiddlename" HorizontalAlignment="Left" Height="40" Margin="158,139,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="361" FontSize="18" TextAlignment="Center"/>
+        <ComboBox x:Name="CbxPosition" HorizontalAlignment="Left" Margin="158,184,0,0" VerticalAlignment="Top" Width="361" FontSize="18" Height="40">
+            <ComboBoxItem Content="Учитель биологии"/>
+            <ComboBoxItem Content="Учитель географии"/>
+            <ComboBoxItem Content="Учитель истории"/>
+        </ComboBox>
+        <Label Content="Должность" HorizontalAlignment="Left" Margin="8,184,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <Label Content="E-mail" HorizontalAlignment="Left" Margin="10,229,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <TextBox x:Name="TxbxMiddlename1" HorizontalAlignment="Left" Height="40" Margin="158,229,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="361" FontSize="18" TextAlignment="Center"/>
+        <PasswordBox x:Name="PwdBox" HorizontalAlignment="Left" Margin="158,274,0,0" VerticalAlignment="Top" Height="40" Width="361" FontSize="18"/>
+        <PasswordBox x:Name="PwdBoxReplase" HorizontalAlignment="Left" Margin="158,319,0,0" VerticalAlignment="Top" Height="40" Width="361" FontSize="18"/>
+        <Label Content="Пароль" HorizontalAlignment="Left" Margin="10,274,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <Label Content="Пароль еще раз" HorizontalAlignment="Left" Margin="10,319,0,0" VerticalAlignment="Top" FontSize="18"/>
 
     </Grid>
 </Window>

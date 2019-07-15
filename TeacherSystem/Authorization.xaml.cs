@@ -29,21 +29,9 @@ namespace TeacherSystem
             Close();
         }
 
-        private void CbxAuthorizeAs_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (CbxAuthorizeAs.Text == "Администратор")
-            {
-                BtnRegistration.IsEnabled = true;
-            }
-            else if (CbxAuthorizeAs.Text == "Учитель")
-            {
-                BtnRegistration.IsEnabled = false;
-            }
-        }
-
         private void BtnRegistration_Click(object sender, RoutedEventArgs e)
         {
-            new Message("Тут будет сообщение").ShowDialog();
+            new Registrations().ShowDialog();
         }
     }
 }

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TeacherSystem"
         mc:Ignorable="d"
-        Title="Авторизация пользователя" Height="378.684" Width="501.903" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow" ResizeMode="NoResize">
+        Title="Авторизация пользователя" Height="375.403" Width="495.448" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow" ResizeMode="NoResize">
     <Grid>
         <TextBox Name="TxbxLogin" HorizontalAlignment="Left" Height="36" Margin="178,126,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="286" FontSize="18" FontWeight="Bold" TextAlignment="Center"/>
         <Label Content="Имя пользователя" HorizontalAlignment="Left" Margin="10,128,0,0" VerticalAlignment="Top" FontSize="18"/>
@@ -15,8 +15,8 @@
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
-        <GroupBox Header="Войти как..." HorizontalAlignment="Left" Height="92" Margin="10,10,0,0" VerticalAlignment="Top" Width="330" FontSize="18">
-            <ComboBox Name="CbxAuthorizeAs" HorizontalAlignment="Left" Margin="59,10,0,0" VerticalAlignment="Top" Width="208" SelectionChanged="CbxAuthorizeAs_SelectionChanged">
+        <GroupBox Header="Войти как..." HorizontalAlignment="Left" Height="92" Margin="86,10,0,0" VerticalAlignment="Top" Width="330" FontSize="18">
+            <ComboBox Name="CbxAuthorizeAs" HorizontalAlignment="Left" Margin="59,10,0,0" VerticalAlignment="Top" Width="208">
                 <ComboBox.Effect>
                     <DropShadowEffect/>
                 </ComboBox.Effect>
@@ -30,11 +30,6 @@
             </Button.Effect>
         </Button>
         <CheckBox x:Name="ChkBoxSaveUser" Content="Запомнить пользователя" Margin="145,226,140,0" VerticalAlignment="Top" FontSize="16"/>
-        <Button x:Name="BtnRegistration" Content="Регистрация" HorizontalAlignment="Left" Margin="345,22,0,0" VerticalAlignment="Top" Width="119" Height="26" FontSize="14" Click="BtnRegistration_Click">
-            <Button.Effect>
-                <DropShadowEffect/>
-            </Button.Effect>
-        </Button>
         <PasswordBox x:Name="TxbxPassword" HorizontalAlignment="Left" Margin="178,171,0,0" VerticalAlignment="Top" Width="286" Height="34" FontSize="18"/>
 
     </Grid>
