@@ -23,5 +23,15 @@ namespace TeacherSystem
         {
             InitializeComponent();
         }
+
+        private void BtnAuthorizeExit_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void CbxAuthorizeAs_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
