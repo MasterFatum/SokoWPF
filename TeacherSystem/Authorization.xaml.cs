@@ -43,7 +43,7 @@ namespace TeacherSystem
 
         private void BtnRegistration_Click(object sender, RoutedEventArgs e)
         {
-            new Message().ShowDialog();
+            new Message("Тут будет сообщение").ShowDialog();
         }
     }
 }

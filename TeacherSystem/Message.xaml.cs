@@ -19,9 +19,16 @@ namespace TeacherSystem
     /// </summary>
     public partial class Message : Window
     {
-        public Message()
+        public Message(string message)
         {
             InitializeComponent();
+
+            LblMessage.Content = message;
+        }
+
+        private void BtnMessageOk_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
     }
 }
