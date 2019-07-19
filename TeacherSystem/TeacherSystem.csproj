@@ -44,6 +44,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -64,13 +66,22 @@
     </ApplicationDefinition>
     <Compile Include="Abstract\IUserRepository.cs" />
     <Compile Include="Concrete\UserRepository.cs" />
-    <Compile Include="Entities\User.cs" />
+    <Compile Include="Entities\Contests.cs" />
+    <Compile Include="Entities\Courses.cs" />
+    <Compile Include="Entities\Experience.cs" />
+    <Compile Include="Entities\Materials.cs" />
     <Compile Include="Message.xaml.cs">
       <DependentUpon>Message.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Entities\Other.cs" />
+    <Compile Include="Entities\Publications.cs" />
     <Compile Include="Registrations.xaml.cs">
       <DependentUpon>Registrations.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SokoContext.cs" />
+    <Compile Include="Entities\Technology.cs" />
+    <Compile Include="Entities\Users.cs" />
+    <Compile Include="Entities\WorkWithParents.cs" />
     <Page Include="Authorization.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

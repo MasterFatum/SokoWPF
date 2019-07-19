@@ -3,21 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TeacherSystem.Entities;
 
 namespace TeacherSystem.Abstract
 {
     interface IUserRepository
     {
-        void AddUser(User user);
+        void AddUser(Users user);
 
         void DeleteUser(int id);
 
-        void EditUser(User user);
+        void EditUser(Users user);
 
-        IEnumerable<User> GetAllUser();
+        IEnumerable<Users> GetAllUser();
 
-        IQueryable<User> GetUserByLastame();
+        IQueryable<Users> GetUserByLastame();
 
     }
 }

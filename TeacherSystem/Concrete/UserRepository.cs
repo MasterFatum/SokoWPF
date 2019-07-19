@@ -4,13 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TeacherSystem.Abstract;
-using TeacherSystem.Entities;
 
 namespace TeacherSystem.Concrete
 {
     class UserRepository : IUserRepository
     {
-        public void AddUser(User user)
+        public void AddUser(Users user)
         {
             throw new NotImplementedException();
         }
@@ -20,17 +19,17 @@ namespace TeacherSystem.Concrete
             throw new NotImplementedException();
         }
 
-        public void EditUser(User user)
+        public void EditUser(Users user)
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<User> GetAllUser()
+        public IEnumerable<Users> GetAllUser()
         {
             throw new NotImplementedException();
         }
 
-        public IQueryable<User> GetUserByLastame()
+        public IQueryable<Users> GetUserByLastame()
         {
             throw new NotImplementedException();
         }
