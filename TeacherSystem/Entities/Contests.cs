@@ -6,7 +6,7 @@ namespace TeacherSystem
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class Contests
+    public class Contests
     {
         public int Id { get; set; }
 

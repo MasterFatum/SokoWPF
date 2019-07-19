@@ -9,9 +9,21 @@ namespace TeacherSystem.Concrete
 {
     class UserRepository : IUserRepository
     {
+        SokoContext sokoContext = new SokoContext();
+
         public void AddUser(Users user)
         {
-            throw new NotImplementedException();
+            try
+            {
+                sokoContext.Users.Add(user);
+
+                sokoContext.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                new Message(e.Message).ShowDialog();
+            }
+            
         }
 
         public void DeleteUser(int id)
@@ -26,7 +38,9 @@ namespace TeacherSystem.Concrete
 
         public IEnumerable<Users> GetAllUser()
         {
-            throw new NotImplementedException();
+            IEnumerable<Users> users = sokoContext.Users.ToList();
+
+            return users;
         }
 
         public IQueryable<Users> GetUserByLastame()

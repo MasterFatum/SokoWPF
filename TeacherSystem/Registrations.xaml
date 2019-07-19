@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Регистрация нового пользователя" Height="489.631" Width="549.432" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="ToolWindow">
     <Grid>
-        <Button x:Name="BtnRegistration" Content="Регистрация" HorizontalAlignment="Left" Margin="384,391,0,0" VerticalAlignment="Top" Width="135" Height="53" FontSize="18">
+        <Button x:Name="BtnRegistration" Content="Регистрация" HorizontalAlignment="Left" Margin="384,391,0,0" VerticalAlignment="Top" Width="135" Height="53" FontSize="18" Click="BtnRegistration_Click">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
@@ -20,17 +20,28 @@
         <Label Content="Имя" HorizontalAlignment="Left" Margin="10,94,0,0" VerticalAlignment="Top" FontSize="18"/>
         <Label Content="Фамилия" HorizontalAlignment="Left" Margin="10,49,0,0" VerticalAlignment="Top" FontSize="18"/>
         <Label Content="Отчество" HorizontalAlignment="Left" Margin="10,139,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <TextBox x:Name="TxbxLastname" HorizontalAlignment="Left" Height="40" Margin="158,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="361" FontSize="18" TextAlignment="Center"/>
-        <TextBox x:Name="TxbxFirstname" HorizontalAlignment="Left" Height="40" Margin="158,94,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="361" FontSize="18" TextAlignment="Center"/>
-        <TextBox x:Name="TxbxMiddlename" HorizontalAlignment="Left" Height="40" Margin="158,139,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="361" FontSize="18" TextAlignment="Center"/>
+        <TextBox x:Name="TxbxLastname" HorizontalAlignment="Left" Height="40" Margin="158,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="361" FontSize="18"/>
+        <TextBox x:Name="TxbxFirstname" HorizontalAlignment="Left" Height="40" Margin="158,94,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="361" FontSize="18"/>
+        <TextBox x:Name="TxbxMiddlename" HorizontalAlignment="Left" Height="40" Margin="158,139,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="361" FontSize="18"/>
         <ComboBox x:Name="CbxPosition" HorizontalAlignment="Left" Margin="158,184,0,0" VerticalAlignment="Top" Width="361" FontSize="18" Height="40">
             <ComboBoxItem Content="Учитель биологии"/>
+            <ComboBoxItem Content="Учитель математики"/>
+            <ComboBoxItem Content="Учитель английского языка"/>
+            <ComboBoxItem Content="Учитель информатики"/>
             <ComboBoxItem Content="Учитель географии"/>
-            <ComboBoxItem Content="Учитель истории"/>
+            <ComboBoxItem Content="Учитель истории и обществознания"/>
+            <ComboBoxItem Content="Учитель русского языка и литературы"/>
+            <ComboBoxItem Content="Учитель физики"/>
+            <ComboBoxItem Content="Учитель химии"/>
+            <ComboBoxItem Content="Учитель шахмат"/>
+            <ComboBoxItem Content="Учитель ИЗО"/>
+            <ComboBoxItem Content="Педагог-организатор"/>
+            <ComboBoxItem Content="Психолог"/>
+            <ComboBoxItem Content="Другое"/>
         </ComboBox>
         <Label Content="Должность" HorizontalAlignment="Left" Margin="8,184,0,0" VerticalAlignment="Top" FontSize="18"/>
         <Label Content="E-mail" HorizontalAlignment="Left" Margin="10,229,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <TextBox x:Name="TxbxMiddlename1" HorizontalAlignment="Left" Height="40" Margin="158,229,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="361" FontSize="18" TextAlignment="Center"/>
+        <TextBox x:Name="TxbxEmail" HorizontalAlignment="Left" Height="40" Margin="158,229,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="361" FontSize="18"/>
         <PasswordBox x:Name="PwdBox" HorizontalAlignment="Left" Margin="158,274,0,0" VerticalAlignment="Top" Height="40" Width="361" FontSize="18"/>
         <PasswordBox x:Name="PwdBoxReplase" HorizontalAlignment="Left" Margin="158,319,0,0" VerticalAlignment="Top" Height="40" Width="361" FontSize="18"/>
         <Label Content="Пароль" HorizontalAlignment="Left" Margin="10,274,0,0" VerticalAlignment="Top" FontSize="18"/>

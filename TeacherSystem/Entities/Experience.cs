@@ -7,7 +7,7 @@ namespace TeacherSystem
     using System.Data.Entity.Spatial;
 
     [Table("Experience")]
-    public partial class Experience
+    public class Experience
     {
         public int Id { get; set; }
 

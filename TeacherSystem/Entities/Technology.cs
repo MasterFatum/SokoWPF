@@ -7,7 +7,7 @@ namespace TeacherSystem
     using System.Data.Entity.Spatial;
 
     [Table("Technology")]
-    public partial class Technology
+    public class Technology
     {
         public int Id { get; set; }
 

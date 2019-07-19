@@ -23,12 +23,17 @@ namespace TeacherSystem
         {
             InitializeComponent();
 
-            LblMessage.Content = message;
+            TxbxMessage.Text = message;
         }
 
         private void BtnMessageOk_Click(object sender, RoutedEventArgs e)
         {
             Close();
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }

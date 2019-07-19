@@ -6,7 +6,7 @@ namespace TeacherSystem
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class WorkWithParents
+    public class WorkWithParents
     {
         public int Id { get; set; }
 
