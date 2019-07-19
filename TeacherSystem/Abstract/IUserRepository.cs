@@ -18,5 +18,6 @@ namespace TeacherSystem.Abstract
 
         IQueryable<Users> GetUserByLastame();
 
+        Users ValidationUser(string username, string password);
     }
 }

@@ -17,6 +17,11 @@
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
+        <Button x:Name="BtnClear" Content="Очистить" HorizontalAlignment="Left" Margin="196,391,0,0" VerticalAlignment="Top" Width="135" Height="53" FontSize="18" Click="BtnClear_Click">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
         <Label Content="Имя" HorizontalAlignment="Left" Margin="10,94,0,0" VerticalAlignment="Top" FontSize="18"/>
         <Label Content="Фамилия" HorizontalAlignment="Left" Margin="10,49,0,0" VerticalAlignment="Top" FontSize="18"/>
         <Label Content="Отчество" HorizontalAlignment="Left" Margin="10,139,0,0" VerticalAlignment="Top" FontSize="18"/>

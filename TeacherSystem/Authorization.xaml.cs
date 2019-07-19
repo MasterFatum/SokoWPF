@@ -11,14 +11,14 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using TeacherSystem.Concrete;
 
 namespace TeacherSystem
 {
-    /// <summary>
-    /// Логика взаимодействия для Authorization.xaml
-    /// </summary>
     public partial class Authorization : Window
     {
+        UserRepository userRepository = new UserRepository();
+
         public Authorization()
         {
             InitializeComponent();
@@ -29,14 +29,39 @@ namespace TeacherSystem
             Close();
         }
 
-        private void BtnRegistration_Click(object sender, RoutedEventArgs e)
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
             new Registrations().ShowDialog();
         }
 
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        private void BtnAuthorize_Click(object sender, RoutedEventArgs e)
         {
-            new Registrations().ShowDialog();
+            Users user = userRepository.ValidationUser(TxbxLogin.Text.Trim(), TxbxPassword.Password);
+
+            if (user != null)
+            {
+                if (ChkBoxSaveUser.IsChecked == true)
+                {
+                    Properties.Settings.Default.Username = TxbxLogin.Text.Trim();
+                    Properties.Settings.Default.Password = TxbxPassword.Password.Trim();
+                    Properties.Settings.Default.IsSaveUser = ChkBoxSaveUser.IsChecked.Value;
+
+                    Properties.Settings.Default.Save();
+                }
+
+                this.Visibility = Visibility.Collapsed;
+                this.Visibility = Visibility.Hidden;
+                new MainWindow(user).ShowDialog();
+            }
+            else
+            {
+                new Message("Неправильный логин или пароль!").ShowDialog();
+            }
+        }
+
+        private void ChkBoxSaveUser_Checked(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }

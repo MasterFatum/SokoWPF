@@ -73,5 +73,16 @@ namespace TeacherSystem
 
             
         }
+
+        private void BtnClear_Click(object sender, RoutedEventArgs e)
+        {
+            TxbxLastname.Text = String.Empty;
+            TxbxFirstname.Text = String.Empty;
+            TxbxMiddlename.Text = String.Empty;
+            TxbxEmail.Text = String.Empty;
+            PwdBox.Password = String.Empty;
+            PwdBoxReplase.Password = String.Empty;
+            CbxPosition.SelectedIndex = -1;
+        }
     }
 }

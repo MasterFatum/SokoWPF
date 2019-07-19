@@ -49,5 +49,23 @@ namespace TeacherSystem.Concrete
         {
             throw new NotImplementedException();
         }
+
+        public Users ValidationUser(string username, string password)
+        {
+            Users user = null;
+
+            var findUser = sokoContext.Users.FirstOrDefault(u => u.Email == username);
+
+            if (findUser != null)
+            {
+                if (findUser.Password == password)
+                {
+                    user = findUser;
+
+                }
+            }
+
+            return user;
+        }
     }
 }

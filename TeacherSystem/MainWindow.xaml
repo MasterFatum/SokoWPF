@@ -5,8 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TeacherSystem"
         mc:Ignorable="d"
-        Title="Система оценки" Height="584.232" Width="1132.386">
+        Title="Система оценки качества образования" Height="593.555" Width="1144.816" WindowStartupLocation="CenterScreen">
     <Grid>
+        <DataGrid HorizontalAlignment="Left" Height="478" Margin="10,66,0,0" VerticalAlignment="Top" Width="967"/>
+        <Button x:Name="BtnMainExit" Content="Закрыть" HorizontalAlignment="Left" Margin="982,487,0,0" VerticalAlignment="Top" Width="132" Height="57" FontSize="18" Click="BtnMainExit_Click">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Label x:Name="Lbl" Content="Label" HorizontalAlignment="Left" Margin="1013,336,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.413,0.235"/>
+        <Button x:Name="BtnMainExit_Copy" Content="Закрыть" HorizontalAlignment="Left" Margin="982,425,0,0" VerticalAlignment="Top" Width="132" Height="57" FontSize="18" Click="BtnMainExit_Click">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <GroupBox Header="GroupBox" HorizontalAlignment="Left" Height="51" Margin="10,10,0,0" VerticalAlignment="Top" Width="967"/>
 
     </Grid>
 </Window>
