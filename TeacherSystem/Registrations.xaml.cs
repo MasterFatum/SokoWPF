@@ -15,9 +15,7 @@ using TeacherSystem.Concrete;
 
 namespace TeacherSystem
 {
-    /// <summary>
-    /// Логика взаимодействия для Registrations.xaml
-    /// </summary>
+
     public partial class Registrations : Window
     {
         public Registrations()
@@ -36,25 +34,35 @@ namespace TeacherSystem
         {
             try
             {
-                if (PwdBox.Password.Equals(PwdBoxReplase.Password))
+                if (TxbxLastname.Text == String.Empty || 
+                    TxbxFirstname.Text == String.Empty || 
+                    TxbxMiddlename.Text == String.Empty || 
+                    TxbxEmail.Text == String.Empty || 
+                    PwdBox.Password == String.Empty)
                 {
-                    Users user = new Users();
-                    user.Lastname = TxbxLastname.Text.Trim();
-                    user.Firstname = TxbxFirstname.Text.Trim();
-                    user.Middlename = TxbxMiddlename.Text.Trim();
-                    user.Position = ((ComboBoxItem)CbxPosition.SelectedItem).Content.ToString();
-                    user.Privilege = "User";
-                    user.Email = TxbxEmail.Text.Trim();
-                    user.Password = PwdBox.Password;
-
-                    userRepository.AddUser(user);
-
-                    //new Message("Вы успешно зарегестрированы в системе! Войдите под вашим логином и паролем!").ShowDialog();
+                    
+                    new Message("Одно или несколько полей не заполнено!").ShowDialog();
                 }
-
                 else
                 {
-                    new Message("Пароли не совдпадают!").ShowDialog();
+                    if (PwdBox.Password != String.Empty && PwdBox.Password.Equals(PwdBoxReplase.Password))
+                    {
+                        Users user = new Users();
+                        user.Lastname = TxbxLastname.Text.Trim();
+                        user.Firstname = TxbxFirstname.Text.Trim();
+                        user.Middlename = TxbxMiddlename.Text.Trim();
+                        user.Position = ((ComboBoxItem)CbxPosition.SelectedItem).Content.ToString();
+                        user.Privilege = "User";
+                        user.Email = TxbxEmail.Text.Trim();
+                        user.Password = PwdBox.Password;
+
+                        userRepository.AddUser(user);
+                    }
+
+                    else
+                    {
+                        new Message("Пароли не совпадают!").ShowDialog();
+                    }
                 }
                 
             }
