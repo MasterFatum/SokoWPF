@@ -12,20 +12,23 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TeacherSystem.Concrete;
+using TeacherSystem.FormAddEducations;
 
 namespace TeacherSystem
 {
-    /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
+
+        UserRepository userRepository = new UserRepository();
+
         public MainWindow(Users user)
         {
             InitializeComponent();
 
             Lbl.Content = user.Lastname;
 
+            DataGridMain.ItemsSource = userRepository.GetAllUser();
         }
 
         public string Lastname { get; set; }
@@ -37,6 +40,16 @@ namespace TeacherSystem
         private void BtnMainExit_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
+        }
+
+        private void BtnMainAdd_Click(object sender, RoutedEventArgs e)
+        {
+            new FormChooseEducation().ShowDialog();
+        }
+
+        private void BtnMainAdd_Click_1(object sender, RoutedEventArgs e)
+        {
+            new FormChooseEducation().ShowDialog();
         }
     }
 }

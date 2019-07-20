@@ -1,0 +1,35 @@
+﻿<Window x:Class="TeacherSystem.FormAddEducations.FormChooseEducation"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TeacherSystem.FormAddEducations"
+        mc:Ignorable="d"
+        Title="Выберите вид" Height="163.946" Width="321.733" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <ComboBox x:Name="CbxAuthorizeAs" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="281" FontSize="18">
+            <ComboBox.Effect>
+                <DropShadowEffect/>
+            </ComboBox.Effect>
+            <ComboBoxItem IsSelected="True" Content="Курсы"/>
+            <ComboBoxItem Content="Конкурсы"/>
+            <ComboBoxItem Content="Опыт"/>
+            <ComboBoxItem Content="Материалы"/>
+            <ComboBoxItem Content="Публикации"/>
+            <ComboBoxItem Content="Технологии"/>
+            <ComboBoxItem Content="Работа с родителями"/>
+            <ComboBoxItem Content="Другое"/>
+        </ComboBox>
+        <Button x:Name="BtnMainAdd" Content="Добавить" HorizontalAlignment="Left" Margin="159,75,0,0" VerticalAlignment="Top" Width="132" Height="35" FontSize="18">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button x:Name="BtnChooseEducation" Content="Закрыть" HorizontalAlignment="Left" Margin="10,75,0,0" VerticalAlignment="Top" Width="132" Height="35" FontSize="18" Click="BtnChooseEducation_Click">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+
+    </Grid>
+</Window>

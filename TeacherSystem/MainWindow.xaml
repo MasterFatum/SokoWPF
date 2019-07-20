@@ -7,19 +7,34 @@
         mc:Ignorable="d"
         Title="Система оценки качества образования" Height="593.555" Width="1144.816" WindowStartupLocation="CenterScreen">
     <Grid>
-        <DataGrid HorizontalAlignment="Left" Height="478" Margin="10,66,0,0" VerticalAlignment="Top" Width="967"/>
+        <DataGrid x:Name="DataGridMain" HorizontalAlignment="Left" IsReadOnly="True" Height="478" Margin="10,66,0,0" VerticalAlignment="Top" Width="967" FontSize="16"/>
         <Button x:Name="BtnMainExit" Content="Закрыть" HorizontalAlignment="Left" Margin="982,487,0,0" VerticalAlignment="Top" Width="132" Height="57" FontSize="18" Click="BtnMainExit_Click">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
-        <Label x:Name="Lbl" Content="Label" HorizontalAlignment="Left" Margin="1013,336,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.413,0.235"/>
-        <Button x:Name="BtnMainExit_Copy" Content="Закрыть" HorizontalAlignment="Left" Margin="982,425,0,0" VerticalAlignment="Top" Width="132" Height="57" FontSize="18" Click="BtnMainExit_Click">
+        <Label x:Name="Lbl" Content="Label" HorizontalAlignment="Left" Margin="16,26,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.413,0.235" FontSize="14" FontWeight="Bold"/>
+        <Button x:Name="BtnMainAdd" Content="Добавить" HorizontalAlignment="Left" Margin="982,66,0,0" VerticalAlignment="Top" Width="132" Height="35" FontSize="18" Click="BtnMainAdd_Click_1">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
-        <GroupBox Header="GroupBox" HorizontalAlignment="Left" Height="51" Margin="10,10,0,0" VerticalAlignment="Top" Width="967"/>
+        <GroupBox Header="Пользователь" HorizontalAlignment="Left" Height="51" Margin="10,10,0,0" VerticalAlignment="Top" Width="967"/>
+        <Button x:Name="BtnMainEdit" Content="Изменить" HorizontalAlignment="Left" Margin="982,106,0,0" VerticalAlignment="Top" Width="132" Height="35" FontSize="18">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button x:Name="BtnMainDelete" Content="Удалить" HorizontalAlignment="Left" Margin="982,146,0,0" VerticalAlignment="Top" Width="132" Height="35" FontSize="18">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button x:Name="BtnMainUpdate" Content="Обновить" HorizontalAlignment="Left" Margin="982,217,0,0" VerticalAlignment="Top" Width="132" Height="35" FontSize="18">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
 
     </Grid>
 </Window>

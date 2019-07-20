@@ -40,6 +40,7 @@
             <ComboBoxItem Content="Учитель химии"/>
             <ComboBoxItem Content="Учитель шахмат"/>
             <ComboBoxItem Content="Учитель ИЗО"/>
+            <ComboBoxItem Content="Основы проектной деятельности"/>
             <ComboBoxItem Content="Педагог-организатор"/>
             <ComboBoxItem Content="Психолог"/>
             <ComboBoxItem Content="Другое"/>
