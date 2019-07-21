@@ -28,5 +28,10 @@ namespace TeacherSystem.FormAddEducations
         {
             Close();
         }
+
+        private void BtnMainAdd_Click(object sender, RoutedEventArgs e)
+        {
+            new FormAdd(((ComboBoxItem)CbxSelectEducation.SelectedItem).Content.ToString()).ShowDialog();
+        }
     }
 }

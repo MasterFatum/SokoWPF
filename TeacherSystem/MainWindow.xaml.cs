@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,15 +21,23 @@ namespace TeacherSystem
     public partial class MainWindow : Window
     {
 
-        UserRepository userRepository = new UserRepository();
+        ContestsRepository contestsRepository = new ContestsRepository();
+
+        SokoContext sokoContext = new SokoContext();
 
         public MainWindow(Users user)
         {
             InitializeComponent();
 
-            Lbl.Content = user.Lastname;
+            LblUserId.Content = user.Id;
+            LblLastname.Content = user.Lastname;
+            LblLFirstname.Content = user.Firstname;
+            LblMeddlename.Content = user.Middlename;
+            LblPosition.Content = user.Position;
 
-            DataGridMain.ItemsSource = userRepository.GetAllUser();
+            IEnumerable<Contests> contestses = contestsRepository.GetContestsByUserId(user.Id);
+
+            DataGridMain.ItemsSource = contestses.ToList();
         }
 
         public string Lastname { get; set; }

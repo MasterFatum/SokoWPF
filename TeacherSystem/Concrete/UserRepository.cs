@@ -45,11 +45,6 @@ namespace TeacherSystem.Concrete
             return users;
         }
 
-        public IQueryable<Users> GetUserByLastame()
-        {
-            throw new NotImplementedException();
-        }
-
         public Users ValidationUser(string username, string password)
         {
             Users user = null;
@@ -66,6 +61,16 @@ namespace TeacherSystem.Concrete
             }
 
             return user;
+        }
+
+        public IEnumerable<Users> SearchUsersByLastname(string lastname)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<Users> SearchUsersByPosition(string position)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -16,7 +16,10 @@ namespace TeacherSystem.Abstract
 
         IEnumerable<Contests> GetAllContests();
 
+        IEnumerable<Contests> GetContestsByUserId(int userId);
+
         IEnumerable<Contests> GetContestsByUser(Users user);
+        
 
     }
 }

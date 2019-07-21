@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Выберите вид" Height="163.946" Width="321.733" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
-        <ComboBox x:Name="CbxAuthorizeAs" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="281" FontSize="18">
+        <ComboBox x:Name="CbxSelectEducation" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="281" FontSize="18">
             <ComboBox.Effect>
                 <DropShadowEffect/>
             </ComboBox.Effect>
@@ -20,7 +20,7 @@
             <ComboBoxItem Content="Работа с родителями"/>
             <ComboBoxItem Content="Другое"/>
         </ComboBox>
-        <Button x:Name="BtnMainAdd" Content="Добавить" HorizontalAlignment="Left" Margin="159,75,0,0" VerticalAlignment="Top" Width="132" Height="35" FontSize="18">
+        <Button x:Name="BtnMainAdd" Content="Добавить" HorizontalAlignment="Left" Margin="159,75,0,0" VerticalAlignment="Top" Width="132" Height="35" FontSize="18" Click="BtnMainAdd_Click">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>

@@ -12,8 +12,6 @@ namespace TeacherSystem
 
         public int UserId { get; set; }
 
-        [Required]
-        [StringLength(50)]
         public string Title { get; set; }
 
         public string Description { get; set; }

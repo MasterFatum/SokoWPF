@@ -5,8 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TeacherSystem.FormAddEducations"
         mc:Ignorable="d"
-        Title="FormAdd" Height="450" Width="800">
+        Title="Добавление новой записи в ваше портфолио" Height="443.546" Width="594.486" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
-        
+        <Label Content="Название" HorizontalAlignment="Left" Margin="7,91,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <TextBox Name="TxbxTitle" HorizontalAlignment="Left" Height="31" Margin="104,94,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="457" FontSize="18"/>
+        <Label Content="Описание" HorizontalAlignment="Left" Margin="7,130,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.216,0.009" FontSize="18"/>
+        <TextBox Name="TxbxDescription" HorizontalAlignment="Left" Height="183" Margin="104,130,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="457" FontSize="18"/>
+        <Button Name="BtnAdd" Content="Добавить" HorizontalAlignment="Left" Margin="429,331,0,0" VerticalAlignment="Top" Width="132" Height="57" RenderTransformOrigin="0.9,0.199" FontSize="18">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button Name="BtnClose" Content="Закрыть" HorizontalAlignment="Left" Margin="10,331,0,0" VerticalAlignment="Top" Width="132" Height="57" FontSize="18" Click="Button_Click">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Label Content="Вид квалификации" HorizontalAlignment="Left" Margin="247,12,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <TextBox x:Name="TxbxSelectedEducation" IsEnabled="False" HorizontalAlignment="Left" IsReadOnly="False" Height="31" Margin="144,46,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="380" FontSize="18" TextAlignment="Center"/>
+        <Button Name="BtnClear" Content="Очистить" HorizontalAlignment="Left" Margin="221,331,0,0" VerticalAlignment="Top" Width="132" Height="57" FontSize="18" Click="BtnClear_Click">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+
     </Grid>
 </Window>

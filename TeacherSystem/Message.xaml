@@ -7,7 +7,11 @@
         mc:Ignorable="d"
         Title="Сообщение" Height="187.53" Width="299.024" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow">
     <Grid>
-        <Button x:Name="BtnMessageOk" Content="OK" HorizontalAlignment="Left" Margin="110,126,0,0" VerticalAlignment="Top" Width="75" Click="BtnMessageOk_Click"/>
+        <Button x:Name="BtnMessageOk" Content="OK" HorizontalAlignment="Left" Margin="110,126,0,0" VerticalAlignment="Top" Width="75" Click="BtnMessageOk_Click">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
         <TextBox x:Name="TxbxMessage" HorizontalAlignment="Left" Height="111" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="265" TextChanged="TextBox_TextChanged" IsEnabled="False" Foreground="#FF6D6D6D" TextAlignment="Center"/>
 
     </Grid>

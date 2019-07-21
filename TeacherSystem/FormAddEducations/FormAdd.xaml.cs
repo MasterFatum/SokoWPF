@@ -19,9 +19,25 @@ namespace TeacherSystem.FormAddEducations
     /// </summary>
     public partial class FormAdd : Window
     {
-        public FormAdd()
+        public string SelectedEducation { get; set; }
+
+        public FormAdd(string selectedEducation)
         {
             InitializeComponent();
+
+            SelectedEducation = selectedEducation;
+            TxbxSelectedEducation.Text = SelectedEducation;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void BtnClear_Click(object sender, RoutedEventArgs e)
+        {
+            TxbxTitle.Text = String.Empty;
+            TxbxDescription.Text = String.Empty;
         }
     }
 }
