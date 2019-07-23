@@ -19,11 +19,16 @@ namespace TeacherSystem.FormAddEducations
     /// </summary>
     public partial class FormChooseEducation : Window
     {
-        public FormChooseEducation()
+
+        public int UserId { get; set; }
+
+        public FormChooseEducation(int userId)
         {
             InitializeComponent();
-        }
 
+            UserId = userId;
+        }
+        
         private void BtnChooseEducation_Click(object sender, RoutedEventArgs e)
         {
             Close();
@@ -31,7 +36,7 @@ namespace TeacherSystem.FormAddEducations
 
         private void BtnMainAdd_Click(object sender, RoutedEventArgs e)
         {
-            new FormAdd(((ComboBoxItem)CbxSelectEducation.SelectedItem).Content.ToString()).ShowDialog();
+            new FormAdd(UserId, ((ComboBoxItem)CbxSelectEducation.SelectedItem).Content.ToString()).ShowDialog();
         }
     }
 }

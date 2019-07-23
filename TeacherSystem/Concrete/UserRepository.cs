@@ -19,7 +19,7 @@ namespace TeacherSystem.Concrete
 
                 sokoContext.SaveChanges();
 
-                new Message("Вы успешно зарегистрированы в системе! Войдите под вашим логином и паролем!").ShowDialog();
+                new Message("Вы успешно зарегистрированы в системе! Войдите в систему под вашим логином и паролем!").ShowDialog();
             }
             catch (Exception e)
             {

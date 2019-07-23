@@ -19,7 +19,11 @@ namespace TeacherSystem.Abstract
         IEnumerable<Contests> GetContestsByUserId(int userId);
 
         IEnumerable<Contests> GetContestsByUser(Users user);
-        
+
+        IEnumerable<Contests> GetContestsByPosition(string position);
+
+        IEnumerable<Contests> GetContestsByFirstname(string firstname);
+
 
     }
 }

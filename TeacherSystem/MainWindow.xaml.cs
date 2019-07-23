@@ -23,17 +23,16 @@ namespace TeacherSystem
 
         ContestsRepository contestsRepository = new ContestsRepository();
 
-        SokoContext sokoContext = new SokoContext();
 
         public MainWindow(Users user)
         {
             InitializeComponent();
 
-            LblUserId.Content = user.Id;
-            LblLastname.Content = user.Lastname;
-            LblLFirstname.Content = user.Firstname;
-            LblMeddlename.Content = user.Middlename;
-            LblPosition.Content = user.Position;
+            TxbxUserId.Text = user.Id.ToString();
+            TxbxUserLastname.Text = user.Lastname;
+            TxbxUserFirstname.Text= user.Firstname;
+            TxbxUserMiddlename.Text = user.Middlename;
+            TxbxUserPosition.Text = user.Position;
 
             IEnumerable<Contests> contestses = contestsRepository.GetContestsByUserId(user.Id);
 
@@ -51,14 +50,19 @@ namespace TeacherSystem
             Application.Current.Shutdown();
         }
 
-        private void BtnMainAdd_Click(object sender, RoutedEventArgs e)
+        private void BtnMainCategoryShow_Click(object sender, RoutedEventArgs e)
         {
-            new FormChooseEducation().ShowDialog();
+            
         }
 
-        private void BtnMainAdd_Click_1(object sender, RoutedEventArgs e)
+        private void BtnMainAdd_Click(object sender, RoutedEventArgs e)
         {
-            new FormChooseEducation().ShowDialog();
+            new FormChooseEducation(Convert.ToInt32(TxbxUserId.Text)).ShowDialog();
+        }
+
+        private void BtnMainUpdate_Click(object sender, RoutedEventArgs e)
+        {
+            DataGridMain.ItemsSource = contestsRepository.GetContestsByUserId(Convert.ToInt32(TxbxUserId.Text));
         }
     }
 }

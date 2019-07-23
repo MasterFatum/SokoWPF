@@ -11,22 +11,24 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using TeacherSystem.Concrete;
 
 namespace TeacherSystem.FormAddEducations
 {
-    /// <summary>
-    /// Логика взаимодействия для FormAdd.xaml
-    /// </summary>
     public partial class FormAdd : Window
     {
-        public string SelectedEducation { get; set; }
+        ContestsRepository contestsRepository = new ContestsRepository();
 
-        public FormAdd(string selectedEducation)
+        public string SelectedEducation { get; set; }
+        public int UseridAdd { get; set; }
+
+        public FormAdd(int userId, string selectedEducation)
         {
             InitializeComponent();
 
             SelectedEducation = selectedEducation;
             TxbxSelectedEducation.Text = SelectedEducation;
+            UseridAdd = userId;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -36,6 +38,22 @@ namespace TeacherSystem.FormAddEducations
 
         private void BtnClear_Click(object sender, RoutedEventArgs e)
         {
+            TxbxTitle.Text = String.Empty;
+            TxbxDescription.Text = String.Empty;
+        }
+
+        private void BtnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            Contests contests =  new Contests
+            {
+                UserId = UseridAdd,
+                Title = TxbxTitle.Text.Trim(),
+                Description = TxbxDescription.Text.Trim()
+            
+            };
+
+            contestsRepository.AddContests(contests);
+
             TxbxTitle.Text = String.Empty;
             TxbxDescription.Text = String.Empty;
         }

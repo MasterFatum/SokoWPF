@@ -13,7 +13,17 @@ namespace TeacherSystem.Concrete
 
         public void AddContests(Contests contests)
         {
-            throw new NotImplementedException();
+            try
+            {
+                sokoContext.Contests.Add(contests);
+                sokoContext.SaveChanges();
+                new Message("Категория успешно добавлена!").ShowDialog();
+            }
+            catch (Exception e)
+            {
+                new Message(e.Message).ShowDialog();
+            }
+            
         }
 
         public void DeleteContests(int id, int userId)
@@ -39,6 +49,16 @@ namespace TeacherSystem.Concrete
         }
 
         public IEnumerable<Contests> GetContestsByUser(Users user)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<Contests> GetContestsByPosition(string position)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<Contests> GetContestsByFirstname(string firstname)
         {
             throw new NotImplementedException();
         }

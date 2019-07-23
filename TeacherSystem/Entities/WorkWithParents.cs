@@ -17,7 +17,5 @@ namespace TeacherSystem
         public string Description { get; set; }
 
         public int? Evaluation { get; set; }
-
-        public virtual Users Users { get; set; }
     }
 }
