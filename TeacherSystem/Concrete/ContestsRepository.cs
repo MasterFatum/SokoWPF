@@ -20,7 +20,8 @@ namespace TeacherSystem.Concrete
             {
                 sokoContext.Contests.Add(contests);
                 sokoContext.SaveChanges();
-                new Message("Категория успешно добавлена!").ShowDialog();
+                MessageBox.Show("Запись успешно добавлена!", "Добавление записи", MessageBoxButton.OK,
+                    MessageBoxImage.Information);
             }
             catch (Exception e)
             {
@@ -97,6 +98,11 @@ namespace TeacherSystem.Concrete
         }
 
         public IEnumerable<Contests> GetContestsByFirstname(string firstname)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<Contests> GetContestsByCategory(string category)
         {
             throw new NotImplementedException();
         }
