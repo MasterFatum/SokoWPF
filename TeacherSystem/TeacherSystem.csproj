@@ -81,6 +81,9 @@
     <Compile Include="FormAddEducations\FormChooseEducation.xaml.cs">
       <DependentUpon>FormChooseEducation.xaml</DependentUpon>
     </Compile>
+    <Compile Include="FormAddEducations\FormEdit.xaml.cs">
+      <DependentUpon>FormEdit.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -116,6 +119,10 @@
     <Compile Include="Authorization.xaml.cs">
       <DependentUpon>Authorization.xaml</DependentUpon>
     </Compile>
+    <Page Include="FormAddEducations\FormEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>XamlIntelliSenseFileGenerator</Generator>

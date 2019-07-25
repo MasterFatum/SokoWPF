@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using TeacherSystem.Abstract;
 
 namespace TeacherSystem.Concrete
@@ -23,7 +24,7 @@ namespace TeacherSystem.Concrete
             }
             catch (Exception e)
             {
-                new Message(e.Message).ShowDialog();
+                MessageBox.Show(e.Message);
             }
             
         }

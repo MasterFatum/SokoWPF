@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Система оценки качества образования" Height="593.555" Width="1257.952" WindowStartupLocation="CenterScreen">
     <Grid>
-        <DataGrid x:Name="DataGridMain" HorizontalAlignment="Left" IsReadOnly="True" Height="482" Margin="10,10,0,0" VerticalAlignment="Top" Width="967" FontSize="16"/>
+        <DataGrid x:Name="DataGridMain" HorizontalAlignment="Left" IsReadOnly="True" Height="482" Margin="10,10,0,0" VerticalAlignment="Top" Width="967" FontSize="16" SelectionChanged="DataGridMain_SelectionChanged"/>
         <Button x:Name="BtnMainExit" Content="Закрыть" HorizontalAlignment="Left" Margin="1125,497,0,0" VerticalAlignment="Top" Width="111" Height="47" FontSize="18" Click="BtnMainExit_Click">
             <Button.Effect>
                 <DropShadowEffect/>
@@ -19,12 +19,12 @@
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
-        <Button x:Name="BtnMainEdit" Content="Изменить" HorizontalAlignment="Left" Margin="147,497,0,0" VerticalAlignment="Top" Width="132" Height="47" FontSize="18">
+        <Button x:Name="BtnMainEdit" Content="Изменить" HorizontalAlignment="Left" Margin="147,497,0,0" VerticalAlignment="Top" Width="132" Height="47" FontSize="18" Click="BtnMainEdit_Click">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
-        <Button x:Name="BtnMainDelete" Content="Удалить" HorizontalAlignment="Left" Margin="284,497,0,0" VerticalAlignment="Top" Width="132" Height="47" FontSize="18">
+        <Button x:Name="BtnMainDelete" Content="Удалить" HorizontalAlignment="Left" Margin="284,497,0,0" VerticalAlignment="Top" Width="132" Height="47" FontSize="18" Click="BtnMainDelete_Click">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>

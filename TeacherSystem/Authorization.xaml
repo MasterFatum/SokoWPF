@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Авторизация пользователя" Height="398.366" Width="406.589" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow" ResizeMode="NoResize">
   <Grid>
-    <TextBox Name="TxbxLogin" HorizontalAlignment="Left" Height="36" Margin="89,143,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="286" FontSize="18" FontWeight="Bold" TextAlignment="Left" TabIndex="1"/>
+    <TextBox Name="TxbxLogin" HorizontalAlignment="Left" Height="36" Margin="89,143,0,0" TextWrapping="Wrap" Text="i.panfilov@fckrasnodar.ru" VerticalAlignment="Top" Width="286" FontSize="18" FontWeight="Bold" TextAlignment="Left" TabIndex="1"/>
     <Label Content="E-mail" HorizontalAlignment="Left" Margin="12,145,0,0" VerticalAlignment="Top" FontSize="18"/>
     <Label Content="Пароль" HorizontalAlignment="Left" Margin="12,188,0,0" VerticalAlignment="Top" FontSize="18"/>
     <Button Name="BtnAuthorize" Content="Войти" HorizontalAlignment="Left" Margin="243,292,0,0" VerticalAlignment="Top" Width="132" Height="57" FontSize="18" Click="BtnAuthorize_Click" TabIndex="5">
@@ -30,7 +30,7 @@
             </Button.Effect>
         </Button>
     <CheckBox x:Name="ChkBoxSaveUser" Content="Запомнить пользователя" Margin="95,243,95,0" VerticalAlignment="Top" FontSize="16" Checked="ChkBoxSaveUser_Checked" TabIndex="3"/>
-    <PasswordBox x:Name="TxbxPassword" HorizontalAlignment="Left" Margin="89,188,0,0" VerticalAlignment="Top" Width="286" Height="34" FontSize="18" TabIndex="2"/>
+    <PasswordBox x:Name="TxbxPassword" HorizontalAlignment="Left" Margin="89,188,0,0" VerticalAlignment="Top" Width="286" Height="34" FontSize="18" TabIndex="2" Password="doberman777"/>
     <Menu HorizontalAlignment="Left" Height="22" Margin="10,10,0,0" VerticalAlignment="Top" Width="48">
       <MenuItem Header="Меню">
         <MenuItem Header="Регистрация нового пользователя" Click="MenuItem_Click"/>

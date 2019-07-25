@@ -20,15 +20,15 @@ namespace TeacherSystem.FormAddEducations
         ContestsRepository contestsRepository = new ContestsRepository();
 
         public string SelectedEducation { get; set; }
-        public int UseridAdd { get; set; }
+        public int UserIdAdd { get; set; }
 
         public FormAdd(int userId, string selectedEducation)
         {
             InitializeComponent();
 
             SelectedEducation = selectedEducation;
-            TxbxSelectedEducation.Text = SelectedEducation;
-            UseridAdd = userId;
+            TxbxSelectedCategory.Text = SelectedEducation;
+            UserIdAdd = userId;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -46,7 +46,8 @@ namespace TeacherSystem.FormAddEducations
         {
             Contests contests =  new Contests
             {
-                UserId = UseridAdd,
+                UserId = UserIdAdd,
+                Category = TxbxSelectedCategory.Text.Trim(),
                 Title = TxbxTitle.Text.Trim(),
                 Description = TxbxDescription.Text.Trim()
             

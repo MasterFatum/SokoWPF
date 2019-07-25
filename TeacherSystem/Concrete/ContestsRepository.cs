@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
 using TeacherSystem.Abstract;
 
 namespace TeacherSystem.Concrete
@@ -21,19 +24,54 @@ namespace TeacherSystem.Concrete
             }
             catch (Exception e)
             {
-                new Message(e.Message).ShowDialog();
+                MessageBox.Show(e.Message);
             }
             
         }
 
         public void DeleteContests(int id, int userId)
         {
-            throw new NotImplementedException();
+            try
+            {
+                Contests contests = sokoContext.Contests.Where(u => u.UserId == userId).FirstOrDefault(c => c.Id == id);
+
+                if (contests != null)
+                {
+                    sokoContext.Contests.Remove(contests);
+                    sokoContext.SaveChanges();
+                    MessageBox.Show("Запись успешно удалена!", "Удаление записи", MessageBoxButton.OK,
+                        MessageBoxImage.Information);
+                }
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
         }
 
         public void EditContests(Contests contests)
         {
-            throw new NotImplementedException();
+            try
+            {
+                Contests contestsEdit = sokoContext.Contests.Where(u => u.UserId == contests.UserId).FirstOrDefault(c => c.Id == contests.Id);
+
+                if (contestsEdit != null)
+                {
+                    contestsEdit.Title = contests.Title;
+                    contestsEdit.Description = contests.Description;
+                    sokoContext.Contests.AddOrUpdate(contestsEdit);
+                    sokoContext.SaveChanges();
+
+                    MessageBox.Show("Запись успешно отредактирована!", "Редактирование записи", MessageBoxButton.OK,
+                        MessageBoxImage.Information);
+                }
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
         }
 
         public IEnumerable<Contests> GetAllContests()

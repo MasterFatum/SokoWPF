@@ -39,6 +39,11 @@ namespace TeacherSystem
             DataGridMain.ItemsSource = contestses.ToList();
         }
 
+        public int Id { get; set; }
+        public int UserId { get; set; }
+        public string Category { get; set; }
+        public string Title { get; set; }
+        public string Description { get; set; }
         public string Lastname { get; set; }
         public string Firstname { get; set; }
         public string Middlename { get; set; }
@@ -63,6 +68,37 @@ namespace TeacherSystem
         private void BtnMainUpdate_Click(object sender, RoutedEventArgs e)
         {
             DataGridMain.ItemsSource = contestsRepository.GetContestsByUserId(Convert.ToInt32(TxbxUserId.Text));
+        }
+
+        private void DataGridMain_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var contestsItem = DataGridMain.CurrentItem as Contests;
+
+            if (contestsItem == null)
+            {
+                return;
+            }
+
+            Id = contestsItem.Id;
+            UserId = contestsItem.UserId;
+            Category = contestsItem.Category;
+            Title = contestsItem.Title;
+            Description = contestsItem.Description;
+
+        }
+
+        private void BtnMainDelete_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show("Удалить данную запись?", "Удаление записи", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                contestsRepository.DeleteContests(Id, UserId);
+            }
+           
+        }
+
+        private void BtnMainEdit_Click(object sender, RoutedEventArgs e)
+        {
+            new FormEdit(Id, UserId, Category, Title, Description).ShowDialog();
         }
     }
 }

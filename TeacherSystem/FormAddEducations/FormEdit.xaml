@@ -1,0 +1,33 @@
+﻿<Window x:Class="TeacherSystem.FormAddEducations.FormEdit"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TeacherSystem.FormAddEducations"
+        mc:Ignorable="d"
+        Title="Редактирование записи" Height="450" Width="581.5" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid>
+        <Button x:Name="BtnEditExit" Content="Закрыть" HorizontalAlignment="Left" Margin="10,359,0,0" VerticalAlignment="Top" Width="111" Height="47" FontSize="18" Click="BtnEditExit_Click">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button x:Name="BtnEditSave" Content="Сохранить" HorizontalAlignment="Left" Margin="442,359,0,0" VerticalAlignment="Top" Width="110" Height="45" FontSize="18" Click="BtnEditSave_Click">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <TextBox x:Name="TxbxEditTitle" HorizontalAlignment="Left" Height="30" Margin="104,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="448" TextAlignment="Center" FontSize="18" FontWeight="Bold"/>
+        <Label Content="Название" HorizontalAlignment="Left" Margin="10,90,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <TextBox x:Name="TxbxEditDescription" HorizontalAlignment="Left" Height="228" Margin="104,124,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="448" FontSize="14" FontWeight="Bold"/>
+        <Label Content="Описание" HorizontalAlignment="Left" Margin="7,125,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <TextBox x:Name="TxbxEditCategory" IsEnabled="False" HorizontalAlignment="Left" Height="30" Margin="134,53,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="380" TextAlignment="Center" FontSize="18" FontWeight="Bold"/>
+        <Label Content="Категория" HorizontalAlignment="Left" Margin="278,19,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <Button x:Name="BtnEditClear" Content="Очистить" HorizontalAlignment="Left" Margin="222,359,0,0" VerticalAlignment="Top" Width="132" Height="45" FontSize="18" Click="BtnClear_Click">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+
+    </Grid>
+</Window>
