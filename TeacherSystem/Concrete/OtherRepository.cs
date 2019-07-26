@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,14 +10,21 @@ namespace TeacherSystem.Concrete
 {
     class OtherRepository : IOtherRepository
     {
-        public OtherRepository(int id, string category)
-        {
-
-        }
+        SokoContext sokoContext = new SokoContext();
 
         public void GetCategoryByName(int userId, string category)
         {
             throw new NotImplementedException();
+        }
+
+        public ArrayList GetAllCategoryByUserId(int userId)
+        {
+            ArrayList items = new ArrayList();
+
+            items.AddRange(sokoContext.Contests.Where(u => u.UserId == userId).ToArray());
+            items.AddRange(sokoContext.Courses.Where(u => u.UserId == userId).ToArray());
+
+            return items;
         }
     }
 }

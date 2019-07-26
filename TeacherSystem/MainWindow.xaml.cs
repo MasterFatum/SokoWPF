@@ -36,9 +36,9 @@ namespace TeacherSystem
             TxbxUserMiddlename.Text = user.Middlename;
             TxbxUserPosition.Text = user.Position;
 
-            IEnumerable<Contests> contestses = contestsRepository.GetContestsByUserId(user.Id);
+            ArrayList items = new OtherRepository().GetAllCategoryByUserId(user.Id);
 
-            DataGridMain.ItemsSource = contestses.ToList();
+            DataGridMain.ItemsSource = items;
         }
 
         public int Id { get; set; }
@@ -81,9 +81,8 @@ namespace TeacherSystem
         {
             try
             {
-                sokoContext.Dispose();
-                sokoContext = new SokoContext();
-                DataGridMain.ItemsSource = contestsRepository.GetContestsByUserId(Convert.ToInt32(TxbxUserId.Text));
+                ArrayList items = new OtherRepository().GetAllCategoryByUserId(Convert.ToInt32(TxbxUserId.Text));
+                DataGridMain.ItemsSource = items;
 
             }
             catch (Exception ex)
@@ -96,18 +95,36 @@ namespace TeacherSystem
 
         private void DataGridMain_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            var contestsItem = DataGridMain.CurrentItem as Contests;
-
-            if (contestsItem == null)
+            if (((ComboBoxItem)CbxMainShowCategory.SelectedItem).Content.ToString() == "Конкурсы")
             {
-                return;
-            }
+                var items = DataGridMain.CurrentItem as Contests;
 
-            Id = contestsItem.Id;
-            UserId = contestsItem.UserId;
-            Category = contestsItem.Category;
-            Title = contestsItem.Title;
-            Description = contestsItem.Description;
+                if (items == null)
+                {
+                    return;
+                }
+
+                Id = items.Id;
+                UserId = items.UserId;
+                Category = items.Category;
+                Title = items.Title;
+                Description = items.Description;
+            }
+            if (((ComboBoxItem)CbxMainShowCategory.SelectedItem).Content.ToString() == "Курсы")
+            {
+                var items = DataGridMain.CurrentItem as Courses;
+
+                if (items == null)
+                {
+                    return;
+                }
+
+                Id = items.Id;
+                UserId = items.UserId;
+                Category = items.Category;
+                Title = items.Title;
+                Description = items.Description;
+            }
 
         }
 
