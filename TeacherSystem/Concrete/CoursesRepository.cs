@@ -5,20 +5,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
 using TeacherSystem.Abstract;
 
 namespace TeacherSystem.Concrete
 {
-    class ContestsRepository : IContestsRepository
+    class CoursesRepository : ICoursesRepository
     {
         SokoContext sokoContext = new SokoContext();
 
-        public void AddContests(Contests contests)
+        public void AddCourses(Courses courses)
         {
             try
             {
-                sokoContext.Contests.Add(contests);
+                sokoContext.Courses.Add(courses);
                 sokoContext.SaveChanges();
                 MessageBox.Show("Запись успешно добавлена!", "Добавление записи", MessageBoxButton.OK,
                     MessageBoxImage.Information);
@@ -27,18 +26,17 @@ namespace TeacherSystem.Concrete
             {
                 MessageBox.Show(e.Message);
             }
-            
         }
 
-        public void DeleteContests(int id, int userId)
+        public void DeleteCourses(int id, int userId)
         {
             try
             {
-                Contests contests = sokoContext.Contests.Where(u => u.UserId == userId).FirstOrDefault(c => c.Id == id);
+                Courses courses = sokoContext.Courses.Where(u => u.UserId == userId).FirstOrDefault(c => c.Id == id);
 
-                if (contests != null)
+                if (courses != null)
                 {
-                    sokoContext.Contests.Remove(contests);
+                    sokoContext.Courses.Remove(courses);
                     sokoContext.SaveChanges();
                     MessageBox.Show("Запись успешно удалена!", "Удаление записи", MessageBoxButton.OK,
                         MessageBoxImage.Information);
@@ -51,17 +49,17 @@ namespace TeacherSystem.Concrete
             }
         }
 
-        public void EditContests(Contests contests)
+        public void EditCourses(Courses courses)
         {
             try
             {
-                Contests contestsEdit = sokoContext.Contests.Where(u => u.UserId == contests.UserId).FirstOrDefault(c => c.Id == contests.Id);
+                Courses coursesEdit = sokoContext.Courses.Where(u => u.UserId == courses.UserId).FirstOrDefault(c => c.Id == courses.Id);
 
-                if (contestsEdit != null)
+                if (coursesEdit != null)
                 {
-                    contestsEdit.Title = contests.Title;
-                    contestsEdit.Description = contests.Description;
-                    sokoContext.Contests.AddOrUpdate(contestsEdit);
+                    coursesEdit.Title = courses.Title;
+                    coursesEdit.Description = courses.Description;
+                    sokoContext.Courses.AddOrUpdate(coursesEdit);
                     sokoContext.SaveChanges();
 
                     MessageBox.Show("Запись успешно отредактирована!", "Редактирование записи", MessageBoxButton.OK,
@@ -75,18 +73,18 @@ namespace TeacherSystem.Concrete
             }
         }
 
-        public IEnumerable<Contests> GetAllContests()
+        public IEnumerable<Courses> GetAllCourses()
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Contests> GetContestsByUserId(int userId)
+        public IEnumerable<Courses> GetCoursesByUserId(int userId)
         {
             try
             {
-                IEnumerable<Contests> contestses = sokoContext.Contests.Where(u => u.UserId == userId).ToList();
+                IEnumerable<Courses> courseses = sokoContext.Courses.Where(u => u.UserId == userId).ToList();
 
-                return contestses;
+                return courseses;
             }
             catch (Exception e)
             {
@@ -95,22 +93,17 @@ namespace TeacherSystem.Concrete
             return null;
         }
 
-        public IEnumerable<Contests> GetContestsByUser(Users user)
+        public IEnumerable<Courses> GetCoursesByUser(Users user)
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Contests> GetContestsByPosition(string position)
+        public IEnumerable<Courses> GetCoursesByPosition(string position)
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Contests> GetContestsByFirstname(string firstname)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<Contests> GetContestsByCategory(string category)
+        public IEnumerable<Courses> GetCoursesByFirstname(string firstname)
         {
             throw new NotImplementedException();
         }

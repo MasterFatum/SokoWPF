@@ -44,14 +44,17 @@ namespace TeacherSystem.FormAddEducations
 
         private void BtnEditSave_Click(object sender, RoutedEventArgs e)
         {
-            Contests contests = new Contests();
-            contests.Id = Id;
-            contests.UserId = UserIdEdit;
-            contests.Category = CategoryEdit;
-            contests.Title = TxbxEditTitle.Text.Trim();
-            contests.Description = TxbxEditDescription.Text.Trim();
+            Contests contests = new Contests
+            {
+                Id = Id,
+                UserId = UserIdEdit,
+                Category = CategoryEdit,
+                Title = TxbxEditTitle.Text.Trim(),
+                Description = TxbxEditDescription.Text.Trim()
+            };
 
             contestsRepository.EditContests(contests);
+            this.Close();
         }
 
         private void BtnClear_Click(object sender, RoutedEventArgs e)

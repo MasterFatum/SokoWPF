@@ -23,6 +23,8 @@ namespace TeacherSystem
 
         ContestsRepository contestsRepository = new ContestsRepository();
 
+        SokoContext sokoContext = new SokoContext();
+
 
         public MainWindow(Users user)
         {
@@ -67,7 +69,19 @@ namespace TeacherSystem
 
         private void BtnMainUpdate_Click(object sender, RoutedEventArgs e)
         {
-            DataGridMain.ItemsSource = contestsRepository.GetContestsByUserId(Convert.ToInt32(TxbxUserId.Text));
+            try
+            {
+                sokoContext.Dispose();
+                sokoContext = new SokoContext();
+                DataGridMain.ItemsSource = contestsRepository.GetContestsByUserId(Convert.ToInt32(TxbxUserId.Text));
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            
         }
 
         private void DataGridMain_SelectionChanged(object sender, SelectionChangedEventArgs e)
