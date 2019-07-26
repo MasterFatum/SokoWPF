@@ -18,16 +18,17 @@ namespace TeacherSystem.FormAddEducations
     public partial class FormAdd : Window
     {
         ContestsRepository contestsRepository = new ContestsRepository();
+        CoursesRepository coursesRepository = new CoursesRepository();
 
-        public string SelectedEducation { get; set; }
+        public string SelectedCategory { get; set; }
         public int UserIdAdd { get; set; }
 
-        public FormAdd(int userId, string selectedEducation)
+        public FormAdd(int userId, string selectedCategory)
         {
             InitializeComponent();
 
-            SelectedEducation = selectedEducation;
-            TxbxSelectedCategory.Text = SelectedEducation;
+            SelectedCategory = selectedCategory;
+            TxbxSelectedCategory.Text = SelectedCategory;
             UserIdAdd = userId;
         }
 
@@ -44,19 +45,41 @@ namespace TeacherSystem.FormAddEducations
 
         private void BtnAdd_Click(object sender, RoutedEventArgs e)
         {
-            Contests contests =  new Contests
+
+            switch (SelectedCategory)
             {
-                UserId = UserIdAdd,
-                Category = TxbxSelectedCategory.Text.Trim(),
-                Title = TxbxTitle.Text.Trim(),
-                Description = TxbxDescription.Text.Trim()
+                case "Конкурсы":
+                    Contests contests = new Contests
+                    {
+                        UserId = UserIdAdd,
+                        Category = TxbxSelectedCategory.Text.Trim(),
+                        Title = TxbxTitle.Text.Trim(),
+                        Description = TxbxDescription.Text.Trim()
+
+                    };
+
+                    contestsRepository.AddContests(contests);
+
+                    TxbxTitle.Text = String.Empty;
+                    TxbxDescription.Text = String.Empty;
+                    break;
+                case "Курсы":
+                    Courses courses = new Courses
+                    {
+                        UserId = UserIdAdd,
+                        Category = TxbxSelectedCategory.Text.Trim(),
+                        Title = TxbxTitle.Text.Trim(),
+                        Description = TxbxDescription.Text.Trim()
+
+                    };
+
+                    coursesRepository.AddCourses(courses);
+
+                    TxbxTitle.Text = String.Empty;
+                    TxbxDescription.Text = String.Empty;
+                    break;
+            }
             
-            };
-
-            contestsRepository.AddContests(contests);
-
-            TxbxTitle.Text = String.Empty;
-            TxbxDescription.Text = String.Empty;
         }
     }
 }

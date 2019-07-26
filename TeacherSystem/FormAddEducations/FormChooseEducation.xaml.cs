@@ -36,7 +36,7 @@ namespace TeacherSystem.FormAddEducations
 
         private void BtnMainAdd_Click(object sender, RoutedEventArgs e)
         {
-            new FormAdd(UserId, ((ComboBoxItem)CbxSelectEducation.SelectedItem).Content.ToString()).ShowDialog();
+            new FormAdd(UserId, ((ComboBoxItem)CbxSelectCategory.SelectedItem).Content.ToString()).ShowDialog();
         }
     }
 }

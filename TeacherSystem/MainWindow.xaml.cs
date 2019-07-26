@@ -59,7 +59,17 @@ namespace TeacherSystem
 
         private void BtnMainCategoryShow_Click(object sender, RoutedEventArgs e)
         {
-            
+            switch (((ComboBoxItem) CbxMainShowCategory.SelectedItem).Content.ToString())
+            {
+                case "Конкурсы":
+                    IEnumerable<Contests> contestses = new ContestsRepository().GetContestsByUserId(Convert.ToInt32(TxbxUserId.Text));
+                    DataGridMain.ItemsSource = contestses.ToList();
+                    break;
+                case "Курсы":
+                    IEnumerable<Courses> courseses = new CoursesRepository().GetCoursesByUserId((Convert.ToInt32(TxbxUserId.Text)));
+                    DataGridMain.ItemsSource = courseses.ToList();
+                    break;
+            }
         }
 
         private void BtnMainAdd_Click(object sender, RoutedEventArgs e)

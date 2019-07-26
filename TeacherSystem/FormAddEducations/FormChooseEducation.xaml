@@ -7,12 +7,12 @@
         mc:Ignorable="d"
         Title="Выберите категорию" Height="163.946" Width="321.733" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
-        <ComboBox x:Name="CbxSelectEducation" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="281" FontSize="18">
+        <ComboBox x:Name="CbxSelectCategory" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="281" FontSize="18">
             <ComboBox.Effect>
                 <DropShadowEffect/>
             </ComboBox.Effect>
-            <ComboBoxItem IsSelected="True" Content="Курсы"/>
             <ComboBoxItem Content="Конкурсы"/>
+            <ComboBoxItem IsSelected="True" Content="Курсы"/>
             <ComboBoxItem Content="Опыт"/>
             <ComboBoxItem Content="Материалы"/>
             <ComboBoxItem Content="Публикации"/>

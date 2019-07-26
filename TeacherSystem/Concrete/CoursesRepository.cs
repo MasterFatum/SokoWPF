@@ -85,6 +85,7 @@ namespace TeacherSystem.Concrete
                 IEnumerable<Courses> courseses = sokoContext.Courses.Where(u => u.UserId == userId).ToList();
 
                 return courseses;
+
             }
             catch (Exception e)
             {

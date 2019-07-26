@@ -69,9 +69,11 @@
     </ApplicationDefinition>
     <Compile Include="Abstract\IContestsRepository.cs" />
     <Compile Include="Abstract\ICoursesRepository.cs" />
+    <Compile Include="Abstract\IOtherRepository.cs" />
     <Compile Include="Abstract\IUserRepository.cs" />
     <Compile Include="Concrete\ContestsRepository.cs" />
     <Compile Include="Concrete\CoursesRepository.cs" />
+    <Compile Include="Concrete\OtherRepository.cs" />
     <Compile Include="Concrete\UserRepository.cs" />
     <Compile Include="Entities\Contests.cs" />
     <Compile Include="Entities\Courses.cs" />
