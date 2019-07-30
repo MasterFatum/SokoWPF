@@ -55,7 +55,7 @@ namespace TeacherSystem
             }
             else
             {
-                new Message("Неправильный логин или пароль!").ShowDialog();
+                MessageBox.Show("Неправильный логин или пароль!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
 

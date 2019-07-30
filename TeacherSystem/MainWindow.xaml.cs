@@ -20,15 +20,15 @@ namespace TeacherSystem
 {
     public partial class MainWindow : Window
     {
-
-        ContestsRepository contestsRepository = new ContestsRepository();
-
-        SokoContext sokoContext = new SokoContext();
-
+        CourseRepository courseRepository = new CourseRepository();
 
         public MainWindow(Users user)
         {
             InitializeComponent();
+
+            DataGridMain.ItemsSource = courseRepository.GetCategoryByUserId(user.Id);
+
+            CbxMainShowCategory.SelectedIndex = -1;
 
             TxbxUserId.Text = user.Id.ToString();
             TxbxUserLastname.Text = user.Lastname;
@@ -36,9 +36,7 @@ namespace TeacherSystem
             TxbxUserMiddlename.Text = user.Middlename;
             TxbxUserPosition.Text = user.Position;
 
-            ArrayList items = new OtherRepository().GetAllCategoryByUserId(user.Id);
 
-            DataGridMain.ItemsSource = items;
         }
 
         public int Id { get; set; }
@@ -59,64 +57,34 @@ namespace TeacherSystem
 
         private void BtnMainCategoryShow_Click(object sender, RoutedEventArgs e)
         {
-            switch (((ComboBoxItem) CbxMainShowCategory.SelectedItem).Content.ToString())
+            switch (((ComboBoxItem)CbxMainShowCategory.SelectedItem).Content)
             {
-                case "Конкурсы":
-                    IEnumerable<Contests> contestses = new ContestsRepository().GetContestsByUserId(Convert.ToInt32(TxbxUserId.Text));
-                    DataGridMain.ItemsSource = contestses.ToList();
-                    break;
                 case "Курсы":
-                    IEnumerable<Courses> courseses = new CoursesRepository().GetCoursesByUserId((Convert.ToInt32(TxbxUserId.Text)));
-                    DataGridMain.ItemsSource = courseses.ToList();
                     break;
             }
         }
 
         private void BtnMainAdd_Click(object sender, RoutedEventArgs e)
         {
-            new FormChooseEducation(Convert.ToInt32(TxbxUserId.Text)).ShowDialog();
+            new FormChooseCategory(Convert.ToInt32(TxbxUserId.Text)).ShowDialog();
         }
 
         private void BtnMainUpdate_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                ArrayList items = new OtherRepository().GetAllCategoryByUserId(Convert.ToInt32(TxbxUserId.Text));
-                DataGridMain.ItemsSource = items;
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
-            
+            IEnumerable<Courses> allCourseses = courseRepository.GetCategoryByUserId(Convert.ToInt32(TxbxUserId.Text));
+            DataGridMain.ItemsSource = allCourseses;
+            CbxMainShowCategory.SelectedIndex = -1;
         }
 
         private void DataGridMain_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (((ComboBoxItem)CbxMainShowCategory.SelectedItem).Content.ToString() == "Конкурсы")
-            {
-                var items = DataGridMain.CurrentItem as Contests;
-
-                if (items == null)
-                {
-                    return;
-                }
-
-                Id = items.Id;
-                UserId = items.UserId;
-                Category = items.Category;
-                Title = items.Title;
-                Description = items.Description;
-            }
-            if (((ComboBoxItem)CbxMainShowCategory.SelectedItem).Content.ToString() == "Курсы")
+            try
             {
                 var items = DataGridMain.CurrentItem as Courses;
 
                 if (items == null)
                 {
-                    return;
+                        return;
                 }
 
                 Id = items.Id;
@@ -124,6 +92,10 @@ namespace TeacherSystem
                 Category = items.Category;
                 Title = items.Title;
                 Description = items.Description;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
 
         }
@@ -132,7 +104,7 @@ namespace TeacherSystem
         {
             if (MessageBox.Show("Удалить данную запись?", "Удаление записи", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
-                contestsRepository.DeleteContests(Id, UserId);
+                courseRepository.DeleteCategory(Id, UserId);
             }
            
         }
@@ -140,6 +112,11 @@ namespace TeacherSystem
         private void BtnMainEdit_Click(object sender, RoutedEventArgs e)
         {
             new FormEdit(Id, UserId, Category, Title, Description).ShowDialog();
+        }
+
+        private void CbxMainShowCategory_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

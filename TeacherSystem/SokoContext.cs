@@ -11,16 +11,8 @@ namespace TeacherSystem
             : base("name=Soko")
         {
         }
-
-        public virtual DbSet<Contests> Contests { get; set; }
         public virtual DbSet<Courses> Courses { get; set; }
-        public virtual DbSet<Experience> Experience { get; set; }
-        public virtual DbSet<Materials> Materials { get; set; }
-        public virtual DbSet<Other> Other { get; set; }
-        public virtual DbSet<Publications> Publications { get; set; }
-        public virtual DbSet<Technology> Technology { get; set; }
         public virtual DbSet<Users> Users { get; set; }
-        public virtual DbSet<WorkWithParents> WorkWithParents { get; set; }
 
         //protected override void OnModelCreating(DbModelBuilder modelBuilder)
         //{

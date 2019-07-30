@@ -17,12 +17,12 @@ namespace TeacherSystem.FormAddEducations
     /// <summary>
     /// Логика взаимодействия для FormChooseEducation.xaml
     /// </summary>
-    public partial class FormChooseEducation : Window
+    public partial class FormChooseCategory : Window
     {
 
         public int UserId { get; set; }
 
-        public FormChooseEducation(int userId)
+        public FormChooseCategory(int userId)
         {
             InitializeComponent();
 

@@ -67,52 +67,38 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Abstract\IContestsRepository.cs" />
-    <Compile Include="Abstract\ICoursesRepository.cs" />
-    <Compile Include="Abstract\IOtherRepository.cs" />
+    <Compile Include="Abstract\ICourseRepository.cs" />
     <Compile Include="Abstract\IUserRepository.cs" />
-    <Compile Include="Concrete\ContestsRepository.cs" />
-    <Compile Include="Concrete\CoursesRepository.cs" />
-    <Compile Include="Concrete\OtherRepository.cs" />
+    <Compile Include="Concrete\CourseRepository.cs" />
     <Compile Include="Concrete\UserRepository.cs" />
-    <Compile Include="Entities\Contests.cs" />
     <Compile Include="Entities\Courses.cs" />
-    <Compile Include="Entities\Experience.cs" />
-    <Compile Include="Entities\Materials.cs" />
-    <Compile Include="FormAddEducations\FormAdd.xaml.cs">
+    <Compile Include="FormsAddEducations\FormAdd.xaml.cs">
       <DependentUpon>FormAdd.xaml</DependentUpon>
     </Compile>
-    <Compile Include="FormAddEducations\FormChooseEducation.xaml.cs">
-      <DependentUpon>FormChooseEducation.xaml</DependentUpon>
+    <Compile Include="FormsAddEducations\FormChooseCategory.xaml.cs">
+      <DependentUpon>FormChooseCategory.xaml</DependentUpon>
     </Compile>
-    <Compile Include="FormAddEducations\FormEdit.xaml.cs">
+    <Compile Include="FormsAddEducations\FormEdit.xaml.cs">
       <DependentUpon>FormEdit.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Message.xaml.cs">
-      <DependentUpon>Message.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\Other.cs" />
-    <Compile Include="Entities\Publications.cs" />
     <Compile Include="Registrations.xaml.cs">
       <DependentUpon>Registrations.xaml</DependentUpon>
     </Compile>
     <Compile Include="SokoContext.cs" />
-    <Compile Include="Entities\Technology.cs" />
     <Compile Include="Entities\Users.cs" />
-    <Compile Include="Entities\WorkWithParents.cs" />
     <Page Include="Authorization.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="FormAddEducations\FormAdd.xaml">
+    <Page Include="FormsAddEducations\FormAdd.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="FormAddEducations\FormChooseEducation.xaml">
+    <Page Include="FormsAddEducations\FormChooseCategory.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -123,17 +109,13 @@
     <Compile Include="Authorization.xaml.cs">
       <DependentUpon>Authorization.xaml</DependentUpon>
     </Compile>
-    <Page Include="FormAddEducations\FormEdit.xaml">
+    <Page Include="FormsAddEducations\FormEdit.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MainWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>XamlIntelliSenseFileGenerator</Generator>
-    </Page>
-    <Page Include="Message.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Registrations.xaml">
       <SubType>Designer</SubType>

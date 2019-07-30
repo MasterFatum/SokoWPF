@@ -17,7 +17,7 @@ namespace TeacherSystem.FormAddEducations
 {
     public partial class FormEdit : Window
     {
-        ContestsRepository contestsRepository = new ContestsRepository();
+        CourseRepository courseRepository = new CourseRepository();
 
         public int Id { get; set; }
         public int UserIdEdit { get; set; }
@@ -44,7 +44,7 @@ namespace TeacherSystem.FormAddEducations
 
         private void BtnEditSave_Click(object sender, RoutedEventArgs e)
         {
-            Contests contests = new Contests
+            Courses courses = new Courses
             {
                 Id = Id,
                 UserId = UserIdEdit,
@@ -53,7 +53,7 @@ namespace TeacherSystem.FormAddEducations
                 Description = TxbxEditDescription.Text.Trim()
             };
 
-            contestsRepository.EditContests(contests);
+            courseRepository.EditCategory(courses);
             this.Close();
         }
 

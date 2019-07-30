@@ -41,7 +41,7 @@ namespace TeacherSystem
                     PwdBox.Password == String.Empty)
                 {
                     
-                    new Message("Одно или несколько полей не заполнено!").ShowDialog();
+                    MessageBox.Show("Одно или несколько полей не заполнено!");
                 }
                 else
                 {
@@ -61,14 +61,14 @@ namespace TeacherSystem
 
                     else
                     {
-                        new Message("Пароли не совпадают!").ShowDialog();
+                        MessageBox.Show("Пароли не совпадают!");
                     }
                 }
                 
             }
             catch (Exception ex)
             {
-                new Message(ex.Message).ShowDialog();
+                MessageBox.Show(ex.Message);
             }
 
             
