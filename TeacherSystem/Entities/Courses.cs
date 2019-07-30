@@ -1,3 +1,5 @@
+using System.ComponentModel;
+
 namespace TeacherSystem
 {
     using System;
@@ -8,6 +10,7 @@ namespace TeacherSystem
 
     public class Courses
     {
+
         public int Id { get; set; }
 
         public int UserId { get; set; }

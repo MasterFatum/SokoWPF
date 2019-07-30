@@ -8,19 +8,19 @@ namespace TeacherSystem.Abstract
 {
     interface ICourseRepository
     {
-        void AddCategory(Courses contests);
+        void AddCourse(Courses courses);
 
-        void DeleteCategory(int id, int userId);
+        void DeleteCourse(int id, int userId);
 
-        void EditCategory(Courses contests);
+        void EditCourse(Courses courses);
 
         IEnumerable<Courses> GetAllCategory();
 
-        IEnumerable<Courses> GetCategoryByUserId(int userId);
+        IEnumerable<Courses> GetCoursesByUserId(int userId);
 
-        IEnumerable<Courses> GetCategoryByPosition(int userId, string position);
+        IEnumerable<Courses> GetCoursesByCategory(int userId, string position);
 
-        IEnumerable<Courses> GetCategoryByLastname(string firstname);
+        IEnumerable<Courses> GetCoursesByLastname(string firstname);
 
 
     }

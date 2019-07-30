@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -21,12 +22,13 @@ namespace TeacherSystem
     public partial class MainWindow : Window
     {
         CourseRepository courseRepository = new CourseRepository();
+        OtherRepository otherRepository = new OtherRepository();
 
         public MainWindow(Users user)
         {
             InitializeComponent();
 
-            DataGridMain.ItemsSource = courseRepository.GetCategoryByUserId(user.Id);
+            DataGridMain.ItemsSource = courseRepository.GetCoursesByUserId(user.Id);
 
             CbxMainShowCategory.SelectedIndex = -1;
 
@@ -35,7 +37,6 @@ namespace TeacherSystem
             TxbxUserFirstname.Text= user.Firstname;
             TxbxUserMiddlename.Text = user.Middlename;
             TxbxUserPosition.Text = user.Position;
-
 
         }
 
@@ -50,6 +51,11 @@ namespace TeacherSystem
         public string Position { get; set; }
         public string Email { get; set; }
 
+        private void MainForm_Loaded(object sender, RoutedEventArgs e)
+        {
+            otherRepository.SettingDataGrid(DataGridMain);
+        }
+
         private void BtnMainExit_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
@@ -57,11 +63,15 @@ namespace TeacherSystem
 
         private void BtnMainCategoryShow_Click(object sender, RoutedEventArgs e)
         {
-            switch (((ComboBoxItem)CbxMainShowCategory.SelectedItem).Content)
+            if (CbxMainShowCategory.SelectedIndex != -1)
             {
-                case "Курсы":
-                    break;
+                DataGridMain.ItemsSource = courseRepository.GetCoursesByCategory(Convert.ToInt32(TxbxUserId.Text), (((ComboBoxItem)CbxMainShowCategory.SelectedItem).Content.ToString()));
             }
+            else
+            {
+                MessageBox.Show("Выберите категорию!", "", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            
         }
 
         private void BtnMainAdd_Click(object sender, RoutedEventArgs e)
@@ -71,7 +81,7 @@ namespace TeacherSystem
 
         private void BtnMainUpdate_Click(object sender, RoutedEventArgs e)
         {
-            IEnumerable<Courses> allCourseses = courseRepository.GetCategoryByUserId(Convert.ToInt32(TxbxUserId.Text));
+            IEnumerable<Courses> allCourseses = courseRepository.GetCoursesByUserId(Convert.ToInt32(TxbxUserId.Text));
             DataGridMain.ItemsSource = allCourseses;
             CbxMainShowCategory.SelectedIndex = -1;
         }
@@ -104,7 +114,7 @@ namespace TeacherSystem
         {
             if (MessageBox.Show("Удалить данную запись?", "Удаление записи", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
-                courseRepository.DeleteCategory(Id, UserId);
+                courseRepository.DeleteCourse(Id, UserId);
             }
            
         }
@@ -117,6 +127,6 @@ namespace TeacherSystem
         private void CbxMainShowCategory_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
-        }
+        } 
     }
 }

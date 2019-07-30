@@ -14,7 +14,7 @@ namespace TeacherSystem.Concrete
     {
         SokoContext sokoContext = new SokoContext();
 
-        public void AddCategory(Courses courses)
+        public void AddCourse(Courses courses)
         {
             try
             {
@@ -30,7 +30,7 @@ namespace TeacherSystem.Concrete
             
         }
 
-        public void DeleteCategory(int id, int userId)
+        public void DeleteCourse(int id, int userId)
         {
             try
             {
@@ -51,7 +51,7 @@ namespace TeacherSystem.Concrete
             }
         }
 
-        public void EditCategory(Courses courses)
+        public void EditCourse(Courses courses)
         {
             try
             {
@@ -79,7 +79,7 @@ namespace TeacherSystem.Concrete
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Courses> GetCategoryByUserId(int userId)
+        public IEnumerable<Courses> GetCoursesByUserId(int userId)
         {
             try
             {
@@ -94,19 +94,38 @@ namespace TeacherSystem.Concrete
             return null;
         }
 
-        public IEnumerable<Courses> GetCategoryByPosition(int userId, string category)
+        public IEnumerable<Courses> GetCoursesByCategory(int userId, string category)
+        {
+            IQueryable<Courses> courseses = null;
+
+            try
+            {
+                courseses = sokoContext.Courses.Where(u => u.UserId == userId).Where(c => c.Category == category);
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            if (courseses != null)
+            {
+                return courseses.ToList();
+            }
+            else
+            {
+                MessageBox.Show("Записи данной категории отсутствуют!", "", MessageBoxButton.OK,
+                    MessageBoxImage.Information);
+            }
+
+            return null;
+        }
+
+        public IEnumerable<Courses> GetCoursesByLastname(string firstname)
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Courses> GetCategoryByLastname(string firstname)
-        {
-            throw new NotImplementedException();
-        }
 
-        public IEnumerable<Courses> GetContestsByCategory(string category)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

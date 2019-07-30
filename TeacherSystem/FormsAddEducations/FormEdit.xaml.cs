@@ -53,7 +53,7 @@ namespace TeacherSystem.FormAddEducations
                 Description = TxbxEditDescription.Text.Trim()
             };
 
-            courseRepository.EditCategory(courses);
+            courseRepository.EditCourse(courses);
             this.Close();
         }
 

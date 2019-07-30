@@ -52,7 +52,7 @@ namespace TeacherSystem.FormAddEducations
                 Description = TxbxDescription.Text.Trim()
             };
 
-            courseRepository.AddCategory(courses);
+            courseRepository.AddCourse(courses);
         }
     }
 }
