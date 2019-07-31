@@ -171,6 +171,11 @@
   <ItemGroup>
     <Resource Include="icons8_Training.ico" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\AdminSystem\AdminSystem.csproj">
+      <Project>{0371feb2-bcad-4276-9d39-b94452024155}</Project>
+      <Name>AdminSystem</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

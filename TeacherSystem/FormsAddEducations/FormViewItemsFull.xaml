@@ -12,7 +12,7 @@
         <Label Content="Описание" HorizontalAlignment="Left" Margin="10,126,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
         <TextBox x:Name="TxbxDescription" IsReadOnly="True" HorizontalAlignment="Left" Height="269" Margin="125,126,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="474" FontSize="16" Text="Описание курса" VerticalScrollBarVisibility="Auto"/>
         <Label Content="Категория" HorizontalAlignment="Left" Margin="10,54,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
-        <TextBox x:Name="TxbxCategory" HorizontalAlignment="Left" IsReadOnly="True" Height="31" Margin="125,54,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="366" FontSize="18" FontWeight="Bold" TextAlignment="Center" Text="Категория"/>
+        <TextBox x:Name="TxbxCategory" HorizontalAlignment="Left" IsReadOnly="True" Height="31" Margin="125,54,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="366" FontSize="16" FontWeight="Bold" TextAlignment="Center" Text="Категория"/>
         <TextBox x:Name="TxbxEvaluation" HorizontalAlignment="Left" IsReadOnly="True" Height="75" Margin="496,44,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="103" Text="100" TextAlignment="Center" FontSize="48" FontWeight="Bold" Foreground="#FF177C25"/>
         <TextBox x:Name="TxbxUser" HorizontalAlignment="Left" IsReadOnly="True"  Height="31" Margin="125,18,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="366" FontSize="16" Text="Пользователь" FontWeight="Bold" TextAlignment="Center"/>
         <Label Content="Пользователь" HorizontalAlignment="Left" Margin="9,18,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
