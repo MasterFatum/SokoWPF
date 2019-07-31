@@ -8,7 +8,7 @@
         Title="Курсы других пользователей" Height="450" Width="856.702" Loaded="Window_Loaded" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
         <DataGrid x:Name="DataGridOtherUsersCategory" IsReadOnly="True" HorizontalAlignment="Left" Height="300" Margin="10,110,0,0" VerticalAlignment="Top" Width="829" FontSize="16"/>
-        <Button Content="Закрыть" HorizontalAlignment="Right" Margin="0,0,12,317" VerticalAlignment="Bottom" Width="132" Height="31" FontSize="18" Click="Button_Click">
+        <Button Content="Закрыть" HorizontalAlignment="Right" Margin="0,0,12,318" VerticalAlignment="Bottom" Width="132" Height="31" FontSize="18" Click="Button_Click">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
@@ -33,7 +33,7 @@
         </ComboBox>
         <Label Content="Пользователь" HorizontalAlignment="Left" Margin="10,17,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
         <Label Content="Категория" HorizontalAlignment="Left" Margin="10,64,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
-        <Button Name="BtnShowOtherUsersCourses" Content="Показать" HorizontalAlignment="Right" Margin="0,0,259,316" VerticalAlignment="Bottom" Width="132" Height="31" FontSize="18" Click="BtnShowOtherUsersCourses_Click">
+        <Button Name="BtnShowOtherUsersCourses" Content="Показать" HorizontalAlignment="Right" Margin="0,0,259,317" VerticalAlignment="Bottom" Width="132" Height="88" FontSize="18" Click="BtnShowOtherUsersCourses_Click">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>

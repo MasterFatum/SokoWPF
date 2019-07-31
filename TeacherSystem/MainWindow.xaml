@@ -5,31 +5,31 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TeacherSystem"
         mc:Ignorable="d"
-        Title="Система оценки качества образования" Height="593.555" Width="1257.952" WindowStartupLocation="CenterScreen">
-    <Grid>
+        Title="Система оценки качества образования" Height="580.055" Width="1257.952" WindowStartupLocation="CenterScreen">
+    <Grid Margin="0,0,0,12">
         <DataGrid x:Name="DataGridMain" IsReadOnly="True" Margin="10,10,273,0" VerticalAlignment="Top" FontSize="16" SelectionChanged="DataGridMain_SelectionChanged" Height="477" MouseDoubleClick="DataGridMain_MouseDoubleClick"/>
-        <Button x:Name="BtnMainExit" Content="Закрыть" HorizontalAlignment="Right" Margin="0,0,14,13" VerticalAlignment="Bottom" Width="132" Height="47" FontSize="18" Click="BtnMainExit_Click">
+        <Button x:Name="BtnMainExit" Content="Закрыть" HorizontalAlignment="Right" Margin="0,0,10,2" VerticalAlignment="Bottom" Width="132" Height="34" FontSize="18" Click="BtnMainExit_Click">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
         <Label x:Name="LblLastname" Content="Фамилия" HorizontalAlignment="Right" Margin="0,210,95,0" VerticalAlignment="Top" RenderTransformOrigin="-0.413,0.235" FontSize="14"/>
-        <Button x:Name="BtnMainAdd" Content="Добавить" HorizontalAlignment="Left" Margin="10,0,0,13" VerticalAlignment="Bottom" Width="132" Height="47" FontSize="18" Click="BtnMainAdd_Click">
+        <Button x:Name="BtnMainAdd" Content="Добавить" HorizontalAlignment="Left" Margin="10,0,0,2" VerticalAlignment="Bottom" Width="132" Height="34" FontSize="18" Click="BtnMainAdd_Click">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
-        <Button x:Name="BtnMainEdit" Content="Изменить" HorizontalAlignment="Left" Margin="147,0,0,13" VerticalAlignment="Bottom" Width="132" Height="47" FontSize="18" Click="BtnMainEdit_Click">
+        <Button x:Name="BtnMainEdit" Content="Изменить" HorizontalAlignment="Left" Margin="147,0,0,2" VerticalAlignment="Bottom" Width="132" Height="34" FontSize="18" Click="BtnMainEdit_Click">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
-        <Button x:Name="BtnMainDelete" Content="Удалить" HorizontalAlignment="Left" Margin="284,0,0,13" VerticalAlignment="Bottom" Width="132" Height="47" FontSize="18" Click="BtnMainDelete_Click">
+        <Button x:Name="BtnMainDelete" Content="Удалить" HorizontalAlignment="Left" Margin="284,0,0,2" VerticalAlignment="Bottom" Width="132" Height="34" FontSize="18" Click="BtnMainDelete_Click">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
-        <Button x:Name="BtnMainUpdate" Content="К общему списку" HorizontalAlignment="Left" Margin="796,0,0,13" VerticalAlignment="Bottom" Width="178" Height="47" FontSize="18" Click="BtnMainUpdate_Click">
+        <Button x:Name="BtnMainUpdate" Content="К общему списку" HorizontalAlignment="Left" Margin="796,0,0,2" VerticalAlignment="Bottom" Width="178" Height="34" FontSize="18" Click="BtnMainUpdate_Click">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
@@ -63,7 +63,7 @@
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
-        <Button x:Name="BtnMainOtherUsersCourses" Content="Курсы других пользователей" HorizontalAlignment="Left" Margin="473,0,0,13" VerticalAlignment="Bottom" Width="268" Height="47" FontSize="18" Click="BtnMainOtherUsersCourses_Click">
+        <Button x:Name="BtnMainOtherUsersCourses" Content="Курсы других пользователей" HorizontalAlignment="Left" Margin="473,0,0,2" VerticalAlignment="Bottom" Width="268" Height="34" FontSize="18" Click="BtnMainOtherUsersCourses_Click">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>

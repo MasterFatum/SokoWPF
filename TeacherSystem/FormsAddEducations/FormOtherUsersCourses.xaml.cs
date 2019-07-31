@@ -39,11 +39,27 @@ namespace TeacherSystem.FormsAddEducations
 
         private void BtnShowOtherUsersCourses_Click(object sender, RoutedEventArgs e)
         {
-            String usernameFio = CbxOtherUsersCourses.SelectedItem.ToString();
+            try
+            {
+                if (CbxOtherUsersCourses.SelectedIndex != -1)
+                {
+                    String usernameFio = CbxOtherUsersCourses.SelectedItem.ToString();
 
-            String[] words = usernameFio.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                    String[] words = usernameFio.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
 
-            DataGridOtherUsersCategory.ItemsSource = courseRepository.GetCoursesByFio(words[0], words[1], words[2], ((ComboBoxItem)CbxOtherUsersCategory.SelectedItem).Content.ToString());
+                    DataGridOtherUsersCategory.ItemsSource = courseRepository.GetCoursesByFio(words[0], words[1], words[2], ((ComboBoxItem)CbxOtherUsersCategory.SelectedItem).Content.ToString());
+                }
+                else
+                {
+                    MessageBox.Show("Выберите пользователя!", "", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
     }
 }

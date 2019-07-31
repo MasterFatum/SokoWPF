@@ -1,3 +1,5 @@
+using TeacherSystem.Entities;
+
 namespace TeacherSystem
 {
     using System;

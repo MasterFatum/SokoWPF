@@ -15,7 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using TeacherSystem.Concrete;
-using TeacherSystem.FormAddEducations;
+using TeacherSystem.Entities;
 using TeacherSystem.FormsAddEducations;
 
 namespace TeacherSystem
