@@ -16,6 +16,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using TeacherSystem.Concrete;
 using TeacherSystem.FormAddEducations;
+using TeacherSystem.FormsAddEducations;
 
 namespace TeacherSystem
 {
@@ -45,6 +46,7 @@ namespace TeacherSystem
         public string Category { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
+        public int? Evaluation { get; set; }
         public string Lastname { get; set; }
         public string Firstname { get; set; }
         public string Middlename { get; set; }
@@ -102,6 +104,8 @@ namespace TeacherSystem
                 Category = items.Category;
                 Title = items.Title;
                 Description = items.Description;
+                Evaluation = items.Evaluation;
+
             }
             catch(Exception ex)
             {
@@ -127,6 +131,36 @@ namespace TeacherSystem
         private void CbxMainShowCategory_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
-        } 
+        }
+
+        private void BtnMainOtherUsersCourses_Click(object sender, RoutedEventArgs e)
+        {
+            new FormOtherUsersCourses().ShowDialog();
+        }
+
+        private void DataGridMain_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            try
+            {
+                var items = DataGridMain.CurrentItem as Courses;
+
+                if (items == null)
+                {
+                    return;
+                }
+
+                Category = items.Category;
+                Title = items.Title;
+                Description = items.Description;
+                Evaluation = items.Evaluation ?? 0;
+
+                new FormViewItemsFull("Вы", Category, Title, Description, Evaluation.Value).ShowDialog();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TeacherSystem"
         mc:Ignorable="d"
-        Title="Система оценки качества образования" Height="593.555" Width="1257.952" WindowStartupLocation="CenterScreen" Loaded="MainForm_Loaded">
+        Title="Система оценки качества образования" Height="593.555" Width="1257.952" WindowStartupLocation="CenterScreen">
     <Grid>
-        <DataGrid x:Name="DataGridMain" IsReadOnly="True" Margin="10,10,273,0" VerticalAlignment="Top" FontSize="16" SelectionChanged="DataGridMain_SelectionChanged" Height="477"/>
+        <DataGrid x:Name="DataGridMain" IsReadOnly="True" Margin="10,10,273,0" VerticalAlignment="Top" FontSize="16" SelectionChanged="DataGridMain_SelectionChanged" Height="477" MouseDoubleClick="DataGridMain_MouseDoubleClick"/>
         <Button x:Name="BtnMainExit" Content="Закрыть" HorizontalAlignment="Right" Margin="0,0,14,13" VerticalAlignment="Bottom" Width="132" Height="47" FontSize="18" Click="BtnMainExit_Click">
             <Button.Effect>
                 <DropShadowEffect/>
@@ -63,6 +63,10 @@
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
-        <DockPanel HorizontalAlignment="Left" Height="67" LastChildFill="False" VerticalAlignment="Bottom" Width="977"/>
+        <Button x:Name="BtnMainOtherUsersCourses" Content="Курсы других пользователей" HorizontalAlignment="Left" Margin="473,0,0,13" VerticalAlignment="Bottom" Width="268" Height="47" FontSize="18" Click="BtnMainOtherUsersCourses_Click">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
     </Grid>
 </Window>

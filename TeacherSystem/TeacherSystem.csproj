@@ -83,6 +83,12 @@
     <Compile Include="FormsAddEducations\FormEdit.xaml.cs">
       <DependentUpon>FormEdit.xaml</DependentUpon>
     </Compile>
+    <Compile Include="FormsAddEducations\FormOtherUsersCourses.xaml.cs">
+      <DependentUpon>FormOtherUsersCourses.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FormsAddEducations\FormViewItemsFull.xaml.cs">
+      <DependentUpon>FormViewItemsFull.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -112,6 +118,14 @@
       <DependentUpon>Authorization.xaml</DependentUpon>
     </Compile>
     <Page Include="FormsAddEducations\FormEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FormsAddEducations\FormOtherUsersCourses.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FormsAddEducations\FormViewItemsFull.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

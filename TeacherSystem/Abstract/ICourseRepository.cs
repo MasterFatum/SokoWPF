@@ -20,7 +20,7 @@ namespace TeacherSystem.Abstract
 
         IEnumerable<Courses> GetCoursesByCategory(int userId, string position);
 
-        IEnumerable<Courses> GetCoursesByLastname(string firstname);
+        IEnumerable<Courses> GetCoursesByFio(string lastname, string firstname, string middlename, string category);
 
 
     }

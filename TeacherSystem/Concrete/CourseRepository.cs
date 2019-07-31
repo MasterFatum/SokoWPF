@@ -121,9 +121,14 @@ namespace TeacherSystem.Concrete
             return null;
         }
 
-        public IEnumerable<Courses> GetCoursesByLastname(string firstname)
+        public IEnumerable<Courses> GetCoursesByFio(string lastname, string firstname, string middlename, string category)
         {
-            throw new NotImplementedException();
+            Users userId = sokoContext.Users.Where(l => l.Lastname == lastname).Where(f => f.Firstname == firstname)
+                .FirstOrDefault(m => m.Middlename == middlename);
+
+            IEnumerable<Courses> courseses = sokoContext.Courses.Where(u => u.UserId == userId.Id).Where(c => c.Category == category);
+
+            return courseses.ToList();
         }
 
 

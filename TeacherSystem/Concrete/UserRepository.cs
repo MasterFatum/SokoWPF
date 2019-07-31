@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -46,6 +47,20 @@ namespace TeacherSystem.Concrete
             return users;
         }
 
+        public List<String> GetFioUsers()
+        {
+            List<Users> users = sokoContext.Users.ToList();
+
+            List<String> userFio  = new List<string>();
+
+            foreach (var user in users)
+            {
+                userFio.Add(String.Format($"{user.Lastname} {user.Firstname} {user.Middlename}"));
+            }
+
+            return userFio;
+        }
+
         public Users ValidationUser(string username, string password)
         {
             Users user = null;
@@ -73,5 +88,6 @@ namespace TeacherSystem.Concrete
         {
             throw new NotImplementedException();
         }
+        
     }
 }

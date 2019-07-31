@@ -16,10 +16,15 @@ namespace TeacherSystem.Abstract
 
         IEnumerable<Users> GetAllUser();
 
+        List<String> GetFioUsers();
+
         Users ValidationUser(string username, string password);
 
         IEnumerable<Users> SearchUsersByLastname(string lastname);
 
         IEnumerable<Users> SearchUsersByPosition(string position);
+
+        
+
     }
 }
