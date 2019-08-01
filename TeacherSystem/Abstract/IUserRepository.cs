@@ -13,7 +13,7 @@ namespace TeacherSystem.Abstract
 
         void DeleteUser(int id);
 
-        void EditUser(Users user);
+        void EditUser(int id, string lastname, string firstname, string middlename, string position, string email);
 
         IEnumerable<Users> GetAllUser();
 

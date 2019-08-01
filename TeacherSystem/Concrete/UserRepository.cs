@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -36,9 +37,31 @@ namespace TeacherSystem.Concrete
             throw new NotImplementedException();
         }
 
-        public void EditUser(Users user)
+        public void EditUser(int id, string lastname, string firstname, string middlename, string position, string email)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var user = sokoContext.Users.Find(id);
+
+                if (user != null)
+                {
+                    user.Lastname = lastname;
+                    user.Firstname = firstname;
+                    user.Middlename = middlename;
+                    user.Position = position;
+                    user.Email = email;
+
+                    sokoContext.Users.AddOrUpdate(user);
+
+                    sokoContext.SaveChanges();
+
+                    MessageBox.Show("Ваш аккаунт успешно отредактирован!", "Редактирование пользователя", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         public IEnumerable<Users> GetAllUser()

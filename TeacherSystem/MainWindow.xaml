@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Система оценки качества образования" Height="580.055" Width="1257.952" WindowStartupLocation="CenterScreen">
     <Grid Margin="0,0,0,12">
-        <DataGrid x:Name="DataGridMain" IsReadOnly="True" Margin="10,10,273,0" VerticalAlignment="Top" FontSize="16" SelectionChanged="DataGridMain_SelectionChanged" Height="477" MouseDoubleClick="DataGridMain_MouseDoubleClick"/>
+        <DataGrid x:Name="DataGridMain" IsReadOnly="True" Margin="10,41,273,0" VerticalAlignment="Top" FontSize="16" SelectionChanged="DataGridMain_SelectionChanged" Height="446" MouseDoubleClick="DataGridMain_MouseDoubleClick"/>
         <Button x:Name="BtnMainExit" Content="Закрыть" HorizontalAlignment="Right" Margin="0,0,10,2" VerticalAlignment="Bottom" Width="132" Height="34" FontSize="18" Click="BtnMainExit_Click">
             <Button.Effect>
                 <DropShadowEffect/>
@@ -63,10 +63,15 @@
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
-        <Button x:Name="BtnMainOtherUsersCourses" Content="Курсы других пользователей" HorizontalAlignment="Left" Margin="473,0,0,2" VerticalAlignment="Bottom" Width="268" Height="34" FontSize="18" Click="BtnMainOtherUsersCourses_Click">
+        <Button x:Name="BtnMainOtherUsersCourses" Content="Курсы других пользователей" HorizontalAlignment="Left" Margin="523,0,0,2" VerticalAlignment="Bottom" Width="268" Height="34" FontSize="18" Click="BtnMainOtherUsersCourses_Click">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
+        <Menu HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="63" FontSize="18" FontWeight="Bold">
+            <MenuItem Header="Меню" FontSize="16">
+                <MenuItem Header="Учетная запись" Click="MenuItem_Click" ></MenuItem>
+            </MenuItem>
+        </Menu>
     </Grid>
 </Window>

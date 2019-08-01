@@ -38,6 +38,7 @@ namespace TeacherSystem
             TxbxUserFirstname.Text= user.Firstname;
             TxbxUserMiddlename.Text = user.Middlename;
             TxbxUserPosition.Text = user.Position;
+            Email = user.Email;
 
         }
 
@@ -161,6 +162,13 @@ namespace TeacherSystem
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            new FormProfile(Convert.ToInt32(TxbxUserId.Text), 
+                TxbxUserLastname.Text, TxbxUserFirstname.Text, 
+                TxbxUserMiddlename.Text, TxbxUserPosition.Text, Email).ShowDialog();
         }
     }
 }
