@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="Добавление новой записи в ваше портфолио" Height="413.818" Width="594.486" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="Добавление новой записи в ваше портфолио" Height="413.818" Width="594.486" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow">
     <Grid>
         <Label Content="Название" HorizontalAlignment="Left" Margin="7,91,0,0" VerticalAlignment="Top" FontSize="18"/>
         <TextBox Name="TxbxTitle" HorizontalAlignment="Left" Height="31" Margin="104,94,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="457" FontSize="18"/>

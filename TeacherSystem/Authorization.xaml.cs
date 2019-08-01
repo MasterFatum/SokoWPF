@@ -27,7 +27,7 @@ namespace TeacherSystem
 
         private void BtnAuthorizeExit_Click(object sender, RoutedEventArgs e)
         {
-            Close();
+            Application.Current.Shutdown();
         }
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
@@ -93,22 +93,19 @@ namespace TeacherSystem
                     }
                     break;
             }
-
-            
-            
-
-
-            
-
-
-                
-            
-
         }
 
         private void ChkBoxSaveUser_Checked(object sender, RoutedEventArgs e)
         {
             
+        }
+
+        private void AuthorizeForm_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (e.Cancel == false)
+            {
+                Application.Current.Shutdown();
+            }
         }
     }
 }

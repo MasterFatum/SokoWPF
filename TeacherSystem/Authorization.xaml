@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TeacherSystem"
         mc:Ignorable="d"
-        Title="Авторизация пользователя" Height="398.366" Width="406.589" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow" ResizeMode="NoResize">
+        Title="Авторизация пользователя" Height="398.366" Width="406.589" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="ToolWindow" Closing="AuthorizeForm_Closing">
   <Grid>
     <TextBox Name="TxbxLogin" HorizontalAlignment="Left" Height="36" Margin="89,143,0,0" TextWrapping="Wrap" Text="i.panfilov@fckrasnodar.ru" VerticalAlignment="Top" Width="286" FontSize="18" FontWeight="Bold" TextAlignment="Left" TabIndex="1"/>
     <Label Content="E-mail" HorizontalAlignment="Left" Margin="12,145,0,0" VerticalAlignment="Top" FontSize="18"/>

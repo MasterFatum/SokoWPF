@@ -24,5 +24,18 @@ namespace AdminSystem
         {
             InitializeComponent();
         }
+
+        private void BtnMainExit_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (e.Cancel == false)
+            {
+                Application.Current.Shutdown();
+            }
+        }
     }
 }

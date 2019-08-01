@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="Выберите категорию" Height="163.946" Width="321.733" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="Выберите категорию" Height="163.946" Width="321.733" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow">
     <Grid>
         <ComboBox x:Name="CbxSelectCategory" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="281" FontSize="18">
             <ComboBox.Effect>

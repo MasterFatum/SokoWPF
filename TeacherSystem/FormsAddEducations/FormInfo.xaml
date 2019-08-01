@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TeacherSystem.FormsAddEducations"
         mc:Ignorable="d"
-        Title="Информация о программе" Height="351.072" Width="486.327">
+        Title="Информация о программе" Height="351.072" Width="486.327" WindowStyle="ToolWindow">
     <Grid>
-        <Button x:Name="BtnClose" HorizontalAlignment="Left" Margin="324,267,0,0" VerticalAlignment="Top" Width="132" Height="34" FontSize="18" Click="BtnClose_Click">
+        <Button x:Name="BtnClose" HorizontalAlignment="Left" Margin="323,282,0,0" VerticalAlignment="Top" Width="132" Height="34" FontSize="18" Click="BtnClose_Click">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>

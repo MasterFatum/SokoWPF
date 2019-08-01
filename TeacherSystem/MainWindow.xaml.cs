@@ -180,5 +180,13 @@ namespace TeacherSystem
         {
             MessageBox.Show("Функция 'Экспорт в Excel' находиться в стадии разработки!");
         }
+
+        private void MainForm_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (e.Cancel == false)
+            {
+                Application.Current.Shutdown();
+            }
+        }
     }
 }
