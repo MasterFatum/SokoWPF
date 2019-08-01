@@ -16,7 +16,11 @@
         <TextBox x:Name="TxbxEvaluation" HorizontalAlignment="Left" IsReadOnly="True" Height="75" Margin="496,44,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="103" Text="100" TextAlignment="Center" FontSize="48" FontWeight="Bold" Foreground="#FF177C25"/>
         <TextBox x:Name="TxbxUser" HorizontalAlignment="Left" IsReadOnly="True"  Height="31" Margin="125,18,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="366" FontSize="16" Text="Пользователь" FontWeight="Bold" TextAlignment="Center"/>
         <Label Content="Пользователь" HorizontalAlignment="Left" Margin="9,18,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
-        <Button Content="Закрыть" HorizontalAlignment="Right" Margin="0,0,17,10" VerticalAlignment="Bottom" Width="132" Height="31" FontSize="18" Click="Button_Click">
+        <Button HorizontalAlignment="Right" Margin="0,0,17,10" VerticalAlignment="Bottom" Width="132" Height="34" FontSize="18" Click="Button_Click">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="../Source/Close Window_32px.png" Height="29"/>
+                <TextBlock Text="Закрыть" Height="26"/>
+            </StackPanel>
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>

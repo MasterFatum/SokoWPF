@@ -10,21 +10,29 @@
     <TextBox Name="TxbxLogin" HorizontalAlignment="Left" Height="36" Margin="89,143,0,0" TextWrapping="Wrap" Text="i.panfilov@fckrasnodar.ru" VerticalAlignment="Top" Width="286" FontSize="18" FontWeight="Bold" TextAlignment="Left" TabIndex="1"/>
     <Label Content="E-mail" HorizontalAlignment="Left" Margin="12,145,0,0" VerticalAlignment="Top" FontSize="18"/>
     <Label Content="Пароль" HorizontalAlignment="Left" Margin="12,188,0,0" VerticalAlignment="Top" FontSize="18"/>
-    <Button Name="BtnAuthorize" Content="Войти" HorizontalAlignment="Left" Margin="243,292,0,0" VerticalAlignment="Top" Width="132" Height="57" FontSize="18" Click="BtnAuthorize_Click" TabIndex="5">
-      <Button.Effect>
+    <Button Name="BtnAuthorize" HorizontalAlignment="Left" Margin="243,292,0,0" VerticalAlignment="Top" Width="132" Height="57" FontSize="18" Click="BtnAuthorize_Click" TabIndex="5">
+        <StackPanel Orientation="Horizontal">
+            <Image Source="Source/Connected_32px.png" Height="29"/>
+                <TextBlock Text="Войти" Height="26"/>
+        </StackPanel>
+            <Button.Effect>
         <DropShadowEffect/>
       </Button.Effect>
-    </Button>
+        </Button>
     <GroupBox Header="Войти как..." HorizontalAlignment="Left" Height="92" Margin="89,32,0,0" VerticalAlignment="Top" Width="286" FontSize="18">
-      <ComboBox Name="CbxAuthorizeAs" HorizontalAlignment="Left" Margin="32,10,0,0" VerticalAlignment="Top" Width="208">
-        <ComboBox.Effect>
+            <ComboBox Name="CbxAuthorizeAs" HorizontalAlignment="Left" Margin="32,10,0,0" VerticalAlignment="Top" Width="208">
+            <ComboBox.Effect>
           <DropShadowEffect/>
         </ComboBox.Effect>
         <ComboBoxItem IsSelected="True">Учитель</ComboBoxItem>
         <ComboBoxItem Content="Администратор"/>
       </ComboBox>
     </GroupBox>
-    <Button x:Name="BtnAuthorizeExit" Content="Закрыть" HorizontalAlignment="Left" Margin="12,292,0,0" VerticalAlignment="Top" Width="132" Height="57" FontSize="18" Click="BtnAuthorizeExit_Click" TabIndex="4">
+    <Button x:Name="BtnAuthorizeExit" HorizontalAlignment="Left" Margin="12,292,0,0" VerticalAlignment="Top" Width="132" Height="57" FontSize="18" Click="BtnAuthorizeExit_Click" TabIndex="4">
+        <StackPanel Orientation="Horizontal">
+            <Image Source="Source/Close Window_32px.png" Height="29"/>
+            <TextBlock Text="Закрыть" Height="26"/>
+        </StackPanel>
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>

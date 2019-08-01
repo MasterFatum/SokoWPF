@@ -7,7 +7,11 @@
         mc:Ignorable="d"
         Title="Профиль пользователя" Height="393.298" Width="430.83" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Button x:Name="BtnExit" Content="Закрыть" HorizontalAlignment="Right" Margin="0,0,270,13" VerticalAlignment="Bottom" Width="132" Height="34" FontSize="18" Click="BtnExit_Click">
+        <Button x:Name="BtnExit" HorizontalAlignment="Right" Margin="0,0,270,13" VerticalAlignment="Bottom" Width="132" Height="34" FontSize="18" Click="BtnExit_Click">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="../Source/Close Window_32px.png" Height="29"/>
+                <TextBlock Text="Закрыть" Height="26"/>
+            </StackPanel>
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
@@ -24,7 +28,11 @@
         <Label Content="Отчество:" HorizontalAlignment="Left" Margin="20,159,0,0" VerticalAlignment="Top" FontSize="16" RenderTransformOrigin="0.349,2.179" FontWeight="Bold"/>
         <Label Content="Должность:" HorizontalAlignment="Left" Margin="20,198,0,0" VerticalAlignment="Top" FontSize="16" RenderTransformOrigin="0.349,2.179" FontWeight="Bold"/>
         <Label Content="Email:" HorizontalAlignment="Left" Margin="20,236,0,0" VerticalAlignment="Top" FontSize="16" RenderTransformOrigin="0.349,2.179" FontWeight="Bold"/>
-        <Button x:Name="BtnChangeProfile" Content="Изменить" HorizontalAlignment="Right" Margin="0,0,25,13" VerticalAlignment="Bottom" Width="132" Height="34" FontSize="18" Click="BtnChangeProfile_Click">
+        <Button x:Name="BtnChangeProfile" HorizontalAlignment="Right" Margin="0,0,25,13" VerticalAlignment="Bottom" Width="132" Height="34" FontSize="18" Click="BtnChangeProfile_Click">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="../Source/Edit Property_32px.png" Height="29"/>
+                <TextBlock Text="Изменить" Height="26"/>
+            </StackPanel>
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>

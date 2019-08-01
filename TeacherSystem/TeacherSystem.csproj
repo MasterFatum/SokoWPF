@@ -184,5 +184,41 @@
       <Name>AdminSystem</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\Connected_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\Close Window_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\Shutdown_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\Available Updates_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\Add Property_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\Edit Property_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\Delete Document_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\Broom_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\Plus_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\Save_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\Search_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\Old Man_32px.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

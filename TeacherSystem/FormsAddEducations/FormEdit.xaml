@@ -6,12 +6,20 @@
         mc:Ignorable="d"
         Title="Редактирование записи" Height="450" Width="581.5" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
-        <Button x:Name="BtnEditExit" Content="Закрыть" HorizontalAlignment="Left" Margin="10,359,0,0" VerticalAlignment="Top" Width="111" Height="47" FontSize="18" Click="BtnEditExit_Click">
+        <Button x:Name="BtnEditExit" HorizontalAlignment="Left" Margin="10,370,0,0" VerticalAlignment="Top" Width="132" Height="34" FontSize="18" Click="BtnEditExit_Click">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="../Source/Close Window_32px.png" Height="29"/>
+                <TextBlock Text="Закрыть" Height="26"/>
+            </StackPanel>
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
-        <Button x:Name="BtnEditSave" Content="Сохранить" HorizontalAlignment="Left" Margin="442,359,0,0" VerticalAlignment="Top" Width="110" Height="45" FontSize="18" Click="BtnEditSave_Click">
+        <Button x:Name="BtnEditSave" HorizontalAlignment="Left" Margin="420,370,0,0" VerticalAlignment="Top" Width="132" Height="34" FontSize="18" Click="BtnEditSave_Click">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="../Source/Save_32px.png" Height="29"/>
+                <TextBlock Text="Сохранить" Height="26"/>
+            </StackPanel>
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
@@ -22,7 +30,11 @@
         <Label Content="Описание" HorizontalAlignment="Left" Margin="7,125,0,0" VerticalAlignment="Top" FontSize="18"/>
         <TextBox x:Name="TxbxEditCategory" IsEnabled="False" HorizontalAlignment="Left" Height="30" Margin="134,53,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="380" TextAlignment="Center" FontSize="18" FontWeight="Bold"/>
         <Label Content="Категория" HorizontalAlignment="Left" Margin="278,19,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <Button x:Name="BtnEditClear" Content="Очистить" HorizontalAlignment="Left" Margin="222,359,0,0" VerticalAlignment="Top" Width="132" Height="45" FontSize="18" Click="BtnClear_Click">
+        <Button x:Name="BtnEditClear" HorizontalAlignment="Left" Margin="215,370,0,0" VerticalAlignment="Top" Width="132" Height="34" FontSize="18" Click="BtnClear_Click">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="../Source/Broom_32px.png" Height="29"/>
+                <TextBlock Text="Очистить" Height="26"/>
+            </StackPanel>
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
