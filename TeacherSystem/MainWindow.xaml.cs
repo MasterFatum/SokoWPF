@@ -170,5 +170,15 @@ namespace TeacherSystem
                 TxbxUserLastname.Text, TxbxUserFirstname.Text, 
                 TxbxUserMiddlename.Text, TxbxUserPosition.Text, Email).ShowDialog();
         }
+
+        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void BtnMainExport_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Функция 'Экспорт в Excel' находиться в стадии разработки!");
+        }
     }
 }

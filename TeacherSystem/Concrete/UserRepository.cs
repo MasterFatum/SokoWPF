@@ -103,6 +103,23 @@ namespace TeacherSystem.Concrete
             return user;
         }
 
+        public Users ValidationAdmin(string username, string password)
+        {
+            Users user = null;
+            
+            var findUser = sokoContext.Users.Where(p => p.Privilege == "Admin").FirstOrDefault(u => u.Email == username);
+
+            if (findUser != null)
+            {
+                if (findUser.Password == password)
+                {
+                    user = findUser;
+                }
+            }
+
+            return user;
+        }
+
         public IEnumerable<Users> SearchUsersByLastname(string lastname)
         {
             throw new NotImplementedException();

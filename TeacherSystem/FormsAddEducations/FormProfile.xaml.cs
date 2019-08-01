@@ -37,18 +37,18 @@ namespace TeacherSystem.FormsAddEducations
 
         private void BtnChangeProfile_Click(object sender, RoutedEventArgs e)
         {
-            if (BtnChangeProfile.Content.ToString() == "Изменить")
+            if (TxBlEdit.Text == "Изменить")
             {
-                BtnChangeProfile.Content = "Сохранить";
+                TxBlEdit.Text = "Сохранить";
                 TxbxLastname.IsEnabled = true;
                 TxbxFirstname.IsEnabled = true;
                 TxbxMiddlename.IsEnabled = true;
                 TxbxPosition.IsEnabled = true;
                 TxbxEmail.IsEnabled = true;
             }
-            else if (BtnChangeProfile.Content.ToString() == "Сохранить")
+            else if (TxBlEdit.Text == "Сохранить")
             {
-                BtnChangeProfile.Content = "Изменить";
+                TxBlEdit.Text = "Изменить";
                 TxbxLastname.IsEnabled = false;
                 TxbxFirstname.IsEnabled = false;
                 TxbxMiddlename.IsEnabled = false;

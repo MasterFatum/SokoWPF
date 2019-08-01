@@ -21,6 +21,8 @@ namespace TeacherSystem.Abstract
 
         Users ValidationUser(string username, string password);
 
+        Users ValidationAdmin(string username, string password);
+
         IEnumerable<Users> SearchUsersByLastname(string lastname);
 
         IEnumerable<Users> SearchUsersByPosition(string position);

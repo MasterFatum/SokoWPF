@@ -31,7 +31,7 @@
         <Button x:Name="BtnChangeProfile" HorizontalAlignment="Right" Margin="0,0,25,13" VerticalAlignment="Bottom" Width="132" Height="34" FontSize="18" Click="BtnChangeProfile_Click">
             <StackPanel Orientation="Horizontal">
                 <Image Source="../Source/Edit Property_32px.png" Height="29"/>
-                <TextBlock Text="Изменить" Height="26"/>
+                <TextBlock Name="TxBlEdit" Text="Изменить" Height="26"/>
             </StackPanel>
             <Button.Effect>
                 <DropShadowEffect/>

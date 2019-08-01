@@ -87,7 +87,11 @@
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
-        <Button x:Name="BtnMainOtherUsersCourses" Content="Курсы других пользователей" HorizontalAlignment="Left" Margin="523,0,0,2" VerticalAlignment="Bottom" Width="268" Height="34" FontSize="18" Click="BtnMainOtherUsersCourses_Click">
+        <Button x:Name="BtnMainOtherUsersCourses" HorizontalAlignment="Left" Margin="508,0,0,2" VerticalAlignment="Bottom" Width="283" Height="34" FontSize="18" Click="BtnMainOtherUsersCourses_Click">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="Source/Old Man_32px.png" Height="29"/>
+                <TextBlock Text="Курсы других пользователей" Height="26"/>
+            </StackPanel>
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
@@ -95,7 +99,18 @@
         <Menu HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="63" FontSize="18" FontWeight="Bold">
             <MenuItem Header="Меню" FontSize="16">
                 <MenuItem Header="Учетная запись" Click="MenuItem_Click" ></MenuItem>
+                <MenuItem Header="Информация о программе"></MenuItem>
+                <MenuItem Header="Выйти" Click="MenuItem_Click_1"></MenuItem>
             </MenuItem>
         </Menu>
+        <Button x:Name="BtnMainExport"  HorizontalAlignment="Right" Margin="0,0,147,2" VerticalAlignment="Bottom" Width="116" Height="34" FontSize="18" Click="BtnMainExport_Click">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+            <StackPanel Orientation="Horizontal">
+                <Image Source="Source/../Source/Microsoft Excel_32px.png" Height="29"/>
+                <TextBlock Text="Экспорт" Height="26"/>
+            </StackPanel>
+        </Button>
     </Grid>
 </Window>

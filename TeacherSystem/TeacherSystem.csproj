@@ -83,6 +83,9 @@
     <Compile Include="FormsAddEducations\FormEdit.xaml.cs">
       <DependentUpon>FormEdit.xaml</DependentUpon>
     </Compile>
+    <Compile Include="FormsAddEducations\FormInfo.xaml.cs">
+      <DependentUpon>FormInfo.xaml</DependentUpon>
+    </Compile>
     <Compile Include="FormsAddEducations\FormOtherUsersCourses.xaml.cs">
       <DependentUpon>FormOtherUsersCourses.xaml</DependentUpon>
     </Compile>
@@ -121,6 +124,10 @@
       <DependentUpon>Authorization.xaml</DependentUpon>
     </Compile>
     <Page Include="FormsAddEducations\FormEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FormsAddEducations\FormInfo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -219,6 +226,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Source\Old Man_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\Info_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\Microsoft Excel_32px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

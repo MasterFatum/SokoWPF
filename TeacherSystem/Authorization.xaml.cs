@@ -37,27 +37,73 @@ namespace TeacherSystem
 
         private void BtnAuthorize_Click(object sender, RoutedEventArgs e)
         {
-            Users user = userRepository.ValidationUser(TxbxLogin.Text.Trim(), TxbxPassword.Password);
+            
 
-            if (user != null)
+            switch (((ComboBoxItem)CbxAuthorizeAs.SelectedItem).Content.ToString())
             {
-                if (ChkBoxSaveUser.IsChecked == true)
-                {
-                    Properties.Settings.Default.Username = TxbxLogin.Text.Trim();
-                    Properties.Settings.Default.Password = TxbxPassword.Password.Trim();
-                    Properties.Settings.Default.IsSaveUser = ChkBoxSaveUser.IsChecked.Value;
+                //АВТОРИЗАЦИЯ ПОЛЬЗОВАТЕЛЯ
+                case "Учитель":
+                    Users user = userRepository.ValidationUser(TxbxLogin.Text.Trim(), TxbxPassword.Password);
 
-                    Properties.Settings.Default.Save();
-                }
+                    if (user != null)
+                    {
+                        if (ChkBoxSaveUser.IsChecked == true)
+                        {
+                            Properties.Settings.Default.Username = TxbxLogin.Text.Trim();
+                            Properties.Settings.Default.Password = TxbxPassword.Password.Trim();
+                            Properties.Settings.Default.IsSaveUser = ChkBoxSaveUser.IsChecked.Value;
 
-                this.Visibility = Visibility.Collapsed;
-                this.Visibility = Visibility.Hidden;
-                new MainWindow(user).ShowDialog();
+                            Properties.Settings.Default.Save();
+                        }
+
+                        Visibility = Visibility.Collapsed;
+                        Visibility = Visibility.Hidden;
+                        new MainWindow(user).ShowDialog();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Неправильный логин или пароль!", "Ошибка", MessageBoxButton.OK,
+                            MessageBoxImage.Information);
+                    }
+                    break;
+
+                //АВТОРИЗАЦИЯ АДМИНИСТРАТОРА
+                case "Администратор":
+                    Users userAdmin = userRepository.ValidationAdmin(TxbxLogin.Text.Trim(), TxbxPassword.Password);
+
+                    if (userAdmin != null)
+                    {
+                        if (ChkBoxSaveUser.IsChecked == true)
+                        {
+                            Properties.Settings.Default.Username = TxbxLogin.Text.Trim();
+                            Properties.Settings.Default.Password = TxbxPassword.Password.Trim();
+                            Properties.Settings.Default.IsSaveUser = ChkBoxSaveUser.IsChecked.Value;
+
+                            Properties.Settings.Default.Save();
+                        }
+
+                        this.Visibility = Visibility.Collapsed;
+                        this.Visibility = Visibility.Hidden;
+                        new AdminSystem.MainWindow().ShowDialog();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Неправильный логин или пароль!", "Ошибка", MessageBoxButton.OK,
+                            MessageBoxImage.Information);
+                    }
+                    break;
             }
-            else
-            {
-                MessageBox.Show("Неправильный логин или пароль!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Information);
-            }
+
+            
+            
+
+
+            
+
+
+                
+            
+
         }
 
         private void ChkBoxSaveUser_Checked(object sender, RoutedEventArgs e)
