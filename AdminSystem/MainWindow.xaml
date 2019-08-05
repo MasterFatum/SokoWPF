@@ -21,13 +21,12 @@
                 <DropShadowEffect/>
             </Button.Effect>
             <StackPanel Orientation="Horizontal">
-
                 <TextBlock Text="Управление пользователями" Height="26"/>
             </StackPanel>
         </Button>
 
-        <GroupBox Header="Пользователи системы" HorizontalAlignment="Left" Height="458" Margin="10,10,0,0" VerticalAlignment="Top" Width="540">
-            <DataGrid Name="DataGridAllUsers" IsReadOnly="True" HorizontalAlignment="Left" Margin="0,0,-2,-1" Width="530"/>
+        <GroupBox Header="Пользователи системы" HorizontalAlignment="Left" Height="406" Margin="10,10,0,0" VerticalAlignment="Top" Width="958">
+            <DataGrid Name="DataGridAllUsers" IsReadOnly="True" HorizontalAlignment="Left" Margin="0,0,-2,2" Width="948"/>
         </GroupBox>
 
     </Grid>
