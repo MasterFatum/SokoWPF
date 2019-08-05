@@ -16,7 +16,7 @@
                 <TextBlock Text="Выйти" Height="26"/>
             </StackPanel>
         </Button>
-        <Button x:Name="BtnMainUsersManage"  HorizontalAlignment="Right" Margin="0,0,696,10" VerticalAlignment="Bottom" Width="260" Height="34" FontSize="18" Click="BtnMainExit_Click">
+        <Button x:Name="BtnMainUsersManage"  HorizontalAlignment="Right" Margin="0,0,696,10" VerticalAlignment="Bottom" Width="260" Height="34" FontSize="18">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
@@ -33,13 +33,22 @@
                 <DropShadowEffect/>
             </TextBox.Effect>
         </TextBox>
-        <Button x:Name="BtnSearch"  HorizontalAlignment="Right" Margin="0,0,262,9" VerticalAlignment="Bottom" Width="93" Height="34" FontSize="18" Click="BtnMainExit_Click">
+        <Button x:Name="BtnSearch"  HorizontalAlignment="Right" Margin="0,0,262,9" VerticalAlignment="Bottom" Width="93" Height="34" FontSize="18">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
             <StackPanel Orientation="Horizontal">
 
                 <TextBlock Text="Найти" Height="26"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="BtnUpdate"  HorizontalAlignment="Right" Margin="0,0,147,9" VerticalAlignment="Bottom" Width="110" Height="34" FontSize="18">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+            <StackPanel Orientation="Horizontal">
+
+                <TextBlock Text="Обновить" Height="26"/>
             </StackPanel>
         </Button>
     </Grid>

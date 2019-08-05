@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AdminSystem.Forms"
         mc:Ignorable="d"
-        Title="Курсы пользователя" Height="481.96" Width="865.199" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="Курсы пользователя" Height="481.96" Width="1046.733" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
-        <DataGrid x:Name="DataGridUserCourses" IsReadOnly="True" HorizontalAlignment="Left" Height="339" Margin="10,103,0,0" VerticalAlignment="Top" Width="829" FontSize="16" MouseDoubleClick="DataGridUserCourses_MouseDoubleClick"/>
+        <DataGrid x:Name="DataGridUserCourses" IsReadOnly="True" HorizontalAlignment="Left" Height="339" Margin="10,103,0,0" VerticalAlignment="Top" Width="1011" FontSize="16" MouseDoubleClick="DataGridUserCourses_MouseDoubleClick"/>
         <Button HorizontalAlignment="Right" Margin="0,0,20,356" VerticalAlignment="Bottom" Width="132" Height="30" FontSize="18" Click="Button_Click">
             <Button.Effect>
                 <DropShadowEffect/>
@@ -17,7 +17,7 @@
                 <TextBlock Text="Закрыть" Height="26"/>
             </StackPanel>
         </Button>
-        <ComboBox x:Name="CbxUserCategory" HorizontalAlignment="Right" Margin="0,57,417,0" VerticalAlignment="Top" Width="288" FontSize="18">
+        <ComboBox x:Name="CbxUserCategory" HorizontalAlignment="Right" Margin="0,57,608,0" VerticalAlignment="Top" Width="270" FontSize="18">
             <ComboBox.Effect>
                 <DropShadowEffect/>
             </ComboBox.Effect>
@@ -32,7 +32,7 @@
         </ComboBox>
         <Label Content="Пользователь" HorizontalAlignment="Left" Margin="10,17,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
         <Label Content="Категория" HorizontalAlignment="Left" Margin="10,58,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
-        <Button x:Name="BtnShowOtherUsersCourses" HorizontalAlignment="Right" Margin="0,0,268,356" VerticalAlignment="Bottom" Width="132" Height="79" FontSize="18">
+        <Button x:Name="BtnShowOtherUsersCourses" HorizontalAlignment="Right" Margin="0,0,459,356" VerticalAlignment="Bottom" Width="132" Height="79" FontSize="18">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
