@@ -1,17 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity.Migrations;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using TeacherSystem.Abstract;
-using TeacherSystem.Entities;
+using System.Data;
+using System.Data.Entity.Migrations;
+using BLL;
+using BLL.Abstract;
+using BLL.Entities;
 
-namespace TeacherSystem.Concrete
+namespace Bll.Concrete
 {
-    class CourseRepository : ICourseRepository
+    public class CourseRepository : ICourseRepository
     {
         SokoContext sokoContext = new SokoContext();
 

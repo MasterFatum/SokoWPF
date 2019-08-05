@@ -1,11 +1,10 @@
-using TeacherSystem.Entities;
+using BLL.Entities;
+using System;
+using System.Data.Entity;
 
-namespace TeacherSystem
+namespace BLL
 {
-    using System;
-    using System.Data.Entity;
-    using System.ComponentModel.DataAnnotations.Schema;
-    using System.Linq;
+    
 
     public class SokoContext : DbContext
     {

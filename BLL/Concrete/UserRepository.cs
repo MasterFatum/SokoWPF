@@ -1,17 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-using TeacherSystem.Abstract;
-using TeacherSystem.Entities;
+using BLL;
+using BLL.Abstract;
+using BLL.Entities;
 
-namespace TeacherSystem.Concrete
+namespace BLL.Concrete
 {
-    class UserRepository : IUserRepository
+    public class UserRepository : IUserRepository
     {
         SokoContext sokoContext = new SokoContext();
 
@@ -87,20 +87,28 @@ namespace TeacherSystem.Concrete
 
         public Users ValidationUser(string username, string password)
         {
-            Users user = null;
-
-            var findUser = sokoContext.Users.FirstOrDefault(u => u.Email == username);
-
-            if (findUser != null)
+            try
             {
-                if (findUser.Password == password)
+                Users user = null;
+
+                var findUser = sokoContext.Users.FirstOrDefault(u => u.Email == username);
+
+                if (findUser != null)
                 {
-                    user = findUser;
+                    if (findUser.Password == password)
+                    {
+                        user = findUser;
 
+                    }
                 }
-            }
 
-            return user;
+                return user;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return null;
         }
 
         public Users ValidationAdmin(string username, string password)

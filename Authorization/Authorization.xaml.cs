@@ -1,18 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using TeacherSystem.Concrete;
-using TeacherSystem.Entities;
+using BLL.Concrete;
+using BLL.Entities;
 
 namespace TeacherSystem
 {
@@ -38,7 +27,6 @@ namespace TeacherSystem
         private void BtnAuthorize_Click(object sender, RoutedEventArgs e)
         {
             
-
             switch (((ComboBoxItem)CbxAuthorizeAs.SelectedItem).Content.ToString())
             {
                 //АВТОРИЗАЦИЯ ПОЛЬЗОВАТЕЛЯ
@@ -49,16 +37,16 @@ namespace TeacherSystem
                     {
                         if (ChkBoxSaveUser.IsChecked == true)
                         {
-                            Properties.Settings.Default.Username = TxbxLogin.Text.Trim();
-                            Properties.Settings.Default.Password = TxbxPassword.Password.Trim();
-                            Properties.Settings.Default.IsSaveUser = ChkBoxSaveUser.IsChecked.Value;
+                            //Properties.Settings.Default.Username = TxbxLogin.Text.Trim();
+                            //Properties.Settings.Default.Password = TxbxPassword.Password.Trim();
+                            //Properties.Settings.Default.IsSaveUser = ChkBoxSaveUser.IsChecked.Value;
 
-                            Properties.Settings.Default.Save();
+                            //Properties.Settings.Default.Save();
                         }
 
                         Visibility = Visibility.Collapsed;
                         Visibility = Visibility.Hidden;
-                        new MainWindow(user).ShowDialog();
+                        new TeacherSystem.MainWindow().ShowDialog();
                     }
                     else
                     {
@@ -75,11 +63,11 @@ namespace TeacherSystem
                     {
                         if (ChkBoxSaveUser.IsChecked == true)
                         {
-                            Properties.Settings.Default.Username = TxbxLogin.Text.Trim();
-                            Properties.Settings.Default.Password = TxbxPassword.Password.Trim();
-                            Properties.Settings.Default.IsSaveUser = ChkBoxSaveUser.IsChecked.Value;
+                            //Properties.Settings.Default.Username = TxbxLogin.Text.Trim();
+                            //Properties.Settings.Default.Password = TxbxPassword.Password.Trim();
+                            //Properties.Settings.Default.IsSaveUser = ChkBoxSaveUser.IsChecked.Value;
 
-                            Properties.Settings.Default.Save();
+                            //Properties.Settings.Default.Save();
                         }
 
                         this.Visibility = Visibility.Collapsed;

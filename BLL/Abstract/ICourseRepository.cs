@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TeacherSystem.Entities;
+using BLL.Entities;
 
-namespace TeacherSystem.Abstract
+namespace BLL.Abstract
 {
     interface ICourseRepository
     {

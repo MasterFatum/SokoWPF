@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Web.UI.WebControls;
 using System.Windows;
 
-namespace TeacherSystem.Concrete
+namespace BLL.Concrete
 {
-    class OtherRepository
+    public class OtherRepository
     {
         public void SettingDataGrid(System.Windows.Controls.DataGrid dataGrid)
         {

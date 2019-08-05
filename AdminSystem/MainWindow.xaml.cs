@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BLL.Concrete;
+
 
 namespace AdminSystem
 {
@@ -20,9 +22,13 @@ namespace AdminSystem
     /// </summary>
     public partial class MainWindow : Window
     {
+        UserRepository userRepository = new UserRepository();
+
         public MainWindow()
         {
             InitializeComponent();
+
+            DataGridAllUsers.ItemsSource = userRepository.GetAllUser();
         }
 
         private void BtnMainExit_Click(object sender, RoutedEventArgs e)
@@ -36,6 +42,11 @@ namespace AdminSystem
             {
                 Application.Current.Shutdown();
             }
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }

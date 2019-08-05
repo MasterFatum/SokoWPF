@@ -11,7 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using TeacherSystem.Concrete;
+using Bll.Concrete;
+using BLL.Concrete;
 
 namespace TeacherSystem.FormsAddEducations
 {

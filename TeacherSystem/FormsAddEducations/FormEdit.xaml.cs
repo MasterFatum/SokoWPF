@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows;
-using TeacherSystem.Concrete;
-using TeacherSystem.Entities;
+using Bll.Concrete;
+using BLL.Entities;
 
 namespace TeacherSystem.FormsAddEducations
 {

@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.UI.WebControls;
@@ -14,8 +15,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using TeacherSystem.Concrete;
-using TeacherSystem.Entities;
+using Bll.Concrete;
+using BLL.Concrete;
+using BLL.Entities;
 using TeacherSystem.FormsAddEducations;
 
 namespace TeacherSystem
@@ -25,20 +27,20 @@ namespace TeacherSystem
         CourseRepository courseRepository = new CourseRepository();
         OtherRepository otherRepository = new OtherRepository();
 
-        public MainWindow(Users user)
+        public MainWindow()
         {
             InitializeComponent();
 
-            DataGridMain.ItemsSource = courseRepository.GetCoursesByUserId(user.Id);
+            DataGridMain.ItemsSource = courseRepository.GetCoursesByUserId(1);
 
             CbxMainShowCategory.SelectedIndex = -1;
 
-            TxbxUserId.Text = user.Id.ToString();
-            TxbxUserLastname.Text = user.Lastname;
-            TxbxUserFirstname.Text= user.Firstname;
-            TxbxUserMiddlename.Text = user.Middlename;
-            TxbxUserPosition.Text = user.Position;
-            Email = user.Email;
+            //TxbxUserId.Text = user.Id.ToString();
+            //TxbxUserLastname.Text = user.Lastname;
+            //TxbxUserFirstname.Text= user.Firstname;
+            //TxbxUserMiddlename.Text = user.Middlename;
+            //TxbxUserPosition.Text = user.Position;
+            //Email = user.Email;
 
         }
 
@@ -187,6 +189,11 @@ namespace TeacherSystem
             {
                 Application.Current.Shutdown();
             }
+        }
+
+        private void MainForm_Loaded_1(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

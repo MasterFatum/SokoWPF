@@ -11,8 +11,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using TeacherSystem.Concrete;
-using TeacherSystem.Entities;
+using BLL.Concrete;
+using BLL.Entities;
+
 
 namespace TeacherSystem
 {

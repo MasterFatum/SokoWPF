@@ -1,4 +1,4 @@
-namespace TeacherSystem.Entities
+namespace BLL.Entities
 {
     public class Users
     {

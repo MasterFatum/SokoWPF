@@ -5,17 +5,30 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AdminSystem"
         mc:Ignorable="d"
-        Title="Система оценки качества образования (Интерфейс администратора)" Height="483.78" Width="895.308" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Closing="Window_Closing">
+        Title="Система оценки качества образования (Интерфейс администратора)" Height="506.28" Width="983.808" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Closing="Window_Closing" Loaded="Window_Loaded">
     <Grid>
-        <Button x:Name="BtnMainExit"  HorizontalAlignment="Right" Margin="0,0,18,10" VerticalAlignment="Bottom" Width="132" Height="34" FontSize="18" Click="BtnMainExit_Click">
+        <Button x:Name="BtnMainExit"  HorizontalAlignment="Right" Margin="0,0,10,10" VerticalAlignment="Bottom" Width="132" Height="34" FontSize="18" Click="BtnMainExit_Click">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
             <StackPanel Orientation="Horizontal">
-                <Image Source="Shutdown_32px.png" Height="29"/>
+
                 <TextBlock Text="Выйти" Height="26"/>
             </StackPanel>
         </Button>
+        <Button x:Name="BtnMainUsersManage"  HorizontalAlignment="Right" Margin="0,0,147,10" VerticalAlignment="Bottom" Width="260" Height="34" FontSize="18" Click="BtnMainExit_Click">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+            <StackPanel Orientation="Horizontal">
+
+                <TextBlock Text="Управление пользователями" Height="26"/>
+            </StackPanel>
+        </Button>
+
+        <GroupBox Header="Пользователи системы" HorizontalAlignment="Left" Height="458" Margin="10,10,0,0" VerticalAlignment="Top" Width="540">
+            <DataGrid Name="DataGridAllUsers" IsReadOnly="True" HorizontalAlignment="Left" Margin="0,0,-2,-1" Width="530"/>
+        </GroupBox>
 
     </Grid>
 </Window>
