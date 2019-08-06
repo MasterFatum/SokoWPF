@@ -7,8 +7,8 @@
         mc:Ignorable="d"
         Title="Курсы других пользователей" Height="450" Width="856.702" Loaded="Window_Loaded" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow">
     <Grid>
-        <DataGrid x:Name="DataGridOtherUsersCategory" IsReadOnly="True" HorizontalAlignment="Left" Height="307" Margin="10,110,0,0" VerticalAlignment="Top" Width="829" FontSize="16"/>
-        <Button HorizontalAlignment="Right" Margin="0,0,12,329" VerticalAlignment="Bottom" Width="132" Height="35" FontSize="18" Click="Button_Click">
+        <DataGrid x:Name="DataGridOtherUsersCategory" IsReadOnly="True" HorizontalAlignment="Left" Height="297" Margin="10,110,0,0" VerticalAlignment="Top" Width="819" FontSize="16"/>
+        <Button HorizontalAlignment="Right" Margin="0,0,12,322" VerticalAlignment="Bottom" Width="132" Height="35" FontSize="18" Click="Button_Click">
             <StackPanel Orientation="Horizontal">
                 <Image Source="../Source/Cancel_32px.png" Height="29"/>
                 <TextBlock Text=" Закрыть" Height="26"/>
@@ -37,7 +37,7 @@
         </ComboBox>
         <Label Content="Пользователь" HorizontalAlignment="Left" Margin="10,17,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
         <Label Content="Категория" HorizontalAlignment="Left" Margin="10,64,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
-        <Button Name="BtnShowOtherUsersCourses" HorizontalAlignment="Right" Margin="0,0,259,329" VerticalAlignment="Bottom" Width="132" Height="88" FontSize="18" Click="BtnShowOtherUsersCourses_Click">
+        <Button Name="BtnShowOtherUsersCourses" HorizontalAlignment="Right" Margin="0,0,259,320" VerticalAlignment="Bottom" Width="132" Height="78" FontSize="18" Click="BtnShowOtherUsersCourses_Click">
             <StackPanel Orientation="Horizontal">
                 <Image Source="../Source/View_32px.png" Height="29"/>
                 <TextBlock Text=" Показать" Height="26"/>
