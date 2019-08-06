@@ -27,7 +27,7 @@ namespace TeacherSystem
         CourseRepository courseRepository = new CourseRepository();
         OtherRepository otherRepository = new OtherRepository();
 
-        public MainWindow()
+        public MainWindow(Users user)
         {
             InitializeComponent();
 
@@ -35,12 +35,12 @@ namespace TeacherSystem
 
             CbxMainShowCategory.SelectedIndex = -1;
 
-            //TxbxUserId.Text = user.Id.ToString();
-            //TxbxUserLastname.Text = user.Lastname;
-            //TxbxUserFirstname.Text= user.Firstname;
-            //TxbxUserMiddlename.Text = user.Middlename;
-            //TxbxUserPosition.Text = user.Position;
-            //Email = user.Email;
+            TxbxUserId.Text = user.Id.ToString();
+            TxbxUserLastname.Text = user.Lastname;
+            TxbxUserFirstname.Text = user.Firstname;
+            TxbxUserMiddlename.Text = user.Middlename;
+            TxbxUserPosition.Text = user.Position;
+            Email = user.Email;
 
         }
 
@@ -76,7 +76,6 @@ namespace TeacherSystem
             {
                 MessageBox.Show("Выберите категорию!", "", MessageBoxButton.OK, MessageBoxImage.Information);
             }
-            
         }
 
         private void BtnMainAdd_Click(object sender, RoutedEventArgs e)

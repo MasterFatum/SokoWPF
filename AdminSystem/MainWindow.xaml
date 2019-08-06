@@ -5,50 +5,51 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AdminSystem"
         mc:Ignorable="d"
-        Title="Система оценки качества образования (Интерфейс администратора)" Height="506.28" Width="983.808" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Closing="Window_Closing" Loaded="Window_Loaded">
+        Title="Система оценки качества образования (Интерфейс администратора)" Height="506.28" Width="1005.808" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Closing="Window_Closing" Loaded="Window_Loaded">
     <Grid>
-        <Button x:Name="BtnExit"  HorizontalAlignment="Right" Margin="0,0,10,10" VerticalAlignment="Bottom" Width="132" Height="34" FontSize="18" Click="BtnMainExit_Click">
+        <Button x:Name="BtnExit"  HorizontalAlignment="Right" Margin="0,0,10,9" VerticalAlignment="Bottom" Width="117" Height="45" FontSize="18" Click="BtnMainExit_Click">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
             <StackPanel Orientation="Horizontal">
-
-                <TextBlock Text="Выйти" Height="26"/>
+                <Image Source="Source/Shutdown_32px.png" Height="29"/>
+                <TextBlock Text=" Выйти" Height="26"/>
             </StackPanel>
         </Button>
-        <Button x:Name="BtnMainUsersManage"  HorizontalAlignment="Right" Margin="0,0,696,10" VerticalAlignment="Bottom" Width="260" Height="34" FontSize="18">
+        <Button x:Name="BtnMainUsersManage"  HorizontalAlignment="Right" Margin="0,0,693,10" VerticalAlignment="Bottom" Width="284" Height="44" FontSize="18">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
             <StackPanel Orientation="Horizontal">
-                <TextBlock Text="Управление пользователями" Height="26"/>
+                <Image Source="Source/User Account_32px.png" Height="29"/>
+                <TextBlock Text=" Управление пользователями" Height="26"/>
             </StackPanel>
         </Button>
 
-        <GroupBox Header="Пользователи системы" HorizontalAlignment="Left" Height="406" Margin="10,10,0,0" VerticalAlignment="Top" Width="958">
+        <GroupBox Header="Пользователи системы" HorizontalAlignment="Left" Height="402" Margin="10,10,0,0" VerticalAlignment="Top" Width="958">
             <DataGrid Name="DataGridAllUsers" IsReadOnly="True" HorizontalAlignment="Left" Margin="0,0,-2,2" Width="948" MouseDoubleClick="DataGridAllUsers_MouseDoubleClick" FontSize="16"/>
         </GroupBox>
-        <TextBox Name="TxbxSearch"  HorizontalAlignment="Left" Height="34" Margin="287,424,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="319">
+        <TextBox Name="TxbxSearch"  HorizontalAlignment="Left" Height="44" Margin="312,414,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="319" FontSize="18">
             <TextBox.Effect>
                 <DropShadowEffect/>
             </TextBox.Effect>
         </TextBox>
-        <Button x:Name="BtnSearch"  HorizontalAlignment="Right" Margin="0,0,262,9" VerticalAlignment="Bottom" Width="93" Height="34" FontSize="18">
+        <Button x:Name="BtnSearch"  HorizontalAlignment="Right" Margin="0,0,262,9" VerticalAlignment="Bottom" Width="93" Height="45" FontSize="18">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
             <StackPanel Orientation="Horizontal">
-
-                <TextBlock Text="Найти" Height="26"/>
+                <Image Source="Source/Search_32px.png" Height="29"/>
+                <TextBlock Text=" Найти" Height="26"/>
             </StackPanel>
         </Button>
-        <Button x:Name="BtnUpdate"  HorizontalAlignment="Right" Margin="0,0,147,9" VerticalAlignment="Bottom" Width="110" Height="34" FontSize="18">
+        <Button x:Name="BtnUpdate"  HorizontalAlignment="Right" Margin="0,0,132,9" VerticalAlignment="Bottom" Width="125" Height="45" FontSize="18">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
             <StackPanel Orientation="Horizontal">
-
-                <TextBlock Text="Обновить" Height="26"/>
+                <Image Source="Source/Available Updates_32px.png" Height="29"/>
+                <TextBlock Text=" Обновить" Height="26"/>
             </StackPanel>
         </Button>
     </Grid>

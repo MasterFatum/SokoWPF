@@ -34,6 +34,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icons8_Training.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
@@ -123,6 +126,24 @@
       <Project>{6722a8f7-8a85-4bed-b79e-a675c4d9a79a}</Project>
       <Name>UserSystem</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icons8_Training.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\Shutdown_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\Connected_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\Cancel_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\Broom_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\Add User Male_32px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

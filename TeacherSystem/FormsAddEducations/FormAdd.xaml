@@ -10,19 +10,19 @@
         <TextBox Name="TxbxTitle" HorizontalAlignment="Left" Height="31" Margin="104,94,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="457" FontSize="18"/>
         <Label Content="Описание" HorizontalAlignment="Left" Margin="7,131,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.216,0.009" FontSize="18"/>
         <TextBox Name="TxbxDescription" HorizontalAlignment="Left" Height="183" Margin="104,130,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="457" FontSize="16"/>
-        <Button Name="BtnAdd" HorizontalAlignment="Left" Margin="429,331,0,0" VerticalAlignment="Top" Width="132" Height="34" RenderTransformOrigin="0.9,0.199" FontSize="18" Click="BtnAdd_Click">
+        <Button Name="BtnAdd" HorizontalAlignment="Left" Margin="429,331,0,0" VerticalAlignment="Top" Width="132" Height="35" RenderTransformOrigin="0.9,0.199" FontSize="18" Click="BtnAdd_Click">
             <StackPanel Orientation="Horizontal">
-                <Image Source="../Source/Plus_32px.png" Height="29"/>
-                <TextBlock Text="Добавить" Height="26"/>
+                <Image Source="../Source/Save_32px.png" Height="29"/>
+                <TextBlock Text=" Сохранить" Height="26"/>
             </StackPanel>
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
-        <Button Name="BtnClose" HorizontalAlignment="Left" Margin="10,331,0,0" VerticalAlignment="Top" Width="132" Height="34" FontSize="18" Click="Button_Click">
+        <Button Name="BtnClose" HorizontalAlignment="Left" Margin="10,331,0,0" VerticalAlignment="Top" Width="132" Height="35" FontSize="18" Click="Button_Click">
             <StackPanel Orientation="Horizontal">
-                <Image Source="../Source/Close Window_32px.png" Height="29"/>
-                <TextBlock Text="Закрыть" Height="26"/>
+                <Image Source="../Source/Cancel_32px.png" Height="29"/>
+                <TextBlock Text=" Закрыть" Height="26"/>
             </StackPanel>
             <Button.Effect>
                 <DropShadowEffect/>
@@ -30,10 +30,10 @@
         </Button>
         <Label Content="Категория" HorizontalAlignment="Left" Margin="285,12,0,0" VerticalAlignment="Top" FontSize="18"/>
         <TextBox x:Name="TxbxSelectedCategory" IsEnabled="False" HorizontalAlignment="Left" IsReadOnly="False" Height="31" Margin="144,46,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="380" FontSize="18" TextAlignment="Center"/>
-        <Button Name="BtnClear" HorizontalAlignment="Left" Margin="221,331,0,0" VerticalAlignment="Top" Width="132" Height="34" FontSize="18" Click="BtnClear_Click">
+        <Button Name="BtnClear" HorizontalAlignment="Left" Margin="221,331,0,0" VerticalAlignment="Top" Width="132" Height="35" FontSize="18" Click="BtnClear_Click">
             <StackPanel Orientation="Horizontal">
                 <Image Source="../Source/Broom_32px.png" Height="29"/>
-                <TextBlock Text="Очистить" Height="26"/>
+                <TextBlock Text=" Очистить" Height="26"/>
             </StackPanel>
             <Button.Effect>
                 <DropShadowEffect/>

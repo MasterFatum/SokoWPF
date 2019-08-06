@@ -7,13 +7,13 @@
         mc:Ignorable="d"
         Title="Информация о программе" Height="351.072" Width="486.327" WindowStyle="ToolWindow">
     <Grid>
-        <Button x:Name="BtnClose" HorizontalAlignment="Left" Margin="323,282,0,0" VerticalAlignment="Top" Width="132" Height="34" FontSize="18" Click="BtnClose_Click">
+        <Button x:Name="BtnClose" HorizontalAlignment="Left" Margin="323,282,0,0" VerticalAlignment="Top" Width="132" Height="35" FontSize="18" Click="BtnClose_Click">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
             <StackPanel Orientation="Horizontal">
-                <Image Source="/TeacherSystem;component/Source/Close Window_32px.png" Height="29"/>
-                <TextBlock Text="Закрыть" Height="26"/>
+                <Image Source="../Source/Cancel_32px.png" Height="29"/>
+                <TextBlock Text=" Закрыть" Height="26"/>
             </StackPanel>
         </Button>
 

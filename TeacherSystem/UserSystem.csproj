@@ -166,52 +166,27 @@
     <Resource Include="icons8_Training.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Source\Connected_32px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Source\Close Window_32px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Source\Shutdown_32px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Source\Available Updates_32px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Source\Add Property_32px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Source\Edit Property_32px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Source\Delete Document_32px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Source\Broom_32px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Source\Plus_32px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Source\Save_32px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Source\Search_32px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Source\Old Man_32px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Source\Info_32px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Source\Microsoft Excel_32px.png" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\BLL\BLL.csproj">
       <Project>{90e65c95-82ed-4fce-99e0-b4bafcbd1dab}</Project>
       <Name>BLL</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\Add Property_32px.png" />
+    <Resource Include="Source\Available Updates_32px.png" />
+    <Resource Include="Source\Broom_32px.png" />
+    <Resource Include="Source\Cancel_32px.png" />
+    <Resource Include="Source\Connected_32px.png" />
+    <Resource Include="Source\Delete Document_32px.png" />
+    <Resource Include="Source\Edit Property_32px.png" />
+    <Resource Include="Source\Info_32px.png" />
+    <Resource Include="Source\Microsoft Excel_32px.png" />
+    <Resource Include="Source\Save_32px.png" />
+    <Resource Include="Source\Search_32px.png" />
+    <Resource Include="Source\Shutdown_32px.png" />
+    <Resource Include="Source\Shutdown_50px.png" />
+    <Resource Include="Source\User Account_32px.png" />
+    <Resource Include="Source\View_32px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
