@@ -77,6 +77,7 @@ namespace AdminSystem.Forms
 
         private void BtnUpdate_Click(object sender, RoutedEventArgs e)
         {
+            CbxUserCategory.SelectedIndex = 0;
             DataGridUserCourses.ItemsSource = courseRepository.GetCoursesByUserId(Convert.ToInt32(LblUserId.Content)).ToList();
         }
     }

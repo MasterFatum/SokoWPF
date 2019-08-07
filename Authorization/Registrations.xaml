@@ -37,10 +37,25 @@
         <Label Content="Имя" HorizontalAlignment="Left" Margin="10,94,0,0" VerticalAlignment="Top" FontSize="18"/>
         <Label Content="Фамилия" HorizontalAlignment="Left" Margin="10,49,0,0" VerticalAlignment="Top" FontSize="18"/>
         <Label Content="Отчество" HorizontalAlignment="Left" Margin="10,139,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <TextBox x:Name="TxbxLastname" HorizontalAlignment="Left" Height="40" Margin="158,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="361" FontSize="18"/>
-        <TextBox x:Name="TxbxFirstname" HorizontalAlignment="Left" Height="40" Margin="158,94,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="361" FontSize="18"/>
-        <TextBox x:Name="TxbxMiddlename" HorizontalAlignment="Left" Height="40" Margin="158,139,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="361" FontSize="18"/>
+        <TextBox x:Name="TxbxLastname" HorizontalAlignment="Left" Height="40" Margin="158,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="361" FontSize="18">
+            <TextBox.Effect>
+                <DropShadowEffect/>
+            </TextBox.Effect>
+        </TextBox>
+        <TextBox x:Name="TxbxFirstname" HorizontalAlignment="Left" Height="40" Margin="158,94,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="361" FontSize="18">
+            <TextBox.Effect>
+                <DropShadowEffect/>
+            </TextBox.Effect>
+        </TextBox>
+        <TextBox x:Name="TxbxMiddlename" HorizontalAlignment="Left" Height="40" Margin="158,139,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="361" FontSize="18">
+            <TextBox.Effect>
+                <DropShadowEffect/>
+            </TextBox.Effect>
+        </TextBox>
         <ComboBox x:Name="CbxPosition" HorizontalAlignment="Left" Margin="158,184,0,0" VerticalAlignment="Top" Width="361" FontSize="18" Height="40">
+            <ComboBox.Effect>
+                <DropShadowEffect/>
+            </ComboBox.Effect>
             <ComboBoxItem Content="Учитель биологии"/>
             <ComboBoxItem Content="Учитель математики"/>
             <ComboBoxItem Content="Учитель английского языка"/>
@@ -59,9 +74,21 @@
         </ComboBox>
         <Label Content="Должность" HorizontalAlignment="Left" Margin="8,184,0,0" VerticalAlignment="Top" FontSize="18"/>
         <Label Content="E-mail" HorizontalAlignment="Left" Margin="10,229,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <TextBox x:Name="TxbxEmail" HorizontalAlignment="Left" Height="40" Margin="158,229,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="361" FontSize="18"/>
-        <PasswordBox x:Name="PwdBox" HorizontalAlignment="Left" Margin="158,274,0,0" VerticalAlignment="Top" Height="40" Width="361" FontSize="18"/>
-        <PasswordBox x:Name="PwdBoxReplase" HorizontalAlignment="Left" Margin="158,319,0,0" VerticalAlignment="Top" Height="40" Width="361" FontSize="18"/>
+        <TextBox x:Name="TxbxEmail" HorizontalAlignment="Left" Height="40" Margin="158,229,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="361" FontSize="18">
+            <TextBox.Effect>
+                <DropShadowEffect/>
+            </TextBox.Effect>
+        </TextBox>
+        <PasswordBox x:Name="PwdBox" HorizontalAlignment="Left" Margin="158,274,0,0" VerticalAlignment="Top" Height="40" Width="361" FontSize="18">
+            <PasswordBox.Effect>
+                <DropShadowEffect/>
+            </PasswordBox.Effect>
+        </PasswordBox>
+        <PasswordBox x:Name="PwdBoxReplase" HorizontalAlignment="Left" Margin="158,319,0,0" VerticalAlignment="Top" Height="40" Width="361" FontSize="18">
+            <PasswordBox.Effect>
+                <DropShadowEffect/>
+            </PasswordBox.Effect>
+        </PasswordBox>
         <Label Content="Пароль" HorizontalAlignment="Left" Margin="10,274,0,0" VerticalAlignment="Top" FontSize="18"/>
         <Label Content="Пароль еще раз" HorizontalAlignment="Left" Margin="10,319,0,0" VerticalAlignment="Top" FontSize="18"/>
 

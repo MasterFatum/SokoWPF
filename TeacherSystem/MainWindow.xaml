@@ -62,11 +62,31 @@
         <Label x:Name="LblUserId" Content="ID пользователя" HorizontalAlignment="Right" Margin="0,147,75,0" VerticalAlignment="Top" RenderTransformOrigin="-0.413,0.235" FontSize="14"/>
         <Label x:Name="LblPosition" Content="Должность" HorizontalAlignment="Right" Margin="0,396,94,0" VerticalAlignment="Top" RenderTransformOrigin="-0.413,0.235" FontSize="14"/>
         <GroupBox Header="Пользователь" HorizontalAlignment="Right" Height="350" Margin="0,124,9,0" VerticalAlignment="Top" Width="254"/>
-        <TextBox x:Name="TxbxUserId" IsReadOnly="True" HorizontalAlignment="Right" Height="25" Margin="0,181,21,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="231" TextAlignment="Center" FontSize="14" FontWeight="Bold"/>
-        <TextBox x:Name="TxbxUserLastname" IsReadOnly="True" HorizontalAlignment="Right" Height="25" Margin="0,244,21,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="231" TextAlignment="Center" FontSize="14" FontWeight="Bold"/>
-        <TextBox x:Name="TxbxUserFirstname" IsReadOnly="True" HorizontalAlignment="Right" Height="25" Margin="0,306,21,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="231" TextAlignment="Center" FontSize="14" FontWeight="Bold"/>
-        <TextBox x:Name="TxbxUserMiddlename" IsReadOnly="True" HorizontalAlignment="Right" Height="25" Margin="0,368,21,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="231" TextAlignment="Center" FontSize="14" FontWeight="Bold"/>
-        <TextBox x:Name="TxbxUserPosition" IsReadOnly="True" HorizontalAlignment="Right" Height="25" Margin="0,430,21,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="231" TextAlignment="Center" FontSize="14" FontWeight="Bold"/>
+        <TextBox x:Name="TxbxUserId" IsReadOnly="True" HorizontalAlignment="Right" Height="25" Margin="0,181,21,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="231" TextAlignment="Center" FontSize="14" FontWeight="Bold">
+            <TextBox.Effect>
+                <DropShadowEffect/>
+            </TextBox.Effect>
+        </TextBox>
+        <TextBox x:Name="TxbxUserLastname" IsReadOnly="True" HorizontalAlignment="Right" Height="25" Margin="0,244,21,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="231" TextAlignment="Center" FontSize="14" FontWeight="Bold">
+            <TextBox.Effect>
+                <DropShadowEffect/>
+            </TextBox.Effect>
+        </TextBox>
+        <TextBox x:Name="TxbxUserFirstname" IsReadOnly="True" HorizontalAlignment="Right" Height="25" Margin="0,306,21,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="231" TextAlignment="Center" FontSize="14" FontWeight="Bold">
+            <TextBox.Effect>
+                <DropShadowEffect/>
+            </TextBox.Effect>
+        </TextBox>
+        <TextBox x:Name="TxbxUserMiddlename" IsReadOnly="True" HorizontalAlignment="Right" Height="25" Margin="0,368,21,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="231" TextAlignment="Center" FontSize="14" FontWeight="Bold">
+            <TextBox.Effect>
+                <DropShadowEffect/>
+            </TextBox.Effect>
+        </TextBox>
+        <TextBox x:Name="TxbxUserPosition" IsReadOnly="True" HorizontalAlignment="Right" Height="25" Margin="0,430,21,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="231" TextAlignment="Center" FontSize="14" FontWeight="Bold">
+            <TextBox.Effect>
+                <DropShadowEffect/>
+            </TextBox.Effect>
+        </TextBox>
         <GroupBox Header="Категории" HorizontalAlignment="Right" Height="129" Margin="0,0,10,0" VerticalAlignment="Top" Width="254"/>
         <ComboBox x:Name="CbxMainShowCategory" HorizontalAlignment="Right" Margin="0,25,21,0" VerticalAlignment="Top" Width="231" FontSize="18" SelectionChanged="CbxMainShowCategory_SelectionChanged">
             <ComboBox.Effect>
