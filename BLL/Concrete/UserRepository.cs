@@ -34,7 +34,25 @@ namespace BLL.Concrete
 
         public void DeleteUser(int id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                Users user = sokoContext.Users.Find(id);
+
+                if (user != null)
+                {
+                    sokoContext.Users.Remove(user);
+                    sokoContext.SaveChanges();
+
+                    MessageBox.Show("Пользователь успешно удалён!", "", MessageBoxButton.OK,
+                        MessageBoxImage.Information);
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
 
         public void EditUser(int id, string lastname, string firstname, string middlename, string position, string email)

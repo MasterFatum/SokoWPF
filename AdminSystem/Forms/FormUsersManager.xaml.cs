@@ -111,8 +111,14 @@ namespace AdminSystem.Forms
                 MessageBox.Show("Не выбран пользователь для изменения!", "", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
             
+        }
 
-            
+        private void BtnDeleteUser_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show("Удалить данного пользователя?", "", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                userRepository.DeleteUser(Convert.ToInt32(TxbxUserId.Text));
+            }
         }
     }
 }

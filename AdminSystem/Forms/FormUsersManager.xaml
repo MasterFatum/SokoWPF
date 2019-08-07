@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Управление пользователями" Height="450" Width="911.264" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Button x:Name="BtnClose" HorizontalAlignment="Left" Margin="761,368,0,0" VerticalAlignment="Top" Width="132" Height="35" RenderTransformOrigin="0.9,0.199" FontSize="18" Click="BtnClose_Click" >
+        <Button x:Name="BtnClose" HorizontalAlignment="Left" Margin="743,368,0,0" VerticalAlignment="Top" Width="150" Height="35" RenderTransformOrigin="0.9,0.199" FontSize="18" Click="BtnClose_Click" >
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
@@ -59,7 +59,7 @@
                 <DropShadowEffect/>
             </TextBox.Effect>
         </TextBox>
-        <Button x:Name="BtnChangeUser" HorizontalAlignment="Left" Margin="622,368,0,0" VerticalAlignment="Top" Width="134" Height="35" RenderTransformOrigin="0.9,0.199" FontSize="18" Click="BtnChangeUser_Click" >
+        <Button x:Name="BtnChangeUser" HorizontalAlignment="Left" Margin="743,328,0,0" VerticalAlignment="Top" Width="150" Height="35" RenderTransformOrigin="0.9,0.199" FontSize="18" Click="BtnChangeUser_Click" >
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
@@ -68,12 +68,22 @@
                 <TextBlock Name="TxBlChangeUser" Text=" Изменить" Height="26"/>
             </StackPanel>
         </Button>
-        <Button x:Name="BtnUpdateListUsers" HorizontalAlignment="Left" Margin="564,368,0,0" VerticalAlignment="Top" Width="53" Height="35" RenderTransformOrigin="0.9,0.199" FontSize="18" Click="BtnUpdateListUsers_Click" >
+        <Button x:Name="BtnUpdateListUsers" HorizontalAlignment="Left" Margin="566,368,0,0" VerticalAlignment="Top" Width="150" Height="35" RenderTransformOrigin="0.9,0.199" FontSize="18" Click="BtnUpdateListUsers_Click" >
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
             <StackPanel Orientation="Horizontal">
                 <Image Source="../Source/Available Updates_32px.png" Height="29"/>
+                <TextBlock Text=" Обновить" Height="26"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="BtnDeleteUser" HorizontalAlignment="Left" Margin="566,328,0,0" VerticalAlignment="Top" Width="150" Height="35" RenderTransformOrigin="0.9,0.199" FontSize="18" Click="BtnDeleteUser_Click" >
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/AdminSystem;component/Source/Cancel_32px.png" Height="29"/>
+                <TextBlock Text=" Удалить" Height="26"/>
             </StackPanel>
         </Button>
 
