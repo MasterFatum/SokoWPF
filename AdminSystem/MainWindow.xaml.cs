@@ -74,5 +74,10 @@ namespace AdminSystem
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void BtnMainUsersManage_Click(object sender, RoutedEventArgs e)
+        {
+            new FormUsersManager().ShowDialog();
+        }
     }
 }

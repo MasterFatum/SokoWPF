@@ -16,12 +16,16 @@ using BLL.Entities;
 
 namespace AdminSystem.Forms
 {
-    /// <summary>
-    /// Логика взаимодействия для FormViewCoursesUser.xaml
-    /// </summary>
+    
     public partial class FormViewCoursesUser : Window
     {
         public int Id { get; set; }
+        public int UserId { get; set; }
+        public string Lastname { get; set; }
+        public string Category { get; set; }
+        public string Title { get; set; }
+        public string Description { get; set; }
+        public int? Evaluation { get; set; }
 
         CourseRepository courseRepository = new CourseRepository();
 
@@ -32,19 +36,56 @@ namespace AdminSystem.Forms
 
             Id = id;
 
+            LblUserId.Content = Id;
+
+            Lastname = lastname;
+
             LblUsername.Content = String.Format($"{lastname} {firstname} {middlename}");
 
             DataGridUserCourses.ItemsSource = courseRepository.GetCoursesByUserId(Id);
         }
 
-        private void DataGridUserCourses_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
-
-        }
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Close();
+        }
+
+        private void BtnShowOtherUsersCourses_Click(object sender, RoutedEventArgs e)
+        {
+            DataGridUserCourses.ItemsSource =
+                courseRepository.GetCoursesByCategory(Id, ((ComboBoxItem)CbxUserCategory.SelectedItem).Content.ToString());
+        }
+
+        private void DataGridUserCourses_MouseDoubleClick_1(object sender, MouseButtonEventArgs e)
+        {
+            try
+            {
+                var items = DataGridUserCourses.CurrentItem as Courses;
+
+                if (items == null)
+                {
+                    return;
+                }
+
+                UserId = items.UserId;
+                Id = items.Id;
+                Category = items.Category;
+                Title = items.Title;
+                Description = items.Description;
+                Evaluation = items.Evaluation ?? 0;
+
+                new FormViewCourseFull(UserId, Id, Lastname, Category, Title, Description, Evaluation.Value).ShowDialog();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void BtnUpdate_Click(object sender, RoutedEventArgs e)
+        {
+            DataGridUserCourses.ItemsSource = courseRepository.GetCoursesByUserId(Convert.ToInt32(LblUserId.Content)).ToList();
         }
     }
 }

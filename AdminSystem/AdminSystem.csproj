@@ -69,6 +69,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Forms\FormViewCourseFull.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Forms\FormViewCoursesUser.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -83,6 +87,9 @@
     </Compile>
     <Compile Include="Forms\FormUsersManager.xaml.cs">
       <DependentUpon>FormUsersManager.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormViewCourseFull.xaml.cs">
+      <DependentUpon>FormViewCourseFull.xaml</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormViewCoursesUser.xaml.cs">
       <DependentUpon>FormViewCoursesUser.xaml</DependentUpon>
@@ -141,13 +148,16 @@
     <Resource Include="icons8_Training.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Save_32px.png" />
+    <Resource Include="Source\Save_32px.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Source\Cancel_32px.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Source\Change User_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\View_32px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

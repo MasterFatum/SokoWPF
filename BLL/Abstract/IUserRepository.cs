@@ -15,6 +15,8 @@ namespace BLL.Abstract
 
         void EditUser(int id, string lastname, string firstname, string middlename, string position, string email);
 
+        void EditUser(int id, string lastname, string firstname, string middlename, string position, string email, string password);
+
         IEnumerable<Users> GetAllUser();
 
         List<String> GetFioUsers();

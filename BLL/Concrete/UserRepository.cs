@@ -64,6 +64,35 @@ namespace BLL.Concrete
             }
         }
 
+        public void EditUser(int id, string lastname, string firstname, string middlename, string position, string email, string password)
+        {
+            try
+            {
+                var user = sokoContext.Users.Find(id);
+
+                if (user != null)
+                {
+                    user.Id = id;
+                    user.Lastname = lastname;
+                    user.Firstname = firstname;
+                    user.Middlename = middlename;
+                    user.Position = position;
+                    user.Email = email;
+                    user.Password = password;
+
+                    sokoContext.Users.AddOrUpdate(user);
+
+                    sokoContext.SaveChanges();
+
+                    MessageBox.Show("Аккаунт успешно отредактирован!", "Редактирование пользователя", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         public IEnumerable<Users> GetAllUser()
         {
             IEnumerable<Users> users = sokoContext.Users.ToList();

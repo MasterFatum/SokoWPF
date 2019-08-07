@@ -16,7 +16,7 @@
                 <TextBlock Text=" Выйти" Height="26"/>
             </StackPanel>
         </Button>
-        <Button x:Name="BtnMainUsersManage"  HorizontalAlignment="Right" Margin="0,0,693,10" VerticalAlignment="Bottom" Width="284" Height="44" FontSize="18">
+        <Button x:Name="BtnMainUsersManage"  HorizontalAlignment="Right" Margin="0,0,693,10" VerticalAlignment="Bottom" Width="284" Height="44" FontSize="18" Click="BtnMainUsersManage_Click">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>

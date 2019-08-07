@@ -5,16 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AdminSystem.Forms"
         mc:Ignorable="d"
-        Title="Курсы пользователя" Height="481.96" Width="1046.733" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="Курсы пользователя" Height="551.789" Width="1046.733" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
-        <DataGrid x:Name="DataGridUserCourses" IsReadOnly="True" HorizontalAlignment="Left" Height="339" Margin="10,103,0,0" VerticalAlignment="Top" Width="1011" FontSize="16" MouseDoubleClick="DataGridUserCourses_MouseDoubleClick"/>
-        <Button HorizontalAlignment="Right" Margin="0,0,20,356" VerticalAlignment="Bottom" Width="132" Height="30" FontSize="18" Click="Button_Click">
+        <DataGrid x:Name="DataGridUserCourses" IsReadOnly="True" HorizontalAlignment="Left" Height="411" Margin="10,103,0,0" VerticalAlignment="Top" Width="1011" FontSize="16" MouseDoubleClick="DataGridUserCourses_MouseDoubleClick_1"/>
+        <Button HorizontalAlignment="Right" Margin="0,0,20,427" VerticalAlignment="Bottom" Width="132" Height="35" FontSize="18" Click="Button_Click">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
             <StackPanel Orientation="Horizontal">
-
-                <TextBlock Text="Закрыть" Height="26"/>
+                <Image Source="../Source/Cancel_32px.png" Height="29"/>
+                <TextBlock Text=" Закрыть" Height="26"/>
             </StackPanel>
         </Button>
         <ComboBox x:Name="CbxUserCategory" HorizontalAlignment="Right" Margin="0,57,608,0" VerticalAlignment="Top" Width="270" FontSize="18">
@@ -32,16 +32,26 @@
         </ComboBox>
         <Label Content="Пользователь" HorizontalAlignment="Left" Margin="10,17,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
         <Label Content="Категория" HorizontalAlignment="Left" Margin="10,58,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
-        <Button x:Name="BtnShowOtherUsersCourses" HorizontalAlignment="Right" Margin="0,0,459,356" VerticalAlignment="Bottom" Width="132" Height="79" FontSize="18">
+        <Button x:Name="BtnShowOtherUsersCourses" HorizontalAlignment="Right" Margin="0,0,459,427" VerticalAlignment="Bottom" Width="132" Height="79" FontSize="18" Click="BtnShowOtherUsersCourses_Click">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
             <StackPanel Orientation="Horizontal">
-
-                <TextBlock Text="Показать" Height="26"/>
+                <Image Source="../Source/View_32px.png" Height="29"/>
+                <TextBlock Text=" Показать" Height="26"/>
             </StackPanel>
         </Button>
         <Label Name="LblUsername" Content="Имя пользователя" HorizontalAlignment="Left" Margin="147,17,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+        <Button Name="BtnUpdate" HorizontalAlignment="Right" Margin="0,0,322,427" VerticalAlignment="Bottom" Width="132" Height="79" FontSize="18" Click="BtnUpdate_Click">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+            <StackPanel Orientation="Horizontal">
+                <Image Source="../Source/Available Updates_32px.png" Height="29"/>
+                <TextBlock Text=" Обновить" Height="26"/>
+            </StackPanel>
+        </Button>
+        <Label x:Name="LblUserId" Content="ID" HorizontalAlignment="Left" Margin="994,10,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
 
     </Grid>
 </Window>

@@ -55,13 +55,13 @@ namespace Bll.Concrete
         {
             try
             {
-                Courses contestsEdit = sokoContext.Courses.Where(u => u.UserId == courses.UserId).FirstOrDefault(c => c.Id == courses.Id);
+                Courses courseEdit = sokoContext.Courses.Where(u => u.UserId == courses.UserId).FirstOrDefault(c => c.Id == courses.Id);
 
-                if (contestsEdit != null)
+                if (courseEdit != null)
                 {
-                    contestsEdit.Title = courses.Title;
-                    contestsEdit.Description = courses.Description;
-                    sokoContext.Courses.AddOrUpdate(contestsEdit);
+                    courseEdit.Title = courses.Title;
+                    courseEdit.Description = courses.Description;
+                    sokoContext.Courses.AddOrUpdate(courseEdit);
                     sokoContext.SaveChanges();
 
                     MessageBox.Show("Запись успешно отредактирована!", "Редактирование записи", MessageBoxButton.OK,
@@ -129,6 +129,30 @@ namespace Bll.Concrete
             IEnumerable<Courses> courseses = sokoContext.Courses.Where(u => u.UserId == userId.Id).Where(c => c.Category == category);
 
             return courseses.ToList();
+        }
+
+        public void SetRatingCourse(int userId, int id, int rating)
+        {
+            try
+            {
+                Courses course = sokoContext.Courses.Where(u => u.UserId == userId).FirstOrDefault(c => c.Id == id);
+
+                if (course != null)
+                {
+                    course.Evaluation = rating;
+
+                    sokoContext.Courses.AddOrUpdate(course);
+                    sokoContext.SaveChanges();
+
+                    MessageBox.Show("Балы успешно назначены!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            
         }
 
 

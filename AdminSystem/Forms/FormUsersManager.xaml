@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Управление пользователями" Height="450" Width="911.264" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Button x:Name="BtnClose" HorizontalAlignment="Left" Margin="763,377,0,0" VerticalAlignment="Top" Width="132" Height="35" RenderTransformOrigin="0.9,0.199" FontSize="18" >
+        <Button x:Name="BtnClose" HorizontalAlignment="Left" Margin="761,368,0,0" VerticalAlignment="Top" Width="132" Height="35" RenderTransformOrigin="0.9,0.199" FontSize="18" Click="BtnClose_Click" >
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
@@ -16,8 +16,8 @@
                 <TextBlock Text=" Закрыть" Height="26"/>
             </StackPanel>
         </Button>
-        <DataGrid x:Name="DataGridAllUsers" IsReadOnly="True" Margin="10,10,344,0" VerticalAlignment="Top" FontSize="16" Height="402" />
-        <TextBox x:Name="TxbxUserId" IsReadOnly="True" HorizontalAlignment="Right" Height="25" Margin="0,20,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="222" TextAlignment="Center" FontSize="14" FontWeight="Bold">
+        <DataGrid x:Name="DataGridAllUsers" IsReadOnly="True" Margin="10,10,344,0" VerticalAlignment="Top" FontSize="16" Height="402" SelectionChanged="DataGridAllUsers_SelectionChanged" />
+        <TextBox x:Name="TxbxUserId" IsEnabled="False" HorizontalAlignment="Right" Height="25" Margin="0,20,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="222" TextAlignment="Center" FontSize="14" FontWeight="Bold">
             <TextBox.Effect>
                 <DropShadowEffect/>
             </TextBox.Effect>
@@ -29,46 +29,46 @@
         <Label Content="Email" HorizontalAlignment="Left" Margin="566,206,0,0" VerticalAlignment="Top" FontSize="18"/>
         <Label Content="Пароль" HorizontalAlignment="Left" Margin="566,245,0,0" VerticalAlignment="Top" FontSize="18" RenderTransformOrigin="0.4,1.49"/>
         <Label Content="Должность" HorizontalAlignment="Left" Margin="566,167,0,0" VerticalAlignment="Top" FontSize="18" RenderTransformOrigin="0.4,1.49"/>
-        <TextBox x:Name="TxbxLastname" IsReadOnly="True" HorizontalAlignment="Right" Height="25" Margin="0,59,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="222" TextAlignment="Center" FontSize="14" FontWeight="Bold">
+        <TextBox x:Name="TxbxLastname" IsEnabled="False" HorizontalAlignment="Right" Height="25" Margin="0,59,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="222" TextAlignment="Center" FontSize="14" FontWeight="Bold">
             <TextBox.Effect>
                 <DropShadowEffect/>
             </TextBox.Effect>
         </TextBox>
-        <TextBox x:Name="TxbxFirstname" IsReadOnly="True" HorizontalAlignment="Right" Height="25" Margin="0,98,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="222" TextAlignment="Center" FontSize="14" FontWeight="Bold">
+        <TextBox x:Name="TxbxFirstname" IsEnabled="False" HorizontalAlignment="Right" Height="25" Margin="0,98,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="222" TextAlignment="Center" FontSize="14" FontWeight="Bold">
             <TextBox.Effect>
                 <DropShadowEffect/>
             </TextBox.Effect>
         </TextBox>
-        <TextBox x:Name="TxbxMiddlename" IsReadOnly="True" HorizontalAlignment="Right" Height="25" Margin="0,137,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="222" TextAlignment="Center" FontSize="14" FontWeight="Bold">
+        <TextBox x:Name="TxbxMiddlename" IsEnabled="False" HorizontalAlignment="Right" Height="25" Margin="0,137,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="222" TextAlignment="Center" FontSize="14" FontWeight="Bold">
             <TextBox.Effect>
                 <DropShadowEffect/>
             </TextBox.Effect>
         </TextBox>
-        <TextBox x:Name="TxbxPosition" IsReadOnly="True" HorizontalAlignment="Right" Height="25" Margin="0,176,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="222" TextAlignment="Center" FontSize="14" FontWeight="Bold">
+        <TextBox x:Name="TxbxPosition" IsEnabled="False" HorizontalAlignment="Right" Height="25" Margin="0,176,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="222" TextAlignment="Center" FontSize="14" FontWeight="Bold">
             <TextBox.Effect>
                 <DropShadowEffect/>
             </TextBox.Effect>
         </TextBox>
-        <TextBox x:Name="TxbxEmail" IsReadOnly="True" HorizontalAlignment="Right" Height="25" Margin="0,215,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="222" TextAlignment="Center" FontSize="14" FontWeight="Bold">
+        <TextBox x:Name="TxbxEmail" IsEnabled="False" HorizontalAlignment="Right" Height="25" Margin="0,215,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="222" TextAlignment="Center" FontSize="14" FontWeight="Bold">
             <TextBox.Effect>
                 <DropShadowEffect/>
             </TextBox.Effect>
         </TextBox>
-        <TextBox x:Name="TxbxPassword" IsReadOnly="True" HorizontalAlignment="Right" Height="25" Margin="0,254,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="222" TextAlignment="Center" FontSize="14" FontWeight="Bold">
+        <TextBox x:Name="TxbxPassword" IsEnabled="False" HorizontalAlignment="Right" Height="25" Margin="0,254,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="222" TextAlignment="Center" FontSize="14" FontWeight="Bold">
             <TextBox.Effect>
                 <DropShadowEffect/>
             </TextBox.Effect>
         </TextBox>
-        <Button x:Name="BtnChangeUser" HorizontalAlignment="Left" Margin="624,377,0,0" VerticalAlignment="Top" Width="134" Height="35" RenderTransformOrigin="0.9,0.199" FontSize="18" >
+        <Button x:Name="BtnChangeUser" HorizontalAlignment="Left" Margin="622,368,0,0" VerticalAlignment="Top" Width="134" Height="35" RenderTransformOrigin="0.9,0.199" FontSize="18" Click="BtnChangeUser_Click" >
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
             <StackPanel Orientation="Horizontal">
                 <Image Source="../Source/Change User_32px.png" Height="29"/>
-                <TextBlock Text=" Изменить" Height="26"/>
+                <TextBlock Name="TxBlChangeUser" Text=" Изменить" Height="26"/>
             </StackPanel>
         </Button>
-        <Button x:Name="BtnUpdateListUsers" HorizontalAlignment="Left" Margin="566,377,0,0" VerticalAlignment="Top" Width="53" Height="35" RenderTransformOrigin="0.9,0.199" FontSize="18" >
+        <Button x:Name="BtnUpdateListUsers" HorizontalAlignment="Left" Margin="564,368,0,0" VerticalAlignment="Top" Width="53" Height="35" RenderTransformOrigin="0.9,0.199" FontSize="18" Click="BtnUpdateListUsers_Click" >
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
