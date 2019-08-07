@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
-using System.Data;
 using System.Data.Entity.Migrations;
 using BLL;
 using BLL.Abstract;
@@ -81,9 +80,10 @@ namespace Bll.Concrete
 
         public IEnumerable<Courses> GetCoursesByUserId(int userId)
         {
+            
             try
             {
-                IQueryable<Courses> courseses = sokoContext.Courses.Where(u => u.UserId == userId);
+                IQueryable<Courses> courseses = new SokoContext().Courses.Where(u => u.UserId == userId);
 
                 return courseses.ToList();
             }

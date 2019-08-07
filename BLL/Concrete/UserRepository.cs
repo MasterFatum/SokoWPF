@@ -2,10 +2,7 @@
 using System.Collections.Generic;
 using System.Data.Entity.Migrations;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using BLL;
 using BLL.Abstract;
 using BLL.Entities;
 
@@ -184,6 +181,11 @@ namespace BLL.Concrete
         {
             throw new NotImplementedException();
         }
-        
+
+        public void SokoDispose()
+        {
+            sokoContext.Dispose();
+        }
+
     }
 }

@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Управление пользователями" Height="450" Width="911.264" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Button x:Name="BtnClose" HorizontalAlignment="Left" Margin="743,368,0,0" VerticalAlignment="Top" Width="150" Height="35" RenderTransformOrigin="0.9,0.199" FontSize="18" Click="BtnClose_Click" >
+        <Button x:Name="BtnClose" HorizontalAlignment="Left" Margin="740,368,0,0" VerticalAlignment="Top" Width="150" Height="35" RenderTransformOrigin="0.9,0.199" FontSize="18" Click="BtnClose_Click" >
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
@@ -59,7 +59,7 @@
                 <DropShadowEffect/>
             </TextBox.Effect>
         </TextBox>
-        <Button x:Name="BtnChangeUser" HorizontalAlignment="Left" Margin="743,328,0,0" VerticalAlignment="Top" Width="150" Height="35" RenderTransformOrigin="0.9,0.199" FontSize="18" Click="BtnChangeUser_Click" >
+        <Button x:Name="BtnChangeUser" HorizontalAlignment="Left" Margin="740,328,0,0" VerticalAlignment="Top" Width="150" Height="35" RenderTransformOrigin="0.9,0.199" FontSize="18" Click="BtnChangeUser_Click" >
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>

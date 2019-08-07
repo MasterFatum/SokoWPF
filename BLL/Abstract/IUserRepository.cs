@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using BLL.Entities;
 
 namespace BLL.Abstract
@@ -29,7 +26,10 @@ namespace BLL.Abstract
 
         IEnumerable<Users> SearchUsersByPosition(string position);
 
-        
+        void SokoDispose();
+
+
+
 
     }
 }
