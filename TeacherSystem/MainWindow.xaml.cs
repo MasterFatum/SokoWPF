@@ -43,6 +43,7 @@ namespace TeacherSystem
         public string Middlename { get; set; }
         public string Position { get; set; }
         public string Email { get; set; }
+        public string Date { get; set; }
 
         private void MainForm_Loaded(object sender, RoutedEventArgs e)
         {
@@ -143,8 +144,9 @@ namespace TeacherSystem
                 Title = items.Title;
                 Description = items.Description;
                 Evaluation = items.Evaluation ?? 0;
+                Date = items.Date;
 
-                new FormViewItemsFull("Вы", Category, Title, Description, Evaluation.Value).ShowDialog();
+                new FormViewItemsFull("Вы", Category, Title, Description, Date, Evaluation.Value).ShowDialog();
 
             }
             catch (Exception ex)

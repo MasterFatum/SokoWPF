@@ -7,7 +7,7 @@ namespace TeacherSystem.FormsAddEducations
     /// </summary>
     public partial class FormViewItemsFull : Window
     {
-        public FormViewItemsFull(string user, string category, string title, string description, int evaluation = 0)
+        public FormViewItemsFull(string user, string category, string title, string description, string date, int evaluation = 0)
         {
             InitializeComponent();
 
@@ -16,6 +16,7 @@ namespace TeacherSystem.FormsAddEducations
             TxbxTitle.Text = title;
             TxbxDescription.Text = description;
             TxbxEvaluation.Text = evaluation.ToString();
+            TxbxDate.Text = date;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
