@@ -14,13 +14,23 @@ namespace BLL.Concrete
 
         public void AddUser(Users user)
         {
+            
             try
             {
-                sokoContext.Users.Add(user);
+                Users userExists = sokoContext.Users.FirstOrDefault(em => em.Email == user.Email);
 
-                sokoContext.SaveChanges();
+                if (userExists == null)
+                {
+                    sokoContext.Users.Add(user);
 
-                MessageBox.Show("Вы успешно зарегистрированы в системе! Войдите в систему под вашим логином и паролем!", "", MessageBoxButton.OK);
+                    sokoContext.SaveChanges();
+
+                    MessageBox.Show("Вы успешно зарегистрированы в системе! Войдите в систему под вашим логином и паролем!", "", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Пользователь с таким Email уже существует! Пожалуйста введите другой Email!", "", MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
             }
             catch (Exception e)
             {
@@ -79,7 +89,7 @@ namespace BLL.Concrete
             }
         }
 
-        public void EditUser(int id, string lastname, string firstname, string middlename, string position, string email, string password)
+        public void EditUser(int id, string lastname, string firstname, string middlename, string position, string email, string password, string privilege)
         {
             try
             {
@@ -94,6 +104,7 @@ namespace BLL.Concrete
                     user.Position = position;
                     user.Email = email;
                     user.Password = password;
+                    user.Privilege = privilege;
 
                     sokoContext.Users.AddOrUpdate(user);
 

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Windows;
 using System.Windows.Controls;
 using BLL.Concrete;
@@ -47,8 +48,13 @@ namespace TeacherSystem
                         user.Privilege = "User";
                         user.Email = TxbxEmail.Text.Trim();
                         user.Password = PwdBox.Password;
+                        user.Date = String.Format(
+                            $"{DateTime.Now.ToShortDateString()} {DateTime.Now.ToShortTimeString()}");
 
                         userRepository.AddUser(user);
+
+                        BtnClear_Click(null, null);
+                        BtnClose_Click(null, null);
                     }
 
                     else

@@ -18,6 +18,7 @@ namespace AdminSystem.Forms
         public string Title { get; set; }
         public string Description { get; set; }
         public int? Evaluation { get; set; }
+        public string Date { get; set; }
 
         CourseRepository courseRepository = new CourseRepository();
 
@@ -65,8 +66,9 @@ namespace AdminSystem.Forms
                 Title = items.Title;
                 Description = items.Description;
                 Evaluation = items.Evaluation ?? 0;
+                Date = items.Date;
 
-                new FormViewCourseFull(UserId, Id, Lastname, Category, Title, Description, Evaluation.Value).ShowDialog();
+                new FormViewCourseFull(UserId, Id, Lastname, Category, Title, Description, Date, Evaluation.Value).ShowDialog();
 
             }
             catch (Exception ex)

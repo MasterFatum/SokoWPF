@@ -54,7 +54,25 @@ namespace AdminSystem.Forms
                 TxbxPosition.Text = users.Position;
                 TxbxEmail.Text = users.Email;
                 TxbxPassword.Text = users.Password;
+                TxbxDate.Text = users.Date;
 
+                ComboBoxItem items = new ComboBoxItem{};
+                
+
+                if (users.Privilege == "User")
+                {
+                    CbxPrivilege.Items.Clear();
+                    CbxPrivilege.Items.Add("User");
+                    CbxPrivilege.Items.Add("Admin");
+                    CbxPrivilege.SelectedIndex = 0;
+                }
+                if (users.Privilege == "Admin")
+                {
+                    CbxPrivilege.Items.Clear();
+                    CbxPrivilege.Items.Add("Admin");
+                    CbxPrivilege.Items.Add("User");
+                    CbxPrivilege.SelectedIndex = 0;
+                }
 
             }
             catch (Exception ex)
@@ -75,6 +93,7 @@ namespace AdminSystem.Forms
                     TxbxPosition.IsEnabled = true;
                     TxbxEmail.IsEnabled = true;
                     TxbxPassword.IsEnabled = true;
+                    CbxPrivilege.IsEnabled = true;
 
                     TxBlChangeUser.Text = " Сохранить";
                 }
@@ -86,12 +105,13 @@ namespace AdminSystem.Forms
                     TxbxPosition.IsEnabled = false;
                     TxbxEmail.IsEnabled = false;
                     TxbxPassword.IsEnabled = false;
+                    CbxPrivilege.IsEnabled = false;
 
                     TxBlChangeUser.Text = " Изменить";
 
                     userRepository.EditUser(Convert.ToInt32(TxbxUserId.Text), TxbxLastname.Text.Trim(),
                         TxbxFirstname.Text.Trim(), TxbxMiddlename.Text.Trim(), TxbxPosition.Text.Trim(),
-                        TxbxEmail.Text.Trim(), TxbxPassword.Text.Trim());
+                        TxbxEmail.Text.Trim(), TxbxPassword.Text.Trim(), CbxPrivilege.SelectedItem.ToString());
                 }
             }
             else

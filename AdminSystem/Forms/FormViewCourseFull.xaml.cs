@@ -13,7 +13,7 @@ namespace AdminSystem.Forms
         public int UserId { get; set; }
 
 
-        public FormViewCourseFull(int userId, int id, string user, string category, string title, string description, int evaluation = 0)
+        public FormViewCourseFull(int userId, int id, string user, string category, string title, string description, string date, int evaluation = 0)
         {
             InitializeComponent();
 
@@ -25,6 +25,7 @@ namespace AdminSystem.Forms
             TxbxTitle.Text = title;
             TxbxDescription.Text = description;
             TxbxEvaluation.Text = evaluation.ToString();
+            TxbxDate.Text = date;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

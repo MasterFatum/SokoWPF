@@ -1,3 +1,5 @@
+using System;
+
 namespace BLL.Entities
 {
     public class Courses
@@ -14,6 +16,8 @@ namespace BLL.Entities
         public string Description { get; set; }
 
         public int? Evaluation { get; set; }
+
+        public string Date { get; set; }
 
     }
 }

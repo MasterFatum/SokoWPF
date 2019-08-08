@@ -42,7 +42,8 @@ namespace TeacherSystem.FormsAddEducations
                     UserId = UserIdAdd,
                     Category = SelectedCategory,
                     Title = TxbxTitle.Text.Trim(),
-                    Description = TxbxDescription.Text.Trim()
+                    Description = TxbxDescription.Text.Trim(),
+                    Date = String.Format($"{DateTime.Now.ToShortDateString()} {DateTime.Now.ToShortTimeString()}")
                 };
                 courseRepository.AddCourse(courses);
             }

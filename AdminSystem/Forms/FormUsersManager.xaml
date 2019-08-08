@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AdminSystem.Forms"
         mc:Ignorable="d"
-        Title="Управление пользователями" Height="450" Width="911.264" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
-    <Grid>
-        <Button x:Name="BtnClose" HorizontalAlignment="Left" Margin="740,368,0,0" VerticalAlignment="Top" Width="150" Height="35" RenderTransformOrigin="0.9,0.199" FontSize="18" Click="BtnClose_Click" >
+        Title="Управление пользователями" Height="501.136" Width="911.264" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid Margin="0,0,0,-18">
+        <Button x:Name="BtnClose" HorizontalAlignment="Left" Margin="740,418,0,0" VerticalAlignment="Top" Width="150" Height="35" RenderTransformOrigin="0.9,0.199" FontSize="18" Click="BtnClose_Click" >
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
@@ -16,7 +16,7 @@
                 <TextBlock Text=" Закрыть" Height="26"/>
             </StackPanel>
         </Button>
-        <DataGrid x:Name="DataGridAllUsers" IsReadOnly="True" Margin="10,10,344,0" VerticalAlignment="Top" FontSize="16" Height="402" SelectionChanged="DataGridAllUsers_SelectionChanged" />
+        <DataGrid x:Name="DataGridAllUsers" IsReadOnly="True" Margin="10,10,344,0" VerticalAlignment="Top" FontSize="16" Height="445" SelectionChanged="DataGridAllUsers_SelectionChanged" />
         <TextBox x:Name="TxbxUserId" IsEnabled="False" HorizontalAlignment="Right" Height="25" Margin="0,20,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="222" TextAlignment="Center" FontSize="14" FontWeight="Bold">
             <TextBox.Effect>
                 <DropShadowEffect/>
@@ -59,7 +59,7 @@
                 <DropShadowEffect/>
             </TextBox.Effect>
         </TextBox>
-        <Button x:Name="BtnChangeUser" HorizontalAlignment="Left" Margin="740,328,0,0" VerticalAlignment="Top" Width="150" Height="35" RenderTransformOrigin="0.9,0.199" FontSize="18" Click="BtnChangeUser_Click" >
+        <Button x:Name="BtnChangeUser" HorizontalAlignment="Left" Margin="740,378,0,0" VerticalAlignment="Top" Width="150" Height="35" RenderTransformOrigin="0.9,0.199" FontSize="18" Click="BtnChangeUser_Click" >
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
@@ -68,7 +68,7 @@
                 <TextBlock Name="TxBlChangeUser" Text=" Изменить" Height="26"/>
             </StackPanel>
         </Button>
-        <Button x:Name="BtnUpdateListUsers" HorizontalAlignment="Left" Margin="566,368,0,0" VerticalAlignment="Top" Width="150" Height="35" RenderTransformOrigin="0.9,0.199" FontSize="18" Click="BtnUpdateListUsers_Click" >
+        <Button x:Name="BtnUpdateListUsers" HorizontalAlignment="Left" Margin="566,418,0,0" VerticalAlignment="Top" Width="150" Height="35" RenderTransformOrigin="0.9,0.199" FontSize="18" Click="BtnUpdateListUsers_Click" >
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
@@ -77,7 +77,7 @@
                 <TextBlock Text=" Обновить" Height="26"/>
             </StackPanel>
         </Button>
-        <Button x:Name="BtnDeleteUser" HorizontalAlignment="Left" Margin="566,328,0,0" VerticalAlignment="Top" Width="150" Height="35" RenderTransformOrigin="0.9,0.199" FontSize="18" Click="BtnDeleteUser_Click" >
+        <Button x:Name="BtnDeleteUser" HorizontalAlignment="Left" Margin="566,378,0,0" VerticalAlignment="Top" Width="150" Height="35" RenderTransformOrigin="0.9,0.199" FontSize="18" Click="BtnDeleteUser_Click" >
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
@@ -86,6 +86,18 @@
                 <TextBlock Text=" Удалить" Height="26"/>
             </StackPanel>
         </Button>
+        <Label Content="Дата" HorizontalAlignment="Left" Margin="566,283,0,0" VerticalAlignment="Top" FontSize="18" RenderTransformOrigin="0.4,1.49"/>
+        <TextBox x:Name="TxbxDate" IsEnabled="False" HorizontalAlignment="Right" Height="25" Margin="0,292,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="222" TextAlignment="Center" FontSize="14" FontWeight="Bold">
+            <TextBox.Effect>
+                <DropShadowEffect/>
+            </TextBox.Effect>
+        </TextBox>
+        <ComboBox Name="CbxPrivilege" IsEnabled="False" HorizontalAlignment="Left" Margin="664,331,0,0" VerticalAlignment="Top" Width="92" Height="25" FontSize="14" FontWeight="Bold">
+            <ComboBox.Effect>
+                <DropShadowEffect/>
+            </ComboBox.Effect>
+        </ComboBox>
+        <Label Content="Права" HorizontalAlignment="Left" Margin="566,322,0,0" VerticalAlignment="Top" FontSize="18" RenderTransformOrigin="0.4,1.49"/>
 
     </Grid>
 </Window>

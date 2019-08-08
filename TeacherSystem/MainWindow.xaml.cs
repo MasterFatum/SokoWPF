@@ -19,7 +19,7 @@ namespace TeacherSystem
         {
             InitializeComponent();
 
-            DataGridMain.ItemsSource = courseRepository.GetCoursesByUserId(1);
+            DataGridMain.ItemsSource = courseRepository.GetCoursesByUserId(user.Id);
 
             CbxMainShowCategory.SelectedIndex = -1;
 
