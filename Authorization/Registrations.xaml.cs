@@ -14,6 +14,9 @@ namespace TeacherSystem
         public Registrations()
         {
             InitializeComponent();
+            TxbxFirstname.TextChanged += TxbxLastname_TextChanged;
+            TxbxLastname.TextChanged += TxbxLastname_TextChanged;
+            TxbxMiddlename.TextChanged += TxbxLastname_TextChanged;
         }
         
         UserRepository userRepository = new UserRepository();
@@ -81,6 +84,18 @@ namespace TeacherSystem
             PwdBox.Password = String.Empty;
             PwdBoxReplase.Password = String.Empty;
             CbxPosition.SelectedIndex = -1;
+        }
+
+        void FirstCharToUpper(TextBox textBox)
+        {
+            if (textBox.Text.Length == 1)
+                textBox.Text = textBox.Text.ToUpper();
+            textBox.Select(textBox.Text.Length, 0);
+        }
+
+        private void TxbxLastname_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            FirstCharToUpper((TextBox)sender);
         }
     }
 }

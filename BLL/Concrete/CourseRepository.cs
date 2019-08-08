@@ -144,7 +144,7 @@ namespace Bll.Concrete
                     sokoContext.Courses.AddOrUpdate(course);
                     sokoContext.SaveChanges();
 
-                    MessageBox.Show("Балы успешно назначены!");
+                    MessageBox.Show("Баллы успешно назначены!");
                 }
             }
             catch (Exception ex)

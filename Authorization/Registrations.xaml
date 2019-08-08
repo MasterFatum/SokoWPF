@@ -37,7 +37,7 @@
         <Label Content="Имя" HorizontalAlignment="Left" Margin="10,94,0,0" VerticalAlignment="Top" FontSize="18"/>
         <Label Content="Фамилия" HorizontalAlignment="Left" Margin="10,49,0,0" VerticalAlignment="Top" FontSize="18"/>
         <Label Content="Отчество" HorizontalAlignment="Left" Margin="10,139,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <TextBox x:Name="TxbxLastname" HorizontalAlignment="Left" Height="40" Margin="158,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="361" FontSize="18">
+        <TextBox x:Name="TxbxLastname" HorizontalAlignment="Left" Height="40" Margin="158,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="361" FontSize="18" TextChanged="TxbxLastname_TextChanged">
             <TextBox.Effect>
                 <DropShadowEffect/>
             </TextBox.Effect>
