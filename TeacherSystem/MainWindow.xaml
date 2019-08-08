@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TeacherSystem"
         mc:Ignorable="d"
-        Title="Система оценки качества образования (Интерфейс пользователя)" Height="580.055" Width="1257.952" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Closing="MainForm_Closing" Loaded="MainForm_Loaded_1">
+        Title="Система оценки качества образования (Интерфейс пользователя)" Height="580.055" Width="1257.952" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Closing="MainForm_Closing">
     <Grid Margin="0,0,0,12">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>

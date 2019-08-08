@@ -34,7 +34,7 @@
                 <DropShadowEffect/>
             </TextBox.Effect>
         </TextBox>
-        <Button x:Name="BtnSearch"  HorizontalAlignment="Right" Margin="0,0,262,9" VerticalAlignment="Bottom" Width="93" Height="45" FontSize="18">
+        <Button x:Name="BtnSearch"  HorizontalAlignment="Right" Margin="0,0,262,9" VerticalAlignment="Bottom" Width="93" Height="45" FontSize="18" Click="BtnSearch_Click">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>

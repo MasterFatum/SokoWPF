@@ -180,10 +180,6 @@ namespace TeacherSystem
             }
         }
 
-        private void MainForm_Loaded_1(object sender, RoutedEventArgs e)
-        {
-
-        }
 
         private void MenuItem_Click_2(object sender, RoutedEventArgs e)
         {

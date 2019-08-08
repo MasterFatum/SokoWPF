@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Windows;
 using System.Data.Entity.Migrations;
+using System.Windows.Controls;
+using System.Windows.Input;
 using BLL;
 using BLL.Abstract;
 using BLL.Entities;
@@ -26,7 +29,7 @@ namespace Bll.Concrete
             {
                 MessageBox.Show(e.Message);
             }
-            
+
         }
 
         public void DeleteCourse(int id, int userId)
@@ -54,7 +57,8 @@ namespace Bll.Concrete
         {
             try
             {
-                Courses courseEdit = sokoContext.Courses.Where(u => u.UserId == courses.UserId).FirstOrDefault(c => c.Id == courses.Id);
+                Courses courseEdit = sokoContext.Courses.Where(u => u.UserId == courses.UserId)
+                    .FirstOrDefault(c => c.Id == courses.Id);
 
                 if (courseEdit != null)
                 {
@@ -80,7 +84,7 @@ namespace Bll.Concrete
 
         public IEnumerable<Courses> GetCoursesByUserId(int userId)
         {
-            
+
             try
             {
                 IQueryable<Courses> courseses = new SokoContext().Courses.Where(u => u.UserId == userId);
@@ -101,7 +105,7 @@ namespace Bll.Concrete
             try
             {
                 courseses = sokoContext.Courses.Where(u => u.UserId == userId).Where(c => c.Category == category);
-                
+
             }
             catch (Exception ex)
             {
@@ -121,12 +125,14 @@ namespace Bll.Concrete
             return null;
         }
 
-        public IEnumerable<Courses> GetCoursesByFio(string lastname, string firstname, string middlename, string category)
+        public IEnumerable<Courses> GetCoursesByFio(string lastname, string firstname, string middlename,
+            string category)
         {
             Users userId = sokoContext.Users.Where(l => l.Lastname == lastname).Where(f => f.Firstname == firstname)
                 .FirstOrDefault(m => m.Middlename == middlename);
 
-            IEnumerable<Courses> courseses = sokoContext.Courses.Where(u => u.UserId == userId.Id).Where(c => c.Category == category);
+            IEnumerable<Courses> courseses = sokoContext.Courses.Where(u => u.UserId == userId.Id)
+                .Where(c => c.Category == category);
 
             return courseses.ToList();
         }
@@ -151,10 +157,11 @@ namespace Bll.Concrete
             {
                 MessageBox.Show(ex.Message);
             }
-
-            
         }
 
-
+        public void SearchInDataGrid(TextBox textBoxSearch, DataGrid dataGrid)
+        {
+            
+        }
     }
 }

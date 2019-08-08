@@ -79,5 +79,10 @@ namespace AdminSystem
         {
             new FormUsersManager().ShowDialog();
         }
+
+        private void BtnSearch_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
     }
 }
