@@ -152,5 +152,14 @@
   <ItemGroup>
     <Resource Include="Source\View_32px.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\icons8-удалить-пользователя-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\UserEdit-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\Rating-32.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

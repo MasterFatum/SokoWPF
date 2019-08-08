@@ -51,7 +51,7 @@
                 <DropShadowEffect/>
             </Button.Effect>
             <StackPanel Orientation="Horizontal">
-                <Image Source="../Source/Cancel_32px.png" Height="29"/>
+                <Image Source="../Source/Rating-32.png" Height="29"/>
                 <TextBlock Name="TxBlSetRating" Text=" Назначить баллы" Height="26" Width="153"/>
             </StackPanel>
         </Button>

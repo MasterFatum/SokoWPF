@@ -64,7 +64,7 @@
                 <DropShadowEffect/>
             </Button.Effect>
             <StackPanel Orientation="Horizontal">
-                <Image Source="../Source/Change User_32px.png" Height="29"/>
+                <Image Source="../Source/UserEdit-32.png" Height="29"/>
                 <TextBlock Name="TxBlChangeUser" Text=" Изменить" Height="26"/>
             </StackPanel>
         </Button>
@@ -82,7 +82,7 @@
                 <DropShadowEffect/>
             </Button.Effect>
             <StackPanel Orientation="Horizontal">
-                <Image Source="/AdminSystem;component/Source/Cancel_32px.png" Height="29"/>
+                <Image Source="../Source/icons8-удалить-пользователя-32.png" Height="29"/>
                 <TextBlock Text=" Удалить" Height="26"/>
             </StackPanel>
         </Button>
