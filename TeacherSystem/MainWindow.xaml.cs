@@ -144,7 +144,7 @@ namespace TeacherSystem
                 Title = items.Title;
                 Description = items.Description;
                 Evaluation = items.Evaluation ?? 0;
-                Date = items.Date;
+                Date = items.Date ?? "Дата отсутствует";
 
                 new FormViewItemsFull("Вы", Category, Title, Description, Date, Evaluation.Value).ShowDialog();
 

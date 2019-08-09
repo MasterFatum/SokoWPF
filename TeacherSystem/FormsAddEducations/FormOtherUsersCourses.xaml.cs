@@ -7,9 +7,6 @@ using BLL.Entities;
 
 namespace TeacherSystem.FormsAddEducations
 {
-    /// <summary>
-    /// Логика взаимодействия для FormOtherUsersCourses.xaml
-    /// </summary>
     public partial class FormOtherUsersCourses : Window
     {
         public FormOtherUsersCourses()
@@ -77,7 +74,7 @@ namespace TeacherSystem.FormsAddEducations
                 Title = items.Title;
                 Description = items.Description;
                 Evaluation = items.Evaluation ?? 0;
-                Date = items.Date ?? "Нет даты";
+                Date = items.Date ?? "Дата отсутствует";
 
                 new FormViewItemsFull(Lastname, Category, Title, Description, Date, Evaluation).ShowDialog();
 
