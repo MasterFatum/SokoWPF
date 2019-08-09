@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Курсы других пользователей" Height="450" Width="856.702" Loaded="Window_Loaded" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow">
     <Grid>
-        <DataGrid x:Name="DataGridOtherUsersCategory" IsReadOnly="True" HorizontalAlignment="Left" Height="297" Margin="10,110,0,0" VerticalAlignment="Top" Width="819" FontSize="16"/>
+        <DataGrid x:Name="DataGridOtherUsersCategory" IsReadOnly="True" HorizontalAlignment="Left" Height="297" Margin="10,110,0,0" VerticalAlignment="Top" Width="819" FontSize="16" MouseDoubleClick="DataGridOtherUsersCategory_MouseDoubleClick"/>
         <Button HorizontalAlignment="Right" Margin="0,0,12,322" VerticalAlignment="Bottom" Width="132" Height="35" FontSize="18" Click="Button_Click">
             <StackPanel Orientation="Horizontal">
                 <Image Source="../Source/Cancel_32px.png" Height="29"/>
