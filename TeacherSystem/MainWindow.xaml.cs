@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -167,10 +169,6 @@ namespace TeacherSystem
             Application.Current.Shutdown();
         }
 
-        private void BtnMainExport_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("Функция 'Экспорт в Excel' находиться в стадии разработки!");
-        }
 
         private void MainForm_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {

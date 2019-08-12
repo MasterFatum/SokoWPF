@@ -1,5 +1,8 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
 using System.Windows.Input;
 using AdminSystem.Forms;
 using BLL.Concrete;
@@ -82,7 +85,28 @@ namespace AdminSystem
 
         private void BtnSearch_Click(object sender, RoutedEventArgs e)
         {
-            
+            ICollectionView viewSource = CollectionViewSource.GetDefaultView(DataGridAllUsers.ItemsSource);
+
+            if (TxbxSearch.Text.Trim() == String.Empty)
+            {
+                viewSource.Filter = null;
+            }
+            else
+            {
+                viewSource.Filter = o =>
+                {
+                    Users u = o as Users;
+
+                    return u.Lastname.ToString().Contains(TxbxSearch.Text.Trim());
+
+                    
+                };
+            }
+        }
+
+        private void BtnUpdate_Click(object sender, RoutedEventArgs e)
+        {
+            DataGridAllUsers.ItemsSource = new UserRepository().GetAllUser();
         }
     }
 }
