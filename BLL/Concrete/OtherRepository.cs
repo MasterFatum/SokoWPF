@@ -1,4 +1,5 @@
-﻿using System.Configuration;
+﻿using System;
+using System.Configuration;
 using System.Windows;
 using System.IO;
 
@@ -12,28 +13,24 @@ namespace BLL.Concrete
             dataGrid.Columns[1].Visibility = Visibility.Hidden;
         }
 
-        public void SetConnectionStringInside(string connectionString)
+        public void SetConnectionString(string connectionString)
         {
-            string appPath = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
-            string configFile = Path.Combine(appPath, "App.config");
-            ExeConfigurationFileMap configFileMap = new ExeConfigurationFileMap();
-            configFileMap.ExeConfigFilename = configFile;
-            Configuration config = ConfigurationManager.OpenMappedExeConfiguration(configFileMap, ConfigurationUserLevel.None);
+            try
+            {
+                Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+                config.ConnectionStrings.ConnectionStrings[1].ConnectionString = connectionString;
+                config.ConnectionStrings.ConnectionStrings[1].Name = "Soko";
+                config.ConnectionStrings.ConnectionStrings[1].ProviderName = "System.Data.SqlClient";
+                config.Save(ConfigurationSaveMode.Full, true);
+                ConfigurationManager.RefreshSection("connectionStrings");
 
-            config.AppSettings.Settings["connectionString"].Value = @"data source=NETSCHOOL;initial catalog=SOKO;integrated security=False;User ID=SOKOUser;Password=Admin;MultipleActiveResultSets=True;App=EntityFramework";
-            config.Save();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
 
-        public void SetConnectionStringOutside(string connectionString)
-        {
-            string appPath = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
-            string configFile = Path.Combine(appPath, "App.config");
-            ExeConfigurationFileMap configFileMap = new ExeConfigurationFileMap();
-            configFileMap.ExeConfigFilename = configFile;
-            Configuration config = ConfigurationManager.OpenMappedExeConfiguration(configFileMap, ConfigurationUserLevel.None);
-
-            config.AppSettings.Settings["connectionString"].Value = @"data source=NETSCHOOL;initial catalog=SOKO;integrated security=False;User ID=SOKOUser;Password=Admin;MultipleActiveResultSets=True;App=EntityFramework";
-            config.Save();
-        }
     }
 }

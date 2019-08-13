@@ -15,6 +15,10 @@ namespace TeacherSystem
             InitializeComponent();
         }
 
+        private const string ConnetcionStringInside = "Data Source = NETSCHOOL; initial catalog = SOKO; integrated security = False; User ID = SOKOUser; Password=Admin;MultipleActiveResultSets=True;App=EntityFramework";
+
+        private const string ConnetcionStringOutside = "Data Source = 87.229.192.199,1435; initial catalog = SOKO; integrated security = False; User ID = SOKOUser; Password=Admin;MultipleActiveResultSets=True;App=EntityFramework";
+
         private void BtnAuthorizeExit_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
@@ -27,11 +31,17 @@ namespace TeacherSystem
 
         private void BtnAuthorize_Click(object sender, RoutedEventArgs e)
         {
+            if (CbxSetConnectionString.SelectedIndex == 0)
+            {
+                new OtherRepository().SetConnectionString(ConnetcionStringInside);
+            }
+            if (CbxSetConnectionString.SelectedIndex == 1)
+            {
+                new OtherRepository().SetConnectionString(ConnetcionStringOutside);
+            }
 
             switch (((ComboBoxItem)CbxAuthorizeAs.SelectedItem).Content.ToString())
             {
-
-
                 //АВТОРИЗАЦИЯ ПОЛЬЗОВАТЕЛЯ
                 case "Учитель":
                     Users user = userRepository.ValidationUser(TxbxLogin.Text.Trim(), TxbxPassword.Password);
