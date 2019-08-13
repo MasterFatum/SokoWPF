@@ -2,13 +2,14 @@
 using System.Windows.Controls;
 using BLL.Concrete;
 using BLL.Entities;
+using System.Configuration;
 
 namespace TeacherSystem
 {
     public partial class Authorization : Window
     {
         UserRepository userRepository = new UserRepository();
-
+        
         public Authorization()
         {
             InitializeComponent();
@@ -26,9 +27,11 @@ namespace TeacherSystem
 
         private void BtnAuthorize_Click(object sender, RoutedEventArgs e)
         {
-            
+
             switch (((ComboBoxItem)CbxAuthorizeAs.SelectedItem).Content.ToString())
             {
+
+
                 //АВТОРИЗАЦИЯ ПОЛЬЗОВАТЕЛЯ
                 case "Учитель":
                     Users user = userRepository.ValidationUser(TxbxLogin.Text.Trim(), TxbxPassword.Password);

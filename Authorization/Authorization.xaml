@@ -5,53 +5,60 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TeacherSystem"
         mc:Ignorable="d"
-        Title="Авторизация пользователя" Height="398.366" Width="406.589" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="ToolWindow" Closing="AuthorizeForm_Closing">
-  <Grid>
-    <TextBox Name="TxbxLogin" HorizontalAlignment="Left" Height="36" Margin="89,143,0,0" TextWrapping="Wrap" Text="i.panfilov@fckrasnodar.ru" VerticalAlignment="Top" Width="286" FontSize="18" FontWeight="Bold" TextAlignment="Left" TabIndex="1">
+        Title="Авторизация пользователя" Height="426.659" Width="406.589" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="ToolWindow" Closing="AuthorizeForm_Closing">
+    <Grid>
+        <TextBox Name="TxbxLogin" HorizontalAlignment="Left" Height="36" Margin="89,178,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="286" FontSize="18" FontWeight="Bold" TextAlignment="Left" TabIndex="1">
             <TextBox.Effect>
                 <DropShadowEffect/>
             </TextBox.Effect>
         </TextBox>
-        <Label Content="E-mail" HorizontalAlignment="Left" Margin="12,145,0,0" VerticalAlignment="Top" FontSize="18"/>
-    <Label Content="Пароль" HorizontalAlignment="Left" Margin="12,188,0,0" VerticalAlignment="Top" FontSize="18"/>
-    <Button Name="BtnAuthorize" HorizontalAlignment="Left" Margin="243,292,0,0" VerticalAlignment="Top" Width="132" Height="57" FontSize="18" Click="BtnAuthorize_Click" TabIndex="5">
-        <StackPanel Orientation="Horizontal">
-            <Image Source="Source/Connected_32px.png"  Height="29"/>
+        <Label Content="E-mail" HorizontalAlignment="Left" Margin="12,180,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <Label Content="Пароль" HorizontalAlignment="Left" Margin="12,223,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <Button Name="BtnAuthorize" HorizontalAlignment="Left" Margin="243,327,0,0" VerticalAlignment="Top" Width="132" Height="57" FontSize="18" Click="BtnAuthorize_Click" TabIndex="5">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="Source/Connected_32px.png"  Height="29"/>
                 <TextBlock Text=" Войти" Height="26"/>
-        </StackPanel>
-            <Button.Effect>
-        <DropShadowEffect/>
-      </Button.Effect>
-        </Button>
-    <GroupBox Header="Войти как..." HorizontalAlignment="Left" Height="92" Margin="89,32,0,0" VerticalAlignment="Top" Width="286" FontSize="18">
-            <ComboBox Name="CbxAuthorizeAs" HorizontalAlignment="Left" Margin="32,10,0,0" VerticalAlignment="Top" Width="208">
-            <ComboBox.Effect>
-          <DropShadowEffect/>
-        </ComboBox.Effect>
-        <ComboBoxItem IsSelected="True">Учитель</ComboBoxItem>
-        <ComboBoxItem Content="Администратор"/>
-      </ComboBox>
-    </GroupBox>
-    <Button x:Name="BtnAuthorizeExit" HorizontalAlignment="Left" Margin="12,292,0,0" VerticalAlignment="Top" Width="132" Height="57" FontSize="18" Click="BtnAuthorizeExit_Click" TabIndex="4">
-        <StackPanel Orientation="Horizontal">
-            <Image Source="Source/Shutdown_32px.png"  Height="29"/>
-            <TextBlock Text=" Выйти" Height="26"/>
-        </StackPanel>
+            </StackPanel>
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
-    <CheckBox x:Name="ChkBoxSaveUser" Content="Запомнить пользователя" Margin="95,243,95,0" VerticalAlignment="Top" FontSize="16" Checked="ChkBoxSaveUser_Checked" TabIndex="3"/>
-    <PasswordBox x:Name="TxbxPassword" HorizontalAlignment="Left" Margin="89,188,0,0" VerticalAlignment="Top" Width="286" Height="34" FontSize="18" TabIndex="2" Password="doberman777">
+        <GroupBox Header="Войти как..." HorizontalAlignment="Left" Height="132" Margin="89,32,0,0" VerticalAlignment="Top" Width="286" FontSize="18">
+            <ComboBox Name="CbxAuthorizeAs" HorizontalAlignment="Left" Margin="32,55,0,0" VerticalAlignment="Top" Width="208">
+                <ComboBox.Effect>
+                    <DropShadowEffect/>
+                </ComboBox.Effect>
+                <ComboBoxItem IsSelected="True">Учитель</ComboBoxItem>
+                <ComboBoxItem Content="Администратор"/>
+            </ComboBox>
+        </GroupBox>
+        <Button x:Name="BtnAuthorizeExit" HorizontalAlignment="Left" Margin="12,327,0,0" VerticalAlignment="Top" Width="132" Height="57" FontSize="18" Click="BtnAuthorizeExit_Click" TabIndex="4">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="Source/Shutdown_32px.png"  Height="29"/>
+                <TextBlock Text=" Выйти" Height="26"/>
+            </StackPanel>
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <CheckBox x:Name="ChkBoxSaveUser" Content="Запомнить пользователя" Margin="95,283,95,0" VerticalAlignment="Top" FontSize="16" Checked="ChkBoxSaveUser_Checked" TabIndex="3"/>
+        <PasswordBox x:Name="TxbxPassword" HorizontalAlignment="Left" Margin="89,223,0,0" VerticalAlignment="Top" Width="286" Height="34" FontSize="18" TabIndex="2">
             <PasswordBox.Effect>
                 <DropShadowEffect/>
             </PasswordBox.Effect>
         </PasswordBox>
         <Menu HorizontalAlignment="Left" Height="22" Margin="10,10,0,0" VerticalAlignment="Top" Width="48">
-      <MenuItem Header="Меню">
-        <MenuItem Header="Регистрация нового пользователя" Click="MenuItem_Click"/>
-      </MenuItem>
-    </Menu>
+            <MenuItem Header="Меню">
+                <MenuItem Header="Регистрация нового пользователя" Click="MenuItem_Click"/>
+            </MenuItem>
+        </Menu>
+        <ComboBox HorizontalAlignment="Left" Margin="127,65,0,0" VerticalAlignment="Top" Width="207" Height="31" FontSize="18">
+            <ComboBox.Effect>
+                <DropShadowEffect/>
+            </ComboBox.Effect>
+            <ComboBoxItem IsSelected="True" Content="Внутренняя сеть"/>
+            <ComboBoxItem Content="Внешняя сеть"/>
+        </ComboBox>
 
-  </Grid>
+    </Grid>
 </Window>
