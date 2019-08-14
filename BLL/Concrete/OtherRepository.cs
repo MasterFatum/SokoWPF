@@ -17,13 +17,25 @@ namespace BLL.Concrete
         {
             try
             {
-                Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-                config.ConnectionStrings.ConnectionStrings[1].ConnectionString = connectionString;
-                config.ConnectionStrings.ConnectionStrings[1].Name = "Soko";
-                config.ConnectionStrings.ConnectionStrings[1].ProviderName = "System.Data.SqlClient";
-                config.Save(ConfigurationSaveMode.Full, true);
-                ConfigurationManager.RefreshSection("connectionStrings");
+                //string appPath = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
+                //string configFile = Path.Combine(appPath, "Authorization.config");
+                //ExeConfigurationFileMap configFileMap = new ExeConfigurationFileMap();
+                //configFileMap.ExeConfigFilename = configFile;
+                //Configuration config = ConfigurationManager.OpenMappedExeConfiguration(configFileMap, ConfigurationUserLevel.None);
 
+                //var connectionStringsSection = (ConnectionStringsSection)config.GetSection("connectionStrings");
+                ////connectionStringsSection.ConnectionStrings["TeacherSystem.Authorization.Properties.Settings.Setting"].ConnectionString = connectionString;
+                //connectionStringsSection.ConnectionStrings[0].ConnectionString = connectionString;
+                //config.Save();
+                //ConfigurationManager.RefreshSection("connectionStrings");
+                //config.Save();
+
+                Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+                config.ConnectionStrings.ConnectionStrings.Remove("Soko");
+                config.ConnectionStrings.ConnectionStrings.Add(new ConnectionStringSettings("Soko", connectionString));
+                config.Save(ConfigurationSaveMode.Modified);
+                ConfigurationManager.RefreshSection("connectionStrings");
+                config.Save();
             }
             catch (Exception ex)
             {

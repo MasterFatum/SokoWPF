@@ -1,8 +1,10 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using System.Windows.Controls;
 using BLL.Concrete;
 using BLL.Entities;
 using System.Configuration;
+using System.Data.SqlClient;
 
 namespace TeacherSystem
 {
@@ -13,11 +15,11 @@ namespace TeacherSystem
         public Authorization()
         {
             InitializeComponent();
+            
         }
 
-        private const string ConnetcionStringInside = "Data Source = NETSCHOOL; initial catalog = SOKO; integrated security = False; User ID = SOKOUser; Password=Admin;MultipleActiveResultSets=True;App=EntityFramework";
-
-        private const string ConnetcionStringOutside = "Data Source = 87.229.192.199,1435; initial catalog = SOKO; integrated security = False; User ID = SOKOUser; Password=Admin;MultipleActiveResultSets=True;App=EntityFramework";
+        private string connectionStringInside = "data source=NETSCHOOL;initial catalog=SOKO;integrated security=False;User ID=SOKOUser;Password=Admin;MultipleActiveResultSets=True;App=EntityFramework\"";
+        private string connectionStringOutside = "data source=87.229.192.199,1435;initial catalog=SOKO;integrated security=False;User ID=SOKOUser;Password=Admin;MultipleActiveResultSets=True;App=EntityFramework\"";
 
         private void BtnAuthorizeExit_Click(object sender, RoutedEventArgs e)
         {
@@ -33,11 +35,11 @@ namespace TeacherSystem
         {
             if (CbxSetConnectionString.SelectedIndex == 0)
             {
-                new OtherRepository().SetConnectionString(ConnetcionStringInside);
+                new OtherRepository().SetConnectionString(connectionStringInside);
             }
             if (CbxSetConnectionString.SelectedIndex == 1)
             {
-                new OtherRepository().SetConnectionString(ConnetcionStringOutside);
+                new OtherRepository().SetConnectionString(connectionStringOutside);
             }
 
             switch (((ComboBoxItem)CbxAuthorizeAs.SelectedItem).Content.ToString())
