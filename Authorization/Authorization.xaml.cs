@@ -52,6 +52,7 @@ namespace TeacherSystem
                             //Properties.Settings.Default.Save();
                         }
 
+
                         Visibility = Visibility.Collapsed;
                         Visibility = Visibility.Hidden;
                         new MainWindow(user).ShowDialog();

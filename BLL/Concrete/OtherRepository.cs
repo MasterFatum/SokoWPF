@@ -24,6 +24,7 @@ namespace BLL.Concrete
                 config.ConnectionStrings.ConnectionStrings.Remove("Soko");
                 config.ConnectionStrings.ConnectionStrings.Add(new ConnectionStringSettings("Soko", connectionString, "System.Data.SqlClient"));
                 config.Save(ConfigurationSaveMode.Modified);
+                config.Save();
                 ConfigurationManager.RefreshSection("connectionStrings");
                 config.Save();
             }
