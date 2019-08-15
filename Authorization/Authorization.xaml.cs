@@ -1,18 +1,15 @@
-﻿using System;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
 using BLL.Concrete;
 using BLL.Entities;
-using System.Configuration;
-using System.Data.SqlClient;
 
 namespace Authorization
 {
-    public partial class Authorization : Window
+    public partial class MainWindow : Window
     {
         UserRepository userRepository = new UserRepository();
         
-        public Authorization()
+        public MainWindow()
         {
             InitializeComponent();
             
