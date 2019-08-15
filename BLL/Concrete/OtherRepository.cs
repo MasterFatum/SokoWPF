@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Configuration;
+using System.Data.SqlClient;
 using System.Windows;
 using System.IO;
+using System.Xml;
 
 namespace BLL.Concrete
 {
@@ -17,22 +19,10 @@ namespace BLL.Concrete
         {
             try
             {
-                //string appPath = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
-                //string configFile = Path.Combine(appPath, "Authorization.config");
-                //ExeConfigurationFileMap configFileMap = new ExeConfigurationFileMap();
-                //configFileMap.ExeConfigFilename = configFile;
-                //Configuration config = ConfigurationManager.OpenMappedExeConfiguration(configFileMap, ConfigurationUserLevel.None);
-
-                //var connectionStringsSection = (ConnectionStringsSection)config.GetSection("connectionStrings");
-                ////connectionStringsSection.ConnectionStrings["TeacherSystem.Authorization.Properties.Settings.Setting"].ConnectionString = connectionString;
-                //connectionStringsSection.ConnectionStrings[0].ConnectionString = connectionString;
-                //config.Save();
-                //ConfigurationManager.RefreshSection("connectionStrings");
-                //config.Save();
 
                 Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
                 config.ConnectionStrings.ConnectionStrings.Remove("Soko");
-                config.ConnectionStrings.ConnectionStrings.Add(new ConnectionStringSettings("Soko", connectionString));
+                config.ConnectionStrings.ConnectionStrings.Add(new ConnectionStringSettings("Soko", connectionString, "System.Data.SqlClient"));
                 config.Save(ConfigurationSaveMode.Modified);
                 ConfigurationManager.RefreshSection("connectionStrings");
                 config.Save();

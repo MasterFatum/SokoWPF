@@ -18,8 +18,9 @@ namespace TeacherSystem
             
         }
 
-        private string connectionStringInside = "data source=NETSCHOOL;initial catalog=SOKO;integrated security=False;User ID=SOKOUser;Password=Admin;MultipleActiveResultSets=True;App=EntityFramework\"";
-        private string connectionStringOutside = "data source=87.229.192.199,1435;initial catalog=SOKO;integrated security=False;User ID=SOKOUser;Password=Admin;MultipleActiveResultSets=True;App=EntityFramework\"";
+        private const string ConnectionStringInside = "data source=NETSCHOOL;initial catalog=SOKO;integrated security=False;User ID=SOKOUser;Password=Admin;MultipleActiveResultSets=True;App=EntityFramework";
+        private const string ConnectionStringOutside = "data source=87.229.192.199,1435;initial catalog=SOKO;integrated security=False;User ID=SOKOUser;Password=Admin;MultipleActiveResultSets=True;App=EntityFramework";
+        
 
         private void BtnAuthorizeExit_Click(object sender, RoutedEventArgs e)
         {
@@ -33,15 +34,7 @@ namespace TeacherSystem
 
         private void BtnAuthorize_Click(object sender, RoutedEventArgs e)
         {
-            if (CbxSetConnectionString.SelectedIndex == 0)
-            {
-                new OtherRepository().SetConnectionString(connectionStringInside);
-            }
-            if (CbxSetConnectionString.SelectedIndex == 1)
-            {
-                new OtherRepository().SetConnectionString(connectionStringOutside);
-            }
-
+            
             switch (((ComboBoxItem)CbxAuthorizeAs.SelectedItem).Content.ToString())
             {
                 //АВТОРИЗАЦИЯ ПОЛЬЗОВАТЕЛЯ
@@ -61,7 +54,7 @@ namespace TeacherSystem
 
                         Visibility = Visibility.Collapsed;
                         Visibility = Visibility.Hidden;
-                        new TeacherSystem.MainWindow(user).ShowDialog();
+                        new MainWindow(user).ShowDialog();
                     }
                     else
                     {
@@ -109,6 +102,19 @@ namespace TeacherSystem
             {
                 Application.Current.Shutdown();
             }
+        }
+
+        private void CbxSetConnectionString_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (CbxSetConnectionString.SelectedIndex == 0)
+            {
+                new OtherRepository().SetConnectionString(ConnectionStringInside);
+            }
+            else if (CbxSetConnectionString.SelectedIndex == 1)
+            {
+                new OtherRepository().SetConnectionString(ConnectionStringOutside);
+            }
+            
         }
     }
 }
