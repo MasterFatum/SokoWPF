@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace TeacherSystem.FormsAddEducations
+namespace UserSystem.FormsAddEducations
 {
     /// <summary>
     /// Логика взаимодействия для FormViewItemsFull.xaml

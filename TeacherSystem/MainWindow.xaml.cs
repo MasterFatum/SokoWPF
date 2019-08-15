@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using Bll.Concrete;
 using BLL.Concrete;
 using BLL.Entities;
-using TeacherSystem.FormsAddEducations;
+using UserSystem.FormsAddEducations;
 
 namespace TeacherSystem
 {

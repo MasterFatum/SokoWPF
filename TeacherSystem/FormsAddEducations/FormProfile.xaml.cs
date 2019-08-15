@@ -2,7 +2,7 @@
 using System.Windows;
 using BLL.Concrete;
 
-namespace TeacherSystem.FormsAddEducations
+namespace UserSystem.FormsAddEducations
 {
     /// <summary>
     /// Логика взаимодействия для FormProfile.xaml

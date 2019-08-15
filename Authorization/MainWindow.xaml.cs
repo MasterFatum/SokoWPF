@@ -3,16 +3,14 @@ using System.Windows;
 using System.Windows.Controls;
 using BLL.Concrete;
 using BLL.Entities;
-using System.Configuration;
-using System.Data.SqlClient;
 
 namespace Authorization
 {
-    public partial class Authorization : Window
+    public partial class MainWindow : Window
     {
         UserRepository userRepository = new UserRepository();
         
-        public Authorization()
+        public MainWindow()
         {
             InitializeComponent();
             
@@ -45,17 +43,26 @@ namespace Authorization
                     {
                         if (ChkBoxSaveUser.IsChecked == true)
                         {
-                            //Properties.Settings.Default.Username = TxbxLogin.Text.Trim();
-                            //Properties.Settings.Default.Password = TxbxPassword.Password.Trim();
-                            //Properties.Settings.Default.IsSaveUser = ChkBoxSaveUser.IsChecked.Value;
+                            Properties.Settings.Default.Username = TxbxLogin.Text.Trim();
+                            Properties.Settings.Default.Password = TxbxPassword.Password.Trim();
+                            Properties.Settings.Default.IsSaveUser = ChkBoxSaveUser.IsChecked == true;
 
-                            //Properties.Settings.Default.Save();
+                            Properties.Settings.Default.Save();
                         }
+                        if (ChkBoxSaveUser.IsChecked == false)
+                        {
+                            Properties.Settings.Default.Username = String.Empty;
+                            Properties.Settings.Default.Password = String.Empty;
+                            Properties.Settings.Default.IsSaveUser = ChkBoxSaveUser.IsChecked== false;
 
+                            Properties.Settings.Default.Save();
+                        }
 
                         Visibility = Visibility.Collapsed;
                         Visibility = Visibility.Hidden;
-                        new TeacherSystem.MainWindow(user).ShowDialog();
+                        
+                        new Authorization.MainWindow(user).ShowDialog();
+
                     }
                     else
                     {

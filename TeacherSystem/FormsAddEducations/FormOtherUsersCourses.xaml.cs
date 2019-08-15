@@ -5,7 +5,7 @@ using Bll.Concrete;
 using BLL.Concrete;
 using BLL.Entities;
 
-namespace TeacherSystem.FormsAddEducations
+namespace UserSystem.FormsAddEducations
 {
     public partial class FormOtherUsersCourses : Window
     {

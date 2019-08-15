@@ -6,7 +6,7 @@ using BLL.Concrete;
 using BLL.Entities;
 
 
-namespace TeacherSystem
+namespace Authorization
 {
 
     public partial class Registrations : Window

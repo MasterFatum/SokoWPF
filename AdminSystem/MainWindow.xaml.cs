@@ -10,9 +10,6 @@ using BLL.Entities;
 
 namespace AdminSystem
 {
-    /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         UserRepository userRepository = new UserRepository();

@@ -4,7 +4,7 @@ using Bll.Concrete;
 using BLL.Entities;
 
 
-namespace TeacherSystem.FormsAddEducations
+namespace UserSystem.FormsAddEducations
 {
     public partial class FormAdd : Window
     {

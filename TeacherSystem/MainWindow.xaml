@@ -3,13 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:TeacherSystem"
+        xmlns:local="clr-namespace:UserSystem"
         mc:Ignorable="d"
         Title="Система оценки качества образования (Интерфейс пользователя)" Height="580.055" Width="1257.952" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Closing="MainForm_Closing">
     <Grid Margin="0,0,0,12">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
         <DataGrid x:Name="DataGridMain" IsReadOnly="True" Margin="10,41,273,0" VerticalAlignment="Top" FontSize="16" SelectionChanged="DataGridMain_SelectionChanged" Height="433" MouseDoubleClick="DataGridMain_MouseDoubleClick"/>
         <Button x:Name="BtnMainExit"  HorizontalAlignment="Right" Margin="0,0,10,2" VerticalAlignment="Bottom" Width="132" Height="44" FontSize="18" Click="BtnMainExit_Click">
             <StackPanel Orientation="Horizontal">

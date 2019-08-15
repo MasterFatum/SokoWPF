@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 
-namespace TeacherSystem.FormsAddEducations
+namespace UserSystem.FormsAddEducations
 {
     /// <summary>
     /// Логика взаимодействия для FormChooseEducation.xaml
