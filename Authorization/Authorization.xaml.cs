@@ -86,11 +86,19 @@ namespace Authorization
                     {
                         if (ChkBoxSaveUser.IsChecked == true)
                         {
-                            //Properties.Settings.Default.Username = TxbxLogin.Text.Trim();
-                            //Properties.Settings.Default.Password = TxbxPassword.Password.Trim();
-                            //Properties.Settings.Default.IsSaveUser = ChkBoxSaveUser.IsChecked.Value;
+                            Properties.Settings.Default.Username = TxbxLogin.Text.Trim();
+                            Properties.Settings.Default.Password = TxbxPassword.Password.Trim();
+                            Properties.Settings.Default.IsSaveUser = true;
 
-                            //Properties.Settings.Default.Save();
+                            Properties.Settings.Default.Save();
+                        }
+                        if (ChkBoxSaveUser.IsChecked == false)
+                        {
+                            Properties.Settings.Default.Username = String.Empty;
+                            Properties.Settings.Default.Password = String.Empty;
+                            Properties.Settings.Default.IsSaveUser = false;
+
+                            Properties.Settings.Default.Save();
                         }
 
                         this.Visibility = Visibility.Collapsed;
