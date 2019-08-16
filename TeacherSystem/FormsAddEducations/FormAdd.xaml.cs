@@ -45,7 +45,7 @@ namespace UserSystem.FormsAddEducations
                     Description = TxbxDescription.Text.Trim(),
                     Date = String.Format($"{DateTime.Now.ToShortDateString()} {DateTime.Now.ToShortTimeString()}")
                 };
-                courseRepository.AddCourse(courses);
+                courseRepository.AddCourse(courses, TxbxTitle, TxbxDescription);
             }
             else
             {

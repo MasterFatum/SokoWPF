@@ -16,7 +16,7 @@ namespace Bll.Concrete
     {
         SokoContext sokoContext = new SokoContext();
 
-        public void AddCourse(Courses courses)
+        public void AddCourse(Courses courses, TextBox title, TextBox description)
         {
             try
             {
@@ -24,6 +24,9 @@ namespace Bll.Concrete
                 sokoContext.SaveChanges();
                 MessageBox.Show("Запись успешно добавлена!", "Добавление записи", MessageBoxButton.OK,
                     MessageBoxImage.Information);
+
+                title.Text = String.Empty;
+                description.Text = String.Empty;
             }
             catch (Exception e)
             {

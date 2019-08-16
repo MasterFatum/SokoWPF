@@ -1,11 +1,12 @@
 ﻿using System.Collections.Generic;
+using System.Windows.Controls;
 using BLL.Entities;
 
 namespace BLL.Abstract
 {
     interface ICourseRepository
     {
-        void AddCourse(Courses courses);
+        void AddCourse(Courses courses, TextBox title, TextBox description);
 
         void DeleteCourse(int id, int userId);
 

@@ -104,6 +104,7 @@ namespace AdminSystem
         private void BtnUpdate_Click(object sender, RoutedEventArgs e)
         {
             DataGridAllUsers.ItemsSource = new UserRepository().GetAllUser();
+            TxbxSearch.Text = String.Empty;
         }
     }
 }
