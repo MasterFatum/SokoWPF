@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using System.Windows.Controls;
 using BLL.Concrete;
 using BLL.Entities;
@@ -12,6 +13,13 @@ namespace Authorization
         public MainWindow()
         {
             InitializeComponent();
+
+            if (Properties.Settings.Default.IsSaveUser)
+            {
+                TxbxLogin.Text = Properties.Settings.Default.Username;
+                TxbxPassword.Password = Properties.Settings.Default.Password;
+                ChkBoxSaveUser.IsChecked = Properties.Settings.Default.IsSaveUser;
+            }
             
         }
 
@@ -40,13 +48,22 @@ namespace Authorization
 
                     if (user != null)
                     {
+                        
                         if (ChkBoxSaveUser.IsChecked == true)
                         {
-                            //Properties.Settings.Default.Username = TxbxLogin.Text.Trim();
-                            //Properties.Settings.Default.Password = TxbxPassword.Password.Trim();
-                            //Properties.Settings.Default.IsSaveUser = ChkBoxSaveUser.IsChecked.Value;
+                            Properties.Settings.Default.Username = TxbxLogin.Text.Trim();
+                            Properties.Settings.Default.Password = TxbxPassword.Password.Trim();
+                            Properties.Settings.Default.IsSaveUser = true;
 
-                            //Properties.Settings.Default.Save();
+                            Properties.Settings.Default.Save();
+                        }
+                        if (ChkBoxSaveUser.IsChecked == false)
+                        {
+                            Properties.Settings.Default.Username = String.Empty;
+                            Properties.Settings.Default.Password = String.Empty;
+                            Properties.Settings.Default.IsSaveUser = false;
+
+                            Properties.Settings.Default.Save();
                         }
 
 
