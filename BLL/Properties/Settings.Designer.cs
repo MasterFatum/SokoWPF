@@ -26,5 +26,9 @@ namespace BLL.Properties
                 return defaultInstance;
             }
         }
+
+        public object Username { get; internal set; }
+        public string Password { get; set; }
+        public bool IsSaveUser { get; internal set; }
     }
 }
