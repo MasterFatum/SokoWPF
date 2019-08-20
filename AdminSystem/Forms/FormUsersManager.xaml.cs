@@ -26,6 +26,11 @@ namespace AdminSystem.Forms
             DataGridAllUsers.ItemsSource = userRepository.GetAllUser();
         }
 
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            new OtherRepository().SettingDataGridAdmins(DataGridAllUsers);
+        }
+
         private void BtnClose_Click(object sender, RoutedEventArgs e)
         {
             Close();
@@ -128,5 +133,6 @@ namespace AdminSystem.Forms
                 userRepository.DeleteUser(Convert.ToInt32(TxbxUserId.Text));
             }
         }
+        
     }
 }

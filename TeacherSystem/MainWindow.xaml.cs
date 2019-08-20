@@ -32,6 +32,11 @@ namespace TeacherSystem
 
         }
 
+        private void MainForm_Loaded(object sender, RoutedEventArgs e)
+        {
+            otherRepository.SettingDataGridUsers(DataGridMain);
+        }
+
         public int Id { get; set; }
         public int UserId { get; set; }
         public string Category { get; set; }
@@ -44,11 +49,6 @@ namespace TeacherSystem
         public string Position { get; set; }
         public string Email { get; set; }
         public string Date { get; set; }
-
-        private void MainForm_Loaded(object sender, RoutedEventArgs e)
-        {
-            otherRepository.SettingDataGrid(DataGridMain);
-        }
 
         private void BtnMainExit_Click(object sender, RoutedEventArgs e)
         {

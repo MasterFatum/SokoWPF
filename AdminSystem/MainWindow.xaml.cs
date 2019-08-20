@@ -48,7 +48,7 @@ namespace AdminSystem
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            
+            new OtherRepository().SettingDataGridAdmins(DataGridAllUsers);
         }
 
         private void DataGridAllUsers_MouseDoubleClick(object sender, MouseButtonEventArgs e)

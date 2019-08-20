@@ -4,6 +4,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using Bll.Concrete;
+using BLL.Concrete;
 using BLL.Entities;
 
 namespace AdminSystem.Forms
@@ -36,6 +37,11 @@ namespace AdminSystem.Forms
             LblUsername.Content = String.Format($"{lastname} {firstname} {middlename}");
 
             DataGridUserCourses.ItemsSource = courseRepository.GetCoursesByUserId(Id);
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            new OtherRepository().SettingDataGridUsers(DataGridUserCourses);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
