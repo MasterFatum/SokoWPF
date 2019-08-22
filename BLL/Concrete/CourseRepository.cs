@@ -167,9 +167,9 @@ namespace Bll.Concrete
             
         }
 
-        public string AllRating()
+        public string AllRating(int userId)
         {
-            return sokoContext.Courses.Sum(r => r.Evaluation).ToString();
+            return sokoContext.Courses.Where(x => x.UserId == userId).Sum(r => r.Evaluation).ToString();
         }
     }
 }

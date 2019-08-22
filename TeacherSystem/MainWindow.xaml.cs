@@ -21,7 +21,7 @@ namespace TeacherSystem
 
             DataGridMain.ItemsSource = courseRepository.GetCoursesByUserId(user.Id);
 
-            TxbxAllRating.Text = courseRepository.AllRating();
+            TxbxAllRating.Text = courseRepository.AllRating(user.Id);
 
             CbxMainShowCategory.SelectedIndex = -1;
 

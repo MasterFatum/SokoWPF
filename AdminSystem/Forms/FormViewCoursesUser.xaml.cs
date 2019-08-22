@@ -37,6 +37,20 @@ namespace AdminSystem.Forms
             LblUsername.Content = String.Format($"{lastname} {firstname} {middlename}");
 
             DataGridUserCourses.ItemsSource = courseRepository.GetCoursesByUserId(Id);
+
+            string rating = courseRepository.AllRating(Id);
+
+            if (rating == String.Empty)
+            {
+                TxbxAllRating.Text = "Баллы отсутствуют";
+                TxbxAllRating.FontSize = 12;
+            }
+            else
+            {
+                TxbxAllRating.Text = rating;
+            }
+
+            
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -89,6 +103,18 @@ namespace AdminSystem.Forms
         {
             CbxUserCategory.SelectedIndex = 0;
             DataGridUserCourses.ItemsSource = courseRepository.GetCoursesByUserId(Convert.ToInt32(LblUserId.Content)).ToList();
+
+            string rating = courseRepository.AllRating(Convert.ToInt32(LblUserId.Content));
+
+            if (rating == String.Empty)
+            {
+                TxbxAllRating.Text = "Баллы отсутствуют";
+                TxbxAllRating.FontSize = 12;
+            }
+            else
+            {
+                TxbxAllRating.Text = rating;
+            }
 
             new OtherRepository().SettingDataGridUsers(DataGridUserCourses);
         }

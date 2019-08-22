@@ -22,6 +22,6 @@ namespace BLL.Abstract
 
         void SetRatingCourse(int userId, int id, int rating);
 
-        string AllRating();
+        string AllRating(int userId);
     }
 }
