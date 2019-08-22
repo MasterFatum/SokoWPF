@@ -53,6 +53,8 @@ namespace AdminSystem.Forms
         {
             DataGridUserCourses.ItemsSource =
                 courseRepository.GetCoursesByCategory(Id, ((ComboBoxItem)CbxUserCategory.SelectedItem).Content.ToString());
+
+            new OtherRepository().SettingDataGridUsers(DataGridUserCourses);
         }
 
         private void DataGridUserCourses_MouseDoubleClick_1(object sender, MouseButtonEventArgs e)
@@ -87,6 +89,8 @@ namespace AdminSystem.Forms
         {
             CbxUserCategory.SelectedIndex = 0;
             DataGridUserCourses.ItemsSource = courseRepository.GetCoursesByUserId(Convert.ToInt32(LblUserId.Content)).ToList();
+
+            new OtherRepository().SettingDataGridUsers(DataGridUserCourses);
         }
     }
 }

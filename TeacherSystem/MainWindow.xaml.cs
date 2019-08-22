@@ -21,6 +21,8 @@ namespace TeacherSystem
 
             DataGridMain.ItemsSource = courseRepository.GetCoursesByUserId(user.Id);
 
+            TxbxAllRating.Text = courseRepository.AllRating();
+
             CbxMainShowCategory.SelectedIndex = -1;
 
             TxbxUserId.Text = user.Id.ToString();
@@ -60,6 +62,8 @@ namespace TeacherSystem
             if (CbxMainShowCategory.SelectedIndex != -1)
             {
                 DataGridMain.ItemsSource = courseRepository.GetCoursesByCategory(Convert.ToInt32(TxbxUserId.Text), (((ComboBoxItem)CbxMainShowCategory.SelectedItem).Content.ToString()));
+
+                new OtherRepository().SettingDataGridUsers(DataGridMain);
             }
             else
             {
@@ -77,6 +81,7 @@ namespace TeacherSystem
             IEnumerable<Courses> allCourseses = courseRepository.GetCoursesByUserId(Convert.ToInt32(TxbxUserId.Text));
             DataGridMain.ItemsSource = allCourseses;
             CbxMainShowCategory.SelectedIndex = -1;
+            otherRepository.SettingDataGridUsers(DataGridMain);
         }
 
         private void DataGridMain_SelectionChanged(object sender, SelectionChangedEventArgs e)

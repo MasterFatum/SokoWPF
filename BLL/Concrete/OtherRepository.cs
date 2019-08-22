@@ -12,8 +12,9 @@ namespace BLL.Concrete
     {
         public void SettingDataGridUsers(DataGrid dataGrid)
         {
+            dataGrid.Columns[0].Visibility = Visibility.Hidden;
             dataGrid.Columns[1].Visibility = Visibility.Hidden;
-            dataGrid.Columns[0].Header = "ID";
+
             dataGrid.Columns[2].Header = "Категория";
             dataGrid.Columns[3].Header = "Название";
             dataGrid.Columns[4].Header = "Описание";
@@ -24,14 +25,15 @@ namespace BLL.Concrete
 
         public void SettingDataGridAdmins(DataGrid dataGrid)
         {
-            dataGrid.Columns[0].Header = "ID";
+            dataGrid.Columns[0].Visibility = Visibility.Hidden;
+            dataGrid.Columns[5].Visibility = Visibility.Hidden;
+            dataGrid.Columns[7].Visibility = Visibility.Hidden;
+
             dataGrid.Columns[1].Header = "Фамилия";
             dataGrid.Columns[2].Header = "Имя";
             dataGrid.Columns[3].Header = "Отчество";
             dataGrid.Columns[4].Header = "Должность";
-            dataGrid.Columns[5].Header = "Права";
             dataGrid.Columns[6].Header = "Email";
-            dataGrid.Columns[7].Header = "Пароль";
             dataGrid.Columns[8].Header = "Дата регистрации";
 
         }

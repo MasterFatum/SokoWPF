@@ -123,5 +123,11 @@
                 <MenuItem Header="Выйти" Click="MenuItem_Click_1"></MenuItem>
             </MenuItem>
         </Menu>
+        <Label Content="Общее количество баллов:" HorizontalAlignment="Left" Margin="1140,499,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <TextBox x:Name="TxbxAllRating" IsReadOnly="True" HorizontalAlignment="Right" Height="34" Margin="0,545,63,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="146" TextAlignment="Center" FontSize="16" FontWeight="Bold">
+            <TextBox.Effect>
+                <DropShadowEffect/>
+            </TextBox.Effect>
+        </TextBox>
     </Grid>
 </Window>

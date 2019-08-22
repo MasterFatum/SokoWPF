@@ -25,11 +25,6 @@
                 <DropShadowEffect/>
             </TextBox.Effect>
         </TextBox>
-        <TextBox x:Name="TxbxEvaluation" HorizontalAlignment="Left" IsReadOnly="True" IsEnabled="False" Height="75" Margin="629,46,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="103" Text="100" TextAlignment="Center" FontSize="48" FontWeight="Bold" Foreground="#FF177C25">
-            <TextBox.Effect>
-                <DropShadowEffect/>
-            </TextBox.Effect>
-        </TextBox>
         <TextBox x:Name="TxbxUser" HorizontalAlignment="Left" IsEnabled="False"  Height="31" Margin="125,18,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="499" FontSize="16" Text="Пользователь" FontWeight="Bold" TextAlignment="Center">
             <TextBox.Effect>
                 <DropShadowEffect/>
@@ -45,7 +40,7 @@
                 <TextBlock Text=" Закрыть" Height="26"/>
             </StackPanel>
         </Button>
-        <Label Content="Баллы" HorizontalAlignment="Left" Margin="646,5,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" FontStyle="Italic"/>
+        <Label Content="Баллы" HorizontalAlignment="Left" Margin="647,13,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" FontStyle="Italic"/>
         <Button Name="BtnSetRating" HorizontalAlignment="Right" Margin="0,0,149,11" VerticalAlignment="Bottom" Width="213" Height="35" FontSize="18" Click="SetRating_Click" >
             <Button.Effect>
                 <DropShadowEffect/>
@@ -61,6 +56,16 @@
             </TextBox.Effect>
         </TextBox>
         <Label Content="Дата" HorizontalAlignment="Left" Margin="121,408,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
+        <ComboBox Name="CbxRating" IsEnabled="False" HorizontalAlignment="Left" Margin="651,49,0,0" VerticalAlignment="Top" Width="62" Height="67" FontSize="48" SelectedIndex="0">
+            <ComboBox.Effect>
+                <DropShadowEffect/>
+            </ComboBox.Effect>
+            <ComboBoxItem Content="1"/>
+            <ComboBoxItem Content="2"/>
+            <ComboBoxItem Content="3"/>
+            <ComboBoxItem Content="4"/>
+            <ComboBoxItem Content="5"/>
+        </ComboBox>
 
     </Grid>
 </Window>

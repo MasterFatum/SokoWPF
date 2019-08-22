@@ -38,7 +38,7 @@ namespace AdminSystem
             Application.Current.Shutdown();
         }
 
-        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        private void Window_Closing(object sender, CancelEventArgs e)
         {
             if (e.Cancel == false)
             {
@@ -105,6 +105,8 @@ namespace AdminSystem
         {
             DataGridAllUsers.ItemsSource = new UserRepository().GetAllUser();
             TxbxSearch.Text = String.Empty;
+
+            new OtherRepository().SettingDataGridAdmins(DataGridAllUsers);
         }
     }
 }

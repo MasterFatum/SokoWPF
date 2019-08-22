@@ -24,7 +24,7 @@ namespace AdminSystem.Forms
             TxbxCategory.Text = category;
             TxbxTitle.Text = title;
             TxbxDescription.Text = description;
-            TxbxEvaluation.Text = evaluation.ToString();
+            CbxRating.Text = evaluation.ToString();
             TxbxDate.Text = date;
         }
 
@@ -37,17 +37,15 @@ namespace AdminSystem.Forms
         {
             if (TxBlSetRating.Text == " Назначить баллы")
             {
-                TxbxEvaluation.IsReadOnly = false;
-                TxbxEvaluation.IsEnabled = true;
+                CbxRating.IsEnabled = true;
                 TxBlSetRating.Text = " Сохранить";
             }
             else if (TxBlSetRating.Text == " Сохранить")
             {
-                TxbxEvaluation.IsReadOnly = true;
-                TxbxEvaluation.IsEnabled = false;
+                CbxRating.IsEnabled = false;
                 TxBlSetRating.Text = " Назначить баллы";
 
-                courseRepository.SetRatingCourse(UserId, Id, Convert.ToByte(TxbxEvaluation.Text.Trim()));
+                courseRepository.SetRatingCourse(UserId, Id, Convert.ToByte(CbxRating.Text.Trim()));
             }
         }
     }
