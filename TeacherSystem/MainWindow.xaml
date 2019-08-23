@@ -117,10 +117,10 @@
             </Button.Effect>
         </Button>
         <Menu HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="63" FontSize="18" FontWeight="Bold">
-            <MenuItem Header="Меню" FontSize="16">
-                <MenuItem Header="Учетная запись" Click="MenuItem_Click" ></MenuItem>
-                <MenuItem Header="Информация о программе" Click="MenuItem_Click_2"></MenuItem>
-                <MenuItem Header="Выйти" Click="MenuItem_Click_1"></MenuItem>
+            <MenuItem Header="Меню" FontSize="16" FontWeight="Normal">
+                <MenuItem Header="Учетная запись" Click="MenuItem_Click" FontWeight="Normal" ></MenuItem>
+                <MenuItem Header="Информация о программе" Click="MenuItem_Click_2" FontWeight="Normal"></MenuItem>
+                <MenuItem Header="Выйти" Click="MenuItem_Click_1" FontWeight="Normal"></MenuItem>
             </MenuItem>
         </Menu>
     </Grid>

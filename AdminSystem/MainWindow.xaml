@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AdminSystem"
         mc:Ignorable="d"
-        Title="Система оценки качества образования (Интерфейс администратора)" Height="506.28" Width="1005.808" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Closing="Window_Closing" Loaded="Window_Loaded">
+        Title="Система оценки качества образования (Интерфейс администратора)" Height="600.78" Width="1067.308" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Closing="Window_Closing" Loaded="Window_Loaded">
     <Grid>
         <Button x:Name="BtnExit"  HorizontalAlignment="Right" Margin="0,0,10,9" VerticalAlignment="Bottom" Width="117" Height="45" FontSize="18" Click="BtnMainExit_Click">
             <Button.Effect>
@@ -16,7 +16,7 @@
                 <TextBlock Text=" Выйти" Height="26"/>
             </StackPanel>
         </Button>
-        <Button x:Name="BtnMainUsersManage"  HorizontalAlignment="Right" Margin="0,0,693,10" VerticalAlignment="Bottom" Width="284" Height="44" FontSize="18" Click="BtnMainUsersManage_Click">
+        <Button x:Name="BtnMainUsersManage"  HorizontalAlignment="Right" Margin="0,0,761,10" VerticalAlignment="Bottom" Width="284" Height="44" FontSize="18" Click="BtnMainUsersManage_Click">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
@@ -26,10 +26,10 @@
             </StackPanel>
         </Button>
 
-        <GroupBox Header="Пользователи системы" HorizontalAlignment="Left" Height="402" Margin="10,10,0,0" VerticalAlignment="Top" Width="958">
-            <DataGrid Name="DataGridAllUsers" IsReadOnly="True" HorizontalAlignment="Left" Margin="0,0,-2,2" Width="948" MouseDoubleClick="DataGridAllUsers_MouseDoubleClick" FontSize="16"/>
+        <GroupBox Header="Пользователи системы" HorizontalAlignment="Left" Height="488" Margin="10,10,0,0" VerticalAlignment="Top" Width="1041">
+            <DataGrid Name="DataGridAllUsers" IsReadOnly="True" HorizontalAlignment="Left" Margin="0,0,-2,2" Width="1031" MouseDoubleClick="DataGridAllUsers_MouseDoubleClick" FontSize="16"/>
         </GroupBox>
-        <TextBox Name="TxbxSearch"  HorizontalAlignment="Left" Height="44" Margin="312,414,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="319" FontSize="18">
+        <TextBox Name="TxbxSearch"  HorizontalAlignment="Left" Height="44" Margin="303,509,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="381" FontSize="18">
             <TextBox.Effect>
                 <DropShadowEffect/>
             </TextBox.Effect>
