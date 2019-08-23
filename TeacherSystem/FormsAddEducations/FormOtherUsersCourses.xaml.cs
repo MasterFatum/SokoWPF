@@ -44,6 +44,8 @@ namespace UserSystem.FormsAddEducations
                     String[] words = usernameFio.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
 
                     DataGridOtherUsersCategory.ItemsSource = courseRepository.GetCoursesByFio(words[0], words[1], words[2], ((ComboBoxItem)CbxOtherUsersCategory.SelectedItem).Content.ToString());
+
+                    new OtherRepository().SettingDataGridUsers(DataGridOtherUsersCategory);
                 }
                 else
                 {

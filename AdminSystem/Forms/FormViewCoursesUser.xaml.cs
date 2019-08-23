@@ -4,6 +4,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using Bll.Concrete;
+using BLL.Concrete;
 using BLL.Entities;
 
 namespace AdminSystem.Forms
@@ -36,6 +37,25 @@ namespace AdminSystem.Forms
             LblUsername.Content = String.Format($"{lastname} {firstname} {middlename}");
 
             DataGridUserCourses.ItemsSource = courseRepository.GetCoursesByUserId(Id);
+
+            string rating = courseRepository.AllRating(Id);
+
+            if (rating == String.Empty)
+            {
+                TxbxAllRating.Text = "Баллы отсутствуют";
+                TxbxAllRating.FontSize = 12;
+            }
+            else
+            {
+                TxbxAllRating.Text = rating;
+            }
+
+            
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            new OtherRepository().SettingDataGridUsers(DataGridUserCourses);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -47,6 +67,8 @@ namespace AdminSystem.Forms
         {
             DataGridUserCourses.ItemsSource =
                 courseRepository.GetCoursesByCategory(Id, ((ComboBoxItem)CbxUserCategory.SelectedItem).Content.ToString());
+
+            new OtherRepository().SettingDataGridUsers(DataGridUserCourses);
         }
 
         private void DataGridUserCourses_MouseDoubleClick_1(object sender, MouseButtonEventArgs e)
@@ -81,6 +103,20 @@ namespace AdminSystem.Forms
         {
             CbxUserCategory.SelectedIndex = 0;
             DataGridUserCourses.ItemsSource = courseRepository.GetCoursesByUserId(Convert.ToInt32(LblUserId.Content)).ToList();
+
+            string rating = courseRepository.AllRating(Convert.ToInt32(LblUserId.Content));
+
+            if (rating == String.Empty)
+            {
+                TxbxAllRating.Text = "Баллы отсутствуют";
+                TxbxAllRating.FontSize = 12;
+            }
+            else
+            {
+                TxbxAllRating.Text = rating;
+            }
+
+            new OtherRepository().SettingDataGridUsers(DataGridUserCourses);
         }
     }
 }

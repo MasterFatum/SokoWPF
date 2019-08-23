@@ -10,13 +10,13 @@
             <ComboBox.Effect>
                 <DropShadowEffect/>
             </ComboBox.Effect>
-            <ComboBoxItem Content="Конкурсы"/>
-            <ComboBoxItem IsSelected="True" Content="Курсы"/>
-            <ComboBoxItem Content="Опыт"/>
-            <ComboBoxItem Content="Материалы"/>
-            <ComboBoxItem Content="Публикации"/>
-            <ComboBoxItem Content="Технологии"/>
-            <ComboBoxItem Content="Работа с родителями"/>
+            <ComboBoxItem IsSelected="True" Content="Индивидуальная образовательная траектория"/>
+            <ComboBoxItem Content="Курсы, семинары, вебинары"/>
+            <ComboBoxItem Content="Публикации, выступления"/>
+            <ComboBoxItem Content="Освоение и применение новых технологий"/>
+            <ComboBoxItem Content="Участие в конкурсах"/>
+            <ComboBoxItem Content="Обобщение и распространение педаг. опыта"/>
+            <ComboBoxItem Content="Размещение материалов на сайте"/>
             <ComboBoxItem Content="Другое"/>
         </ComboBox>
         <Button x:Name="BtnMainAdd" HorizontalAlignment="Left" Margin="159,75,0,0" VerticalAlignment="Top" Width="132" Height="35" FontSize="18" Click="BtnMainAdd_Click">

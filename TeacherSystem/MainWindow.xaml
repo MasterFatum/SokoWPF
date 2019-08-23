@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UserSystem"
         mc:Ignorable="d"
-        Title="Система оценки качества образования (Интерфейс пользователя)" Height="707.555" Width="1418.452" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Closing="MainForm_Closing">
+        Title="Система оценки качества образования (Интерфейс пользователя)" Height="707.555" Width="1418.452" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Closing="MainForm_Closing" Loaded="MainForm_Loaded">
     <Grid Margin="0,0,0,12">
         <DataGrid x:Name="DataGridMain" IsReadOnly="True" Margin="10,41,273,0" VerticalAlignment="Top" FontSize="16" SelectionChanged="DataGridMain_SelectionChanged" Height="559" MouseDoubleClick="DataGridMain_MouseDoubleClick"/>
         <Button x:Name="BtnMainExit"  HorizontalAlignment="Right" Margin="0,0,10,2" VerticalAlignment="Bottom" Width="132" Height="44" FontSize="18" Click="BtnMainExit_Click">
@@ -89,13 +89,13 @@
             <ComboBox.Effect>
                 <DropShadowEffect/>
             </ComboBox.Effect>
-            <ComboBoxItem IsSelected="True" Content="Курсы"/>
-            <ComboBoxItem Content="Конкурсы"/>
-            <ComboBoxItem Content="Опыт"/>
-            <ComboBoxItem Content="Материалы"/>
-            <ComboBoxItem Content="Публикации"/>
-            <ComboBoxItem Content="Технологии"/>
-            <ComboBoxItem Content="Работа с родителями"/>
+            <ComboBoxItem Content="Индивидуальная образовательная траектория"/>
+            <ComboBoxItem Content="Курсы, семинары, вебинары"/>
+            <ComboBoxItem Content="Публикации, выступления"/>
+            <ComboBoxItem Content="Освоение и применение новых технологий"/>
+            <ComboBoxItem Content="Участие в конкурсах"/>
+            <ComboBoxItem Content="Обобщение и распространение педаг. опыта"/>
+            <ComboBoxItem Content="Размещение материалов на сайте"/>
             <ComboBoxItem Content="Другое"/>
         </ComboBox>
         <Button x:Name="BtnMainCategoryShow" Margin="0,77,65,0" VerticalAlignment="Top" Width="146" Height="34" FontSize="18" Click="BtnMainCategoryShow_Click" HorizontalAlignment="Right">
@@ -123,5 +123,11 @@
                 <MenuItem Header="Выйти" Click="MenuItem_Click_1" FontWeight="Normal"></MenuItem>
             </MenuItem>
         </Menu>
+        <Label Content="Общее количество баллов:" HorizontalAlignment="Left" Margin="1140,499,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <TextBox x:Name="TxbxAllRating" IsReadOnly="True" HorizontalAlignment="Right" Height="34" Margin="0,545,63,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="146" TextAlignment="Center" FontSize="16" FontWeight="Bold">
+            <TextBox.Effect>
+                <DropShadowEffect/>
+            </TextBox.Effect>
+        </TextBox>
     </Grid>
 </Window>

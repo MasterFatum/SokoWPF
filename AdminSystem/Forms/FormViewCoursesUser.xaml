@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AdminSystem.Forms"
         mc:Ignorable="d"
-        Title="Курсы пользователя" Height="551.789" Width="1046.733" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="Курсы пользователя" Height="551.789" Width="1046.733" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
     <Grid>
+        
         <DataGrid x:Name="DataGridUserCourses" IsReadOnly="True" HorizontalAlignment="Left" Height="411" Margin="10,103,0,0" VerticalAlignment="Top" Width="1011" FontSize="16" MouseDoubleClick="DataGridUserCourses_MouseDoubleClick_1"/>
         <Button HorizontalAlignment="Right" Margin="0,0,20,427" VerticalAlignment="Bottom" Width="132" Height="35" FontSize="18" Click="Button_Click">
             <Button.Effect>
@@ -21,13 +22,13 @@
             <ComboBox.Effect>
                 <DropShadowEffect/>
             </ComboBox.Effect>
-            <ComboBoxItem IsSelected="True" Content="Курсы"/>
-            <ComboBoxItem Content="Конкурсы"/>
-            <ComboBoxItem Content="Опыт"/>
-            <ComboBoxItem Content="Материалы"/>
-            <ComboBoxItem Content="Публикации"/>
-            <ComboBoxItem Content="Технологии"/>
-            <ComboBoxItem Content="Работа с родителями"/>
+            <ComboBoxItem IsSelected="True" Content="Индивидуальная образовательная траектория"/>
+            <ComboBoxItem Content="Курсы, семинары, вебинары"/>
+            <ComboBoxItem Content="Публикации, выступления"/>
+            <ComboBoxItem Content="Освоение и применение новых технологий"/>
+            <ComboBoxItem Content="Участие в конкурсах"/>
+            <ComboBoxItem Content="Обобщение и распространение педаг. опыта"/>
+            <ComboBoxItem Content="Размещение материалов на сайте"/>
             <ComboBoxItem Content="Другое"/>
         </ComboBox>
         <Label Content="Пользователь" HorizontalAlignment="Left" Margin="10,17,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
@@ -52,6 +53,12 @@
             </StackPanel>
         </Button>
         <Label x:Name="LblUserId" Content="ID" HorizontalAlignment="Left" Margin="994,10,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+        <TextBox x:Name="TxbxAllRating" IsReadOnly="True" HorizontalAlignment="Right" Height="34" Margin="0,52,164,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="146" TextAlignment="Center" FontSize="16" FontWeight="Bold">
+            <TextBox.Effect>
+                <DropShadowEffect/>
+            </TextBox.Effect>
+        </TextBox>
+        <Label Content="Количество баллов" HorizontalAlignment="Left" Margin="719,21,0,0" VerticalAlignment="Top" FontSize="16"/>
 
     </Grid>
 </Window>
