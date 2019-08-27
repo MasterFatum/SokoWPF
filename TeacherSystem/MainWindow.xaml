@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UserSystem"
         mc:Ignorable="d"
-        Title="Система оценки качества образования (Интерфейс пользователя)" Height="707.555" Width="1418.452" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Closing="MainForm_Closing" Loaded="MainForm_Loaded">
+        Title="Система управлением качеством образования (Интерфейс пользователя)" Height="679.055" Width="1136.271" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Closing="MainForm_Closing" Loaded="MainForm_Loaded">
     <Grid Margin="0,0,0,12">
-        <DataGrid x:Name="DataGridMain" IsReadOnly="True" Margin="10,41,273,0" VerticalAlignment="Top" FontSize="16" SelectionChanged="DataGridMain_SelectionChanged" Height="559" MouseDoubleClick="DataGridMain_MouseDoubleClick"/>
+        <DataGrid x:Name="DataGridMain" IsReadOnly="True" Margin="10,41,273,0" VerticalAlignment="Top" FontSize="16" SelectionChanged="DataGridMain_SelectionChanged" Height="532" MouseDoubleClick="DataGridMain_MouseDoubleClick"/>
         <Button x:Name="BtnMainExit"  HorizontalAlignment="Right" Margin="0,0,10,2" VerticalAlignment="Bottom" Width="132" Height="44" FontSize="18" Click="BtnMainExit_Click">
             <StackPanel Orientation="Horizontal">
                 <Image Source="Source/Shutdown_32px.png" Height="29"/>
@@ -45,7 +45,7 @@
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
-        <Button x:Name="BtnMainUpdate" HorizontalAlignment="Left" Margin="952,0,0,2" VerticalAlignment="Bottom" Width="178" Height="44" FontSize="18" Click="BtnMainUpdate_Click">
+        <Button x:Name="BtnMainUpdate" HorizontalAlignment="Left" Margin="718,0,0,1" VerticalAlignment="Bottom" Width="178" Height="44" FontSize="18" Click="BtnMainUpdate_Click">
             <StackPanel Orientation="Horizontal">
                 <Image Source="Source/Available Updates_32px.png" Height="29"/>
                 <TextBlock Text=" Общий список" Height="26"/>
@@ -107,7 +107,7 @@
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
-        <Button x:Name="BtnMainOtherUsersCourses" HorizontalAlignment="Left" Margin="663,0,0,2" VerticalAlignment="Bottom" Width="284" Height="44" FontSize="18" Click="BtnMainOtherUsersCourses_Click">
+        <Button x:Name="BtnMainOtherUsersCourses" HorizontalAlignment="Left" Margin="429,0,0,1" VerticalAlignment="Bottom" Width="284" Height="44" FontSize="18" Click="BtnMainOtherUsersCourses_Click">
             <StackPanel Orientation="Horizontal">
                 <Image Source="Source/User Account_32px.png" Height="29"/>
                 <TextBlock Text=" Курсы других пользователей" Height="26"/>
@@ -123,8 +123,8 @@
                 <MenuItem Header="Выйти" Click="MenuItem_Click_1" FontWeight="Normal"></MenuItem>
             </MenuItem>
         </Menu>
-        <Label Content="Общее количество баллов:" HorizontalAlignment="Left" Margin="1140,499,0,0" VerticalAlignment="Top" FontSize="20"/>
-        <TextBox x:Name="TxbxAllRating" IsReadOnly="True" HorizontalAlignment="Right" Height="34" Margin="0,545,63,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="146" TextAlignment="Center" FontSize="16" FontWeight="Bold">
+        <Label Content="Общее количество баллов:" HorizontalAlignment="Left" Margin="859,477,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <TextBox x:Name="TxbxAllRating" IsReadOnly="True" HorizontalAlignment="Right" Height="34" Margin="0,519,63,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="146" TextAlignment="Center" FontSize="16" FontWeight="Bold">
             <TextBox.Effect>
                 <DropShadowEffect/>
             </TextBox.Effect>

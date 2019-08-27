@@ -56,7 +56,7 @@
             </TextBox.Effect>
         </TextBox>
         <Label Content="Дата" HorizontalAlignment="Left" Margin="121,408,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
-        <ComboBox Name="CbxRating" IsEnabled="False" HorizontalAlignment="Left" Margin="651,49,0,0" VerticalAlignment="Top" Width="62" Height="67" FontSize="48" SelectedIndex="0">
+        <ComboBox Name="CbxRating" VerticalContentAlignment="Center" IsEnabled="False" HorizontalAlignment="Left" Margin="651,49,0,0" VerticalAlignment="Top" Width="62" Height="67" FontSize="48" SelectedIndex="0">
             <ComboBox.Effect>
                 <DropShadowEffect/>
             </ComboBox.Effect>

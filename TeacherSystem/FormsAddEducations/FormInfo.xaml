@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UserSystem.FormsAddEducations"
         mc:Ignorable="d"
-        Title="Информация о программе" Height="351.072" Width="486.327" WindowStyle="ToolWindow" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="Информация о программе" Height="285.072" Width="486.327" WindowStyle="ToolWindow" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Button x:Name="BtnClose" HorizontalAlignment="Left" Margin="323,274,0,0" VerticalAlignment="Top" Width="132" Height="35" FontSize="18" Click="BtnClose_Click">
+        <Button x:Name="BtnClose" HorizontalAlignment="Left" Margin="331,213,0,0" VerticalAlignment="Top" Width="132" Height="35" FontSize="18" Click="BtnClose_Click">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
@@ -16,5 +16,9 @@
                 <TextBlock Text=" Закрыть" Height="26"/>
             </StackPanel>
         </Button>
+        <Label Content="'Система управления качеством образования'" HorizontalAlignment="Left" Margin="16,22,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <Label Content="Версия: 1.0.0.0" HorizontalAlignment="Left" Margin="16,71,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <Label Content="Версия MS SQL Server: Не ниже 2008" HorizontalAlignment="Left" Margin="16,108,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <Label Content="Разработка: i.panfilov@fckrasnodar.ru" HorizontalAlignment="Left" Margin="16,150,0,0" VerticalAlignment="Top" FontSize="20"/>
     </Grid>
 </Window>
