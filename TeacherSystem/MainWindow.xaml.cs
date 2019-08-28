@@ -115,6 +115,8 @@ namespace TeacherSystem
             if (MessageBox.Show("Удалить данную запись?", "Удаление записи", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
                 courseRepository.DeleteCourse(Id, UserId);
+
+                BtnMainUpdate_Click(null, null);
             }
            
         }

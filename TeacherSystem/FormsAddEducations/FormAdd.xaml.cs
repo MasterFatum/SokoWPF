@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows;
+using System.Windows.Documents;
 using Bll.Concrete;
 using BLL.Entities;
 
@@ -37,6 +38,8 @@ namespace UserSystem.FormsAddEducations
         {
             if (TxbxTitle.Text != String.Empty && TxbxDescription.Text != String.Empty)
             {
+                var textRang = new TextRange(RTxbxHyperlink.Document.ContentStart, RTxbxHyperlink.Document.ContentEnd);
+
                 Courses courses = new Courses
                 {
                     UserId = UserIdAdd,
@@ -46,6 +49,8 @@ namespace UserSystem.FormsAddEducations
                     Date = String.Format($"{DateTime.Now.ToShortDateString()} {DateTime.Now.ToShortTimeString()}")
                 };
                 courseRepository.AddCourse(courses, TxbxTitle, TxbxDescription);
+
+                var link = textRang.Text;
             }
             else
             {

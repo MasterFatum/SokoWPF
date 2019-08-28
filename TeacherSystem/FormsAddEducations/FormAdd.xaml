@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="Добавление новой записи в ваше портфолио" Height="413.818" Width="594.486" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow">
+        Title="Добавление новой записи в ваше портфолио" Height="450" Width="594.486" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow">
     <Grid>
         <Label Content="Название" HorizontalAlignment="Left" Margin="7,91,0,0" VerticalAlignment="Top" FontSize="18"/>
         <TextBox Name="TxbxTitle" HorizontalAlignment="Left" Height="31" Margin="104,94,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="457" FontSize="18">
@@ -18,7 +18,7 @@
                 <DropShadowEffect/>
             </TextBox.Effect>
         </TextBox>
-        <Button Name="BtnAdd" HorizontalAlignment="Left" Margin="429,331,0,0" VerticalAlignment="Top" Width="132" Height="35" RenderTransformOrigin="0.9,0.199" FontSize="18" Click="BtnAdd_Click">
+        <Button Name="BtnAdd" HorizontalAlignment="Left" Margin="429,369,0,0" VerticalAlignment="Top" Width="132" Height="35" RenderTransformOrigin="0.9,0.199" FontSize="18" Click="BtnAdd_Click">
             <StackPanel Orientation="Horizontal">
                 <Image Source="../Source/Save_32px.png" Height="29"/>
                 <TextBlock Text=" Сохранить" Height="26"/>
@@ -27,7 +27,7 @@
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
-        <Button Name="BtnClose" HorizontalAlignment="Left" Margin="10,331,0,0" VerticalAlignment="Top" Width="132" Height="35" FontSize="18" Click="Button_Click">
+        <Button Name="BtnClose" HorizontalAlignment="Left" Margin="10,369,0,0" VerticalAlignment="Top" Width="132" Height="35" FontSize="18" Click="Button_Click">
             <StackPanel Orientation="Horizontal">
                 <Image Source="../Source/Cancel_32px.png" Height="29"/>
                 <TextBlock Text=" Закрыть" Height="26"/>
@@ -42,7 +42,7 @@
                 <DropShadowEffect/>
             </TextBox.Effect>
         </TextBox>
-        <Button Name="BtnClear" HorizontalAlignment="Left" Margin="221,331,0,0" VerticalAlignment="Top" Width="132" Height="35" FontSize="18" Click="BtnClear_Click">
+        <Button Name="BtnClear" HorizontalAlignment="Left" Margin="221,369,0,0" VerticalAlignment="Top" Width="132" Height="35" FontSize="18" Click="BtnClear_Click">
             <StackPanel Orientation="Horizontal">
                 <Image Source="../Source/Broom_32px.png" Height="29"/>
                 <TextBlock Text=" Очистить" Height="26"/>
@@ -51,6 +51,17 @@
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
+        <Label Content="Ссылка" HorizontalAlignment="Left" Margin="10,315,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.216,0.009" FontSize="18"/>
+        <RichTextBox IsDocumentEnabled="True" Name="RTxbxHyperlink" HorizontalAlignment="Left" Height="31" Margin="104,318,0,0" VerticalAlignment="Top" Width="457" FontSize="14" FontWeight="Medium">
+            <RichTextBox.Effect>
+                <DropShadowEffect/>
+            </RichTextBox.Effect>
+            <FlowDocument>
+                <Paragraph>
+                    <Run Text="RichTextBox"/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
 
     </Grid>
 </Window>

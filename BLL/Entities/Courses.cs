@@ -20,5 +20,7 @@ namespace BLL.Entities
 
         public string Date { get; set; }
 
+        public string Hyperlink { get; set; }
+
     }
 }
