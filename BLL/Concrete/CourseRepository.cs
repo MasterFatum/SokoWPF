@@ -130,8 +130,7 @@ namespace Bll.Concrete
             return null;
         }
 
-        public IEnumerable<Courses> GetCoursesByFio(string lastname, string firstname, string middlename,
-            string category)
+        public IEnumerable<Courses> GetCoursesByFio(string lastname, string firstname, string middlename, string category)
         {
             Users userId = sokoContext.Users.Where(l => l.Lastname == lastname).Where(f => f.Firstname == firstname)
                 .FirstOrDefault(m => m.Middlename == middlename);

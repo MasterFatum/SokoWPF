@@ -123,8 +123,8 @@
                 <MenuItem Header="Выйти" Click="MenuItem_Click_1" FontWeight="Normal"></MenuItem>
             </MenuItem>
         </Menu>
-        <Label Content="Общее количество баллов:" HorizontalAlignment="Left" Margin="859,477,0,0" VerticalAlignment="Top" FontSize="20"/>
-        <TextBox x:Name="TxbxAllRating" IsReadOnly="True" HorizontalAlignment="Right" Height="34" Margin="0,519,63,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="146" TextAlignment="Center" FontSize="16" FontWeight="Bold">
+        <Label Content="Общее количество баллов:" HorizontalAlignment="Left" Margin="855,477,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <TextBox x:Name="TxbxAllRating" IsReadOnly="True" HorizontalAlignment="Right" Height="34" Margin="0,523,79,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="117" TextAlignment="Center" FontSize="18" FontWeight="Bold">
             <TextBox.Effect>
                 <DropShadowEffect/>
             </TextBox.Effect>

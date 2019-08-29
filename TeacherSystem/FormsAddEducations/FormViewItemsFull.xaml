@@ -14,7 +14,7 @@
             </TextBox.Effect>
         </TextBox>
         <Label Content="Описание" HorizontalAlignment="Left" Margin="10,126,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
-        <TextBox x:Name="TxbxDescription" IsReadOnly="True" HorizontalAlignment="Left" Height="228" Margin="125,126,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="617" FontSize="16" Text="Описание курса" VerticalScrollBarVisibility="Auto">
+        <TextBox x:Name="TxbxDescription" IsReadOnly="True" HorizontalAlignment="Left" Height="228" Margin="125,126,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="612" FontSize="16" Text="Описание курса" VerticalScrollBarVisibility="Auto">
             <TextBox.Effect>
                 <DropShadowEffect/>
             </TextBox.Effect>
@@ -25,7 +25,7 @@
                 <DropShadowEffect/>
             </TextBox.Effect>
         </TextBox>
-        <TextBox x:Name="TxbxEvaluation" HorizontalAlignment="Left" IsReadOnly="True" Height="75" Margin="637,44,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="103" Text="100" TextAlignment="Center" FontSize="48" FontWeight="Bold" Foreground="#FF177C25">
+        <TextBox x:Name="TxbxEvaluation" HorizontalAlignment="Left" IsReadOnly="True" Height="75" Margin="634,44,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="103" Text="100" TextAlignment="Center" FontSize="48" FontWeight="Bold" Foreground="#FF177C25">
             <TextBox.Effect>
                 <DropShadowEffect/>
             </TextBox.Effect>
@@ -52,9 +52,9 @@
             </TextBox.Effect>
         </TextBox>
         <Label Content="Материалы" HorizontalAlignment="Left" Margin="10,365,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.216,0.009" FontSize="14" FontWeight="Bold"/>
-        <TextBlock Name="TextBlockHyperlink" HorizontalAlignment="Left" Margin="125,370,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="14" FontWeight="Bold">
+        <TextBlock Name="TextBlockHyperlink" HorizontalAlignment="Left" Margin="128,370,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="14" FontWeight="Bold">
             <Hyperlink Name="Hyperlink" NavigateUri=""  RequestNavigate="Hyperlink_RequestNavigate">
-                Ссылка для доступа к материалам данного курса
+                Материалы данного курса
             </Hyperlink>
         </TextBlock>
         <Label Content="Дата" HorizontalAlignment="Left" Margin="10,406,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.216,0.009" FontSize="14" FontWeight="Bold"/>
