@@ -5,38 +5,38 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UserSystem.FormsAddEducations"
         mc:Ignorable="d"
-        Title="Просмотр курса" Height="481.367" Width="626.273" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="Просмотр курса" Height="487" Width="760" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
         <Label Content="Название" HorizontalAlignment="Left" Margin="10,90,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
-        <TextBox x:Name="TxbxTitle" HorizontalAlignment="Left" IsReadOnly="True" Height="31" Margin="125,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="366" FontSize="16" Text="Название курса">
+        <TextBox x:Name="TxbxTitle" HorizontalAlignment="Left" IsReadOnly="True" Height="31" Margin="125,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="499" FontSize="16" Text="Название курса">
             <TextBox.Effect>
                 <DropShadowEffect/>
             </TextBox.Effect>
         </TextBox>
         <Label Content="Описание" HorizontalAlignment="Left" Margin="10,126,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
-        <TextBox x:Name="TxbxDescription" IsReadOnly="True" HorizontalAlignment="Left" Height="269" Margin="125,126,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="474" FontSize="16" Text="Описание курса" VerticalScrollBarVisibility="Auto">
+        <TextBox x:Name="TxbxDescription" IsReadOnly="True" HorizontalAlignment="Left" Height="228" Margin="125,126,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="617" FontSize="16" Text="Описание курса" VerticalScrollBarVisibility="Auto">
             <TextBox.Effect>
                 <DropShadowEffect/>
             </TextBox.Effect>
         </TextBox>
         <Label Content="Категория" HorizontalAlignment="Left" Margin="10,54,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
-        <TextBox x:Name="TxbxCategory" HorizontalAlignment="Left" IsReadOnly="True" Height="31" Margin="125,54,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="366" FontSize="16" FontWeight="Bold" TextAlignment="Center" Text="Категория">
+        <TextBox x:Name="TxbxCategory" HorizontalAlignment="Left" IsReadOnly="True" Height="31" Margin="125,54,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="499" FontSize="16" FontWeight="Bold" TextAlignment="Center" Text="Категория">
             <TextBox.Effect>
                 <DropShadowEffect/>
             </TextBox.Effect>
         </TextBox>
-        <TextBox x:Name="TxbxEvaluation" HorizontalAlignment="Left" IsReadOnly="True" Height="75" Margin="496,44,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="103" Text="100" TextAlignment="Center" FontSize="48" FontWeight="Bold" Foreground="#FF177C25">
+        <TextBox x:Name="TxbxEvaluation" HorizontalAlignment="Left" IsReadOnly="True" Height="75" Margin="637,44,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="103" Text="100" TextAlignment="Center" FontSize="48" FontWeight="Bold" Foreground="#FF177C25">
             <TextBox.Effect>
                 <DropShadowEffect/>
             </TextBox.Effect>
         </TextBox>
-        <TextBox x:Name="TxbxUser" HorizontalAlignment="Left" IsReadOnly="True"  Height="31" Margin="125,18,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="366" FontSize="16" Text="Пользователь" FontWeight="Bold" TextAlignment="Center">
+        <TextBox x:Name="TxbxUser" HorizontalAlignment="Left" IsReadOnly="True"  Height="31" Margin="125,18,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="499" FontSize="16" Text="Пользователь" FontWeight="Bold" TextAlignment="Center">
             <TextBox.Effect>
                 <DropShadowEffect/>
             </TextBox.Effect>
         </TextBox>
         <Label Content="Пользователь" HorizontalAlignment="Left" Margin="9,18,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
-        <Button HorizontalAlignment="Right" Margin="0,0,14,7" VerticalAlignment="Bottom" Width="132" Height="35" FontSize="18" Click="Button_Click">
+        <Button HorizontalAlignment="Right" Margin="0,0,12,8" VerticalAlignment="Bottom" Width="132" Height="35" FontSize="18" Click="Button_Click">
             <StackPanel Orientation="Horizontal">
                 <Image Source="../Source/Cancel_32px.png" Height="29"/>
                 <TextBlock Text=" Закрыть" Height="26"/>
@@ -45,12 +45,20 @@
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
-        <Label Content="Баллы" HorizontalAlignment="Left" Margin="513,10,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" FontStyle="Italic"/>
-        <TextBox x:Name="TxbxDate" HorizontalAlignment="Left" IsEnabled ="False"  Height="35" Margin="125,400,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="194" FontSize="16" Text="Название курса" TextAlignment="Center">
+        <Label Content="Баллы" HorizontalAlignment="Left" Margin="654,10,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" FontStyle="Italic"/>
+        <TextBox x:Name="TxbxDate" HorizontalAlignment="Left" IsEnabled ="False"  Height="35" Margin="125,400,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="194" FontSize="16" TextAlignment="Center">
             <TextBox.Effect>
                 <DropShadowEffect/>
             </TextBox.Effect>
         </TextBox>
+        <Label Content="Материалы" HorizontalAlignment="Left" Margin="10,365,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.216,0.009" FontSize="14" FontWeight="Bold"/>
+        <TextBlock Name="TextBlockHyperlink" HorizontalAlignment="Left" Margin="125,370,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="14" FontWeight="Bold">
+            <Hyperlink Name="Hyperlink" NavigateUri=""  RequestNavigate="Hyperlink_RequestNavigate">
+                Ссылка для доступа к материалам данного курса
+            </Hyperlink>
+        </TextBlock>
+        <Label Content="Дата" HorizontalAlignment="Left" Margin="10,406,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.216,0.009" FontSize="14" FontWeight="Bold"/>
+
 
     </Grid>
 </Window>

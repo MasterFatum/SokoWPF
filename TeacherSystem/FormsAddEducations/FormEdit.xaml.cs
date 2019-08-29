@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows;
+using System.Windows.Documents;
 using Bll.Concrete;
 using BLL.Entities;
 
@@ -14,9 +15,10 @@ namespace UserSystem.FormsAddEducations
         public string CategoryEdit { get; set; }
         public string TitleEdit { get; set; }
         public string DescriptionEdit { get; set; }
+        public string HyperlinkEdit { get; set; }
 
 
-        public FormEdit(int id, int userIdEdit, string categoryEdit, string title, string description)
+        public FormEdit(int id, int userIdEdit, string categoryEdit, string title, string description, string hyperlink)
         {
             InitializeComponent();
 
@@ -25,6 +27,7 @@ namespace UserSystem.FormsAddEducations
             TxbxEditCategory.Text = categoryEdit;
             TxbxEditTitle.Text = title;
             TxbxEditDescription.Text = description;
+            TxbxHyperlink.Text = hyperlink;
         }
 
         private void BtnEditExit_Click(object sender, RoutedEventArgs e)
@@ -40,7 +43,8 @@ namespace UserSystem.FormsAddEducations
                 UserId = UserIdEdit,
                 Category = CategoryEdit,
                 Title = TxbxEditTitle.Text.Trim(),
-                Description = TxbxEditDescription.Text.Trim()
+                Description = TxbxEditDescription.Text.Trim(),
+                Hyperlink = TxbxHyperlink.Text.Trim()
             };
 
             courseRepository.EditCourse(courses);

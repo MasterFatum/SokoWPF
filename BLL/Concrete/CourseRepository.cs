@@ -16,7 +16,7 @@ namespace Bll.Concrete
     {
         SokoContext sokoContext = new SokoContext();
 
-        public void AddCourse(Courses courses, TextBox title, TextBox description)
+        public void AddCourse(Courses courses, TextBox title, TextBox description, TextBox hyperlink)
         {
             try
             {
@@ -27,6 +27,7 @@ namespace Bll.Concrete
 
                 title.Text = String.Empty;
                 description.Text = String.Empty;
+                hyperlink.Text = String.Empty;
             }
             catch (Exception e)
             {
@@ -67,6 +68,7 @@ namespace Bll.Concrete
                 {
                     courseEdit.Title = courses.Title;
                     courseEdit.Description = courses.Description;
+                    courseEdit.Hyperlink = courses.Hyperlink;
                     sokoContext.Courses.AddOrUpdate(courseEdit);
                     sokoContext.SaveChanges();
 
@@ -136,6 +138,16 @@ namespace Bll.Concrete
 
             IEnumerable<Courses> courseses = sokoContext.Courses.Where(u => u.UserId == userId.Id)
                 .Where(c => c.Category == category);
+
+            return courseses.ToList();
+        }
+
+        public IEnumerable<Courses> GetCoursesByFio(string lastname, string firstname, string middlename)
+        {
+            Users userId = sokoContext.Users.Where(l => l.Lastname == lastname).Where(f => f.Firstname == firstname)
+                .FirstOrDefault(m => m.Middlename == middlename);
+
+            IEnumerable<Courses> courseses = sokoContext.Courses.Where(u => u.UserId == userId.Id);
 
             return courseses.ToList();
         }

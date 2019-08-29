@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Windows;
 using System.Windows.Documents;
+using System.Windows.Navigation;
 using Bll.Concrete;
 using BLL.Entities;
 
@@ -38,27 +40,23 @@ namespace UserSystem.FormsAddEducations
         {
             if (TxbxTitle.Text != String.Empty && TxbxDescription.Text != String.Empty)
             {
-                var textRang = new TextRange(RTxbxHyperlink.Document.ContentStart, RTxbxHyperlink.Document.ContentEnd);
-
                 Courses courses = new Courses
                 {
                     UserId = UserIdAdd,
                     Category = SelectedCategory,
                     Title = TxbxTitle.Text.Trim(),
                     Description = TxbxDescription.Text.Trim(),
-                    Date = String.Format($"{DateTime.Now.ToShortDateString()} {DateTime.Now.ToShortTimeString()}")
+                    Date = String.Format($"{DateTime.Now.ToShortDateString()} {DateTime.Now.ToShortTimeString()}"),
+                    Hyperlink = TxbxHyperlink.Text.Trim()
                 };
-                courseRepository.AddCourse(courses, TxbxTitle, TxbxDescription);
-
-                var link = textRang.Text;
+                courseRepository.AddCourse(courses, TxbxTitle, TxbxDescription, TxbxHyperlink);
             }
             else
             {
                 MessageBox.Show("Одно или несколько полей не заполнено!", "", MessageBoxButton.OK,
                     MessageBoxImage.Information);
             }
-
-            
         }
+
     }
 }

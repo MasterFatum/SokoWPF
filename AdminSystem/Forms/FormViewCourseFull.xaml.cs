@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Windows;
+using System.Windows.Documents;
+using System.Windows.Navigation;
 using Bll.Concrete;
 
 namespace AdminSystem.Forms
@@ -11,9 +14,10 @@ namespace AdminSystem.Forms
 
         public int Id { get; set; }
         public int UserId { get; set; }
+        public string MyUrlHyperlink { get; set; }
 
 
-        public FormViewCourseFull(int userId, int id, string user, string category, string title, string description, string date, int evaluation = 0)
+        public FormViewCourseFull(int userId, int id, string user, string category, string title, string description, string date, string hyperlink, int evaluation = 0)
         {
             InitializeComponent();
 
@@ -26,6 +30,7 @@ namespace AdminSystem.Forms
             TxbxDescription.Text = description;
             CbxRating.Text = evaluation.ToString();
             TxbxDate.Text = date;
+            MyUrlHyperlink = hyperlink;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -47,6 +52,13 @@ namespace AdminSystem.Forms
 
                 courseRepository.SetRatingCourse(UserId, Id, Convert.ToByte(CbxRating.Text.Trim()));
             }
+        }
+
+        private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)
+        {
+            Process.Start(new ProcessStartInfo(MyUrlHyperlink));
+            e.Handled = true;
+
         }
     }
 }

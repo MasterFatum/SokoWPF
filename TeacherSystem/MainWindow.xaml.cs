@@ -51,6 +51,7 @@ namespace TeacherSystem
         public string Position { get; set; }
         public string Email { get; set; }
         public string Date { get; set; }
+        public string Hyperlink { get; set; }
 
         private void BtnMainExit_Click(object sender, RoutedEventArgs e)
         {
@@ -101,6 +102,7 @@ namespace TeacherSystem
                 Title = items.Title;
                 Description = items.Description;
                 Evaluation = items.Evaluation;
+                Hyperlink = items.Hyperlink;
 
             }
             catch(Exception ex)
@@ -123,7 +125,7 @@ namespace TeacherSystem
 
         private void BtnMainEdit_Click(object sender, RoutedEventArgs e)
         {
-            new FormEdit(Id, UserId, Category, Title, Description).ShowDialog();
+            new FormEdit(Id, UserId, Category, Title, Description, Hyperlink).ShowDialog();
         }
 
         private void CbxMainShowCategory_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -152,8 +154,9 @@ namespace TeacherSystem
                 Description = items.Description;
                 Evaluation = items.Evaluation ?? 0;
                 Date = items.Date ?? "Дата отсутствует";
+                Hyperlink = items.Hyperlink;
 
-                new FormViewItemsFull("Вы", Category, Title, Description, Date, Evaluation.Value).ShowDialog();
+                new FormViewItemsFull("Вы", Category, Title, Description, Date, Hyperlink, Evaluation.Value).ShowDialog();
 
             }
             catch (Exception ex)

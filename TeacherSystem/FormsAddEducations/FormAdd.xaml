@@ -14,6 +14,7 @@
         </TextBox>
         <Label Content="Описание" HorizontalAlignment="Left" Margin="7,131,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.216,0.009" FontSize="18"/>
         <TextBox Name="TxbxDescription" HorizontalAlignment="Left" Height="183" Margin="104,130,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="457" FontSize="16">
+            
             <TextBox.Effect>
                 <DropShadowEffect/>
             </TextBox.Effect>
@@ -52,16 +53,11 @@
             </Button.Effect>
         </Button>
         <Label Content="Ссылка" HorizontalAlignment="Left" Margin="10,315,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.216,0.009" FontSize="18"/>
-        <RichTextBox IsDocumentEnabled="True" Name="RTxbxHyperlink" HorizontalAlignment="Left" Height="31" Margin="104,318,0,0" VerticalAlignment="Top" Width="457" FontSize="14" FontWeight="Medium">
-            <RichTextBox.Effect>
+        <TextBox x:Name="TxbxHyperlink" HorizontalAlignment="Left" Height="31" Margin="104,318,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="457" FontSize="18">
+            <TextBox.Effect>
                 <DropShadowEffect/>
-            </RichTextBox.Effect>
-            <FlowDocument>
-                <Paragraph>
-                    <Run Text="RichTextBox"/>
-                </Paragraph>
-            </FlowDocument>
-        </RichTextBox>
+            </TextBox.Effect>
+        </TextBox>
 
     </Grid>
 </Window>

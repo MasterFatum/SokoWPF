@@ -21,7 +21,8 @@
             <ComboBox.Effect>
                 <DropShadowEffect/>
             </ComboBox.Effect>
-            <ComboBoxItem IsSelected="True" Content="Индивидуальная образовательная траектория"/>
+            <ComboBoxItem IsSelected="True" Content="Все категории" />
+            <ComboBoxItem Content="Индивидуальная образовательная траектория"/>
             <ComboBoxItem Content="Курсы, семинары, вебинары"/>
             <ComboBoxItem Content="Публикации, выступления"/>
             <ComboBoxItem Content="Освоение и применение новых технологий"/>

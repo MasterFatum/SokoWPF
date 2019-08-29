@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AdminSystem.Forms"
         mc:Ignorable="d"
-        Title="Просмотр курса" Height="487.074" Width="760.37" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="Просмотр курса" Height="487.074" Width="760" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
         <Label Content="Название" HorizontalAlignment="Left" Margin="10,90,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
         <TextBox x:Name="TxbxTitle" HorizontalAlignment="Left" IsReadOnly="True" Height="31" Margin="125,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="499" FontSize="16" Text="Название курса">
@@ -14,7 +14,7 @@
             </TextBox.Effect>
         </TextBox>
         <Label Content="Описание" HorizontalAlignment="Left" Margin="10,126,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
-        <TextBox x:Name="TxbxDescription" IsReadOnly="True" HorizontalAlignment="Left" Height="269" Margin="125,126,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="607" FontSize="16" Text="Описание курса" VerticalScrollBarVisibility="Auto">
+        <TextBox x:Name="TxbxDescription" IsReadOnly="True" HorizontalAlignment="Left" Height="228" Margin="125,126,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="607" FontSize="16" Text="Описание курса" VerticalScrollBarVisibility="Auto">
             <TextBox.Effect>
                 <DropShadowEffect/>
             </TextBox.Effect>
@@ -56,16 +56,19 @@
             </TextBox.Effect>
         </TextBox>
         <Label Content="Дата" HorizontalAlignment="Left" Margin="121,408,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
-        <ComboBox Name="CbxRating" VerticalContentAlignment="Center" IsEnabled="False" HorizontalAlignment="Left" Margin="651,49,0,0" VerticalAlignment="Top" Width="62" Height="67" FontSize="48" SelectedIndex="0">
+        <ComboBox Name="CbxRating" VerticalContentAlignment="Center" IsEnabled="False" HorizontalAlignment="Left" Margin="650,50,0,0" VerticalAlignment="Top" Width="65" Height="56" FontSize="36" SelectedIndex="0">
             <ComboBox.Effect>
                 <DropShadowEffect/>
             </ComboBox.Effect>
-            <ComboBoxItem Content="1"/>
-            <ComboBoxItem Content="2"/>
-            <ComboBoxItem Content="3"/>
-            <ComboBoxItem Content="4"/>
-            <ComboBoxItem Content="5"/>
+            <ComboBoxItem Content="0" FontWeight="Bold"/>
+            <ComboBoxItem Content="1" FontWeight="Bold"/>
+            <ComboBoxItem Content="2" FontWeight="Bold"/>
+            <ComboBoxItem Content="3" FontWeight="Bold" FontSize="36"/>
+            <ComboBoxItem Content="4" FontWeight="Bold"/>
+            <ComboBoxItem Content="5" FontWeight="Bold"/>
         </ComboBox>
-
+        <Label Content="Ссылка" HorizontalAlignment="Left" Margin="9,359,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.216,0.009" FontSize="14" Width="89" FontWeight="Bold"/>
+        <TextBlock x:Name="TextBlockHyperlink" HorizontalAlignment="Left" Margin="125,370,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="14" FontWeight="Bold">
+            <Hyperlink x:Name="Hyperlink" NavigateUri=""  RequestNavigate="Hyperlink_RequestNavigate"><Run Text="Ссылка для доступа к материалам данного курса"/></Hyperlink></TextBlock>
     </Grid>
 </Window>

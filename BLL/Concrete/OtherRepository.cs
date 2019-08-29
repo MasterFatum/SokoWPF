@@ -20,7 +20,8 @@ namespace BLL.Concrete
             dataGrid.Columns[4].Header = "Описание";
             dataGrid.Columns[5].Header = "Баллы";
             dataGrid.Columns[6].Header = "Дата";
-            
+            dataGrid.Columns[7].Header = "Ссылка на материал";
+
         }
 
         public void SettingDataGridAdmins(DataGrid dataGrid)

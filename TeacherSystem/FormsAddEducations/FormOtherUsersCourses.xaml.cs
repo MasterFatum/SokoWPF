@@ -20,6 +20,7 @@ namespace UserSystem.FormsAddEducations
         public string Description { get; set; }
         public int Evaluation { get; set; }
         public string Date { get; set; }
+        public string Hyperlink { get; set; }
 
         CourseRepository courseRepository = new CourseRepository();
 
@@ -39,13 +40,31 @@ namespace UserSystem.FormsAddEducations
             {
                 if (CbxOtherUsersCourses.SelectedIndex != -1)
                 {
-                    String usernameFio = CbxOtherUsersCourses.SelectedItem.ToString();
 
-                    String[] words = usernameFio.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                    //АНАЛИЗИРУЕМ COMBOBOX
 
-                    DataGridOtherUsersCategory.ItemsSource = courseRepository.GetCoursesByFio(words[0], words[1], words[2], ((ComboBoxItem)CbxOtherUsersCategory.SelectedItem).Content.ToString());
+                    if (CbxOtherUsersCategory.SelectedIndex == 0)
+                    {
+                        String usernameFio = CbxOtherUsersCourses.SelectedItem.ToString();
 
-                    new OtherRepository().SettingDataGridUsers(DataGridOtherUsersCategory);
+                        String[] words = usernameFio.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+
+                        DataGridOtherUsersCategory.ItemsSource =
+                            courseRepository.GetCoursesByFio(words[0], words[1], words[2]);
+
+                        new OtherRepository().SettingDataGridUsers(DataGridOtherUsersCategory);
+                    }
+                    else if (CbxOtherUsersCategory.SelectedIndex != 0)
+                    {
+                        String usernameFio = CbxOtherUsersCourses.SelectedItem.ToString();
+
+                        String[] words = usernameFio.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+
+                        DataGridOtherUsersCategory.ItemsSource = courseRepository.GetCoursesByFio(words[0], words[1], words[2], ((ComboBoxItem)CbxOtherUsersCategory.SelectedItem).Content.ToString());
+
+                        new OtherRepository().SettingDataGridUsers(DataGridOtherUsersCategory);
+                    }
+                    
                 }
                 else
                 {
@@ -77,8 +96,9 @@ namespace UserSystem.FormsAddEducations
                 Description = items.Description;
                 Evaluation = items.Evaluation ?? 0;
                 Date = items.Date ?? "Дата отсутствует";
+                Hyperlink = items.Hyperlink;
 
-                new FormViewItemsFull(Lastname, Category, Title, Description, Date, Evaluation).ShowDialog();
+                new FormViewItemsFull(Lastname, Category, Title, Description, Date, Hyperlink, Evaluation).ShowDialog();
 
             }
             catch (Exception ex)

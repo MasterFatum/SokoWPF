@@ -6,7 +6,7 @@ namespace BLL.Abstract
 {
     interface ICourseRepository
     {
-        void AddCourse(Courses courses, TextBox title, TextBox description);
+        void AddCourse(Courses courses, TextBox title, TextBox description, TextBox hyperlink);
 
         void DeleteCourse(int id, int userId);
 
@@ -17,6 +17,8 @@ namespace BLL.Abstract
         IEnumerable<Courses> GetCoursesByUserId(int userId);
 
         IEnumerable<Courses> GetCoursesByCategory(int userId, string position);
+
+        IEnumerable<Courses> GetCoursesByFio(string lastname, string firstname, string middlename);
 
         IEnumerable<Courses> GetCoursesByFio(string lastname, string firstname, string middlename, string category);
 
