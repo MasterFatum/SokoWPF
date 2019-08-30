@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Windows;
-using System.Windows.Documents;
 using System.Windows.Navigation;
 using Bll.Concrete;
 
 namespace AdminSystem.Forms
 {
 
-    public partial class FormViewCourseFull : Window
+    public partial class FormViewCourseFull
     {
         CourseRepository courseRepository = new CourseRepository();
 

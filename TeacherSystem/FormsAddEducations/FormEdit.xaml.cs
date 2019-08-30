@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Windows;
-using System.Windows.Documents;
 using Bll.Concrete;
 using BLL.Entities;
+using TeacherSystem;
 
 namespace UserSystem.FormsAddEducations
 {
-    public partial class FormEdit : Window
+    public partial class FormEdit
     {
         CourseRepository courseRepository = new CourseRepository();
 
@@ -48,7 +48,8 @@ namespace UserSystem.FormsAddEducations
             };
 
             courseRepository.EditCourse(courses);
-            this.Close();
+            Close();
+            
         }
 
         private void BtnClear_Click(object sender, RoutedEventArgs e)

@@ -3,10 +3,8 @@ using System.Windows.Controls;
 
 namespace UserSystem.FormsAddEducations
 {
-    /// <summary>
-    /// Логика взаимодействия для FormChooseEducation.xaml
-    /// </summary>
-    public partial class FormChooseCategory : Window
+    
+    public partial class FormChooseCategory 
     {
 
         public int UserId { get; set; }

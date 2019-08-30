@@ -2,10 +2,8 @@
 
 namespace UserSystem.FormsAddEducations
 {
-    /// <summary>
-    /// Логика взаимодействия для FormInfo.xaml
-    /// </summary>
-    public partial class FormInfo : Window
+    
+    public partial class FormInfo
     {
         public FormInfo()
         {

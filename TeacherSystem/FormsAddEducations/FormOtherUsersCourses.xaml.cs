@@ -7,7 +7,7 @@ using BLL.Entities;
 
 namespace UserSystem.FormsAddEducations
 {
-    public partial class FormOtherUsersCourses : Window
+    public partial class FormOtherUsersCourses
     {
         public FormOtherUsersCourses()
         {
@@ -16,7 +16,7 @@ namespace UserSystem.FormsAddEducations
 
         public string Lastname { get; set; }
         public string Category { get; set; }
-        public string Title { get; set; }
+        public new string Title { get; set; }
         public string Description { get; set; }
         public int Evaluation { get; set; }
         public string Date { get; set; }
@@ -47,7 +47,7 @@ namespace UserSystem.FormsAddEducations
                     {
                         String usernameFio = CbxOtherUsersCourses.SelectedItem.ToString();
 
-                        String[] words = usernameFio.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                        String[] words = usernameFio.Split(new [] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
 
                         DataGridOtherUsersCategory.ItemsSource =
                             courseRepository.GetCoursesByFio(words[0], words[1], words[2]);
@@ -58,7 +58,7 @@ namespace UserSystem.FormsAddEducations
                     {
                         String usernameFio = CbxOtherUsersCourses.SelectedItem.ToString();
 
-                        String[] words = usernameFio.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                        String[] words = usernameFio.Split(new [] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
 
                         DataGridOtherUsersCategory.ItemsSource = courseRepository.GetCoursesByFio(words[0], words[1], words[2], ((ComboBoxItem)CbxOtherUsersCategory.SelectedItem).Content.ToString());
 

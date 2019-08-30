@@ -1,14 +1,11 @@
-﻿using System;
-using System.Diagnostics;
-using System.Net.Mime;
+﻿using System.Diagnostics;
 using System.Windows;
-using System.Windows.Documents;
 using System.Windows.Navigation;
 
 namespace UserSystem.FormsAddEducations
 {
     
-    public partial class FormViewItemsFull : Window
+    public partial class FormViewItemsFull
     {
         public string MyUrlHyperlink { get; set; }
 

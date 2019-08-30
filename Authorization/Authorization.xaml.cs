@@ -6,7 +6,7 @@ using BLL.Entities;
 
 namespace Authorization
 {
-    public partial class MainWindow : Window
+    public partial class MainWindow
     {
         UserRepository userRepository = new UserRepository();
         
@@ -101,8 +101,8 @@ namespace Authorization
                             Properties.Settings.Default.Save();
                         }
 
-                        this.Visibility = Visibility.Collapsed;
-                        this.Visibility = Visibility.Hidden;
+                        Visibility = Visibility.Collapsed;
+                        Visibility = Visibility.Hidden;
                         new AdminSystem.MainWindow().ShowDialog();
                     }
                     else

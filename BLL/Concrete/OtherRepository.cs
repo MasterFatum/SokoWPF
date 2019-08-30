@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Configuration;
-using System.Data.SqlClient;
 using System.Windows;
-using System.IO;
 using System.Windows.Controls;
-using System.Xml;
 
 namespace BLL.Concrete
 {

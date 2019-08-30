@@ -42,7 +42,7 @@ namespace TeacherSystem
         public int Id { get; set; }
         public int UserId { get; set; }
         public string Category { get; set; }
-        public string Title { get; set; }
+        public new string Title { get; set; }
         public string Description { get; set; }
         public int? Evaluation { get; set; }
         public string Lastname { get; set; }

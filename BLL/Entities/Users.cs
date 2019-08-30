@@ -1,12 +1,7 @@
-using System;
-
 namespace BLL.Entities
 {
     public class Users
     {
-        public Users()
-        {
-        }
 
         public int Id { get; set; }
 

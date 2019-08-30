@@ -1,15 +1,12 @@
 ﻿using System;
-using System.Diagnostics;
 using System.Windows;
-using System.Windows.Documents;
-using System.Windows.Navigation;
 using Bll.Concrete;
 using BLL.Entities;
 
 
 namespace UserSystem.FormsAddEducations
 {
-    public partial class FormAdd : Window
+    public partial class FormAdd
     {
         CourseRepository courseRepository = new CourseRepository();
 

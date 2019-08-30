@@ -7,13 +7,12 @@
         mc:Ignorable="d"
         Title="Управление пользователями" Height="501.136" Width="911.264" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
     <Grid Margin="0,0,0,-18">
-        <Button x:Name="BtnClose" HorizontalAlignment="Left" Margin="740,418,0,0" VerticalAlignment="Top" Width="150" Height="35" RenderTransformOrigin="0.9,0.199" FontSize="18" Click="BtnClose_Click" >
+        <Button x:Name="BtnClose" HorizontalAlignment="Left" Margin="832,338,0,0" VerticalAlignment="Top" Width="58" Height="35" RenderTransformOrigin="0.9,0.199" FontSize="18" Click="BtnClose_Click" >
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
             <StackPanel Orientation="Horizontal">
                 <Image Source="../Source/Cancel_32px.png" Height="29"/>
-                <TextBlock Text=" Закрыть" Height="26"/>
             </StackPanel>
         </Button>
         <DataGrid x:Name="DataGridAllUsers" IsReadOnly="True" Margin="10,10,344,0" VerticalAlignment="Top" FontSize="16" Height="445" SelectionChanged="DataGridAllUsers_SelectionChanged" />
@@ -77,7 +76,7 @@
                 <TextBlock Text=" Обновить" Height="26"/>
             </StackPanel>
         </Button>
-        <Button x:Name="BtnDeleteUser" HorizontalAlignment="Left" Margin="566,378,0,0" VerticalAlignment="Top" Width="150" Height="35" RenderTransformOrigin="0.9,0.199" FontSize="18" Click="BtnDeleteUser_Click" >
+        <Button x:Name="BtnDeleteUser" HorizontalAlignment="Left" Margin="740,420,0,0" VerticalAlignment="Top" Width="150" Height="35" RenderTransformOrigin="0.9,0.199" FontSize="18" Click="BtnDeleteUser_Click" >
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
@@ -98,6 +97,15 @@
             </ComboBox.Effect>
         </ComboBox>
         <Label Content="Права" HorizontalAlignment="Left" Margin="566,322,0,0" VerticalAlignment="Top" FontSize="18" RenderTransformOrigin="0.4,1.49"/>
+        <Button x:Name="BtnAddUser" HorizontalAlignment="Left" Margin="566,378,0,0" VerticalAlignment="Top" Width="150" Height="35" RenderTransformOrigin="0.9,0.199" FontSize="18" Click="BtnAddUser_Click" >
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/AdminSystem;component/Source/Add User Male_32px.png" Height="29"/>
+                <TextBlock x:Name="TxBlAddUser" Text=" Добавить" Height="26"/>
+            </StackPanel>
+        </Button>
 
     </Grid>
 </Window>

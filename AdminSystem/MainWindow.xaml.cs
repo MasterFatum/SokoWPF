@@ -1,7 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Input;
 using AdminSystem.Forms;
@@ -10,14 +9,14 @@ using BLL.Entities;
 
 namespace AdminSystem
 {
-    public partial class MainWindow : Window
+    public partial class MainWindow
     {
         UserRepository userRepository = new UserRepository();
 
         public int Id { get; set; }
         public int UserId { get; set; }
         public string Category { get; set; }
-        public string Title { get; set; }
+        public new string Title { get; set; }
         public string Description { get; set; }
         public int? Evaluation { get; set; }
         public string Lastname { get; set; }

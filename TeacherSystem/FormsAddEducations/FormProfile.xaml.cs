@@ -4,10 +4,7 @@ using BLL.Concrete;
 
 namespace UserSystem.FormsAddEducations
 {
-    /// <summary>
-    /// Логика взаимодействия для FormProfile.xaml
-    /// </summary>
-    public partial class FormProfile : Window
+    public partial class FormProfile
     {
 
         public FormProfile(int id, string lastname, string firstname, string middlename, string position, string email)

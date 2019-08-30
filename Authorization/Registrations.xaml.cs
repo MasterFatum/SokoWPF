@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Data;
 using System.Windows;
 using System.Windows.Controls;
 using BLL.Concrete;
@@ -9,7 +8,7 @@ using BLL.Entities;
 namespace Authorization
 {
 
-    public partial class Registrations : Window
+    public partial class Registrations
     {
         public Registrations()
         {

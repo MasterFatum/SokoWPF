@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Documents;
 using BLL.Concrete;
 using BLL.Entities;
 
 namespace AdminSystem.Forms
 {
 
-    public partial class FormUsersManager : Window
+    public partial class FormUsersManager
     {
         UserRepository userRepository = new UserRepository();
 
@@ -52,6 +53,16 @@ namespace AdminSystem.Forms
                     return;
                 }
 
+                TxbxLastname.IsEnabled = false;
+                TxbxFirstname.IsEnabled = false;
+                TxbxMiddlename.IsEnabled = false;
+                TxbxPosition.IsEnabled = false;
+                TxbxEmail.IsEnabled = false;
+                TxbxPassword.IsEnabled = false;
+                CbxPrivilege.IsEnabled = false;
+
+                TxBlChangeUser.Text = " Изменить";
+
                 TxbxUserId.Text = users.Id.ToString();
                 TxbxLastname.Text = users.Lastname;
                 TxbxFirstname.Text = users.Firstname;
@@ -60,8 +71,6 @@ namespace AdminSystem.Forms
                 TxbxEmail.Text = users.Email;
                 TxbxPassword.Text = users.Password;
                 TxbxDate.Text = users.Date;
-
-                ComboBoxItem items = new ComboBoxItem{};
                 
 
                 if (users.Privilege == "User")
@@ -133,6 +142,51 @@ namespace AdminSystem.Forms
                 userRepository.DeleteUser(Convert.ToInt32(TxbxUserId.Text));
             }
         }
-        
+
+        private void BtnAddUser_Click(object sender, RoutedEventArgs e)
+        {
+            if (TxBlAddUser.Text == " Добавить")
+            {
+                TxbxLastname.IsEnabled = true;
+                TxbxFirstname.IsEnabled = true;
+                TxbxMiddlename.IsEnabled = true;
+                TxbxPosition.IsEnabled = true;
+                TxbxEmail.IsEnabled = true;
+                TxbxPassword.IsEnabled = true;
+                CbxPrivilege.IsEnabled = true;
+
+                TxBlChangeUser.Text = " Изменить";
+
+                TxbxUserId.Text = String.Empty;
+                TxbxLastname.Text = String.Empty;
+                TxbxFirstname.Text = String.Empty;
+                TxbxMiddlename.Text = String.Empty;
+                TxbxPosition.Text = String.Empty;
+                TxbxEmail.Text = String.Empty;
+                TxbxPassword.Text = String.Empty;
+                TxbxDate.Text = String.Format($"{DateTime.Now.ToShortDateString()} {DateTime.Now.ToShortTimeString()}");
+
+                CbxPrivilege.Items.Clear();
+                CbxPrivilege.Items.Add("Admin");
+                CbxPrivilege.Items.Add("User");
+
+                TxBlAddUser.Text = " Сохранить";
+            }
+            else if (TxBlAddUser.Text == " Сохранить")
+            {
+                TxbxLastname.IsEnabled = false;
+                TxbxFirstname.IsEnabled = false;
+                TxbxMiddlename.IsEnabled = false;
+                TxbxPosition.IsEnabled = false;
+                TxbxEmail.IsEnabled = false;
+                TxbxPassword.IsEnabled = false;
+                CbxPrivilege.IsEnabled = false;
+
+                CbxPrivilege.Items.Clear();
+
+                TxBlAddUser.Text = " Добавить";
+
+            }
+        }
     }
 }

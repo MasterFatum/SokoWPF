@@ -10,13 +10,13 @@ using BLL.Entities;
 namespace AdminSystem.Forms
 {
     
-    public partial class FormViewCoursesUser : Window
+    public partial class FormViewCoursesUser
     {
         public int Id { get; set; }
         public int UserId { get; set; }
         public string Lastname { get; set; }
         public string Category { get; set; }
-        public string Title { get; set; }
+        public new string Title { get; set; }
         public string Description { get; set; }
         public int? Evaluation { get; set; }
         public string Date { get; set; }
