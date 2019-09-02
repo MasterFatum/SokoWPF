@@ -36,7 +36,7 @@
             </TextBox.Effect>
         </TextBox>
         <Label Content="Пользователь" HorizontalAlignment="Left" Margin="9,18,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
-        <Button HorizontalAlignment="Right" Margin="0,0,12,8" VerticalAlignment="Bottom" Width="132" Height="35" FontSize="18" Click="Button_Click">
+        <Button HorizontalAlignment="Right" Margin="0,0,9,13" VerticalAlignment="Bottom" Width="132" Height="35" FontSize="18" Click="Button_Click">
             <StackPanel Orientation="Horizontal">
                 <Image Source="../Source/Cancel_32px.png" Height="29"/>
                 <TextBlock Text=" Закрыть" Height="26"/>

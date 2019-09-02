@@ -56,6 +56,7 @@ namespace UserSystem.FormsAddEducations
         {
             TxbxEditTitle.Text = String.Empty;
             TxbxEditDescription.Text = String.Empty;
+            TxbxHyperlink.Text = String.Empty;
         }
     }
 }

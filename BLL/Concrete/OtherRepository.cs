@@ -53,7 +53,6 @@ namespace BLL.Concrete
             {
                 MessageBox.Show(ex.Message);
             }
-
         }
     }
 }
