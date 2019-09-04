@@ -24,7 +24,7 @@
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
-        <TextBox x:Name="TxbxEditTitle" HorizontalAlignment="Left" Height="30" Margin="104,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="463" TextAlignment="Center" FontSize="18">
+        <TextBox x:Name="TxbxEditTitle" HorizontalAlignment="Left" Height="30" Margin="104,90,0,0" VerticalAlignment="Top" Width="463" TextAlignment="Center" FontSize="18">
             <TextBox.Effect>
                 <DropShadowEffect/>
             </TextBox.Effect>
@@ -52,7 +52,7 @@
             </Button.Effect>
         </Button>
         <Label Content="Ссылка" HorizontalAlignment="Left" Margin="10,315,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.216,0.009" FontSize="18"/>
-        <TextBox x:Name="TxbxHyperlink" HorizontalAlignment="Left" Height="30" Margin="104,315,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="463" TextAlignment="Center" FontSize="18">
+        <TextBox x:Name="TxbxHyperlink" HorizontalAlignment="Left" Height="30" Margin="104,315,0,0" VerticalAlignment="Top" Width="463" TextAlignment="Center" FontSize="18">
             <TextBox.Effect>
                 <DropShadowEffect/>
             </TextBox.Effect>

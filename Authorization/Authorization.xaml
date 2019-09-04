@@ -6,7 +6,7 @@
         mc:Ignorable="d"
         Title="Авторизация пользователя" Height="426.659" Width="406.589" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="ToolWindow" Closing="AuthorizeForm_Closing">
     <Grid>
-        <TextBox Name="TxbxLogin"  HorizontalAlignment="Left" Height="36" Margin="89,178,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="286" FontSize="18" FontWeight="Bold" TextAlignment="Left" TabIndex="1">
+        <TextBox Name="TxbxLogin"  HorizontalAlignment="Left" Height="36" Margin="89,178,0,0" VerticalAlignment="Top" Width="286" FontSize="18" FontWeight="Bold" TextAlignment="Left" TabIndex="1">
             <TextBox.Effect>
                 <DropShadowEffect/>
             </TextBox.Effect>

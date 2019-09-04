@@ -17,32 +17,32 @@
             </Button.Effect>
         </Button>
         <Label Content="ID:" HorizontalAlignment="Left" Margin="21,46,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
-        <TextBox Name="TxbxUserId" IsEnabled="False" HorizontalAlignment="Left" Height="33" Margin="131,44,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="267" FontSize="18" TextAlignment="Center">
+        <TextBox Name="TxbxUserId" IsEnabled="False" HorizontalAlignment="Left" Height="33" Margin="131,44,0,0" Text="TextBox" VerticalAlignment="Top" Width="267" FontSize="18" TextAlignment="Center">
             <TextBox.Effect>
                 <DropShadowEffect/>
             </TextBox.Effect>
         </TextBox>
-        <TextBox Name="TxbxLastname" HorizontalAlignment="Left" Height="33" Margin="131,82,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="267" FontSize="18" TextAlignment="Center" IsEnabled="False">
+        <TextBox Name="TxbxLastname" HorizontalAlignment="Left" Height="33" Margin="131,82,0,0" Text="TextBox" VerticalAlignment="Top" Width="267" FontSize="18" TextAlignment="Center" IsEnabled="False">
             <TextBox.Effect>
                 <DropShadowEffect/>
             </TextBox.Effect>
         </TextBox>
-        <TextBox Name="TxbxFirstname" HorizontalAlignment="Left" Height="33" Margin="131,120,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="267" FontSize="18" TextAlignment="Center" IsEnabled="False">
+        <TextBox Name="TxbxFirstname" HorizontalAlignment="Left" Height="33" Margin="131,120,0,0" Text="TextBox" VerticalAlignment="Top" Width="267" FontSize="18" TextAlignment="Center" IsEnabled="False">
             <TextBox.Effect>
                 <DropShadowEffect/>
             </TextBox.Effect>
         </TextBox>
-        <TextBox Name="TxbxMiddlename" HorizontalAlignment="Left" Height="33" Margin="131,158,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="267" FontSize="18" TextAlignment="Center" IsEnabled="False">
+        <TextBox Name="TxbxMiddlename" HorizontalAlignment="Left" Height="33" Margin="131,158,0,0" Text="TextBox" VerticalAlignment="Top" Width="267" FontSize="18" TextAlignment="Center" IsEnabled="False">
             <TextBox.Effect>
                 <DropShadowEffect/>
             </TextBox.Effect>
         </TextBox>
-        <TextBox Name="TxbxPosition" HorizontalAlignment="Left" Height="33" Margin="131,196,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="267" FontSize="18" TextAlignment="Center" IsEnabled="False">
+        <TextBox Name="TxbxPosition" HorizontalAlignment="Left" Height="33" Margin="131,196,0,0" Text="TextBox" VerticalAlignment="Top" Width="267" FontSize="18" TextAlignment="Center" IsEnabled="False">
             <TextBox.Effect>
                 <DropShadowEffect/>
             </TextBox.Effect>
         </TextBox>
-        <TextBox Name="TxbxEmail" HorizontalAlignment="Left" Height="33" Margin="131,234,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="267" FontSize="18" TextAlignment="Center" IsEnabled="False">
+        <TextBox Name="TxbxEmail" HorizontalAlignment="Left" Height="33" Margin="131,234,0,0" Text="TextBox" VerticalAlignment="Top" Width="267" FontSize="18" TextAlignment="Center" IsEnabled="False">
             <TextBox.Effect>
                 <DropShadowEffect/>
             </TextBox.Effect>

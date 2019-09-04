@@ -37,17 +37,17 @@
         <Label Content="Имя" HorizontalAlignment="Left" Margin="10,94,0,0" VerticalAlignment="Top" FontSize="18"/>
         <Label Content="Фамилия" HorizontalAlignment="Left" Margin="10,49,0,0" VerticalAlignment="Top" FontSize="18"/>
         <Label Content="Отчество" HorizontalAlignment="Left" Margin="10,139,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <TextBox x:Name="TxbxLastname" HorizontalAlignment="Left" Height="40" Margin="158,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="361" FontSize="18" TextChanged="TxbxLastname_TextChanged">
+        <TextBox x:Name="TxbxLastname" HorizontalAlignment="Left" Height="40" Margin="158,49,0,0" VerticalAlignment="Top" Width="361" FontSize="18" TextChanged="TxbxLastname_TextChanged">
             <TextBox.Effect>
                 <DropShadowEffect/>
             </TextBox.Effect>
         </TextBox>
-        <TextBox x:Name="TxbxFirstname" HorizontalAlignment="Left" Height="40" Margin="158,94,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="361" FontSize="18">
+        <TextBox x:Name="TxbxFirstname" HorizontalAlignment="Left" Height="40" Margin="158,94,0,0" VerticalAlignment="Top" Width="361" FontSize="18">
             <TextBox.Effect>
                 <DropShadowEffect/>
             </TextBox.Effect>
         </TextBox>
-        <TextBox x:Name="TxbxMiddlename" HorizontalAlignment="Left" Height="40" Margin="158,139,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="361" FontSize="18">
+        <TextBox x:Name="TxbxMiddlename" HorizontalAlignment="Left" Height="40" Margin="158,139,0,0" VerticalAlignment="Top" Width="361" FontSize="18">
             <TextBox.Effect>
                 <DropShadowEffect/>
             </TextBox.Effect>
@@ -74,7 +74,7 @@
         </ComboBox>
         <Label Content="Должность" HorizontalAlignment="Left" Margin="8,184,0,0" VerticalAlignment="Top" FontSize="18"/>
         <Label Content="E-mail" HorizontalAlignment="Left" Margin="10,229,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <TextBox x:Name="TxbxEmail" HorizontalAlignment="Left" Height="40" Margin="158,229,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="361" FontSize="18">
+        <TextBox x:Name="TxbxEmail" HorizontalAlignment="Left" Height="40" Margin="158,229,0,0" VerticalAlignment="Top" Width="361" FontSize="18">
             <TextBox.Effect>
                 <DropShadowEffect/>
             </TextBox.Effect>

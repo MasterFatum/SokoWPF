@@ -7,7 +7,7 @@
         Title="Добавление новой записи в ваше портфолио" Height="450" Width="594.486" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow">
     <Grid>
         <Label Content="Название" HorizontalAlignment="Left" Margin="7,91,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <TextBox Name="TxbxTitle" HorizontalAlignment="Left" Height="31" Margin="104,94,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="457" FontSize="18">
+        <TextBox Name="TxbxTitle" HorizontalAlignment="Left" Height="31" Margin="104,94,0,0" Text="" VerticalAlignment="Top" Width="457" FontSize="18">
             <TextBox.Effect>
                 <DropShadowEffect/>
             </TextBox.Effect>
@@ -53,7 +53,7 @@
             </Button.Effect>
         </Button>
         <Label Content="Ссылка" HorizontalAlignment="Left" Margin="10,315,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.216,0.009" FontSize="18"/>
-        <TextBox x:Name="TxbxHyperlink" HorizontalAlignment="Left" Height="31" Margin="104,318,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="457" FontSize="18">
+        <TextBox x:Name="TxbxHyperlink" HorizontalAlignment="Left" Height="31" Margin="104,318,0,0" Text="" VerticalAlignment="Top" Width="457" FontSize="18">
             <TextBox.Effect>
                 <DropShadowEffect/>
             </TextBox.Effect>
