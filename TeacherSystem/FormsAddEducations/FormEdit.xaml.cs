@@ -2,7 +2,6 @@
 using System.Windows;
 using Bll.Concrete;
 using BLL.Entities;
-using TeacherSystem;
 
 namespace UserSystem.FormsAddEducations
 {
