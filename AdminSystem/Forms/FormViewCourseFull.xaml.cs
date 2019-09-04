@@ -55,8 +55,16 @@ namespace AdminSystem.Forms
 
         private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)
         {
-            Process.Start(new ProcessStartInfo(MyUrlHyperlink));
-            e.Handled = true;
+            if (MyUrlHyperlink != null)
+            {
+                Process.Start(new ProcessStartInfo(MyUrlHyperlink));
+                e.Handled = true;
+            }
+            else
+            {
+                MessageBox.Show("Материалы данного курса отсутсвуют!", "", MessageBoxButton.OK,
+                    MessageBoxImage.Information);
+            }
 
         }
     }
