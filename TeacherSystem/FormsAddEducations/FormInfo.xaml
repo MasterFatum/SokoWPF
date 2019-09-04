@@ -16,10 +16,11 @@
                 <TextBlock Text=" Закрыть" Height="26"/>
             </StackPanel>
         </Button>
-        <Label Content="'Система управления качеством образования'" HorizontalAlignment="Left" Margin="16,22,0,0" VerticalAlignment="Top" FontSize="20"/>
-        <Label Content="Версия: 1.0.0.0" HorizontalAlignment="Left" Margin="16,71,0,0" VerticalAlignment="Top" FontSize="20"/>
-        <Label Content="Версия MS SQL Server: Не ниже 2008" HorizontalAlignment="Left" Margin="16,108,0,0" VerticalAlignment="Top" FontSize="20"/>
-        <Label Content="Минимальное разрешение экрана: 1024х768" HorizontalAlignment="Left" Margin="16,150,0,0" VerticalAlignment="Top" FontSize="20"/>
-        <Label Content="Разработка: i.panfilov@fckrasnodar.ru" HorizontalAlignment="Left" Margin="16,187,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <Label Content="'Система управления качеством образования" HorizontalAlignment="Left" Margin="16,13,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <Label Content="НЧОУ СОШ ФК Краснодар'" HorizontalAlignment="Left" Margin="102,44,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <Label Content="Версия: 1.1.0.0" HorizontalAlignment="Left" Margin="16,84,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <Label Content="Версия MS SQL Server: Не ниже 2008" HorizontalAlignment="Left" Margin="16,121,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <Label Content="Минимальное разрешение экрана: 1024х768" HorizontalAlignment="Left" Margin="16,161,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <Label Content="Разработка: i.panfilov@fckrasnodar.ru" HorizontalAlignment="Left" Margin="16,200,0,0" VerticalAlignment="Top" FontSize="20"/>
     </Grid>
 </Window>

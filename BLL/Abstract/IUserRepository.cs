@@ -22,10 +22,6 @@ namespace BLL.Abstract
 
         Users ValidationAdmin(string username, string password);
 
-        IEnumerable<Users> SearchUsersByLastname(string lastname);
-
-        IEnumerable<Users> SearchUsersByPosition(string position);
-
         void SokoDispose();
 
 

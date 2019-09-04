@@ -25,7 +25,7 @@ namespace BLL.Concrete
 
                     sokoContext.SaveChanges();
 
-                    MessageBox.Show("Вы успешно зарегистрированы в системе! Войдите в систему под вашим логином и паролем!", "", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show($"Пользователь {user.Email} успешно зарегистрирован в системе!", "", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
                 else
                 {
@@ -181,16 +181,6 @@ namespace BLL.Concrete
             }
 
             return user;
-        }
-
-        public IEnumerable<Users> SearchUsersByLastname(string lastname)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<Users> SearchUsersByPosition(string position)
-        {
-            throw new NotImplementedException();
         }
 
         public void SokoDispose()
