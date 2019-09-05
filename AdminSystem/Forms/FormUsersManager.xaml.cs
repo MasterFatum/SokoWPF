@@ -42,6 +42,8 @@ namespace AdminSystem.Forms
         private void BtnUpdateListUsers_Click(object sender, RoutedEventArgs e)
         {
             DataGridAllUsers.ItemsSource = userRepository.GetAllUser();
+
+            new OtherRepository().SettingDataGridAdmins(DataGridAllUsers);
         }
 
         private void DataGridAllUsers_SelectionChanged(object sender, SelectionChangedEventArgs e)
