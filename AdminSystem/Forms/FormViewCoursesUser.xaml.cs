@@ -12,6 +12,7 @@ namespace AdminSystem.Forms
     
     public partial class FormViewCoursesUser
     {
+        public string User { get; set; }
         public int Id { get; set; }
         public int UserId { get; set; }
         public string Lastname { get; set; }
@@ -25,9 +26,11 @@ namespace AdminSystem.Forms
         CourseRepository courseRepository = new CourseRepository();
 
 
-        public FormViewCoursesUser(int id, string lastname, string firstname, string middlename)
+        public FormViewCoursesUser(int id, string lastname, string firstname, string middlename, string user)
         {
             InitializeComponent();
+
+            User = user;
 
             Id = id;
 
@@ -92,7 +95,7 @@ namespace AdminSystem.Forms
                 Date = items.Date;
                 Hyperlink = items.Hyperlink;
 
-                new FormViewCourseFull(UserId, Id, Lastname, Category, Title, Description, Date, Hyperlink, Evaluation.Value).ShowDialog();
+                new FormViewCourseFull(UserId, Id, Lastname, Category, Title, Description, Date, Hyperlink, User, Evaluation.Value).ShowDialog();
 
             }
             catch (Exception ex)

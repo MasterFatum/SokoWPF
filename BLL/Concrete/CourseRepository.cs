@@ -149,7 +149,7 @@ namespace Bll.Concrete
             return courseses.ToList();
         }
 
-        public void SetRatingCourse(int userId, int id, int rating)
+        public void SetRatingCourse(int userId, int id, int rating, string evaluating)
         {
             try
             {
@@ -158,6 +158,7 @@ namespace Bll.Concrete
                 if (course != null)
                 {
                     course.Evaluation = rating;
+                    course.Evaluating = evaluating;
 
                     sokoContext.Courses.AddOrUpdate(course);
                     sokoContext.SaveChanges();

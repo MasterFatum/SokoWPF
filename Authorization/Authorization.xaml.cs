@@ -103,7 +103,7 @@ namespace Authorization
 
                         Visibility = Visibility.Collapsed;
                         Visibility = Visibility.Hidden;
-                        new AdminSystem.MainWindow().ShowDialog();
+                        new AdminSystem.MainWindow(userAdmin).ShowDialog();
                     }
                     else
                     {

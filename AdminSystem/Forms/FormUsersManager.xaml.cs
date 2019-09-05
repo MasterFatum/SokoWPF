@@ -11,6 +11,7 @@ namespace AdminSystem.Forms
     {
         UserRepository userRepository = new UserRepository();
 
+        public string User { get; set; }
         public int UserId { get; set; }
         public string Lastname { get; set; }
         public string Firstname { get; set; }
@@ -19,9 +20,11 @@ namespace AdminSystem.Forms
         public string Email { get; set; }
         public string Password { get; set; }
 
-        public FormUsersManager()
+        public FormUsersManager(string user)
         {
             InitializeComponent();
+
+            User = user;
 
             DataGridAllUsers.ItemsSource = userRepository.GetAllUser();
         }

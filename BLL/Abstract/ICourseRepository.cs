@@ -22,7 +22,7 @@ namespace BLL.Abstract
 
         IEnumerable<Courses> GetCoursesByFio(string lastname, string firstname, string middlename, string category);
 
-        void SetRatingCourse(int userId, int id, int rating);
+        void SetRatingCourse(int userId, int id, int rating, string evaluating);
 
         string AllRating(int userId);
     }

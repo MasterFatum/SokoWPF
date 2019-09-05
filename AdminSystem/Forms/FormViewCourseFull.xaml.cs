@@ -11,15 +11,17 @@ namespace AdminSystem.Forms
     {
         CourseRepository courseRepository = new CourseRepository();
 
+        public string User { get; set; }
         public int Id { get; set; }
         public int UserId { get; set; }
         public string MyUrlHyperlink { get; set; }
 
 
-        public FormViewCourseFull(int userId, int id, string user, string category, string title, string description, string date, string hyperlink, int evaluation = 0)
+        public FormViewCourseFull(int userId, int id, string user, string category, string title, string description, string date, string hyperlink, string myUser, int evaluation = 0)
         {
             InitializeComponent();
 
+            User = myUser;
             Id = id;
             UserId = userId;
 
@@ -49,7 +51,7 @@ namespace AdminSystem.Forms
                 CbxRating.IsEnabled = false;
                 TxBlSetRating.Text = " Назначить баллы";
 
-                courseRepository.SetRatingCourse(UserId, Id, Convert.ToByte(CbxRating.Text.Trim()));
+                courseRepository.SetRatingCourse(UserId, Id, Convert.ToByte(CbxRating.Text.Trim()), User);
             }
         }
 

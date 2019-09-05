@@ -16,6 +16,8 @@ namespace BLL.Entities
 
         public int? Evaluation { get; set; }
 
+        public string Evaluating { get; set; }
+
         public string Date { get; set; }
 
         public string Hyperlink { get; set; }

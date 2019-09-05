@@ -13,6 +13,7 @@ namespace AdminSystem
     {
         UserRepository userRepository = new UserRepository();
 
+        public string User { get; set; }
         public int Id { get; set; }
         public int UserId { get; set; }
         public string Category { get; set; }
@@ -25,9 +26,11 @@ namespace AdminSystem
         public string Position { get; set; }
         public string Email { get; set; }
 
-        public MainWindow()
+        public MainWindow(Users user)
         {
             InitializeComponent();
+
+            User = user.Lastname;
 
             DataGridAllUsers.ItemsSource = userRepository.GetAllUser();
         }
@@ -66,7 +69,7 @@ namespace AdminSystem
                 Firstname = items.Firstname;
                 Middlename = items.Middlename;
 
-                new FormViewCoursesUser(Id, Lastname, Firstname, Middlename).ShowDialog();
+                new FormViewCoursesUser(Id, Lastname, Firstname, Middlename, User).ShowDialog();
             }
             catch (Exception ex)
             {
@@ -76,7 +79,7 @@ namespace AdminSystem
 
         private void BtnMainUsersManage_Click(object sender, RoutedEventArgs e)
         {
-            new FormUsersManager().ShowDialog();
+            new FormUsersManager(User).ShowDialog();
         }
 
         private void BtnSearch_Click(object sender, RoutedEventArgs e)
