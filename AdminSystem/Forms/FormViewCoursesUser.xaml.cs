@@ -3,6 +3,7 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media;
 using Bll.Concrete;
 using BLL.Concrete;
 using BLL.Entities;
@@ -122,6 +123,23 @@ namespace AdminSystem.Forms
             }
 
             new OtherRepository().SettingDataGridUsers(DataGridUserCourses);
+        }
+
+        SolidColorBrush orange = new SolidColorBrush(Colors.Orange);
+        SolidColorBrush white = new SolidColorBrush(Colors.White);
+
+        private void DataGridUserCourses_LoadingRow(object sender, DataGridRowEventArgs e)
+        {
+            Courses courses = (Courses) e.Row.DataContext;
+
+            if (courses.Evaluation == null)
+            {
+                e.Row.Background = orange;
+            }
+            else
+            {
+                e.Row.Background = white;
+            }
         }
     }
 }

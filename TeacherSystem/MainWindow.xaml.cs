@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media;
 using Bll.Concrete;
 using BLL.Concrete;
 using BLL.Entities;
@@ -190,6 +191,23 @@ namespace TeacherSystem
         private void MenuItem_Click_2(object sender, RoutedEventArgs e)
         {
             new FormInfo().ShowDialog();
+        }
+
+        SolidColorBrush orange = new SolidColorBrush(Colors.Orange);
+        SolidColorBrush white = new SolidColorBrush(Colors.White);
+
+        private void DataGridMain_LoadingRow(object sender, DataGridRowEventArgs e)
+        {
+            Courses courses = (Courses)e.Row.DataContext;
+
+            if (courses.Evaluation == null)
+            {
+                e.Row.Background = orange;
+            }
+            else
+            {
+                e.Row.Background = white;
+            }
         }
     }
 }

@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AdminSystem.Forms"
         mc:Ignorable="d"
-        Title="Курсы пользователя" Height="551.789" Width="1046.733" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+        Title="Курсы пользователя" Height="563.789" Width="1046.733" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
     <Grid>
-        
-        <DataGrid x:Name="DataGridUserCourses" IsReadOnly="True" HorizontalAlignment="Left" Height="411" Margin="10,103,0,0" VerticalAlignment="Top" Width="1011" FontSize="16" MouseDoubleClick="DataGridUserCourses_MouseDoubleClick_1"/>
-        <Button HorizontalAlignment="Right" Margin="0,0,20,427" VerticalAlignment="Bottom" Width="132" Height="35" FontSize="18" Click="Button_Click">
+
+        <DataGrid x:Name="DataGridUserCourses" IsReadOnly="True" HorizontalAlignment="Left" Height="373" Margin="10,103,0,0" VerticalAlignment="Top" Width="1011" FontSize="16" MouseDoubleClick="DataGridUserCourses_MouseDoubleClick_1" LoadingRow="DataGridUserCourses_LoadingRow"/>
+        <Button HorizontalAlignment="Right" Margin="0,0,10,8" VerticalAlignment="Bottom" Width="132" Height="35" FontSize="18" Click="Button_Click">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
@@ -33,7 +33,7 @@
         </ComboBox>
         <Label Content="Пользователь" HorizontalAlignment="Left" Margin="10,17,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
         <Label Content="Категория" HorizontalAlignment="Left" Margin="10,58,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
-        <Button x:Name="BtnShowOtherUsersCourses" HorizontalAlignment="Right" Margin="0,0,459,427" VerticalAlignment="Bottom" Width="132" Height="79" FontSize="18" Click="BtnShowOtherUsersCourses_Click">
+        <Button x:Name="BtnShowOtherUsersCourses" HorizontalAlignment="Right" Margin="0,0,459,437" VerticalAlignment="Bottom" Width="132" Height="35" FontSize="18" Click="BtnShowOtherUsersCourses_Click">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
@@ -43,7 +43,7 @@
             </StackPanel>
         </Button>
         <Label Name="LblUsername" Content="Имя пользователя" HorizontalAlignment="Left" Margin="147,17,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
-        <Button Name="BtnUpdate" HorizontalAlignment="Right" Margin="0,0,322,427" VerticalAlignment="Bottom" Width="132" Height="79" FontSize="18" Click="BtnUpdate_Click">
+        <Button Name="BtnUpdate" HorizontalAlignment="Right" Margin="0,0,322,437" VerticalAlignment="Bottom" Width="132" Height="35" FontSize="18" Click="BtnUpdate_Click">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
@@ -52,13 +52,17 @@
                 <TextBlock Text=" Обновить" Height="26"/>
             </StackPanel>
         </Button>
-        <Label x:Name="LblUserId" Content="ID" HorizontalAlignment="Left" Margin="994,10,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
-        <TextBox x:Name="TxbxAllRating" IsReadOnly="True" HorizontalAlignment="Right" Height="34" Margin="0,52,164,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="146" TextAlignment="Center" FontSize="18" FontWeight="Bold">
+        <Label x:Name="LblUserId" Content="ID" HorizontalAlignment="Left" Margin="994,-22,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+        <TextBox x:Name="TxbxAllRating" IsReadOnly="True" HorizontalAlignment="Right" Height="34" Margin="0,56,12,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="146" TextAlignment="Center" FontSize="18" FontWeight="Bold">
             <TextBox.Effect>
                 <DropShadowEffect/>
             </TextBox.Effect>
         </TextBox>
-        <Label Content="Количество баллов" HorizontalAlignment="Left" Margin="719,21,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Label Content="Количество баллов" HorizontalAlignment="Left" Margin="871,21,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Rectangle HorizontalAlignment="Left" Height="20" Margin="10,487,0,0" Stroke="Black" VerticalAlignment="Top" Width="20" Fill="Orange"/>
+        <Label Content="Баллы отсутствуют" HorizontalAlignment="Left" Margin="35,484,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.263,0.308"/>
+        <Rectangle HorizontalAlignment="Left" Height="20" Margin="166,487,0,0" Stroke="Black" VerticalAlignment="Top" Width="20" Fill="White"/>
+        <Label Content="Баллы выставлены" HorizontalAlignment="Left" Margin="191,484,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.263,0.308"/>
 
     </Grid>
 </Window>
