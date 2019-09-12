@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 using System.Data.Entity.Migrations;
+using System.IO;
 using System.Windows.Controls;
 using BLL;
 using BLL.Abstract;
@@ -14,7 +15,7 @@ namespace Bll.Concrete
     {
         SokoContext sokoContext = new SokoContext();
 
-        public void AddCourse(Courses courses, TextBox title, TextBox description, TextBox hyperlink)
+        public void AddCourse(Courses courses, TextBox title, TextBox description, TextBox hyperlink, TextBox dataFileName)
         {
             try
             {
@@ -26,6 +27,7 @@ namespace Bll.Concrete
                 title.Text = String.Empty;
                 description.Text = String.Empty;
                 hyperlink.Text = String.Empty;
+                dataFileName.Text = String.Empty;
             }
             catch (Exception e)
             {
@@ -180,6 +182,42 @@ namespace Bll.Concrete
         public string AllRating(int userId)
         {
             return sokoContext.Courses.Where(x => x.UserId == userId).Sum(r => r.Evaluation).ToString();
+        }
+
+        public void SendFileToDb(int userId, string ipAddress, string filePath, string fileNameGuid)
+        {
+            try
+            {
+                if (!Directory.Exists(String.Format($@"\\{ipAddress}\\SukoFileDB\\{userId}")))
+                {
+                    Directory.CreateDirectory(String.Format($@"\\{ipAddress}\\SukoFileDB\\{userId}"));
+                }
+
+                File.Copy(filePath, String.Format($@"\\{ipAddress}\\SukoFileDB\\{userId}\\{fileNameGuid}"));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
+        }
+
+        public void DeleteFileToDb(int userId, string ipAddress, string fileNameGuid)
+        {
+            try
+            {
+                if (Directory.Exists(String.Format($@"\\{ipAddress}\\SukoFileDB\\{userId}")))
+                {
+                    if (File.Exists(String.Format($@"\\{ipAddress}\\SukoFileDB\\{userId}\\{fileNameGuid}")))
+                    {
+                        File.Delete(String.Format($@"\\{ipAddress}\\SukoFileDB\\{userId}\\{fileNameGuid}"));
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

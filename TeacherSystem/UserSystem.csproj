@@ -199,5 +199,8 @@
   <ItemGroup>
     <Resource Include="Source\emblema_fk_krasnodar.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\icons8-открыть-папку-32.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

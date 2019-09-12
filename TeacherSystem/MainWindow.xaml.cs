@@ -53,6 +53,7 @@ namespace TeacherSystem
         public string Email { get; set; }
         public string Date { get; set; }
         public string Hyperlink { get; set; }
+        public string FilePath { get; set; }
 
         private void BtnMainExit_Click(object sender, RoutedEventArgs e)
         {
@@ -104,6 +105,7 @@ namespace TeacherSystem
                 Description = items.Description;
                 Evaluation = items.Evaluation;
                 Hyperlink = items.Hyperlink;
+                FilePath = items.FileNameGuid;
 
             }
             catch(Exception ex)
@@ -118,6 +120,8 @@ namespace TeacherSystem
             if (MessageBox.Show("Удалить данную запись?", "Удаление записи", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
                 courseRepository.DeleteCourse(Id, UserId);
+
+                courseRepository.DeleteFileToDb(UserId, "172.20.2.221", FilePath);
 
                 BtnMainUpdate_Click(null, null);
             }

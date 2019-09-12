@@ -6,7 +6,7 @@ namespace BLL.Abstract
 {
     interface ICourseRepository
     {
-        void AddCourse(Courses courses, TextBox title, TextBox description, TextBox hyperlink);
+        void AddCourse(Courses courses, TextBox title, TextBox description, TextBox hyperlink, TextBox dataFileName);
 
         void DeleteCourse(int id, int userId);
 
@@ -25,5 +25,10 @@ namespace BLL.Abstract
         void SetRatingCourse(int userId, int id, int rating, string evaluating);
 
         string AllRating(int userId);
+
+        void SendFileToDb(int userId, string ipAddress, string filePath, string fileNameGuid);
+
+        void DeleteFileToDb(int userId, string ipAddress, string fileNameGuid);
+
     }
 }
