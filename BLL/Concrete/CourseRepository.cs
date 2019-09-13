@@ -8,6 +8,7 @@ using System.Windows.Controls;
 using BLL;
 using BLL.Abstract;
 using BLL.Entities;
+using Microsoft.Win32;
 
 namespace Bll.Concrete
 {
@@ -217,6 +218,19 @@ namespace Bll.Concrete
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        public void DownloadFileToDb(string ipAddress, int userId, string filename, string newFilepath)
+        {
+           try
+            {
+              File.Copy(String.Format($@"\\{ipAddress}\\SukoFileDB\\{userId}\\{filename}"), newFilepath);
+              MessageBox.Show("Материалы успешно загружены!", "", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message); 
             }
         }
     }

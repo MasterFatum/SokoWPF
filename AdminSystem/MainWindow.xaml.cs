@@ -33,6 +33,8 @@ namespace AdminSystem
             User = user.Lastname;
 
             DataGridAllUsers.ItemsSource = userRepository.GetAllUser();
+
+            LblAllUsers.Content = userRepository.GetAllUsersCount();
         }
 
         private void BtnMainExit_Click(object sender, RoutedEventArgs e)

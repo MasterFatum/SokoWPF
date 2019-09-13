@@ -84,7 +84,7 @@
                 <DropShadowEffect/>
             </TextBox.Effect>
         </TextBox>
-        <GroupBox Header="Категории" HorizontalAlignment="Right" Height="129" Margin="0,6,8,0" VerticalAlignment="Top" Width="233"/>
+        <GroupBox Header="Фильтр записей" HorizontalAlignment="Right" Height="129" Margin="0,6,8,0" VerticalAlignment="Top" Width="233"/>
         <ComboBox x:Name="CbxMainShowCategory" HorizontalAlignment="Right" Margin="0,31,23,0" VerticalAlignment="Top" Width="211" FontSize="18" SelectionChanged="CbxMainShowCategory_SelectionChanged">
             <ComboBox.Effect>
                 <DropShadowEffect/>
@@ -98,7 +98,7 @@
             <ComboBoxItem Content="Размещение материалов на сайте"/>
             <ComboBoxItem Content="Другое"/>
         </ComboBox>
-        <Button x:Name="BtnMainCategoryShow" Margin="0,83,58,0" VerticalAlignment="Top" Width="132" Height="34" FontSize="18" Click="BtnMainCategoryShow_Click" HorizontalAlignment="Right">
+        <Button x:Name="BtnMainCategoryShow" Margin="0,83,102,0" VerticalAlignment="Top" Width="132" Height="34" FontSize="18" Click="BtnMainCategoryShow_Click" HorizontalAlignment="Right">
             <StackPanel Orientation="Horizontal">
                 <Image Source="Source/Search_32px.png" Height="29"/>
                 <TextBlock Text="  Показать" Height="26"/>
@@ -133,5 +133,13 @@
         <Label Content="Баллы отсутствуют" HorizontalAlignment="Left" Margin="113,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.263,0.308"/>
         <Rectangle HorizontalAlignment="Left" Height="20" Margin="232,13,0,0" Stroke="Black" VerticalAlignment="Top" Width="20" Fill="White"/>
         <Label Content="Баллы выставлены" HorizontalAlignment="Left" Margin="257,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.263,0.308"/>
+        <Button x:Name="BtnMainUpdate2" Margin="0,83,23,0" VerticalAlignment="Top" Width="51" Height="34" FontSize="18" Click="BtnMainUpdate_Click" HorizontalAlignment="Right">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+            <StackPanel Orientation="Horizontal">
+                <Image Source="Source/Available Updates_32px.png" Height="29"/>
+            </StackPanel>
+        </Button>
     </Grid>
 </Window>

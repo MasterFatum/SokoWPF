@@ -154,14 +154,16 @@ namespace TeacherSystem
                     return;
                 }
 
+                UserId = items.UserId;
                 Category = items.Category;
                 Title = items.Title;
                 Description = items.Description;
                 Evaluation = items.Evaluation ?? 0;
                 Date = items.Date ?? "Дата отсутствует";
                 Hyperlink = items.Hyperlink;
+                FilePath = items.FileNameGuid;
 
-                new FormViewItemsFull("Вы", Category, Title, Description, Date, Hyperlink, Evaluation.Value).ShowDialog();
+                new FormViewItemsFull(UserId, "Вы", Category, Title, Description, Date, Hyperlink, FilePath, Evaluation.Value).ShowDialog();
 
             }
             catch (Exception ex)

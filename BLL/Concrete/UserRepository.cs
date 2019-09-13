@@ -188,5 +188,9 @@ namespace BLL.Concrete
             sokoContext.Dispose();
         }
 
+        public string GetAllUsersCount()
+        {
+            return sokoContext.Users.Count().ToString();
+        }
     }
 }

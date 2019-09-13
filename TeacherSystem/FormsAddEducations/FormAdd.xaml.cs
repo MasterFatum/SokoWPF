@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Forms;
 using Bll.Concrete;
@@ -64,7 +65,8 @@ namespace UserSystem.FormsAddEducations
 
                 if (FileNameGuidAdd != null)
                 {
-                    courseRepository.SendFileToDb(UserIdAdd, "172.20.2.221\\", FilePath, FileNameGuidAdd);
+                    Task task = new Task(() => courseRepository.SendFileToDb(UserIdAdd, "172.20.2.221\\", FilePath, FileNameGuidAdd));
+                    task.Start();
                 }
             }
             else

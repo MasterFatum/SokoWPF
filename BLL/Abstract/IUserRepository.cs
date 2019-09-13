@@ -24,6 +24,8 @@ namespace BLL.Abstract
 
         void SokoDispose();
 
+        string GetAllUsersCount();
+
 
 
 

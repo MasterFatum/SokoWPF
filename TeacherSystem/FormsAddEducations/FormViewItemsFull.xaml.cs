@@ -1,18 +1,25 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Navigation;
+using Bll.Concrete;
 
 namespace UserSystem.FormsAddEducations
 {
     
     public partial class FormViewItemsFull
     {
-        public string MyUrlHyperlink { get; set; }
+        CourseRepository courseRepository = new CourseRepository();
 
-        public FormViewItemsFull(string user, string category, string title, string description, string date, string hyperlink, int evaluation = 0)
+        public int UserId { get; set; }
+        public string MyUrlHyperlink { get; set; }
+        public string Filepath { get; set; }
+
+        public FormViewItemsFull(int userId, string user, string category, string title, string description, string date, string hyperlink, string filepath, int evaluation = 0)
         {
             InitializeComponent();
-
+            UserId = userId;
             TxbxUser.Text = user;
             TxbxCategory.Text = category;
             TxbxTitle.Text = title;
@@ -20,6 +27,12 @@ namespace UserSystem.FormsAddEducations
             TxbxEvaluation.Text = evaluation.ToString();
             TxbxDate.Text = date;
             MyUrlHyperlink = hyperlink;
+            Filepath = filepath;
+
+            if (Filepath == null)
+            {
+                BtnLocalMatherials.IsEnabled = false;
+            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -29,16 +42,22 @@ namespace UserSystem.FormsAddEducations
 
         private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)
         {
-            if (MyUrlHyperlink != null)
+            if (MyUrlHyperlink != String.Empty)
             {
                 Process.Start(new ProcessStartInfo(MyUrlHyperlink));
                 e.Handled = true;
             }
             else
             {
-                MessageBox.Show("Материалы данного курса отсутсвуют!", "", MessageBoxButton.OK,
+                MessageBox.Show("Web-материалы данного курса отсутсвуют!", "", MessageBoxButton.OK,
                     MessageBoxImage.Information);
             }
+        }
+
+        private void BtnLocalMatherials_Click(object sender, RoutedEventArgs e)
+        {
+            Task task = new Task(() => courseRepository.DownloadFileToDb("172.20.2.221", UserId, Filepath, TxbxTitle.Text.Trim()));
+            task.Start();
         }
     }
 }

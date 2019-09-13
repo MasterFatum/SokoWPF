@@ -26,7 +26,7 @@
             </StackPanel>
         </Button>
 
-        <GroupBox Header="Пользователи системы" HorizontalAlignment="Left" Height="488" Margin="10,10,0,0" VerticalAlignment="Top" Width="1041">
+        <GroupBox Header="Пользователи системы" HorizontalAlignment="Left" Height="470" Margin="10,0,0,75" VerticalAlignment="Bottom" Width="1041">
             <DataGrid Name="DataGridAllUsers" IsReadOnly="True" HorizontalAlignment="Left" Margin="0,0,-2,2" Width="1031" MouseDoubleClick="DataGridAllUsers_MouseDoubleClick" FontSize="16"/>
         </GroupBox>
         <TextBox Name="TxbxSearch"  HorizontalAlignment="Left" Height="44" Margin="303,509,0,0" VerticalAlignment="Top" Width="381" FontSize="18">
@@ -52,5 +52,7 @@
                 <TextBlock Text=" Обновить" Height="26"/>
             </StackPanel>
         </Button>
+        <Label Content="Всего пользователей:" HorizontalAlignment="Left" Margin="870,2,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <Label Name="LblAllUsers" Content="100" HorizontalAlignment="Left" Margin="1013,2,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.158,0.269" FontWeight="Bold" FontSize="14"/>
     </Grid>
 </Window>

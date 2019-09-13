@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Windows.Controls;
 using BLL.Entities;
 
@@ -29,6 +30,8 @@ namespace BLL.Abstract
         void SendFileToDb(int userId, string ipAddress, string filePath, string fileNameGuid);
 
         void DeleteFileToDb(int userId, string ipAddress, string fileNameGuid);
+
+        void DownloadFileToDb(string ipAddress, int userId, string filename, string newFilename);
 
     }
 }
