@@ -18,7 +18,8 @@ namespace BLL.Concrete
             dataGrid.Columns[5].Header = "Баллы";
             dataGrid.Columns[6].Header = "Оценивающий";
             dataGrid.Columns[7].Header = "Дата";
-            dataGrid.Columns[8].Header = "Ссылка на материал";
+            dataGrid.Columns[8].Header = "Web материал";
+            dataGrid.Columns[9].Header = "Локальный материал";
 
         }
 

@@ -14,6 +14,7 @@ namespace UserSystem.FormsAddEducations
             InitializeComponent();
         }
 
+        public int UserId { get; set; }
         public string Lastname { get; set; }
         public string Category { get; set; }
         public new string Title { get; set; }
@@ -21,6 +22,7 @@ namespace UserSystem.FormsAddEducations
         public int Evaluation { get; set; }
         public string Date { get; set; }
         public string Hyperlink { get; set; }
+        public string Filename { get; set; }
 
         CourseRepository courseRepository = new CourseRepository();
 
@@ -90,6 +92,7 @@ namespace UserSystem.FormsAddEducations
                     return;
                 }
 
+                UserId = items.UserId;
                 Lastname = CbxOtherUsersCourses.SelectedItem.ToString();
                 Category = items.Category;
                 Title = items.Title;
@@ -97,8 +100,9 @@ namespace UserSystem.FormsAddEducations
                 Evaluation = items.Evaluation ?? 0;
                 Date = items.Date ?? "Дата отсутствует";
                 Hyperlink = items.Hyperlink;
+                Filename = items.FileNameGuid;
 
-                new FormViewItemsFull(Lastname, Category, Title, Description, Date, Hyperlink, Evaluation).ShowDialog();
+                new FormViewItemsFull(UserId, Lastname, Category, Title, Description, Date, Hyperlink, Filename, Evaluation).ShowDialog();
 
             }
             catch (Exception ex)

@@ -175,5 +175,8 @@
   <ItemGroup>
     <Resource Include="Source\Add User Male_32px.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icons8-скачать-с-ftp-32.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

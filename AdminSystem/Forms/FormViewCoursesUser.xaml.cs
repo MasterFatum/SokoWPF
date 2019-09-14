@@ -23,6 +23,7 @@ namespace AdminSystem.Forms
         public int? Evaluation { get; set; }
         public string Date { get; set; }
         public string Hyperlink { get; set; }
+        public string FilePath { get; set; }
 
         CourseRepository courseRepository = new CourseRepository();
 
@@ -95,8 +96,9 @@ namespace AdminSystem.Forms
                 Evaluation = items.Evaluation ?? 0;
                 Date = items.Date;
                 Hyperlink = items.Hyperlink;
+                FilePath = items.FileNameGuid;
 
-                new FormViewCourseFull(UserId, Id, Lastname, Category, Title, Description, Date, Hyperlink, User, Evaluation.Value).ShowDialog();
+                new FormViewCourseFull(UserId, Id, Lastname, Category, Title, Description, Date, Hyperlink, User, FilePath, Evaluation.Value).ShowDialog();
 
             }
             catch (Exception ex)

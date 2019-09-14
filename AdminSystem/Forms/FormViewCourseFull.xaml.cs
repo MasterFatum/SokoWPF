@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Navigation;
 using Bll.Concrete;
+using Microsoft.Win32;
 
 namespace AdminSystem.Forms
 {
@@ -15,9 +17,10 @@ namespace AdminSystem.Forms
         public int Id { get; set; }
         public int UserId { get; set; }
         public string MyUrlHyperlink { get; set; }
+        public string Filepath { get; set; }
 
 
-        public FormViewCourseFull(int userId, int id, string user, string category, string title, string description, string date, string hyperlink, string myUser, int evaluation = 0)
+        public FormViewCourseFull(int userId, int id, string user, string category, string title, string description, string date, string hyperlink, string myUser, string filePath, int evaluation = 0)
         {
             InitializeComponent();
 
@@ -32,6 +35,13 @@ namespace AdminSystem.Forms
             CbxRating.Text = evaluation.ToString();
             TxbxDate.Text = date;
             MyUrlHyperlink = hyperlink;
+            Filepath = filePath;
+
+            if (Filepath == null)
+            {
+                BtnLocalMatherials.IsEnabled = false;
+            }
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -57,7 +67,7 @@ namespace AdminSystem.Forms
 
         private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)
         {
-            if (MyUrlHyperlink != null)
+            if (MyUrlHyperlink != String.Empty)
             {
                 Process.Start(new ProcessStartInfo(MyUrlHyperlink));
                 e.Handled = true;
@@ -68,6 +78,19 @@ namespace AdminSystem.Forms
                     MessageBoxImage.Information);
             }
 
+        }
+
+        private void BtnLocalMatherials_Click(object sender, RoutedEventArgs e)
+        {
+            SaveFileDialog saveFile = new SaveFileDialog();
+            saveFile.Filter = @"Zip files (*.zip)|*.zip";
+            saveFile.FileName = TxbxTitle.Text;
+
+            if (saveFile.ShowDialog() == true)
+            {
+                Task task = new Task(() => courseRepository.DownloadFileToDb("172.20.2.221", UserId, Filepath, saveFile.FileName));
+                task.Start();
+            }
         }
     }
 }
