@@ -46,7 +46,7 @@
             </Button.Effect>
         </Button>
         <Label Content="Баллы" HorizontalAlignment="Left" Margin="654,10,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" FontStyle="Italic"/>
-        <TextBox x:Name="TxbxDate" HorizontalAlignment="Left" IsEnabled ="False"  Height="35" Margin="125,400,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="194" FontSize="16" TextAlignment="Center">
+        <TextBox x:Name="TxbxDate" HorizontalAlignment="Left" IsEnabled ="False"  Height="35" Margin="128,400,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="182" FontSize="16" TextAlignment="Center">
             <TextBox.Effect>
                 <DropShadowEffect/>
             </TextBox.Effect>
