@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Navigation;
 using Bll.Concrete;
+using Microsoft.Win32;
 
 namespace UserSystem.FormsAddEducations
 {
@@ -56,8 +57,16 @@ namespace UserSystem.FormsAddEducations
 
         private void BtnLocalMatherials_Click(object sender, RoutedEventArgs e)
         {
-            Task task = new Task(() => courseRepository.DownloadFileToDb("172.20.2.221", UserId, Filepath, TxbxTitle.Text.Trim()));
-            task.Start();
+            SaveFileDialog saveFile = new SaveFileDialog();
+            saveFile.Filter = @"Zip files (*.zip)|*.zip";
+            saveFile.FileName = TxbxTitle.Text;
+
+            if (saveFile.ShowDialog() == true)
+            {
+                Task task = new Task(() => courseRepository.DownloadFileToDb("172.20.2.221", UserId, Filepath, saveFile.FileName));
+                task.Start();
+            }
         }
     }
-}
+ }
+

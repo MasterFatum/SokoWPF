@@ -90,7 +90,6 @@ namespace AdminSystem.Forms
             {
                 Task task = new Task(() => courseRepository.DownloadFileToDb("172.20.2.221", UserId, Filepath, saveFile.FileName));
                 task.Start();
-                ;
             }
         }
     }
