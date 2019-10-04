@@ -60,6 +60,11 @@ namespace TeacherSystem
             Application.Current.Shutdown();
         }
 
+        private void MenuItem_Click_3(object sender, RoutedEventArgs e)
+        {
+
+        }
+
         private void BtnMainCategoryShow_Click(object sender, RoutedEventArgs e)
         {
             if (CbxMainShowCategory.SelectedIndex != -1)
@@ -215,5 +220,6 @@ namespace TeacherSystem
                 e.Row.Background = white;
             }
         }
+        
     }
 }

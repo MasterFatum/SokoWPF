@@ -34,6 +34,11 @@ namespace UserSystem.FormsAddEducations
             {
                 BtnLocalMatherials.IsEnabled = false;
             }
+
+            if (MyUrlHyperlink == String.Empty)
+            {
+                Hyperlink.IsEnabled = false;
+            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

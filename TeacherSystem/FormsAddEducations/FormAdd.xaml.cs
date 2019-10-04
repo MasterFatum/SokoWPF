@@ -82,11 +82,20 @@ namespace UserSystem.FormsAddEducations
 
             openFileDialog.Filter = @"Zip files (*.zip)|*.zip";
 
-
+            
             if (openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                FilePath = openFileDialog.FileName;
-                TxbxFilePath.Text = FilePath;
+                long fileLength = new FileInfo(openFileDialog.FileName).Length;
+
+                if (fileLength > 52428800)
+                {
+                    MessageBox.Show("Размер файла превышает допустимый! Размер файла не должен превышать 50 MB.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
+                else
+                {
+                    FilePath = openFileDialog.FileName;
+                    TxbxFilePath.Text = FilePath;
+                }
             }
         }
     }
