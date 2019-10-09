@@ -60,9 +60,19 @@ namespace TeacherSystem
             Application.Current.Shutdown();
         }
 
-        private void MenuItem_Click_3(object sender, RoutedEventArgs e)
+        private void Update_Click(object sender, RoutedEventArgs e)
         {
-
+            try
+            {
+                System.Diagnostics.Process proc = new System.Diagnostics.Process();
+                proc.StartInfo.FileName = "UpdateSoko.exe";
+                proc.Start();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
 
         private void BtnMainCategoryShow_Click(object sender, RoutedEventArgs e)
@@ -111,7 +121,6 @@ namespace TeacherSystem
                 Evaluation = items.Evaluation;
                 Hyperlink = items.Hyperlink;
                 FilePath = items.FileNameGuid;
-
             }
             catch(Exception ex)
             {

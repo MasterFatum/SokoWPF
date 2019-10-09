@@ -120,7 +120,7 @@
             <MenuItem Header="Меню" FontSize="16" FontWeight="Normal">
                 <MenuItem Header="Учетная запись" Click="MenuItem_Click" FontWeight="Normal" ></MenuItem>
                 <MenuItem Header="Информация о программе" Click="MenuItem_Click_2" FontWeight="Normal"></MenuItem>
-                <MenuItem Header="Проверить обновления"  FontWeight="Normal" Click="MenuItem_Click_3"></MenuItem>
+                <MenuItem Header="Проверить обновления"  FontWeight="Normal" Click="Update_Click"></MenuItem>
                 <MenuItem Header="Выйти" Click="MenuItem_Click_1" FontWeight="Normal"></MenuItem>
             </MenuItem>
         </Menu>

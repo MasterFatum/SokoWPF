@@ -56,5 +56,10 @@ namespace BLL.Concrete
                 MessageBox.Show(ex.Message);
             }
         }
+
+        public void Update()
+        {
+
+        }
     }
 }
