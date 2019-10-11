@@ -65,7 +65,7 @@ namespace TeacherSystem
             try
             {
                 System.Diagnostics.Process proc = new System.Diagnostics.Process();
-                proc.StartInfo.FileName = "UpdateSoko.exe";
+                proc.StartInfo.FileName = @"C:\СКО ФК Краснодар\Update\UpdateSoko.exe";
                 proc.Start();
             }
             catch (Exception ex)

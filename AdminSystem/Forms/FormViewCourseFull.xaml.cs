@@ -41,7 +41,10 @@ namespace AdminSystem.Forms
             {
                 BtnLocalMatherials.IsEnabled = false;
             }
-
+            if (MyUrlHyperlink == String.Empty)
+            {
+                Hyperlink.IsEnabled = false;
+            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
