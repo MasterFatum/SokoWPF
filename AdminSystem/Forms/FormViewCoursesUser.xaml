@@ -38,7 +38,7 @@
                 <DropShadowEffect/>
             </Button.Effect>
             <StackPanel Orientation="Horizontal">
-                <Image Source="../Source/View_32px.png" Height="29"/>
+                <Image Source="../Source/Search Property_32px.png" Height="29"/>
                 <TextBlock Text=" Показать" Height="26"/>
             </StackPanel>
         </Button>
@@ -48,7 +48,7 @@
                 <DropShadowEffect/>
             </Button.Effect>
             <StackPanel Orientation="Horizontal">
-                <Image Source="../Source/Available Updates_32px.png" Height="29"/>
+                <Image Source="../Source/Refresh_32px.png" Height="29"/>
                 <TextBlock Text=" Обновить" Height="26"/>
             </StackPanel>
         </Button>

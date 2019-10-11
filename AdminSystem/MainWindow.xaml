@@ -21,7 +21,7 @@
                 <DropShadowEffect/>
             </Button.Effect>
             <StackPanel Orientation="Horizontal">
-                <Image Source="Source/User Account_32px.png" Height="29"/>
+                <Image Source="Source/Users_32px.png" Height="29"/>
                 <TextBlock Text=" Управление пользователями" Height="26"/>
             </StackPanel>
         </Button>
@@ -39,7 +39,7 @@
                 <DropShadowEffect/>
             </Button.Effect>
             <StackPanel Orientation="Horizontal">
-                <Image Source="Source/Search_32px.png" Height="29"/>
+                <Image Source="Source/Find User_32px.png" Height="29"/>
                 <TextBlock Text=" Найти" Height="26"/>
             </StackPanel>
         </Button>
@@ -48,7 +48,7 @@
                 <DropShadowEffect/>
             </Button.Effect>
             <StackPanel Orientation="Horizontal">
-                <Image Source="Source/Available Updates_32px.png" Height="29"/>
+                <Image Source="Source/Refresh_32px.png" Height="29"/>
                 <TextBlock Text=" Обновить" Height="26"/>
             </StackPanel>
         </Button>

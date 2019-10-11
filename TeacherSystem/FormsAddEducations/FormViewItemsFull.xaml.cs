@@ -35,7 +35,7 @@ namespace UserSystem.FormsAddEducations
                 BtnLocalMatherials.IsEnabled = false;
             }
 
-            if (MyUrlHyperlink == String.Empty)
+            if (String.IsNullOrEmpty(MyUrlHyperlink))
             {
                 Hyperlink.IsEnabled = false;
             }

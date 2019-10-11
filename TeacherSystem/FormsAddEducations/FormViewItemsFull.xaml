@@ -64,7 +64,7 @@
                 <DropShadowEffect/>
             </Button.Effect>
             <StackPanel Orientation="Horizontal">
-                <Image Source="../Source/icons8-скачать-с-ftp-32.png" Height="29"/>
+                <Image Source="../Source/Downloads Folder_32px.png" Height="29"/>
                 <TextBlock Text=" Скачать" Height="26"/>
             </StackPanel>
         </Button>

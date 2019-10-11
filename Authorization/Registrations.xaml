@@ -9,7 +9,7 @@
     <Grid>
         <Button x:Name="BtnRegistration" HorizontalAlignment="Left" Margin="368,391,0,0" VerticalAlignment="Top" Width="151" Height="53" FontSize="18" Click="BtnRegistration_Click">
             <StackPanel Orientation="Horizontal">
-                <Image Source="Source/Add User Male_32px.png"  Height="29"/>
+                <Image Source="Source/Add User _32px.png"  Height="29"/>
                 <TextBlock Text=" Регистрация" Height="26"/>
             </StackPanel>
             <Button.Effect>
@@ -18,7 +18,7 @@
         </Button>
         <Button x:Name="BtnClose" HorizontalAlignment="Left" Margin="10,391,0,0" VerticalAlignment="Top" Width="151" Height="53" FontSize="18" Click="BtnClose_Click">
             <StackPanel Orientation="Horizontal">
-                <Image Source="Source/Cancel_32px.png"  Height="29"/>
+                <Image Source="Source/Cancel_32px.png" Height="29"/>
                 <TextBlock Text=" Закрыть" Height="26"/>
             </StackPanel>
             <Button.Effect>
@@ -27,7 +27,7 @@
         </Button>
         <Button x:Name="BtnClear" HorizontalAlignment="Left" Margin="196,391,0,0" VerticalAlignment="Top" Width="135" Height="53" FontSize="18" Click="BtnClear_Click">
             <StackPanel Orientation="Horizontal">
-                <Image Source="Source/Broom_32px.png"  Height="29"/>
+                <Image Source="Source/Clear_32px.png"  Height="29"/>
                 <TextBlock Text=" Очистить" Height="26"/>
             </StackPanel>
             <Button.Effect>

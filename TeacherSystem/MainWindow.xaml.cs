@@ -121,6 +121,17 @@ namespace TeacherSystem
                 Evaluation = items.Evaluation;
                 Hyperlink = items.Hyperlink;
                 FilePath = items.FileNameGuid;
+
+                if (!String.IsNullOrEmpty(Evaluation.ToString()))
+                {
+                    BtnMainEdit.IsEnabled = false;
+                    BtnMainDelete.IsEnabled = false;
+                }
+                else
+                {
+                    BtnMainEdit.IsEnabled = true;
+                    BtnMainDelete.IsEnabled = true;
+                }
             }
             catch(Exception ex)
             {
@@ -135,11 +146,13 @@ namespace TeacherSystem
             {
                 courseRepository.DeleteCourse(Id, UserId);
 
-                courseRepository.DeleteFileToDb(UserId, "172.20.2.221", FilePath);
-
+                if (!String.IsNullOrEmpty(FilePath))
+                {
+                    courseRepository.DeleteFileToDb(UserId, "172.20.2.221", FilePath);
+                }
+                
                 BtnMainUpdate_Click(null, null);
             }
-           
         }
 
         private void BtnMainEdit_Click(object sender, RoutedEventArgs e)

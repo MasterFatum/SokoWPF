@@ -132,19 +132,11 @@
     <Resource Include="icons8_Training.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Source\Shutdown_32px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Source\Connected_32px.png" />
-  </ItemGroup>
-  <ItemGroup>
+    <Resource Include="Source\Add User _32px.png" />
     <Resource Include="Source\Cancel_32px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Source\Broom_32px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Source\Add User Male_32px.png" />
+    <Resource Include="Source\Clear_32px.png" />
+    <Resource Include="Source\Connected_32px.png" />
+    <Resource Include="Source\Shutdown_32px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

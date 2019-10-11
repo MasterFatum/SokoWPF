@@ -40,7 +40,7 @@
         <Label Content="Категория" HorizontalAlignment="Left" Margin="10,64,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
         <Button Name="BtnShowOtherUsersCourses" HorizontalAlignment="Right" Margin="0,0,259,320" VerticalAlignment="Bottom" Width="132" Height="78" FontSize="18" Click="BtnShowOtherUsersCourses_Click">
             <StackPanel Orientation="Horizontal">
-                <Image Source="../Source/View_32px.png" Height="29"/>
+                <Image Source="../Source/Filter_32px.png" Height="29"/>
                 <TextBlock Text=" Показать" Height="26"/>
             </StackPanel>
             <Button.Effect>

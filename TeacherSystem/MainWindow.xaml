@@ -47,7 +47,7 @@
         </Button>
         <Button x:Name="BtnMainUpdate" HorizontalAlignment="Left" Margin="710,0,0,1" VerticalAlignment="Bottom" Width="178" Height="44" FontSize="18" Click="BtnMainUpdate_Click">
             <StackPanel Orientation="Horizontal">
-                <Image Source="Source/Available Updates_32px.png" Height="29"/>
+                <Image Source="Source/Refresh_32px.png" Height="29"/>
                 <TextBlock Text=" Общий список" Height="26"/>
             </StackPanel>
             <Button.Effect>
@@ -100,7 +100,7 @@
         </ComboBox>
         <Button x:Name="BtnMainCategoryShow" Margin="0,83,102,0" VerticalAlignment="Top" Width="132" Height="34" FontSize="18" Click="BtnMainCategoryShow_Click" HorizontalAlignment="Right">
             <StackPanel Orientation="Horizontal">
-                <Image Source="Source/Search_32px.png" Height="29"/>
+                <Image Source="Source/Filter_32px.png" Height="29"/>
                 <TextBlock Text="  Показать" Height="26"/>
             </StackPanel>
             <Button.Effect>
@@ -109,7 +109,7 @@
         </Button>
         <Button x:Name="BtnMainOtherUsersCourses" HorizontalAlignment="Left" Margin="421,0,0,2" VerticalAlignment="Bottom" Width="284" Height="43" FontSize="18" Click="BtnMainOtherUsersCourses_Click">
             <StackPanel Orientation="Horizontal">
-                <Image Source="Source/User Account_32px.png" Height="29"/>
+                <Image Source="Source/Users_32px.png" Height="29"/>
                 <TextBlock Text=" Курсы других пользователей" Height="26"/>
             </StackPanel>
             <Button.Effect>
@@ -139,7 +139,7 @@
                 <DropShadowEffect/>
             </Button.Effect>
             <StackPanel Orientation="Horizontal">
-                <Image Source="Source/Available Updates_32px.png" Height="29"/>
+                <Image Source="Source/Refresh_32px.png"  Height="29"/>
             </StackPanel>
         </Button>
     </Grid>

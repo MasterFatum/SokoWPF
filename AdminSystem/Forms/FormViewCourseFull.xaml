@@ -46,7 +46,7 @@
                 <DropShadowEffect/>
             </Button.Effect>
             <StackPanel Orientation="Horizontal">
-                <Image Source="../Source/Rating-32.png" Height="29"/>
+                <Image Source="../Source/Rating_32px.png" Height="29"/>
                 <TextBlock Name="TxBlSetRating" Text=" Назначить баллы" Height="26" Width="153"/>
             </StackPanel>
         </Button>
@@ -76,7 +76,7 @@
                 <DropShadowEffect/>
             </Button.Effect>
             <StackPanel Orientation="Horizontal">
-                <Image Source="/AdminSystem;component/icons8-скачать-с-ftp-32.png" Height="29"/>
+                <Image Source="../Source/Downloads Folder_32px.png" Height="29"/>
                 <TextBlock Text=" Скачать" Height="26"/>
             </StackPanel>
         </Button>

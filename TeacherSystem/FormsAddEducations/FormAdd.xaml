@@ -45,7 +45,7 @@
         </TextBox>
         <Button Name="BtnClear" HorizontalAlignment="Left" Margin="236,425,0,0" VerticalAlignment="Top" Width="132" Height="35" FontSize="18" Click="BtnClear_Click">
             <StackPanel Orientation="Horizontal">
-                <Image Source="../Source/Broom_32px.png" Height="29"/>
+                <Image Source="../Source/Clear_32px.png"  Height="29"/>
                 <TextBlock Text=" Очистить" Height="26"/>
             </StackPanel>
             <Button.Effect>
@@ -68,7 +68,7 @@
                 <DropShadowEffect/>
             </Button.Effect>
             <StackPanel Orientation="Horizontal">
-                <Image Source="../Source/icons8-открыть-папку-32.png" Height="29"/>
+                <Image Source="../Source/Opened Folder_32px.png"  Height="29"/>
                 <TextBlock Text=" Обзор" Height="26"/>
             </StackPanel>
         </Button>

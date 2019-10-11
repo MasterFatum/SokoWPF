@@ -181,29 +181,24 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Source\Add Property_32px.png" />
-    <Resource Include="Source\Available Updates_32px.png" />
-    <Resource Include="Source\Broom_32px.png" />
+    <Resource Include="Source\Add User _32px.png" />
     <Resource Include="Source\Cancel_32px.png" />
+    <Resource Include="Source\Clear_32px.png" />
     <Resource Include="Source\Connected_32px.png" />
     <Resource Include="Source\Delete Document_32px.png" />
+    <Resource Include="Source\Delete User_32px.png" />
+    <Resource Include="Source\Downloads Folder_32px.png" />
     <Resource Include="Source\Edit Property_32px.png" />
-    <Resource Include="Source\Info_32px.png" />
-    <Resource Include="Source\Microsoft Excel_32px.png" />
+    <Resource Include="Source\Edit User_32px.png" />
+    <Resource Include="Source\Filter_32px.png" />
+    <Resource Include="Source\Find User_32px.png" />
+    <Resource Include="Source\Opened Folder_32px.png" />
+    <Resource Include="Source\Rating_32px.png" />
+    <Resource Include="Source\Refresh_32px.png" />
     <Resource Include="Source\Save_32px.png" />
-    <Resource Include="Source\Search_32px.png" />
+    <Resource Include="Source\Search Property_32px.png" />
     <Resource Include="Source\Shutdown_32px.png" />
-    <Resource Include="Source\Shutdown_50px.png" />
-    <Resource Include="Source\User Account_32px.png" />
-    <Resource Include="Source\View_32px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Source\emblema_fk_krasnodar.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Source\icons8-открыть-папку-32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Source\icons8-скачать-с-ftp-32.png" />
+    <Resource Include="Source\Users_32px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
