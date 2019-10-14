@@ -200,5 +200,8 @@
     <Resource Include="Source\Shutdown_32px.png" />
     <Resource Include="Source\Users_32px.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\Category_32px.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
