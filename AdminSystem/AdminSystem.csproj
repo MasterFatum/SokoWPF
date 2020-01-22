@@ -167,5 +167,8 @@
   <ItemGroup>
     <Resource Include="Source\Find User_32px.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Category_32px.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

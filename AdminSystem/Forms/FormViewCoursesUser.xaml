@@ -18,7 +18,7 @@
                 <TextBlock Text=" Закрыть" Height="26"/>
             </StackPanel>
         </Button>
-        <ComboBox x:Name="CbxUserCategory" HorizontalAlignment="Right" Margin="0,57,608,0" VerticalAlignment="Top" Width="270" FontSize="18">
+        <ComboBox x:Name="CbxUserCategory" HorizontalAlignment="Right" Margin="0,57,546,0" VerticalAlignment="Top" Width="270" FontSize="18">
             <ComboBox.Effect>
                 <DropShadowEffect/>
             </ComboBox.Effect>
@@ -32,9 +32,9 @@
             <ComboBoxItem Content="Справки"/>
             <ComboBoxItem Content="Другое"/>
         </ComboBox>
-        <Label Content="Пользователь" HorizontalAlignment="Left" Margin="10,17,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
-        <Label Content="Категория" HorizontalAlignment="Left" Margin="10,58,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
-        <Button x:Name="BtnShowOtherUsersCourses" HorizontalAlignment="Right" Margin="0,0,459,437" VerticalAlignment="Bottom" Width="132" Height="35" FontSize="18" Click="BtnShowOtherUsersCourses_Click">
+        <Label Content="Пользователь" HorizontalAlignment="Left" Margin="72,17,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+        <Label Content="Категория" HorizontalAlignment="Left" Margin="72,58,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+        <Button x:Name="BtnShowOtherUsersCourses" HorizontalAlignment="Right" Margin="0,0,397,437" VerticalAlignment="Bottom" Width="132" Height="35" FontSize="18" Click="BtnShowOtherUsersCourses_Click">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
@@ -43,8 +43,8 @@
                 <TextBlock Text=" Показать" Height="26"/>
             </StackPanel>
         </Button>
-        <Label Name="LblUsername" Content="Имя пользователя" HorizontalAlignment="Left" Margin="147,17,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
-        <Button Name="BtnUpdate" HorizontalAlignment="Right" Margin="0,0,322,437" VerticalAlignment="Bottom" Width="132" Height="35" FontSize="18" Click="BtnUpdate_Click">
+        <Label Name="LblUsername" Content="Имя пользователя" HorizontalAlignment="Left" Margin="209,17,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+        <Button Name="BtnUpdate" HorizontalAlignment="Right" Margin="0,0,260,437" VerticalAlignment="Bottom" Width="132" Height="35" FontSize="18" Click="BtnUpdate_Click">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
@@ -64,6 +64,8 @@
         <Label Content="Баллы отсутствуют" HorizontalAlignment="Left" Margin="35,484,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.263,0.308"/>
         <Rectangle HorizontalAlignment="Left" Height="20" Margin="166,487,0,0" Stroke="Black" VerticalAlignment="Top" Width="20" Fill="White"/>
         <Label Content="Баллы выставлены" HorizontalAlignment="Left" Margin="191,484,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.263,0.308"/>
+        <Image Source="../Source/Users_32px.png"  HorizontalAlignment="Left" Height="35" Margin="18,16,0,0" VerticalAlignment="Top" Width="36"/>
+        <Image Source="/AdminSystem;component/Category_32px.png" HorizontalAlignment="Left" Height="35" Margin="18,58,0,0" VerticalAlignment="Top" Width="36"/>
 
     </Grid>
 </Window>
