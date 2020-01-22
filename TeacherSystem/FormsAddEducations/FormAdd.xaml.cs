@@ -80,7 +80,7 @@ namespace UserSystem.FormsAddEducations
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
 
-            openFileDialog.Filter = @"Zip files (*.zip)|*.zip";
+            openFileDialog.Filter = @"(*.zip)|*.zip";
 
             
             if (openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)

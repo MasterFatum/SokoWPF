@@ -86,8 +86,8 @@ namespace AdminSystem.Forms
         private void BtnLocalMatherials_Click(object sender, RoutedEventArgs e)
         {
             SaveFileDialog saveFile = new SaveFileDialog();
-            saveFile.Filter = @"Zip files (*.zip)|*.zip";
-            saveFile.FileName = TxbxTitle.Text;
+            saveFile.Filter = @"(*.zip)|*.zip";
+            saveFile.FileName = String.Format($"{TxbxUser.Text} {TxbxTitle.Text}.zip");
 
             if (saveFile.ShowDialog() == true)
             {
