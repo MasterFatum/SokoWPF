@@ -112,5 +112,10 @@ namespace AdminSystem
 
             new OtherRepository().SettingDataGridAdmins(DataGridAllUsers);
         }
+
+        private void BtnSummaryStatement_Click(object sender, RoutedEventArgs e)
+        {
+            new FormSummaryStatement().ShowDialog();
+        }
     }
 }

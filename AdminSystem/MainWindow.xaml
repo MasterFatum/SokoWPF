@@ -54,12 +54,12 @@
         </Button>
         <Label Content="Всего пользователей:" HorizontalAlignment="Left" Margin="870,2,0,0" VerticalAlignment="Top" FontSize="14"/>
         <Label Name="LblAllUsers" Content="100" HorizontalAlignment="Left" Margin="1013,2,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.158,0.269" FontWeight="Bold" FontSize="14"/>
-        <Button x:Name="BtnSummaryStatement"  HorizontalAlignment="Right" Margin="0,0,673,9" VerticalAlignment="Bottom" Width="206" Height="45" FontSize="18">
+        <Button x:Name="BtnSummaryStatement"  HorizontalAlignment="Right" Margin="0,0,673,9" VerticalAlignment="Bottom" Width="206" Height="45" FontSize="18" Click="BtnSummaryStatement_Click">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
             <StackPanel Orientation="Horizontal">
-                <Image Height="29"/>
+                <Image Source="Source/SummaryStatemant32.png" Height="29"/>
                 <TextBlock Text=" Сводная ведомость" Height="26"/>
             </StackPanel>
         </Button>

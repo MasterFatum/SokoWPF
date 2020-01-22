@@ -14,14 +14,16 @@ using System.Windows.Shapes;
 
 namespace AdminSystem.Forms
 {
-    /// <summary>
-    /// Логика взаимодействия для FormSummaryStatement.xaml
-    /// </summary>
     public partial class FormSummaryStatement : Window
     {
         public FormSummaryStatement()
         {
             InitializeComponent();
+        }
+
+        private void BtnClose_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
     }
 }
