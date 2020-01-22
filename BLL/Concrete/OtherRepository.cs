@@ -11,10 +11,10 @@ namespace BLL.Concrete
         {
             dataGrid.Columns[0].Visibility = Visibility.Hidden;
             dataGrid.Columns[1].Visibility = Visibility.Hidden;
+            dataGrid.Columns[4].Visibility = Visibility.Hidden;
 
             dataGrid.Columns[2].Header = "Категория";
             dataGrid.Columns[3].Header = "Название";
-            dataGrid.Columns[4].Header = "Описание";
             dataGrid.Columns[5].Header = "Баллы";
             dataGrid.Columns[6].Header = "Оценивающий";
             dataGrid.Columns[7].Header = "Дата";

@@ -63,9 +63,6 @@
             <ComboBoxItem Content="0" FontWeight="Bold"/>
             <ComboBoxItem Content="1" FontWeight="Bold"/>
             <ComboBoxItem Content="2" FontWeight="Bold"/>
-            <ComboBoxItem Content="3" FontWeight="Bold" FontSize="36"/>
-            <ComboBoxItem Content="4" FontWeight="Bold"/>
-            <ComboBoxItem Content="5" FontWeight="Bold"/>
         </ComboBox>
         <Label Content="Web-материалы" HorizontalAlignment="Left" Margin="9,364,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.216,0.009" FontSize="14" Width="133" FontWeight="Bold"/>
         <TextBlock x:Name="TextBlockHyperlink" HorizontalAlignment="Left" Margin="143,370,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="14" FontWeight="Bold">
