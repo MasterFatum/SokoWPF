@@ -7,8 +7,7 @@
         mc:Ignorable="d"
         Title="Сводная ведомость" Height="570.095" Width="916.949" WindowStyle="ToolWindow" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
     <Grid>
-        <Grid HorizontalAlignment="Left" Height="416" Margin="10,76,0,0" VerticalAlignment="Top" Width="886" Name="GridSummaryStatement" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}"/>
-        <Button x:Name="BtnClose" HorizontalAlignment="Left" Margin="762,497,0,0" VerticalAlignment="Top" Width="134" Height="35" RenderTransformOrigin="0.9,0.199" FontSize="18" Click="BtnClose_Click">
+        <Button x:Name="BtnClose" HorizontalAlignment="Left" Margin="760,493,0,0" VerticalAlignment="Top" Width="134" Height="35" RenderTransformOrigin="0.9,0.199" FontSize="18" Click="BtnClose_Click">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
@@ -17,12 +16,15 @@
                 <TextBlock Text=" Закрыть" Height="26"/>
             </StackPanel>
         </Button>
-        <ComboBox x:Name="CbxUsersSummaryStatement" HorizontalAlignment="Right" Margin="0,20,371,0" VerticalAlignment="Top" Width="342" FontSize="18">
+        <ComboBox x:Name="CbxUsersSummaryStatement" HorizontalAlignment="Right" Margin="0,20,371,0" VerticalAlignment="Top" Width="342" FontSize="18" SelectionChanged="CbxUsersSummaryStatement_SelectionChanged">
             <ComboBox.Effect>
                 <DropShadowEffect/>
             </ComboBox.Effect>
         </ComboBox>
         <Label Content="Пользователь" HorizontalAlignment="Left" Margin="57,18,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
         <Image Source="../Source/Users_32px.png" HorizontalAlignment="Left" Height="49" Margin="10,10,0,0" VerticalAlignment="Top" Width="42"/>
+        <DataGrid x:Name="DataGridSummaryStatement" HorizontalAlignment="Left" Height="398" Margin="10,80,0,0" VerticalAlignment="Top" Width="886" FontSize="16"/>
+        <Label Content="Общее количество баллов:" HorizontalAlignment="Left" Margin="10,491,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
+        <Label Name="LblSummary" Content="0" HorizontalAlignment="Left" Margin="303,481,0,0" VerticalAlignment="Top" FontSize="36" FontWeight="Bold"/>
     </Grid>
 </Window>

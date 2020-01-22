@@ -26,5 +26,7 @@ namespace BLL.Abstract
 
         string GetAllUsersCount();
 
+        int GetUserIdByFio(string lastname, string firstname, string middlename);
+
     }
 }

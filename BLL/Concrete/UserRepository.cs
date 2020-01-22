@@ -192,5 +192,26 @@ namespace BLL.Concrete
         {
             return sokoContext.Users.Count().ToString();
         }
+
+        public int GetUserIdByFio(string lastname, string firstname, string middlename)
+        {
+            Users userId = null;
+
+            try
+            {
+                  userId = sokoContext.Users.Where(l => l.Lastname == lastname).Where(f => f.Firstname == firstname)
+                    .FirstOrDefault(m => m.Middlename == middlename);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            if (userId.Id != 0)
+            {
+                return userId.Id;
+            }
+            return 0;
+        }
     }
 }

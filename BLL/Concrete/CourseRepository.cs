@@ -233,5 +233,16 @@ namespace Bll.Concrete
                 MessageBox.Show(ex.Message); 
             }
         }
+
+        public IEnumerable<Courses> GetSummaryStatementByFio(string lastname, string firstname, string middlename)
+        {
+            Users userId = sokoContext.Users.Where(l => l.Lastname == lastname).Where(f => f.Firstname == firstname)
+                .FirstOrDefault(m => m.Middlename == middlename);
+
+            IEnumerable<Courses> summary = sokoContext.Courses.Where(u => u.UserId == userId.Id);
+
+            return summary.ToList();
+              ;
+        }
     }
 }

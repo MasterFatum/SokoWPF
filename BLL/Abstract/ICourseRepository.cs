@@ -33,5 +33,7 @@ namespace BLL.Abstract
 
         void DownloadFileToDb(string ipAddress, int userId, string filename, string newFilename);
 
+        IEnumerable<Courses> GetSummaryStatementByFio(string lastname, string firstname, string middlename);
+
     }
 }

@@ -38,6 +38,22 @@ namespace BLL.Concrete
 
         }
 
+        public void SettingDataGridSummaryStatement(DataGrid dataGrid)
+        {
+            dataGrid.Columns[0].Visibility = Visibility.Hidden;
+            dataGrid.Columns[1].Visibility = Visibility.Hidden;
+
+            dataGrid.Columns[2].Header = "Категория";
+            dataGrid.Columns[3].Visibility = Visibility.Hidden;
+            dataGrid.Columns[4].Visibility = Visibility.Hidden; 
+            dataGrid.Columns[5].Header = "Оценка";
+            dataGrid.Columns[6].Visibility = Visibility.Hidden;
+            dataGrid.Columns[7].Visibility = Visibility.Hidden;
+            dataGrid.Columns[8].Visibility = Visibility.Hidden;
+            dataGrid.Columns[9].Visibility = Visibility.Hidden;
+
+        }
+
         public void SetConnectionString(string connectionString)
         {
             try
