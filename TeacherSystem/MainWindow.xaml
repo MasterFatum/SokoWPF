@@ -8,7 +8,7 @@
         Title="Система управления качеством образования (Интерфейс пользователя)" Height="679.055" Width="1058" MinHeight="680" MinWidth="1058" WindowStartupLocation="CenterScreen" Closing="MainForm_Closing" Loaded="MainForm_Loaded">
     <Grid Margin="0,0,0,12">
         <DataGrid x:Name="DataGridMain" IsReadOnly="True" Margin="10,41,245,64" FontSize="16" SelectionChanged="DataGridMain_SelectionChanged" MouseDoubleClick="DataGridMain_MouseDoubleClick" LoadingRow="DataGridMain_LoadingRow"/>
-        <Button x:Name="BtnMainExit"  HorizontalAlignment="Right" Margin="0,0,10,1" VerticalAlignment="Bottom" Width="103" Height="44" FontSize="18" Click="BtnMainExit_Click">
+        <Button x:Name="BtnMainExit"  HorizontalAlignment="Right" Margin="0,0,10,1" VerticalAlignment="Bottom" Width="126" Height="44" FontSize="18" Click="BtnMainExit_Click">
             <StackPanel Orientation="Horizontal">
                 <Image Source="Source/Shutdown_32px.png" Height="29"/>
                 <TextBlock Text=" Выйти" Height="26"/>
@@ -45,10 +45,10 @@
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
-        <Button x:Name="BtnMainUpdate" HorizontalAlignment="Left" Margin="710,0,0,1" VerticalAlignment="Bottom" Width="178" Height="44" FontSize="18" Click="BtnMainUpdate_Click">
+        <Button x:Name="BtnMainUpdate" HorizontalAlignment="Left" Margin="710,0,0,1" VerticalAlignment="Bottom" Width="154" Height="44" FontSize="18" Click="BtnMainUpdate_Click">
             <StackPanel Orientation="Horizontal">
                 <Image Source="Source/Refresh_32px.png" Height="29"/>
-                <TextBlock Text=" Общий список" Height="26"/>
+                <TextBlock Text=" Обновить" Height="26"/>
             </StackPanel>
             <Button.Effect>
                 <DropShadowEffect/>

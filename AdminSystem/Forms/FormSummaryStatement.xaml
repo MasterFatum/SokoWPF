@@ -1,0 +1,22 @@
+﻿<Window x:Class="AdminSystem.Forms.FormSummaryStatement"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AdminSystem.Forms"
+        mc:Ignorable="d"
+        Title="Сводная ведомость" Height="514.831" Width="916.949" WindowStyle="ToolWindow">
+    <Grid>
+        <Grid HorizontalAlignment="Left" Height="430" Margin="10,10,0,0" VerticalAlignment="Top" Width="889" Name="GridSummaryStatement"/>
+        <Button x:Name="BtnClose" HorizontalAlignment="Left" Margin="765,445,0,0" VerticalAlignment="Top" Width="134" Height="35" RenderTransformOrigin="0.9,0.199" FontSize="18" Click="BtnClose_Click" >
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/AdminSystem;component/Source/Cancel_32px.png" Height="29"/>
+                <TextBlock Text=" Закрыть" Height="26"/>
+            </StackPanel>
+        </Button>
+
+    </Grid>
+</Window>

@@ -16,20 +16,20 @@
                 <TextBlock Text=" Выйти" Height="26"/>
             </StackPanel>
         </Button>
-        <Button x:Name="BtnMainUsersManage"  HorizontalAlignment="Right" Margin="0,0,761,10" VerticalAlignment="Bottom" Width="284" Height="44" FontSize="18" Click="BtnMainUsersManage_Click">
+        <Button x:Name="BtnMainUsersManage"  HorizontalAlignment="Right" Margin="0,0,884,10" VerticalAlignment="Bottom" Width="161" Height="44" FontSize="18" Click="BtnMainUsersManage_Click">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
             <StackPanel Orientation="Horizontal">
                 <Image Source="Source/Users_32px.png" Height="29"/>
-                <TextBlock Text=" Управление пользователями" Height="26"/>
+                <TextBlock Text=" Пользователи" Height="26"/>
             </StackPanel>
         </Button>
 
         <GroupBox Header="Пользователи системы" HorizontalAlignment="Left" Height="470" Margin="10,0,0,75" VerticalAlignment="Bottom" Width="1041">
             <DataGrid Name="DataGridAllUsers" IsReadOnly="True" HorizontalAlignment="Left" Margin="0,0,-2,2" Width="1031" MouseDoubleClick="DataGridAllUsers_MouseDoubleClick" FontSize="16"/>
         </GroupBox>
-        <TextBox Name="TxbxSearch"  HorizontalAlignment="Left" Height="44" Margin="303,509,0,0" VerticalAlignment="Top" Width="381" FontSize="18">
+        <TextBox Name="TxbxSearch"  HorizontalAlignment="Left" Height="44" Margin="393,509,0,0" VerticalAlignment="Top" Width="291" FontSize="18">
             <TextBox.Effect>
                 <DropShadowEffect/>
             </TextBox.Effect>
@@ -54,5 +54,14 @@
         </Button>
         <Label Content="Всего пользователей:" HorizontalAlignment="Left" Margin="870,2,0,0" VerticalAlignment="Top" FontSize="14"/>
         <Label Name="LblAllUsers" Content="100" HorizontalAlignment="Left" Margin="1013,2,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.158,0.269" FontWeight="Bold" FontSize="14"/>
+        <Button x:Name="BtnSummaryStatement"  HorizontalAlignment="Right" Margin="0,0,673,9" VerticalAlignment="Bottom" Width="206" Height="45" FontSize="18">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+            <StackPanel Orientation="Horizontal">
+                <Image Height="29"/>
+                <TextBlock Text=" Сводная ведомость" Height="26"/>
+            </StackPanel>
+        </Button>
     </Grid>
 </Window>

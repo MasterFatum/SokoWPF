@@ -203,5 +203,8 @@
   <ItemGroup>
     <Resource Include="Source\Category_32px.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\SummaryStatemant32.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
