@@ -26,8 +26,5 @@ namespace BLL.Abstract
 
         string GetAllUsersCount();
 
-
-
-
     }
 }
