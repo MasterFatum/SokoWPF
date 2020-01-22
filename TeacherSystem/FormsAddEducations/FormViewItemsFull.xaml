@@ -25,7 +25,7 @@
                 <DropShadowEffect/>
             </TextBox.Effect>
         </TextBox>
-        <TextBox x:Name="TxbxEvaluation" HorizontalAlignment="Left" IsReadOnly="True" Height="75" Margin="634,44,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="103" Text="100" TextAlignment="Center" FontSize="48" FontWeight="Bold" Foreground="#FF177C25">
+        <TextBox x:Name="TxbxEvaluation" HorizontalAlignment="Left" IsReadOnly="True" Height="75" Margin="634,44,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="103" Text="0" TextAlignment="Center" FontSize="48" FontWeight="Bold" Foreground="#FF177C25">
             <TextBox.Effect>
                 <DropShadowEffect/>
             </TextBox.Effect>

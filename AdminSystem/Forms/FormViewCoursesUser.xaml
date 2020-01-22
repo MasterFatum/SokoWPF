@@ -29,6 +29,7 @@
             <ComboBoxItem Content="Участие в конкурсах"/>
             <ComboBoxItem Content="Обобщение и распространение педаг. опыта"/>
             <ComboBoxItem Content="Размещение материалов на сайте"/>
+            <ComboBoxItem Content="Справки"/>
             <ComboBoxItem Content="Другое"/>
         </ComboBox>
         <Label Content="Пользователь" HorizontalAlignment="Left" Margin="10,17,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>

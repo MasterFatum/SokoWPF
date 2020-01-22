@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UserSystem"
         mc:Ignorable="d"
-        Title="Система управлением качеством образования (Интерфейс пользователя)" Height="679.055" Width="1058" MinHeight="680" MinWidth="1058" WindowStartupLocation="CenterScreen" Closing="MainForm_Closing" Loaded="MainForm_Loaded">
+        Title="Система управления качеством образования (Интерфейс пользователя)" Height="679.055" Width="1058" MinHeight="680" MinWidth="1058" WindowStartupLocation="CenterScreen" Closing="MainForm_Closing" Loaded="MainForm_Loaded">
     <Grid Margin="0,0,0,12">
         <DataGrid x:Name="DataGridMain" IsReadOnly="True" Margin="10,41,245,64" FontSize="16" SelectionChanged="DataGridMain_SelectionChanged" MouseDoubleClick="DataGridMain_MouseDoubleClick" LoadingRow="DataGridMain_LoadingRow"/>
         <Button x:Name="BtnMainExit"  HorizontalAlignment="Right" Margin="0,0,10,1" VerticalAlignment="Bottom" Width="103" Height="44" FontSize="18" Click="BtnMainExit_Click">
@@ -120,7 +120,6 @@
             <MenuItem Header="Меню" FontSize="16" FontWeight="Normal">
                 <MenuItem Header="Учетная запись" Click="MenuItem_Click" FontWeight="Normal" ></MenuItem>
                 <MenuItem Header="Информация о программе" Click="MenuItem_Click_2" FontWeight="Normal"></MenuItem>
-                <MenuItem Header="Проверить обновления"  FontWeight="Normal" Click="Update_Click"></MenuItem>
                 <MenuItem Header="Выйти" Click="MenuItem_Click_1" FontWeight="Normal"></MenuItem>
             </MenuItem>
         </Menu>

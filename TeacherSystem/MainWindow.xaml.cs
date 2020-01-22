@@ -60,21 +60,6 @@ namespace TeacherSystem
             Application.Current.Shutdown();
         }
 
-        private void Update_Click(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                System.Diagnostics.Process proc = new System.Diagnostics.Process();
-                proc.StartInfo.FileName = @"C:\СКО ФК Краснодар\Update\UpdateSoko.exe";
-                proc.Start();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            
-        }
-
         private void BtnMainCategoryShow_Click(object sender, RoutedEventArgs e)
         {
             if (CbxMainShowCategory.SelectedIndex != -1)

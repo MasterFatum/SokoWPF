@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AdminSystem"
         mc:Ignorable="d"
-        Title="Система управлением качеством образования (Интерфейс администратора)" Height="600.78" Width="1067.308" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Closing="Window_Closing" Loaded="Window_Loaded">
+        Title="Система управления качеством образования (Интерфейс администратора)" Height="600.78" Width="1067.308" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Closing="Window_Closing" Loaded="Window_Loaded">
     <Grid>
         <Button x:Name="BtnExit"  HorizontalAlignment="Right" Margin="0,0,10,9" VerticalAlignment="Bottom" Width="117" Height="45" FontSize="18" Click="BtnMainExit_Click">
             <Button.Effect>

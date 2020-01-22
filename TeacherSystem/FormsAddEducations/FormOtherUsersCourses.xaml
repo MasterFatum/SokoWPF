@@ -29,6 +29,7 @@
             <ComboBoxItem Content="Участие в конкурсах"/>
             <ComboBoxItem Content="Обобщение и распространение педаг. опыта"/>
             <ComboBoxItem Content="Размещение материалов на сайте"/>
+            <ComboBoxItem Content="Справки"/>
             <ComboBoxItem Content="Другое"/>
         </ComboBox>
         <ComboBox x:Name="CbxOtherUsersCourses" HorizontalAlignment="Right" Margin="0,17,412,0" VerticalAlignment="Top" Width="288" FontSize="18">
