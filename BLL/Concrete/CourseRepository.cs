@@ -133,7 +133,7 @@ namespace Bll.Concrete
 
         public IEnumerable<Courses> GetCoursesByFio(string lastname, string firstname, string middlename, string category)
         {
-            Users userId = sokoContext.Users.Where(l => l.Lastname == lastname).Where(f => f.Firstname == firstname)
+            Users userId = sokoContext.Users.OrderBy(l => l.Lastname).Where(l => l.Lastname == lastname).Where(f => f.Firstname == firstname)
                 .FirstOrDefault(m => m.Middlename == middlename);
 
             IEnumerable<Courses> courseses = sokoContext.Courses.Where(u => u.UserId == userId.Id)
@@ -239,10 +239,14 @@ namespace Bll.Concrete
             Users userId = sokoContext.Users.Where(l => l.Lastname == lastname).Where(f => f.Firstname == firstname)
                 .FirstOrDefault(m => m.Middlename == middlename);
 
-            IEnumerable<Courses> summary = sokoContext.Courses.Where(u => u.UserId == userId.Id);
+            var summary = sokoContext.Courses.Where(u => u.UserId == userId.Id).GroupBy(c => c.Category).Select(c => new
+            {
+                category = c.Key,
+                evaluation = c.Sum(cc => cc.Evaluation)
+            }).AsEnumerable().Select(an => new Courses{Category = an.category, Evaluation = an.evaluation});
 
             return summary.ToList();
-              ;
+              
         }
     }
 }

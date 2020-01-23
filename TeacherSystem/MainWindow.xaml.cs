@@ -100,7 +100,7 @@ namespace TeacherSystem
 
                 Id = items.Id;
                 UserId = items.UserId;
-                Category = items.Category;
+                Category = (string) items.Category;
                 Title = items.Title;
                 Description = items.Description;
                 Evaluation = items.Evaluation;

@@ -1,4 +1,3 @@
-
 namespace BLL.Entities
 {
     public class Courses
