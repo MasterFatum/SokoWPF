@@ -128,7 +128,7 @@ namespace BLL.Concrete
 
         public List<String> GetFioUsers()
         {
-            List<Users> users = sokoContext.Users.ToList();
+            List<Users> users = sokoContext.Users.OrderBy(l => l.Lastname).ToList();
 
             List<String> userFio  = new List<string>();
 
