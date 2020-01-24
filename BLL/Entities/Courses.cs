@@ -23,5 +23,7 @@ namespace BLL.Entities
 
         public string FileNameGuid { get; set; }
 
+        public string DateEdit { get; set; }
+
     }
 }

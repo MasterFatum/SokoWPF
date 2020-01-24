@@ -242,7 +242,7 @@ namespace Bll.Concrete
             var summary = sokoContext.Courses.Where(u => u.UserId == userId.Id).GroupBy(c => c.Category).Select(c => new
             {
                 category = c.Key,
-                evaluation = c.Sum(cc => cc.Evaluation)
+                evaluation = c.Sum(e => e.Evaluation)
             }).AsEnumerable().Select(an => new Courses{Category = an.category, Evaluation = an.evaluation});
 
             return summary.ToList();
