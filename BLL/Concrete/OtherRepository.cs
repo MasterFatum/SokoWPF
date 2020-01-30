@@ -52,6 +52,7 @@ namespace BLL.Concrete
             dataGrid.Columns[7].Visibility = Visibility.Hidden;
             dataGrid.Columns[8].Visibility = Visibility.Hidden;
             dataGrid.Columns[9].Visibility = Visibility.Hidden;
+            dataGrid.Columns[10].Visibility = Visibility.Hidden;
 
         }
 

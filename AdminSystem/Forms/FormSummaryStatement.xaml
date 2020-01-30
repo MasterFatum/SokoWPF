@@ -25,6 +25,6 @@
         <Image Source="../Source/Users_32px.png" HorizontalAlignment="Left" Height="49" Margin="10,10,0,0" VerticalAlignment="Top" Width="42"/>
         <DataGrid x:Name="DataGridSummaryStatement" HorizontalAlignment="Left" Height="398" Margin="10,80,0,0" VerticalAlignment="Top" Width="507" FontSize="16" IsReadOnly="True"/>
         <Label Content="Общее количество баллов:" HorizontalAlignment="Left" Margin="10,491,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
-        <Label Name="LblSummary" Content="0" HorizontalAlignment="Left" Margin="289,485,0,0" VerticalAlignment="Top" FontSize="30" FontWeight="Bold" Background="White" Foreground="Red"/>
+        <Label Name="LblSummary" Content="0" HorizontalAlignment="Left" Margin="289,485,0,0" VerticalAlignment="Top" FontSize="30" FontWeight="Bold" Background="White" Foreground="Green"/>
     </Grid>
 </Window>
