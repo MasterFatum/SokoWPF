@@ -15,6 +15,7 @@ namespace UserSystem.FormsAddEducations
         public string TitleEdit { get; set; }
         public string DescriptionEdit { get; set; }
         public string HyperlinkEdit { get; set; }
+        public string DateEdit { get; set; }
 
 
         public FormEdit(int id, int userIdEdit, string categoryEdit, string title, string description, string hyperlink)
@@ -43,7 +44,8 @@ namespace UserSystem.FormsAddEducations
                 Category = CategoryEdit,
                 Title = TxbxEditTitle.Text.Trim(),
                 Description = TxbxEditDescription.Text.Trim(),
-                Hyperlink = TxbxHyperlink.Text.Trim()
+                Hyperlink = TxbxHyperlink.Text.Trim(),
+                
             };
 
             courseRepository.EditCourse(courses);

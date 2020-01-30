@@ -100,23 +100,23 @@ namespace TeacherSystem
 
                 Id = items.Id;
                 UserId = items.UserId;
-                Category = (string) items.Category;
+                Category = items.Category;
                 Title = items.Title;
                 Description = items.Description;
                 Evaluation = items.Evaluation;
                 Hyperlink = items.Hyperlink;
                 FilePath = items.FileNameGuid;
 
-                if (!String.IsNullOrEmpty(Evaluation.ToString()))
-                {
-                    BtnMainEdit.IsEnabled = false;
-                    BtnMainDelete.IsEnabled = false;
-                }
-                else
-                {
-                    BtnMainEdit.IsEnabled = true;
-                    BtnMainDelete.IsEnabled = true;
-                }
+                //if (!String.IsNullOrEmpty(Evaluation.ToString()))
+                //{
+                //    BtnMainEdit.IsEnabled = false;
+                //    BtnMainDelete.IsEnabled = false;
+                //}
+                //else
+                //{
+                //    BtnMainEdit.IsEnabled = true;
+                //    BtnMainDelete.IsEnabled = true;
+                //}
             }
             catch(Exception ex)
             {
@@ -213,6 +213,7 @@ namespace TeacherSystem
 
         SolidColorBrush orange = new SolidColorBrush(Colors.Orange);
         SolidColorBrush white = new SolidColorBrush(Colors.White);
+        SolidColorBrush green = new SolidColorBrush(Colors.Green);
 
         private void DataGridMain_LoadingRow(object sender, DataGridRowEventArgs e)
         {
@@ -222,9 +223,13 @@ namespace TeacherSystem
             {
                 e.Row.Background = orange;
             }
-            else
+            if (courses.Evaluation != null && courses.DateEdit == null)
             {
                 e.Row.Background = white;
+            }
+            if (courses.Evaluation != null && courses.DateEdit != null)
+            {
+                e.Row.Background = green;
             }
         }
         

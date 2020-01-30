@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="Добавление новой записи в ваше портфолио" Height="500" Width="614.941" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow">
+        Title="Добавление новой записи в ваше портфолио" Height="500" Width="615" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow">
     <Grid>
         <Label Content="Название" HorizontalAlignment="Left" Margin="27,91,0,0" VerticalAlignment="Top" FontSize="18"/>
         <TextBox Name="TxbxTitle" HorizontalAlignment="Left" Height="31" Margin="124,94,0,0" Text="" VerticalAlignment="Top" Width="457" FontSize="18">
@@ -37,8 +37,8 @@
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
-        <Label Content="Категория" HorizontalAlignment="Left" Margin="305,12,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <TextBox x:Name="TxbxSelectedCategory" IsEnabled="False" HorizontalAlignment="Left" IsReadOnly="False" Height="31" Margin="164,46,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="380" FontSize="18" TextAlignment="Center">
+        <Label Content="Категория" HorizontalAlignment="Left" Margin="305,18,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <TextBox x:Name="TxbxSelectedCategory" IsEnabled="False" HorizontalAlignment="Left" IsReadOnly="False" Height="31" Margin="164,52,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="380" FontSize="18" TextAlignment="Center">
             <TextBox.Effect>
                 <DropShadowEffect/>
             </TextBox.Effect>

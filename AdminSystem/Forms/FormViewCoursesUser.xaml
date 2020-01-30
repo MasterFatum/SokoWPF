@@ -66,6 +66,8 @@
         <Label Content="Баллы выставлены" HorizontalAlignment="Left" Margin="191,484,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.263,0.308"/>
         <Image Source="../Source/Users_32px.png"  HorizontalAlignment="Left" Height="35" Margin="18,16,0,0" VerticalAlignment="Top" Width="36"/>
         <Image Source="/AdminSystem;component/Category_32px.png" HorizontalAlignment="Left" Height="35" Margin="18,58,0,0" VerticalAlignment="Top" Width="36"/>
+        <Rectangle HorizontalAlignment="Left" Height="20" Margin="324,486,0,0" Stroke="Black" VerticalAlignment="Top" Width="20" Fill="Green"/>
+        <Label Content="Баллы выставлены, отредактированно" HorizontalAlignment="Left" Margin="349,483,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.263,0.308"/>
 
     </Grid>
 </Window>

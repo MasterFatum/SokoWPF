@@ -141,5 +141,7 @@
                 <Image Source="Source/Refresh_32px.png"  Height="29"/>
             </StackPanel>
         </Button>
+        <Rectangle HorizontalAlignment="Left" Height="20" Margin="379,13,0,0" Stroke="Black" VerticalAlignment="Top" Width="20" Fill="Green"/>
+        <Label Content="Баллы выставлены, отредактированно" HorizontalAlignment="Left" Margin="404,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.263,0.308"/>
     </Grid>
 </Window>

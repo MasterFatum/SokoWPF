@@ -70,6 +70,13 @@ namespace Bll.Concrete
                     courseEdit.Title = courses.Title;
                     courseEdit.Description = courses.Description;
                     courseEdit.Hyperlink = courses.Hyperlink;
+
+                    if (courseEdit.Evaluation != null)
+                    {
+                        courseEdit.DateEdit =
+                            String.Format($"{DateTime.Now.ToShortDateString()} {DateTime.Now.ToShortTimeString()}");
+                    }
+
                     sokoContext.Courses.AddOrUpdate(courseEdit);
                     sokoContext.SaveChanges();
 

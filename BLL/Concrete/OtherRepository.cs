@@ -12,14 +12,15 @@ namespace BLL.Concrete
             dataGrid.Columns[0].Visibility = Visibility.Hidden;
             dataGrid.Columns[1].Visibility = Visibility.Hidden;
             dataGrid.Columns[4].Visibility = Visibility.Hidden;
+            dataGrid.Columns[8].Visibility = Visibility.Hidden;
+            dataGrid.Columns[9].Visibility = Visibility.Hidden;
 
             dataGrid.Columns[2].Header = "Категория";
             dataGrid.Columns[3].Header = "Название";
             dataGrid.Columns[5].Header = "Баллы";
             dataGrid.Columns[6].Header = "Оценивающий";
-            dataGrid.Columns[7].Header = "Дата";
-            dataGrid.Columns[8].Header = "Web материал";
-            dataGrid.Columns[9].Header = "Локальный материал";
+            dataGrid.Columns[7].Header = "Дата создания";
+            dataGrid.Columns[10].Header = "Дата редактирования";
 
         }
 

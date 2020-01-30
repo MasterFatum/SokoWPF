@@ -129,6 +129,7 @@ namespace AdminSystem.Forms
 
         SolidColorBrush orange = new SolidColorBrush(Colors.Orange);
         SolidColorBrush white = new SolidColorBrush(Colors.White);
+        SolidColorBrush green = new SolidColorBrush(Colors.Green);
 
         private void DataGridUserCourses_LoadingRow(object sender, DataGridRowEventArgs e)
         {
@@ -138,9 +139,13 @@ namespace AdminSystem.Forms
             {
                 e.Row.Background = orange;
             }
-            else
+            if (courses.Evaluation != null && courses.DateEdit == null)
             {
                 e.Row.Background = white;
+            }
+            if (courses.Evaluation != null && courses.DateEdit != null)
+            {
+                e.Row.Background = green;
             }
         }
     }
