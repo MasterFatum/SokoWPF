@@ -20,10 +20,10 @@ namespace BLL.Entities
         public string Date { get; set; }
 
         public string Hyperlink { get; set; }
+        
+        public string DateEdit { get; set; }
 
         public string FileName { get; set; }
-
-        public string DateEdit { get; set; }
 
     }
 }
