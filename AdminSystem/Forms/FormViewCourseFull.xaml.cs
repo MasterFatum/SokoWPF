@@ -85,15 +85,7 @@ namespace AdminSystem.Forms
 
         private void BtnLocalMatherials_Click(object sender, RoutedEventArgs e)
         {
-            SaveFileDialog saveFile = new SaveFileDialog();
-            saveFile.Filter = @"(*.zip)|*.zip";
-            saveFile.FileName = String.Format($"{TxbxUser.Text} {TxbxTitle.Text}.zip");
 
-            if (saveFile.ShowDialog() == true)
-            {
-                Task task = new Task(() => courseRepository.DownloadFileToDb("172.20.2.221", UserId, Filepath, saveFile.FileName));
-                task.Start();
-            }
         }
     }
 }

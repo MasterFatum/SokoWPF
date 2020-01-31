@@ -100,7 +100,7 @@ namespace UserSystem.FormsAddEducations
                 Evaluation = items.Evaluation ?? 0;
                 Date = items.Date ?? "Дата отсутствует";
                 Hyperlink = items.Hyperlink;
-                Filename = items.FileNameGuid;
+                Filename = items.FileName;
 
                 new FormViewItemsFull(UserId, Lastname, Category, Title, Description, Date, Hyperlink, Filename, Evaluation).ShowDialog();
 

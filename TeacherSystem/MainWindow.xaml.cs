@@ -105,7 +105,7 @@ namespace TeacherSystem
                 Description = items.Description;
                 Evaluation = items.Evaluation;
                 Hyperlink = items.Hyperlink;
-                FilePath = items.FileNameGuid;
+                FilePath = items.FileName;
 
                 //if (!String.IsNullOrEmpty(Evaluation.ToString()))
                 //{
@@ -133,7 +133,7 @@ namespace TeacherSystem
 
                 if (!String.IsNullOrEmpty(FilePath))
                 {
-                    courseRepository.DeleteFileToDb(UserId, "172.20.2.221", FilePath);
+
                 }
                 
                 BtnMainUpdate_Click(null, null);
@@ -173,7 +173,7 @@ namespace TeacherSystem
                 Evaluation = items.Evaluation ?? 0;
                 Date = items.Date ?? "Дата отсутствует";
                 Hyperlink = items.Hyperlink;
-                FilePath = items.FileNameGuid;
+                FilePath = items.FileName;
 
                 new FormViewItemsFull(UserId, "Вы", Category, Title, Description, Date, Hyperlink, FilePath, Evaluation.Value).ShowDialog();
 

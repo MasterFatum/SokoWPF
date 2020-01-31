@@ -68,8 +68,7 @@ namespace UserSystem.FormsAddEducations
 
             if (saveFile.ShowDialog() == true)
             {
-                Task task = new Task(() => courseRepository.DownloadFileToDb("172.20.2.221", UserId, Filepath, saveFile.FileName));
-                task.Start();
+
             }
         }
     }

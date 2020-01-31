@@ -21,7 +21,7 @@ namespace BLL.Entities
 
         public string Hyperlink { get; set; }
 
-        public string FileNameGuid { get; set; }
+        public string FileName { get; set; }
 
         public string DateEdit { get; set; }
 

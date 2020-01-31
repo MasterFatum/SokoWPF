@@ -96,7 +96,7 @@ namespace AdminSystem.Forms
                 Evaluation = items.Evaluation ?? 0;
                 Date = items.Date;
                 Hyperlink = items.Hyperlink;
-                FilePath = items.FileNameGuid;
+                FilePath = items.FileName;
 
                 new FormViewCourseFull(UserId, Id, Lastname, Category, Title, Description, Date, Hyperlink, User, FilePath, Evaluation.Value).ShowDialog();
 
