@@ -70,6 +70,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Concrete\FtpRepository.cs" />
     <Compile Include="SokoContext.cs" />
   </ItemGroup>
   <ItemGroup>

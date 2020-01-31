@@ -15,10 +15,11 @@ namespace UserSystem.FormsAddEducations
         public string TitleEdit { get; set; }
         public string DescriptionEdit { get; set; }
         public string HyperlinkEdit { get; set; }
+        public string FilePath { get; set; }
         public string DateEdit { get; set; }
 
 
-        public FormEdit(int id, int userIdEdit, string categoryEdit, string title, string description, string hyperlink)
+        public FormEdit(int id, int userIdEdit, string categoryEdit, string title, string description, string hyperlink, string filePath)
         {
             InitializeComponent();
 
@@ -28,6 +29,7 @@ namespace UserSystem.FormsAddEducations
             TxbxEditTitle.Text = title;
             TxbxEditDescription.Text = description;
             TxbxHyperlink.Text = hyperlink;
+            TxbxFilePath.Text = filePath;
         }
 
         private void BtnEditExit_Click(object sender, RoutedEventArgs e)

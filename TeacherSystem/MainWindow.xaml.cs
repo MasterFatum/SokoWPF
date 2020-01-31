@@ -142,7 +142,7 @@ namespace TeacherSystem
 
         private void BtnMainEdit_Click(object sender, RoutedEventArgs e)
         {
-            new FormEdit(Id, UserId, Category, Title, Description, Hyperlink).ShowDialog();
+            new FormEdit(Id, UserId, Category, Title, Description, Hyperlink, FilePath).ShowDialog();
         }
 
         private void CbxMainShowCategory_SelectionChanged(object sender, SelectionChangedEventArgs e)

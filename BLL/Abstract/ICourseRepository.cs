@@ -27,12 +27,6 @@ namespace BLL.Abstract
 
         string AllRating(int userId);
 
-        void SendFileToDb(int userId, string ipAddress, string filePath, string fileNameGuid);
-
-        void DeleteFileToDb(int userId, string ipAddress, string fileNameGuid);
-
-        void DownloadFileToDb(string ipAddress, int userId, string filename, string newFilename);
-
         IEnumerable<Courses> GetSummaryStatementByFio(string lastname, string firstname, string middlename);
 
     }
