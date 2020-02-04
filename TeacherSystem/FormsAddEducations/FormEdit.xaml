@@ -62,7 +62,7 @@
                 <DropShadowEffect/>
             </TextBox.Effect>
         </TextBox>
-        <Button x:Name="BtnBrowseFile" HorizontalAlignment="Left" Margin="10,325,0,0" VerticalAlignment="Top" Width="100" Height="35" FontSize="18"  >
+        <Button x:Name="BtnBrowseFile" HorizontalAlignment="Left" Margin="10,325,0,0" VerticalAlignment="Top" Width="100" Height="35" FontSize="18" Click="BtnBrowseFile_Click"  >
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>

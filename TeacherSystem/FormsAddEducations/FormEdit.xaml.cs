@@ -1,13 +1,19 @@
 ﻿using System;
+using System.IO;
+using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Forms;
 using Bll.Concrete;
+using BLL.Concrete;
 using BLL.Entities;
+using MessageBox = System.Windows.MessageBox;
 
 namespace UserSystem.FormsAddEducations
 {
     public partial class FormEdit
     {
         CourseRepository courseRepository = new CourseRepository();
+        FtpRepository ftpRepository = new FtpRepository();
 
         public int Id { get; set; }
         public int UserIdEdit { get; set; }
@@ -16,7 +22,9 @@ namespace UserSystem.FormsAddEducations
         public string DescriptionEdit { get; set; }
         public string HyperlinkEdit { get; set; }
         public string FilePath { get; set; }
+        public string FilePathNew { get; set; }
         public string DateEdit { get; set; }
+        public string FileNameGuid { get; set; }
 
 
         public FormEdit(int id, int userIdEdit, string categoryEdit, string title, string description, string hyperlink, string filePath)
@@ -29,7 +37,7 @@ namespace UserSystem.FormsAddEducations
             TxbxEditTitle.Text = title;
             TxbxEditDescription.Text = description;
             TxbxHyperlink.Text = hyperlink;
-            TxbxFilePath.Text = filePath;
+            FilePath = filePath;
         }
 
         private void BtnEditExit_Click(object sender, RoutedEventArgs e)
@@ -39,16 +47,46 @@ namespace UserSystem.FormsAddEducations
 
         private void BtnEditSave_Click(object sender, RoutedEventArgs e)
         {
-            Courses courses = new Courses
+            Courses courses = null;
+
+            if (TxbxFilePath.Text == String.Empty)
             {
-                Id = Id,
-                UserId = UserIdEdit,
-                Category = CategoryEdit,
-                Title = TxbxEditTitle.Text.Trim(),
-                Description = TxbxEditDescription.Text.Trim(),
-                Hyperlink = TxbxHyperlink.Text.Trim(),
+                courses = new Courses
+                {
+                    Id = Id,
+                    UserId = UserIdEdit,
+                    Category = CategoryEdit,
+                    Title = TxbxEditTitle.Text.Trim(),
+                    Description = TxbxEditDescription.Text.Trim(),
+                    Hyperlink = TxbxHyperlink.Text.Trim(),
+                    FileName = FilePath
+                };
+            }
+            
+
+            if (TxbxFilePath.Text != String.Empty)
+            {
+                FileNameGuid = Guid.NewGuid().ToString();
+                FilePath = FileNameGuid;
+
+                courses = new Courses
+                {
+                    Id = Id,
+                    UserId = UserIdEdit,
+                    Category = CategoryEdit,
+                    Title = TxbxEditTitle.Text.Trim(),
+                    Description = TxbxEditDescription.Text.Trim(),
+                    Hyperlink = TxbxHyperlink.Text.Trim(),
+                    FileName = FilePath
+                };
                 
-            };
+                ftpRepository.UseSsl = false;
+                ftpRepository.Host = "172.20.2.221";
+                ftpRepository.Username = "anonymous";
+                ftpRepository.Password = "sko@fckrasnodar.ru";
+                Task task = new Task(() => ftpRepository.UploadFile("/" + UserIdEdit + "/", FilePathNew, FileNameGuid));
+                task.Start();
+            }
 
             courseRepository.EditCourse(courses);
             Close();
@@ -60,6 +98,29 @@ namespace UserSystem.FormsAddEducations
             TxbxEditTitle.Text = String.Empty;
             TxbxEditDescription.Text = String.Empty;
             TxbxHyperlink.Text = String.Empty;
+        }
+
+        private void BtnBrowseFile_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+
+            openFileDialog.Filter = @"(*.zip)|*.zip";
+
+
+            if (openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                long fileLength = new FileInfo(openFileDialog.FileName).Length;
+
+                if (fileLength > 52428800)
+                {
+                    MessageBox.Show("Размер файла превышает допустимый! Размер файла не должен превышать 50 MB.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
+                else
+                {
+                    FilePathNew = openFileDialog.FileName;
+                    TxbxFilePath.Text = FilePathNew;
+                }
+            }
         }
     }
 }

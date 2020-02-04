@@ -53,15 +53,16 @@ namespace BLL.Concrete
         }
 
 
-        public void UploadFile(string path, string fileName)
+        public void UploadFile(string path, string fileName, string fileNameGuid)
         {
             //Для имени файла
-            string shortName = fileName.Remove(0, fileName.LastIndexOf(@"\", StringComparison.Ordinal) + 1);
+            //string shortName = fileName.Remove(0, fileName.LastIndexOf(@"\", StringComparison.Ordinal) + 1);
+            //string shortName = Guid.NewGuid().ToString();
 
 
             FileStream uploadedFile = new FileStream(fileName, FileMode.Open, FileAccess.Read);
 
-            FtpRequest = (FtpWebRequest)WebRequest.Create("ftp://" + Host + path + shortName);
+            FtpRequest = (FtpWebRequest)WebRequest.Create("ftp://" + Host + path + fileNameGuid + ".zip");
             FtpRequest.Credentials = new NetworkCredential(Username, Password);
             FtpRequest.EnableSsl = UseSsl;
             FtpRequest.Method = WebRequestMethods.Ftp.UploadFile;
@@ -80,6 +81,7 @@ namespace BLL.Concrete
             writer.Write(file_to_bytes, 0, file_to_bytes.Length);
             writer.Close();
         }
+
 
         //Метод протокола FTP DELE для удаления файла с FTP-сервера 
         public void DeleteFile(string path)

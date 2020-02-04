@@ -19,6 +19,7 @@ namespace UserSystem.FormsAddEducations
         public string SelectedCategory { get; set; }
         public int UserIdAdd { get; set; }
         public string FilePath { get; set; }
+        public string FileNameGuid { get; set; }
 
         public FormAdd(int userId, string selectedCategory)
         {
@@ -46,17 +47,19 @@ namespace UserSystem.FormsAddEducations
         {
             if (TxbxTitle.Text != String.Empty && TxbxDescription.Text != String.Empty)
             {
+                FileNameGuid = Guid.NewGuid().ToString();
 
                 Courses courses = new Courses
                 {
                     UserId = UserIdAdd,
                     Category = SelectedCategory,
+                    FileName = FileNameGuid,
                     Title = TxbxTitle.Text.Trim(),
                     Description = TxbxDescription.Text.Trim(),
                     Date = String.Format($"{DateTime.Now.ToShortDateString()} {DateTime.Now.ToShortTimeString()}"),
-                    Hyperlink = TxbxHyperlink.Text.Trim(),
+                    Hyperlink = TxbxHyperlink.Text.Trim()
                 };
-                courseRepository.AddCourse(courses, TxbxTitle, TxbxDescription, TxbxHyperlink, TxbxFilePath);
+                
 
                 if (TxbxFilePath.Text != String.Empty)
                 {
@@ -64,10 +67,11 @@ namespace UserSystem.FormsAddEducations
                     ftpRepository.Host = "172.20.2.221";
                     ftpRepository.Username = "anonymous";
                     ftpRepository.Password = "sko@fckrasnodar.ru";
-                    Task task = new Task(() => ftpRepository.UploadFile("/" + UserIdAdd + "/", FilePath));
+                    Task task = new Task(() => ftpRepository.UploadFile("/" + UserIdAdd + "/", FilePath, FileNameGuid));
                     task.Start();
                 }
-        }
+                courseRepository.AddCourse(courses, TxbxTitle, TxbxDescription, TxbxHyperlink, TxbxFilePath);
+            }
             else
             {
                 MessageBox.Show("Одно или несколько полей не заполнено!", "", MessageBoxButton.OK,

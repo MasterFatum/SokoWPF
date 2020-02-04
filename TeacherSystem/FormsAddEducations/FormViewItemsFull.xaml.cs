@@ -64,7 +64,7 @@ namespace UserSystem.FormsAddEducations
         {
             SaveFileDialog saveFile = new SaveFileDialog();
             saveFile.Filter = @"Zip files (*.zip)|*.zip";
-            saveFile.FileName = TxbxTitle.Text;
+            saveFile.FileName = String.Format($"{TxbxUser.Text} {TxbxTitle.Text}");
 
             if (saveFile.ShowDialog() == true)
             {

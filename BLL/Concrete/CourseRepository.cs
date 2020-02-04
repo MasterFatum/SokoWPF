@@ -71,6 +71,7 @@ namespace Bll.Concrete
                     courseEdit.Title = courses.Title;
                     courseEdit.Description = courses.Description;
                     courseEdit.Hyperlink = courses.Hyperlink;
+                    courseEdit.FileName = courses.FileName;
 
                     if (courseEdit.Evaluation != null)
                     {
