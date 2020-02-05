@@ -11,32 +11,32 @@ namespace BLL.Concrete
 {
      public class FtpRepository
     {
-        public string Host { get; set; }
-        public string Username { get; set; }
-        public string Password { get; set; }
-        public FtpWebResponse FtpResponse { get; set; }
-        public FtpWebRequest FtpRequest { get; set; }
-        public bool UseSsl { get; set; }
+        private string host = "172.20.2.221";
+        private string username = "anonymous";
+        private string password = "sko@fckrasnodar.ru";
+        private FtpWebResponse ftpResponse;
+        private FtpWebRequest ftpRequest;
+        private bool useSsl = false;
 
         public void DownloadFile(string path, string fileName)
         {
 
-            FtpRequest = (FtpWebRequest)WebRequest.Create("ftp://" + Host + path + "/" + fileName);
+            ftpRequest = (FtpWebRequest)WebRequest.Create("ftp://" + host + path + "/" + fileName);
 
-            FtpRequest.Credentials = new NetworkCredential(Username, Password);
+            ftpRequest.Credentials = new NetworkCredential(username, password);
 
             //Команда фтп RETR
-            FtpRequest.Method = WebRequestMethods.Ftp.DownloadFile;
+            ftpRequest.Method = WebRequestMethods.Ftp.DownloadFile;
 
-            FtpRequest.EnableSsl = UseSsl;
+            ftpRequest.EnableSsl = useSsl;
 
             //Файлы будут копироваться в кталог программы
             FileStream downloadedFile = new FileStream(fileName, FileMode.Create, FileAccess.ReadWrite);
 
-            FtpResponse = (FtpWebResponse)FtpRequest.GetResponse();
+            ftpResponse = (FtpWebResponse)ftpRequest.GetResponse();
 
             //Получаем входящий поток
-            Stream responseStream = FtpResponse.GetResponseStream();
+            Stream responseStream = ftpResponse.GetResponseStream();
 
             //Буфер для считываемых данных
             byte[] buffer = new byte[1024];
@@ -47,7 +47,7 @@ namespace BLL.Concrete
                 downloadedFile.Write(buffer, 0, size);
 
             }
-            FtpResponse.Close();
+            ftpResponse.Close();
             downloadedFile.Close();
             responseStream.Close();
         }
@@ -62,10 +62,10 @@ namespace BLL.Concrete
 
             FileStream uploadedFile = new FileStream(fileName, FileMode.Open, FileAccess.Read);
 
-            FtpRequest = (FtpWebRequest)WebRequest.Create("ftp://" + Host + path + fileNameGuid + ".zip");
-            FtpRequest.Credentials = new NetworkCredential(Username, Password);
-            FtpRequest.EnableSsl = UseSsl;
-            FtpRequest.Method = WebRequestMethods.Ftp.UploadFile;
+            ftpRequest = (FtpWebRequest)WebRequest.Create("ftp://" + host + path + fileNameGuid + ".zip");
+            ftpRequest.Credentials = new NetworkCredential(username, password);
+            ftpRequest.EnableSsl = useSsl;
+            ftpRequest.Method = WebRequestMethods.Ftp.UploadFile;
 
             //Буфер для загружаемых данных
             byte[] file_to_bytes = new byte[uploadedFile.Length];
@@ -76,32 +76,33 @@ namespace BLL.Concrete
             uploadedFile.Close();
 
             //Поток для загрузки файла 
-            Stream writer = FtpRequest.GetRequestStream();
+            Stream writer = ftpRequest.GetRequestStream();
 
             writer.Write(file_to_bytes, 0, file_to_bytes.Length);
             writer.Close();
+            
         }
 
 
         //Метод протокола FTP DELE для удаления файла с FTP-сервера 
-        public void DeleteFile(string path)
+        public void DeleteFile(string path, string fileName)
         {
-            FtpRequest = (FtpWebRequest)WebRequest.Create("ftp://" + Host + path);
-            FtpRequest.Credentials = new NetworkCredential(Username, Password);
-            FtpRequest.EnableSsl = UseSsl;
-            FtpRequest.Method = WebRequestMethods.Ftp.DeleteFile;
+            ftpRequest = (FtpWebRequest)WebRequest.Create("ftp://" + host + path + fileName + ".zip");
+            ftpRequest.Credentials = new NetworkCredential(username, password);
+            ftpRequest.EnableSsl = useSsl;
+            ftpRequest.Method = WebRequestMethods.Ftp.DeleteFile;
 
-            FtpWebResponse ftpResponse = (FtpWebResponse)FtpRequest.GetResponse();
+            FtpWebResponse ftpResponse = (FtpWebResponse)ftpRequest.GetResponse();
             ftpResponse.Close();
         }
 
         //Метод протокола FTP MKD для создания каталога на FTP-сервере 
-        public void CreateDirectory(string path, string folderName)
+        public void CreateDirectory(string path)
         {
-            FtpWebRequest ftpRequest = (FtpWebRequest)WebRequest.Create("ftp://" + Host + path + folderName);
+            FtpWebRequest ftpRequest = (FtpWebRequest)WebRequest.Create("ftp://" + host + path);
 
-            ftpRequest.Credentials = new NetworkCredential(Username, Password);
-            ftpRequest.EnableSsl = UseSsl;
+            ftpRequest.Credentials = new NetworkCredential(username, password);
+            ftpRequest.EnableSsl = useSsl;
             ftpRequest.Method = WebRequestMethods.Ftp.MakeDirectory;
 
             FtpWebResponse ftpResponse = (FtpWebResponse)ftpRequest.GetResponse();
@@ -111,9 +112,9 @@ namespace BLL.Concrete
         //Метод протокола FTP RMD для удаления каталога с FTP-сервера 
         public void RemoveDirectory(string path)
         {
-            FtpWebRequest ftpRequest = (FtpWebRequest)WebRequest.Create("ftp://" + Host + path);
-            ftpRequest.Credentials = new NetworkCredential(Username, Password);
-            ftpRequest.EnableSsl = UseSsl;
+            FtpWebRequest ftpRequest = (FtpWebRequest)WebRequest.Create("ftp://" + host + "/" + path);
+            ftpRequest.Credentials = new NetworkCredential(username, password);
+            ftpRequest.EnableSsl = useSsl;
             ftpRequest.Method = WebRequestMethods.Ftp.RemoveDirectory;
 
             FtpWebResponse ftpResponse = (FtpWebResponse)ftpRequest.GetResponse();

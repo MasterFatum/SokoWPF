@@ -25,6 +25,7 @@ namespace UserSystem.FormsAddEducations
         public string FilePathNew { get; set; }
         public string DateEdit { get; set; }
         public string FileNameGuid { get; set; }
+        public string FileNameOld { get; set; }
 
 
         public FormEdit(int id, int userIdEdit, string categoryEdit, string title, string description, string hyperlink, string filePath)
@@ -67,6 +68,7 @@ namespace UserSystem.FormsAddEducations
             if (TxbxFilePath.Text != String.Empty)
             {
                 FileNameGuid = Guid.NewGuid().ToString();
+                FileNameOld = FilePath;
                 FilePath = FileNameGuid;
 
                 courses = new Courses
@@ -79,13 +81,14 @@ namespace UserSystem.FormsAddEducations
                     Hyperlink = TxbxHyperlink.Text.Trim(),
                     FileName = FilePath
                 };
+
+                Task taskDeleteOdlFile = new Task(() => ftpRepository.DeleteFile("/" + UserIdEdit + "/", FileNameOld));
+                taskDeleteOdlFile.Start();
+
+                Task taskAddNewFile = new Task(() => ftpRepository.UploadFile("/" + UserIdEdit + "/", FilePathNew, FileNameGuid));
+                taskAddNewFile.Start();
+
                 
-                ftpRepository.UseSsl = false;
-                ftpRepository.Host = "172.20.2.221";
-                ftpRepository.Username = "anonymous";
-                ftpRepository.Password = "sko@fckrasnodar.ru";
-                Task task = new Task(() => ftpRepository.UploadFile("/" + UserIdEdit + "/", FilePathNew, FileNameGuid));
-                task.Start();
             }
 
             courseRepository.EditCourse(courses);

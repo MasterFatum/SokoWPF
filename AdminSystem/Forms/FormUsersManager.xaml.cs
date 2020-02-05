@@ -10,6 +10,7 @@ namespace AdminSystem.Forms
     public partial class FormUsersManager
     {
         UserRepository userRepository = new UserRepository();
+        FtpRepository ftpRepository = new FtpRepository();
 
         public string User { get; set; }
         public int UserId { get; set; }
@@ -142,6 +143,8 @@ namespace AdminSystem.Forms
             if (MessageBox.Show("Удалить данного пользователя?", "", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
                 userRepository.DeleteUser(Convert.ToInt32(TxbxUserId.Text));
+
+                ftpRepository.RemoveDirectory(TxbxUserId.Text);
 
                 BtnUpdateListUsers_Click(null, null);
             }

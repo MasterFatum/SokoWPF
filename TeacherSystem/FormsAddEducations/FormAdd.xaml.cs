@@ -63,10 +63,6 @@ namespace UserSystem.FormsAddEducations
 
                 if (TxbxFilePath.Text != String.Empty)
                 {
-                    ftpRepository.UseSsl = false;
-                    ftpRepository.Host = "172.20.2.221";
-                    ftpRepository.Username = "anonymous";
-                    ftpRepository.Password = "sko@fckrasnodar.ru";
                     Task task = new Task(() => ftpRepository.UploadFile("/" + UserIdAdd + "/", FilePath, FileNameGuid));
                     task.Start();
                 }
