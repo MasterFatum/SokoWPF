@@ -17,7 +17,7 @@ namespace UserSystem.FormsAddEducations
         FtpRepository ftpRepository = new FtpRepository();
 
         public string SelectedCategory { get; set; }
-        public int UserIdAdd { get; set; }
+        public int UserIdDirectory { get; set; }
         public string FilePath { get; set; }
         public string FileNameGuid { get; set; }
 
@@ -27,7 +27,7 @@ namespace UserSystem.FormsAddEducations
 
             SelectedCategory = selectedCategory;
             TxbxSelectedCategory.Text = SelectedCategory;
-            UserIdAdd = userId;
+            UserIdDirectory = userId;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -51,7 +51,7 @@ namespace UserSystem.FormsAddEducations
 
                 Courses courses = new Courses
                 {
-                    UserId = UserIdAdd,
+                    UserId = UserIdDirectory,
                     Category = SelectedCategory,
                     FileName = FileNameGuid,
                     Title = TxbxTitle.Text.Trim(),
@@ -63,7 +63,7 @@ namespace UserSystem.FormsAddEducations
 
                 if (TxbxFilePath.Text != String.Empty)
                 {
-                    Task task = new Task(() => ftpRepository.UploadFile("/" + UserIdAdd + "/", FilePath, FileNameGuid));
+                    Task task = new Task(() => ftpRepository.UploadFile("/" + UserIdDirectory + "/", FilePath, FileNameGuid));
                     task.Start();
                 }
                 courseRepository.AddCourse(courses, TxbxTitle, TxbxDescription, TxbxHyperlink, TxbxFilePath);
@@ -77,10 +77,10 @@ namespace UserSystem.FormsAddEducations
 
         private void BtnBrowseFile_Click(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-
-            openFileDialog.Filter = @"(*.zip)|*.zip";
-
+            OpenFileDialog openFileDialog = new OpenFileDialog
+            {
+                Filter = @"(*.zip)|*.zip"
+            };
             
             if (openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
