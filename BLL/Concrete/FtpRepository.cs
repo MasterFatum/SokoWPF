@@ -12,10 +12,10 @@ namespace BLL.Concrete
         private FtpWebRequest ftpRequest;
         public bool UseSsl { get; } = false;
 
-        public void DownloadFile(string path, string fileName)
+        public void DownloadFile(string path, string localPath, string fileName)
         {
 
-            ftpRequest = (FtpWebRequest)WebRequest.Create("ftp://" + Host + path + "/" + fileName);
+            ftpRequest = (FtpWebRequest)WebRequest.Create("ftp://" + Host + path + "/" + fileName + ".zip");
 
             ftpRequest.Credentials = new NetworkCredential(Username, Password);
 
@@ -25,7 +25,7 @@ namespace BLL.Concrete
             ftpRequest.EnableSsl = UseSsl;
 
             //Файлы будут копироваться в кталог программы
-            FileStream downloadedFile = new FileStream(fileName, FileMode.Create, FileAccess.ReadWrite);
+            FileStream downloadedFile = new FileStream(localPath, FileMode.Create, FileAccess.ReadWrite);
 
             ftpResponse = (FtpWebResponse)ftpRequest.GetResponse();
 
