@@ -100,7 +100,6 @@ namespace AdminSystem
 
                     return u.Lastname.ToString().Contains(TxbxSearch.Text.Trim());
 
-                    
                 };
             }
         }

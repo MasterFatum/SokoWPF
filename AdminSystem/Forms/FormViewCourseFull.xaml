@@ -50,12 +50,12 @@
                 <TextBlock Name="TxBlSetRating" Text=" Назначить баллы" Height="26" Width="153"/>
             </StackPanel>
         </Button>
-        <TextBox x:Name="TxbxDate" HorizontalAlignment="Left" IsEnabled="False" Height="35" Margin="401,403,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="196" FontSize="16" Text="Дата" TextAlignment="Center">
+        <TextBox x:Name="TxbxDate" HorizontalAlignment="Left" IsEnabled="False" Height="35" Margin="461,403,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="137" FontSize="16" Text="Дата" TextAlignment="Center">
             <TextBox.Effect>
                 <DropShadowEffect/>
             </TextBox.Effect>
         </TextBox>
-        <Label Content="Дата" HorizontalAlignment="Left" Margin="355,405,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
+        <Label Content="Дата" HorizontalAlignment="Left" Margin="413,405,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
         <ComboBox Name="CbxRating" VerticalContentAlignment="Center" IsEnabled="False" HorizontalAlignment="Left" Margin="650,50,0,0" VerticalAlignment="Top" Width="65" Height="56" FontSize="36" SelectedIndex="0">
             <ComboBox.Effect>
                 <DropShadowEffect/>

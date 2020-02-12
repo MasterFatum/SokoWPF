@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Navigation;
-using Bll.Concrete;
 using BLL.Concrete;
 using Microsoft.Win32;
 
@@ -12,7 +10,6 @@ namespace UserSystem.FormsAddEducations
     
     public partial class FormViewItemsFull
     {
-        CourseRepository courseRepository = new CourseRepository();
         FtpRepository ftpRepository = new FtpRepository();
 
         public int UserId { get; set; }

@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Net;
 
 namespace BLL.Concrete
@@ -8,42 +9,47 @@ namespace BLL.Concrete
         public string Host { get; } = "172.20.2.221";
         public string Username { get; } = "anonymous";
         public string Password { get; } = "sko@fckrasnodar.ru";
-        private FtpWebResponse ftpResponse;
-        private FtpWebRequest ftpRequest;
+        public FtpWebResponse FtpResponse { get; private set; }
+        public FtpWebRequest FtpRequest { get; private set; }
         public bool UseSsl { get; } = false;
+        public Guid MyGuid { get; set; }
 
         public void DownloadFile(string path, string localPath, string fileName)
         {
 
-            ftpRequest = (FtpWebRequest)WebRequest.Create("ftp://" + Host + path + "/" + fileName + ".zip");
+            FtpRequest = (FtpWebRequest)WebRequest.Create("ftp://" + Host + path + "/" + fileName + ".zip");
 
-            ftpRequest.Credentials = new NetworkCredential(Username, Password);
+            FtpRequest.Credentials = new NetworkCredential(Username, Password);
 
             //Команда фтп RETR
-            ftpRequest.Method = WebRequestMethods.Ftp.DownloadFile;
+            FtpRequest.Method = WebRequestMethods.Ftp.DownloadFile;
 
-            ftpRequest.EnableSsl = UseSsl;
+            FtpRequest.EnableSsl = UseSsl;
 
             //Файлы будут копироваться в кталог программы
             FileStream downloadedFile = new FileStream(localPath, FileMode.Create, FileAccess.ReadWrite);
 
-            ftpResponse = (FtpWebResponse)ftpRequest.GetResponse();
+            FtpResponse = (FtpWebResponse)FtpRequest.GetResponse();
 
             //Получаем входящий поток
-            Stream responseStream = ftpResponse.GetResponseStream();
+            Stream responseStream = FtpResponse.GetResponseStream();
 
             //Буфер для считываемых данных
             byte[] buffer = new byte[1024];
-            int size;
 
-            while ((size = responseStream.Read(buffer, 0, 1024)) > 0)
+            if (responseStream != null)
             {
-                downloadedFile.Write(buffer, 0, size);
+                int size;
 
+                while ((size = responseStream.Read(buffer, 0, 1024)) > 0)
+                {
+                    downloadedFile.Write(buffer, 0, size);
+
+                }
+                FtpResponse.Close();
+                downloadedFile.Close();
+                responseStream.Close();
             }
-            ftpResponse.Close();
-            downloadedFile.Close();
-            responseStream.Close();
         }
 
 
@@ -56,10 +62,10 @@ namespace BLL.Concrete
 
             FileStream uploadedFile = new FileStream(fileName, FileMode.Open, FileAccess.Read);
 
-            ftpRequest = (FtpWebRequest)WebRequest.Create("ftp://" + Host + path + fileNameGuid + ".zip");
-            ftpRequest.Credentials = new NetworkCredential(Username, Password);
-            ftpRequest.EnableSsl = UseSsl;
-            ftpRequest.Method = WebRequestMethods.Ftp.UploadFile;
+            FtpRequest = (FtpWebRequest)WebRequest.Create("ftp://" + Host + path + fileNameGuid + ".zip");
+            FtpRequest.Credentials = new NetworkCredential(Username, Password);
+            FtpRequest.EnableSsl = UseSsl;
+            FtpRequest.Method = WebRequestMethods.Ftp.UploadFile;
 
             //Буфер для загружаемых данных
             byte[] fileToBytes = new byte[uploadedFile.Length];
@@ -70,7 +76,7 @@ namespace BLL.Concrete
             uploadedFile.Close();
 
             //Поток для загрузки файла 
-            Stream writer = ftpRequest.GetRequestStream();
+            Stream writer = FtpRequest.GetRequestStream();
 
             writer.Write(fileToBytes, 0, fileToBytes.Length);
             writer.Close();
@@ -80,12 +86,12 @@ namespace BLL.Concrete
         //Метод протокола FTP DELE для удаления файла с FTP-сервера 
         public void DeleteFile(string path, string fileName)
         {
-            ftpRequest = (FtpWebRequest)WebRequest.Create("ftp://" + Host + path + fileName + ".zip");
-            ftpRequest.Credentials = new NetworkCredential(Username, Password);
-            ftpRequest.EnableSsl = UseSsl;
-            ftpRequest.Method = WebRequestMethods.Ftp.DeleteFile;
+            FtpRequest = (FtpWebRequest)WebRequest.Create("ftp://" + Host + path + fileName + ".zip");
+            FtpRequest.Credentials = new NetworkCredential(Username, Password);
+            FtpRequest.EnableSsl = UseSsl;
+            FtpRequest.Method = WebRequestMethods.Ftp.DeleteFile;
 
-            FtpWebResponse ftpResponse = (FtpWebResponse)ftpRequest.GetResponse();
+            FtpWebResponse ftpResponse = (FtpWebResponse)FtpRequest.GetResponse();
             ftpResponse.Close();
         }
 

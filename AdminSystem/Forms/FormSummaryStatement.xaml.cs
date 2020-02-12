@@ -5,7 +5,7 @@ using BLL.Concrete;
 
 namespace AdminSystem.Forms
 {
-    public partial class FormSummaryStatement : Window
+    public partial class FormSummaryStatement
     {
         public FormSummaryStatement()
         {

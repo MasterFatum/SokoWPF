@@ -11,7 +11,7 @@ using UserSystem.FormsAddEducations;
 
 namespace TeacherSystem
 {
-    public partial class MainWindow : Window
+    public partial class MainWindow
     {
         CourseRepository courseRepository = new CourseRepository();
         OtherRepository otherRepository = new OtherRepository();

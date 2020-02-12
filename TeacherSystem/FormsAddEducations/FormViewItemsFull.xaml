@@ -46,7 +46,7 @@
             </Button.Effect>
         </Button>
         <Label Content="Баллы" HorizontalAlignment="Left" Margin="654,10,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" FontStyle="Italic"/>
-        <TextBox x:Name="TxbxDate" HorizontalAlignment="Left" IsEnabled ="False"  Height="35" Margin="543,362,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="194" FontSize="16" TextAlignment="Center">
+        <TextBox x:Name="TxbxDate" HorizontalAlignment="Left" IsEnabled ="False"  Height="35" Margin="600,362,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="137" FontSize="16" TextAlignment="Center">
             <TextBox.Effect>
                 <DropShadowEffect/>
             </TextBox.Effect>
@@ -57,7 +57,7 @@
                 Материалы данного курса
             </Hyperlink>
         </TextBlock>
-        <Label Content="Дата" HorizontalAlignment="Left" Margin="496,366,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.216,0.009" FontSize="14" FontWeight="Bold"/>
+        <Label Content="Дата" HorizontalAlignment="Left" Margin="553,364,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.216,0.009" FontSize="14" FontWeight="Bold"/>
         <Label Content="Локальные материалы" HorizontalAlignment="Left" Margin="7,407,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.216,0.009" FontSize="14" FontWeight="Bold"/>
         <Button Name="BtnLocalMatherials" HorizontalAlignment="Right" Margin="0,0,433,12" VerticalAlignment="Bottom" Width="132" Height="35" FontSize="18" Click="BtnLocalMatherials_Click" >
             <Button.Effect>
