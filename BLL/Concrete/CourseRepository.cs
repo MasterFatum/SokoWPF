@@ -32,7 +32,6 @@ namespace Bll.Concrete
             {
                 MessageBox.Show(e.Message);
             }
-
         }
 
         public void DeleteCourse(int id, int userId)

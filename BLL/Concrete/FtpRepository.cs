@@ -55,10 +55,6 @@ namespace BLL.Concrete
 
         public void UploadFile(string path, string fileName, string fileNameGuid)
         {
-            //Для имени файла
-            //string shortName = fileName.Remove(0, fileName.LastIndexOf(@"\", StringComparison.Ordinal) + 1);
-            //string shortName = Guid.NewGuid().ToString();
-
 
             FileStream uploadedFile = new FileStream(fileName, FileMode.Open, FileAccess.Read);
 

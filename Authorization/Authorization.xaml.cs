@@ -45,7 +45,7 @@ namespace Authorization
 
 
                     //АВТОРИЗАЦИЯ ПОЛЬЗОВАТЕЛЯ
-                    case "Учитель":
+                    case "Преподаватель":
                         Users user = userRepository.ValidationUser(TxbxLogin.Text.Trim(), TxbxPassword.Password);
 
                         if (user != null)
@@ -119,13 +119,6 @@ namespace Authorization
             {
                 MessageBox.Show(ex.Message);
             }
-            
-           
-        }
-
-        private void ChkBoxSaveUser_Checked(object sender, RoutedEventArgs e)
-        {
-            
         }
 
         private void AuthorizeForm_Closing(object sender, System.ComponentModel.CancelEventArgs e)

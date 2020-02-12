@@ -212,7 +212,7 @@ namespace TeacherSystem
             new FormInfo().ShowDialog();
         }
 
-        SolidColorBrush orange = new SolidColorBrush(Colors.Orange);
+        readonly SolidColorBrush orange = new SolidColorBrush(Colors.Orange);
         SolidColorBrush white = new SolidColorBrush(Colors.White);
         SolidColorBrush green = new SolidColorBrush(Colors.Green);
 

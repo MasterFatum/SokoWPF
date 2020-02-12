@@ -138,5 +138,8 @@
     <Resource Include="Source\Connected_32px.png" />
     <Resource Include="Source\Shutdown_32px.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\icons8-учитель-8.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
