@@ -207,7 +207,7 @@ namespace BLL.Concrete
                 MessageBox.Show(ex.Message);
             }
 
-            if (userId.Id != 0)
+            if (userId != null && userId.Id != 0)
             {
                 return userId.Id;
             }

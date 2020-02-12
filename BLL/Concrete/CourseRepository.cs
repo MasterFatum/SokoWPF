@@ -3,13 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 using System.Data.Entity.Migrations;
-using System.IO;
 using System.Windows.Controls;
 using BLL;
 using BLL.Abstract;
-using BLL.Concrete;
 using BLL.Entities;
-using Microsoft.Win32;
 
 namespace Bll.Concrete
 {
