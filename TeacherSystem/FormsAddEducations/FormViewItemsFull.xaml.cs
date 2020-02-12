@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Navigation;
 using Bll.Concrete;
+using BLL.Concrete;
 using Microsoft.Win32;
 
 namespace UserSystem.FormsAddEducations
@@ -12,12 +13,13 @@ namespace UserSystem.FormsAddEducations
     public partial class FormViewItemsFull
     {
         CourseRepository courseRepository = new CourseRepository();
+        FtpRepository ftpRepository = new FtpRepository();
 
         public int UserId { get; set; }
         public string MyUrlHyperlink { get; set; }
-        public string Filepath { get; set; }
+        public string FileName { get; set; }
 
-        public FormViewItemsFull(int userId, string user, string category, string title, string description, string date, string hyperlink, string filepath, int evaluation = 0)
+        public FormViewItemsFull(int userId, string user, string category, string title, string description, string date, string hyperlink, string fileName, int evaluation = 0)
         {
             InitializeComponent();
             UserId = userId;
@@ -28,9 +30,9 @@ namespace UserSystem.FormsAddEducations
             TxbxEvaluation.Text = evaluation.ToString();
             TxbxDate.Text = date;
             MyUrlHyperlink = hyperlink;
-            Filepath = filepath;
+            FileName = fileName;
 
-            if (Filepath == null)
+            if (FileName == null)
             {
                 BtnLocalMatherials.IsEnabled = false;
             }
@@ -68,7 +70,8 @@ namespace UserSystem.FormsAddEducations
 
             if (saveFile.ShowDialog() == true)
             {
-
+                string fileLocalPath = saveFile.FileName;
+                ftpRepository.DownloadFile(UserId.ToString(), fileLocalPath, FileName);
             }
         }
     }

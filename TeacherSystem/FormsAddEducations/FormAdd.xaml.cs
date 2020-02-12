@@ -53,11 +53,11 @@ namespace UserSystem.FormsAddEducations
                 {
                     UserId = UserIdAdd,
                     Category = SelectedCategory,
-                    FileName = FileNameGuid,
                     Title = TxbxTitle.Text.Trim(),
                     Description = TxbxDescription.Text.Trim(),
                     Date = String.Format($"{DateTime.Now.ToShortDateString()} {DateTime.Now.ToShortTimeString()}"),
-                    Hyperlink = TxbxHyperlink.Text.Trim()
+                    Hyperlink = TxbxHyperlink.Text.Trim(),
+                    FileName = FileNameGuid
                 };
                 
 

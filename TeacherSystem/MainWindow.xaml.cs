@@ -15,6 +15,7 @@ namespace TeacherSystem
     {
         CourseRepository courseRepository = new CourseRepository();
         OtherRepository otherRepository = new OtherRepository();
+        FtpRepository ftpRepository = new FtpRepository();
 
         public MainWindow(Users user)
         {
@@ -53,7 +54,7 @@ namespace TeacherSystem
         public string Email { get; set; }
         public string Date { get; set; }
         public string Hyperlink { get; set; }
-        public string FilePath { get; set; }
+        public string FileName { get; set; }
 
         private void BtnMainExit_Click(object sender, RoutedEventArgs e)
         {
@@ -105,7 +106,7 @@ namespace TeacherSystem
                 Description = items.Description;
                 Evaluation = items.Evaluation;
                 Hyperlink = items.Hyperlink;
-                FilePath = items.FileName;
+                FileName = items.FileName;
 
                 //if (!String.IsNullOrEmpty(Evaluation.ToString()))
                 //{
@@ -131,9 +132,9 @@ namespace TeacherSystem
             {
                 courseRepository.DeleteCourse(Id, UserId);
 
-                if (!String.IsNullOrEmpty(FilePath))
+                if (!String.IsNullOrEmpty(FileName))
                 {
-
+                    ftpRepository.DeleteFile(UserId.ToString(), FileName);
                 }
                 
                 BtnMainUpdate_Click(null, null);
@@ -142,7 +143,7 @@ namespace TeacherSystem
 
         private void BtnMainEdit_Click(object sender, RoutedEventArgs e)
         {
-            new FormEdit(Id, UserId, Category, Title, Description, Hyperlink, FilePath).ShowDialog();
+            new FormEdit(Id, UserId, Category, Title, Description, Hyperlink, FileName).ShowDialog();
         }
 
         private void CbxMainShowCategory_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -173,9 +174,9 @@ namespace TeacherSystem
                 Evaluation = items.Evaluation ?? 0;
                 Date = items.Date ?? "Дата отсутствует";
                 Hyperlink = items.Hyperlink;
-                FilePath = items.FileName;
+                FileName = items.FileName;
 
-                new FormViewItemsFull(UserId, "Вы", Category, Title, Description, Date, Hyperlink, FilePath, Evaluation.Value).ShowDialog();
+                new FormViewItemsFull(UserId, "Вы", Category, Title, Description, Date, Hyperlink, FileName, Evaluation.Value).ShowDialog();
 
             }
             catch (Exception ex)
