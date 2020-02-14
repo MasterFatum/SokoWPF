@@ -12,11 +12,9 @@ namespace BLL.Concrete
         public FtpWebResponse FtpResponse { get; private set; }
         public FtpWebRequest FtpRequest { get; private set; }
         public bool UseSsl { get; } = false;
-        public Guid MyGuid { get; set; }
 
         public void DownloadFile(string path, string localPath, string fileName)
         {
-
             FtpRequest = (FtpWebRequest)WebRequest.Create("ftp://" + Host + path + "/" + fileName + ".zip");
 
             FtpRequest.Credentials = new NetworkCredential(Username, Password);
