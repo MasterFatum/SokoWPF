@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Net;
 
@@ -15,7 +16,7 @@ namespace BLL.Concrete
 
         public void DownloadFile(string path, string localPath, string fileName)
         {
-            FtpRequest = (FtpWebRequest)WebRequest.Create("ftp://" + Host + path + "/" + fileName + ".zip");
+            FtpRequest = (FtpWebRequest)WebRequest.Create("ftp://" + Host + "/" + path + "/" + fileName + ".zip");
 
             FtpRequest.Credentials = new NetworkCredential(Username, Password);
 
@@ -80,7 +81,7 @@ namespace BLL.Concrete
         //Метод протокола FTP DELE для удаления файла с FTP-сервера 
         public void DeleteFile(string path, string fileName)
         {
-            FtpRequest = (FtpWebRequest)WebRequest.Create("ftp://" + Host + path + fileName + ".zip");
+            FtpRequest = (FtpWebRequest)WebRequest.Create("ftp://" + Host + "/" + path + "/" + fileName + ".zip");
             FtpRequest.Credentials = new NetworkCredential(Username, Password);
             FtpRequest.EnableSsl = UseSsl;
             FtpRequest.Method = WebRequestMethods.Ftp.DeleteFile;
@@ -92,7 +93,7 @@ namespace BLL.Concrete
         //Метод протокола FTP MKD для создания каталога на FTP-сервере 
         public void CreateDirectory(string path)
         {
-            FtpWebRequest ftpRequest = (FtpWebRequest)WebRequest.Create("ftp://" + Host + path);
+            FtpWebRequest ftpRequest = (FtpWebRequest)WebRequest.Create("ftp://" + Host + "/" + path);
 
             ftpRequest.Credentials = new NetworkCredential(Username, Password);
             ftpRequest.EnableSsl = UseSsl;
@@ -112,6 +113,36 @@ namespace BLL.Concrete
 
             FtpWebResponse ftpResponse = (FtpWebResponse)ftpRequest.GetResponse();
             ftpResponse.Close();
+        }
+
+        public bool ExistDirectory(string directory)
+        {
+
+            FtpWebRequest request = (FtpWebRequest)WebRequest.Create("ftp://" + Host);
+            request.Method = WebRequestMethods.Ftp.ListDirectory;
+
+            request.Credentials = new NetworkCredential(Username, Password);
+
+            FtpWebResponse response = (FtpWebResponse)request.GetResponse();
+
+            Stream responseStream = response.GetResponseStream();
+
+            StreamReader reader = new StreamReader(responseStream);
+
+            string line;
+
+            while ((line = reader.ReadLine()) != null)
+            {
+                if (directory == line)
+                {
+                    return true;
+                }
+            }
+
+            reader.Close();
+            response.Close();
+
+            return false;
         }
     }
 }

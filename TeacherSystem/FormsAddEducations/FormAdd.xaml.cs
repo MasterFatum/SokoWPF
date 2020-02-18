@@ -63,6 +63,11 @@ namespace UserSystem.FormsAddEducations
 
                 if (TxbxFilePath.Text != String.Empty)
                 {
+                    if (!ftpRepository.ExistDirectory(UserIdDirectory.ToString()))
+                    {
+                        ftpRepository.CreateDirectory(UserIdDirectory.ToString());
+                    }
+                    
                     Task task = new Task(() => ftpRepository.UploadFile("/" + UserIdDirectory + "/", FilePath, FileNameGuid));
                     task.Start();
                 }
