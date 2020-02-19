@@ -14,6 +14,7 @@ namespace BLL.Concrete
         public FtpWebRequest FtpRequest { get; private set; }
         public bool UseSsl { get; } = false;
 
+        //Скачивание файла с FTP сервера
         public void DownloadFile(string path, string localPath, string fileName)
         {
             FtpRequest = (FtpWebRequest)WebRequest.Create("ftp://" + Host + "/" + path + "/" + fileName + ".zip");
@@ -51,7 +52,7 @@ namespace BLL.Concrete
             }
         }
 
-
+        //Загрузка файла на сервер
         public void UploadFile(string path, string fileName, string fileNameGuid)
         {
 
@@ -115,13 +116,16 @@ namespace BLL.Concrete
             ftpResponse.Close();
         }
 
+        //Проверка на существование директории
         public bool ExistDirectory(string directory)
         {
-
             FtpWebRequest request = (FtpWebRequest)WebRequest.Create("ftp://" + Host);
+
             request.Method = WebRequestMethods.Ftp.ListDirectory;
 
             request.Credentials = new NetworkCredential(Username, Password);
+
+            request.EnableSsl = UseSsl;
 
             FtpWebResponse response = (FtpWebResponse)request.GetResponse();
 
@@ -144,5 +148,52 @@ namespace BLL.Concrete
 
             return false;
         }
+
+        //Просмотр файлов в директории
+        public List<string> DirectoryListing(string path)
+        {
+            FtpWebRequest request = (FtpWebRequest)WebRequest.Create("ftp://" + Host + "/" + path);
+            request.Credentials = new NetworkCredential(Username, Password);
+
+            request.Method = WebRequestMethods.Ftp.ListDirectory;
+
+            FtpWebResponse response = (FtpWebResponse)request.GetResponse();
+            Stream responseStream = response.GetResponseStream();
+            StreamReader reader = new StreamReader(responseStream);
+
+            List<string> result = new List<string>();
+
+            while (!reader.EndOfStream)
+            {
+                result.Add(reader.ReadLine());
+            }
+
+            reader.Close();
+            response.Close();
+
+            return result;
+        }
+
+        //Удаление директории с файлами
+        public void DeleteFtpDirectory(string path)
+        {
+            FtpWebRequest clsRequest = (FtpWebRequest)WebRequest.Create("ftp://" + Host + "/" + path);
+
+            clsRequest.Credentials = new NetworkCredential(Username, Password);
+
+            List<string> filesList = DirectoryListing(path);
+
+            foreach (string file in filesList)
+            {
+                DeleteFile(path, file.Substring(0, file.LastIndexOf('.')));
+            }
+
+            clsRequest.Method = WebRequestMethods.Ftp.RemoveDirectory;
+
+            FtpWebResponse response = (FtpWebResponse)clsRequest.GetResponse();
+
+            response.Close();
+        }
+
     }
 }
