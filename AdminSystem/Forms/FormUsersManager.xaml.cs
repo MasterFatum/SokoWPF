@@ -142,9 +142,12 @@ namespace AdminSystem.Forms
         {
             if (MessageBox.Show("Удалить данного пользователя?", "", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
-                ftpRepository.DeleteFtpDirectory(TxbxUserId.Text);
-
                 userRepository.DeleteUser(Convert.ToInt32(TxbxUserId.Text));
+
+                if (ftpRepository.ExistDirectory(TxbxUserId.Text))
+                {
+                    ftpRepository.DeleteFtpDirectory(TxbxUserId.Text);
+                }
                 
                 BtnUpdateListUsers_Click(null, null);
             }
