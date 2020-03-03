@@ -11,7 +11,7 @@ namespace Authorization
         UserRepository userRepository = new UserRepository();
 
         private const string ConnectionStringInside = "data source=NETSCHOOL;initial catalog=SOKO;integrated security=False;User ID=SOKOUser;Password=Admin;MultipleActiveResultSets=True;App=EntityFramework";
-        private const string ConnectionStringOutside = "data source=87.229.192.199,1435;initial catalog=SOKO;integrated security=False;User ID=SOKOUser;Password=Admin;MultipleActiveResultSets=True;App=EntityFramework";
+        private const string ConnectionStringOutside = "data source=212.44.132.205,1435;initial catalog=SOKO;integrated security=False;User ID=SOKOUser;Password=Admin;MultipleActiveResultSets=True;App=EntityFramework";
 
         public MainWindow()
         {
