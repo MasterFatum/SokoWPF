@@ -138,23 +138,39 @@ namespace Bll.Concrete
 
         public IEnumerable<Courses> GetCoursesByFio(string lastname, string firstname, string middlename, string category)
         {
-            Users userId = sokoContext.Users.OrderBy(l => l.Lastname).Where(l => l.Lastname == lastname).Where(f => f.Firstname == firstname)
-                .FirstOrDefault(m => m.Middlename == middlename);
+            try
+            {
+                Users userId = sokoContext.Users.OrderBy(l => l.Lastname).Where(l => l.Lastname == lastname).Where(f => f.Firstname == firstname)
+                    .FirstOrDefault(m => m.Middlename == middlename);
 
-            IEnumerable<Courses> courseses = sokoContext.Courses.Where(u => u.UserId == userId.Id)
-                .Where(c => c.Category == category);
+                IEnumerable<Courses> courseses = sokoContext.Courses.Where(u => u.UserId == userId.Id)
+                    .Where(c => c.Category == category);
 
-            return courseses.ToList();
+                return courseses.ToList();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return null;
         }
 
         public IEnumerable<Courses> GetCoursesByFio(string lastname, string firstname, string middlename)
         {
-            Users userId = sokoContext.Users.Where(l => l.Lastname == lastname).Where(f => f.Firstname == firstname)
-                .FirstOrDefault(m => m.Middlename == middlename);
+            try
+            {
+                Users userId = sokoContext.Users.Where(l => l.Lastname == lastname).Where(f => f.Firstname == firstname)
+                    .FirstOrDefault(m => m.Middlename == middlename);
 
-            IEnumerable<Courses> courseses = sokoContext.Courses.Where(u => u.UserId == userId.Id);
+                IEnumerable<Courses> courseses = sokoContext.Courses.Where(u => u.UserId == userId.Id);
 
-            return courseses.ToList();
+                return courseses.ToList();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return null;
         }
 
         public void SetRatingCourse(int userId, int id, int rating, string evaluating)
@@ -180,30 +196,40 @@ namespace Bll.Concrete
             }
         }
 
-        public void SearchInDataGrid(TextBox textBoxSearch, DataGrid dataGrid)
-        {
-            
-        }
-
         public string AllRating(int userId)
         {
-            return sokoContext.Courses.Where(x => x.UserId == userId).Sum(r => r.Evaluation).ToString();
+            try
+            {
+                return sokoContext.Courses.Where(x => x.UserId == userId).Sum(r => r.Evaluation).ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return null;
         }
-
 
         public IEnumerable<Courses> GetSummaryStatementByFio(string lastname, string firstname, string middlename)
         {
-            Users userId = sokoContext.Users.Where(l => l.Lastname == lastname).Where(f => f.Firstname == firstname)
-                .FirstOrDefault(m => m.Middlename == middlename);
-
-            var summary = sokoContext.Courses.Where(u => u.UserId == userId.Id).GroupBy(c => c.Category).Select(c => new
+            try
             {
-                category = c.Key,
-                evaluation = c.Sum(e => e.Evaluation)
-            }).AsEnumerable().Select(an => new Courses{Category = an.category, Evaluation = an.evaluation});
+                Users userId = sokoContext.Users.Where(l => l.Lastname == lastname).Where(f => f.Firstname == firstname)
+                    .FirstOrDefault(m => m.Middlename == middlename);
 
-            return summary.ToList();
-              
+                var summary = sokoContext.Courses.Where(u => u.UserId == userId.Id).GroupBy(c => c.Category).Select(c => new
+                {
+                    category = c.Key,
+                    evaluation = c.Sum(e => e.Evaluation)
+                }).AsEnumerable().Select(an => new Courses { Category = an.category, Evaluation = an.evaluation });
+
+                return summary.ToList();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return null;
         }
     }
 }

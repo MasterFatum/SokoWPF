@@ -190,7 +190,15 @@ namespace BLL.Concrete
 
         public string GetAllUsersCount()
         {
-            return sokoContext.Users.Count().ToString();
+            try
+            {
+                return sokoContext.Users.Count().ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return null;
         }
 
         public int GetUserIdByFio(string lastname, string firstname, string middlename)
