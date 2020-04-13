@@ -47,8 +47,15 @@ namespace UserSystem.FormsAddEducations
         {
             if (TxbxTitle.Text != String.Empty && TxbxDescription.Text != String.Empty)
             {
-                FileNameGuid = Guid.NewGuid().ToString();
-
+                if (TxbxFilePath.Text != String.Empty)
+                {
+                    FileNameGuid = Guid.NewGuid().ToString();
+                }
+                else
+                {
+                    FileNameGuid = null;
+                }
+                
                 Courses courses = new Courses
                 {
                     UserId = UserIdDirectory,
@@ -60,7 +67,6 @@ namespace UserSystem.FormsAddEducations
                     FileName = FileNameGuid
                 };
                 
-
                 if (TxbxFilePath.Text != String.Empty)
                 {
                     if (!ftpRepository.ExistDirectory(UserIdDirectory.ToString()))

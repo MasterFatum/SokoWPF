@@ -17,7 +17,7 @@
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
-        <Label x:Name="LblLastname" Content="Фамилия" HorizontalAlignment="Right" Margin="0,318,83,0" VerticalAlignment="Top" RenderTransformOrigin="-0.413,0.235" FontSize="14"/>
+        <Label x:Name="LblLastname" Content="Фамилия" HorizontalAlignment="Right" Margin="0,289,83,0" VerticalAlignment="Top" RenderTransformOrigin="-0.413,0.235" FontSize="14"/>
         <Button x:Name="BtnMainAdd" HorizontalAlignment="Left" Margin="10,0,0,2" VerticalAlignment="Bottom" Width="132" Height="44" FontSize="18" Click="BtnMainAdd_Click">
             <StackPanel Orientation="Horizontal">
                 <Image Source="Source/Add Property_32px.png" Height="29"/>
@@ -54,38 +54,38 @@
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
-        <Label x:Name="LblLFirstname" Content="Имя" HorizontalAlignment="Right" Margin="0,380,99,0" VerticalAlignment="Top" RenderTransformOrigin="-0.413,0.235" FontSize="14"/>
-        <Label x:Name="LblMeddlename" Content="Отчество" Margin="0,442,86,0" VerticalAlignment="Top" RenderTransformOrigin="-0.413,0.235" FontSize="14" HorizontalAlignment="Right"/>
-        <Label x:Name="LblUserId" Content="ID пользователя" HorizontalAlignment="Right" Margin="0,255,57,0" VerticalAlignment="Top" RenderTransformOrigin="-0.413,0.235" FontSize="14"/>
-        <Label x:Name="LblPosition" Content="Должность" HorizontalAlignment="Right" Margin="0,504,76,0" VerticalAlignment="Top" RenderTransformOrigin="-0.413,0.235" FontSize="14"/>
-        <GroupBox Header="Пользователь" HorizontalAlignment="Right" Height="338" Margin="0,235,8,0" VerticalAlignment="Top" Width="232"/>
-        <TextBox x:Name="TxbxUserId" IsReadOnly="True" HorizontalAlignment="Right" Height="25" Margin="0,289,18,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="211" TextAlignment="Center" FontSize="14" FontWeight="Bold">
+        <Label x:Name="LblLFirstname" Content="Имя" HorizontalAlignment="Right" Margin="0,351,99,0" VerticalAlignment="Top" RenderTransformOrigin="-0.413,0.235" FontSize="14"/>
+        <Label x:Name="LblMeddlename" Content="Отчество" Margin="0,413,86,0" VerticalAlignment="Top" RenderTransformOrigin="-0.413,0.235" FontSize="14" HorizontalAlignment="Right"/>
+        <Label x:Name="LblUserId" Content="ID пользователя" HorizontalAlignment="Right" Margin="0,226,57,0" VerticalAlignment="Top" RenderTransformOrigin="-0.413,0.235" FontSize="14"/>
+        <Label x:Name="LblPosition" Content="Должность" HorizontalAlignment="Right" Margin="0,475,76,0" VerticalAlignment="Top" RenderTransformOrigin="-0.413,0.235" FontSize="14"/>
+        <GroupBox Header="Пользователь" HorizontalAlignment="Right" Height="338" Margin="0,206,8,0" VerticalAlignment="Top" Width="232"/>
+        <TextBox x:Name="TxbxUserId" IsReadOnly="True" HorizontalAlignment="Right" Height="25" Margin="0,260,18,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="211" TextAlignment="Center" FontSize="14" FontWeight="Bold">
             <TextBox.Effect>
                 <DropShadowEffect/>
             </TextBox.Effect>
         </TextBox>
-        <TextBox x:Name="TxbxUserLastname" IsReadOnly="True" HorizontalAlignment="Right" Height="25" Margin="0,352,18,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="211" TextAlignment="Center" FontSize="14" FontWeight="Bold">
+        <TextBox x:Name="TxbxUserLastname" IsReadOnly="True" HorizontalAlignment="Right" Height="25" Margin="0,323,18,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="211" TextAlignment="Center" FontSize="14" FontWeight="Bold">
             <TextBox.Effect>
                 <DropShadowEffect/>
             </TextBox.Effect>
         </TextBox>
-        <TextBox x:Name="TxbxUserFirstname" IsReadOnly="True" HorizontalAlignment="Right" Height="25" Margin="0,414,18,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="211" TextAlignment="Center" FontSize="14" FontWeight="Bold">
+        <TextBox x:Name="TxbxUserFirstname" IsReadOnly="True" HorizontalAlignment="Right" Height="25" Margin="0,385,18,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="211" TextAlignment="Center" FontSize="14" FontWeight="Bold">
             <TextBox.Effect>
                 <DropShadowEffect/>
             </TextBox.Effect>
         </TextBox>
-        <TextBox x:Name="TxbxUserMiddlename" IsReadOnly="True" HorizontalAlignment="Right" Height="25" Margin="0,476,18,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="211" TextAlignment="Center" FontSize="14" FontWeight="Bold">
+        <TextBox x:Name="TxbxUserMiddlename" IsReadOnly="True" HorizontalAlignment="Right" Height="25" Margin="0,447,18,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="211" TextAlignment="Center" FontSize="14" FontWeight="Bold">
             <TextBox.Effect>
                 <DropShadowEffect/>
             </TextBox.Effect>
         </TextBox>
-        <TextBox x:Name="TxbxUserPosition" IsReadOnly="True" HorizontalAlignment="Right" Height="25" Margin="0,538,18,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="211" TextAlignment="Center" FontSize="14" FontWeight="Bold">
+        <TextBox x:Name="TxbxUserPosition" IsReadOnly="True" HorizontalAlignment="Right" Height="25" Margin="0,509,18,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="211" TextAlignment="Center" FontSize="14" FontWeight="Bold">
             <TextBox.Effect>
                 <DropShadowEffect/>
             </TextBox.Effect>
         </TextBox>
-        <GroupBox Header="Фильтр записей" HorizontalAlignment="Right" Height="129" Margin="0,6,8,0" VerticalAlignment="Top" Width="233"/>
-        <ComboBox x:Name="CbxMainShowCategory" HorizontalAlignment="Right" Margin="0,31,23,0" VerticalAlignment="Top" Width="211" FontSize="18" SelectionChanged="CbxMainShowCategory_SelectionChanged">
+        <GroupBox Header="Фильтр записей" HorizontalAlignment="Right" Height="78" Margin="0,32,7,0" VerticalAlignment="Top" Width="233"/>
+        <ComboBox x:Name="CbxMainShowCategory" HorizontalAlignment="Right" Margin="0,59,79,0" VerticalAlignment="Top" Width="151" FontSize="18" SelectionChanged="CbxMainShowCategory_SelectionChanged" Height="35">
             <ComboBox.Effect>
                 <DropShadowEffect/>
             </ComboBox.Effect>
@@ -99,15 +99,6 @@
             <ComboBoxItem Content="Справки"/>
             <ComboBoxItem Content="Другое"/>
         </ComboBox>
-        <Button x:Name="BtnMainCategoryShow" Margin="0,83,102,0" VerticalAlignment="Top" Width="132" Height="34" FontSize="18" Click="BtnMainCategoryShow_Click" HorizontalAlignment="Right">
-            <StackPanel Orientation="Horizontal">
-                <Image Source="Source/Filter_32px.png" Height="29"/>
-                <TextBlock Text="  Показать" Height="26"/>
-            </StackPanel>
-            <Button.Effect>
-                <DropShadowEffect/>
-            </Button.Effect>
-        </Button>
         <Button x:Name="BtnMainOtherUsersCourses" HorizontalAlignment="Left" Margin="421,0,0,2" VerticalAlignment="Bottom" Width="284" Height="43" FontSize="18" Click="BtnMainOtherUsersCourses_Click">
             <StackPanel Orientation="Horizontal">
                 <Image Source="Source/Users_32px.png" Height="29"/>
@@ -124,8 +115,8 @@
                 <MenuItem Header="Выйти" Click="MenuItem_Click_1" FontWeight="Normal"></MenuItem>
             </MenuItem>
         </Menu>
-        <Label Content="Общее количество баллов:" Margin="0,140,23,0" FontSize="16" Width="211" VerticalAlignment="Top" HorizontalAlignment="Right"/>
-        <TextBox x:Name="TxbxAllRating" IsReadOnly="True" Height="34" Margin="0,176,58,0" Width="132" TextAlignment="Center" FontSize="18" FontWeight="Bold" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Right">
+        <Label Content="Общее количество баллов:" Margin="0,117,19,0" FontSize="16" Width="211" VerticalAlignment="Top" HorizontalAlignment="Right"/>
+        <TextBox x:Name="TxbxAllRating" IsReadOnly="True" Height="34" Foreground="DarkGreen" Margin="0,153,54,0" Width="132" TextAlignment="Center" FontSize="18" FontWeight="Bold" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Right">
             <TextBox.Effect>
                 <DropShadowEffect/>
             </TextBox.Effect>
@@ -134,7 +125,7 @@
         <Label Content="Баллы отсутствуют" HorizontalAlignment="Left" Margin="113,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.263,0.308"/>
         <Rectangle HorizontalAlignment="Left" Height="20" Margin="232,13,0,0" Stroke="Black" VerticalAlignment="Top" Width="20" Fill="White"/>
         <Label Content="Баллы выставлены" HorizontalAlignment="Left" Margin="257,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.263,0.308"/>
-        <Button x:Name="BtnMainUpdate2" Margin="0,83,23,0" VerticalAlignment="Top" Width="51" Height="34" FontSize="18" Click="BtnMainUpdate_Click" HorizontalAlignment="Right">
+        <Button x:Name="BtnMainUpdate2" Margin="0,59,18,0" VerticalAlignment="Top" Width="56" Height="35" FontSize="18" Click="BtnMainUpdate_Click" HorizontalAlignment="Right">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
