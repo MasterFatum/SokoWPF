@@ -19,7 +19,7 @@ namespace UserSystem.FormsAddEducations
             TxbxEmail.Text = email;
         }
 
-        UserRepository userRepository = new UserRepository();
+        readonly UserRepository userRepository = new UserRepository();
 
         private void BtnChangeProfile_Click(object sender, RoutedEventArgs e)
         {
