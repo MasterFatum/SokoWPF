@@ -29,7 +29,7 @@ namespace UserSystem.FormsAddEducations
             MyUrlHyperlink = hyperlink;
             FileName = fileName;
 
-            if (FileName == null)
+            if (String.IsNullOrEmpty(FileName))
             {
                 BtnLocalMatherials.IsEnabled = false;
             }

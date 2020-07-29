@@ -61,20 +61,6 @@ namespace TeacherSystem
             Application.Current.Shutdown();
         }
 
-        private void BtnMainCategoryShow_Click(object sender, RoutedEventArgs e)
-        {
-            if (CbxMainShowCategory.SelectedIndex != -1)
-            {
-                DataGridMain.ItemsSource = courseRepository.GetCoursesByCategory(Convert.ToInt32(TxbxUserId.Text), (((ComboBoxItem)CbxMainShowCategory.SelectedItem).Content.ToString()));
-
-                new OtherRepository().SettingDataGridUsers(DataGridMain);
-            }
-            else
-            {
-                MessageBox.Show("Выберите категорию!", "", MessageBoxButton.OK, MessageBoxImage.Information);
-            }
-        }
-
         private void BtnMainAdd_Click(object sender, RoutedEventArgs e)
         {
             new FormChooseCategory(Convert.ToInt32(TxbxUserId.Text)).ShowDialog();
@@ -148,7 +134,12 @@ namespace TeacherSystem
 
         private void CbxMainShowCategory_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            if (CbxMainShowCategory.SelectedIndex != -1)
+            {
+                DataGridMain.ItemsSource = courseRepository.GetCoursesByCategory(Convert.ToInt32(TxbxUserId.Text), (((ComboBoxItem)CbxMainShowCategory.SelectedItem).Content.ToString()));
 
+                new OtherRepository().SettingDataGridUsers(DataGridMain);
+            }
         }
 
         private void BtnMainOtherUsersCourses_Click(object sender, RoutedEventArgs e)
