@@ -96,6 +96,7 @@
             <ComboBoxItem Content="Участие в конкурсах"/>
             <ComboBoxItem Content="Обобщение и распространение педаг. опыта"/>
             <ComboBoxItem Content="Размещение материалов на сайте"/>
+            <ComboBoxItem Content="Справки"/>
             <ComboBoxItem Content="Другое"/>
         </ComboBox>
         <Button x:Name="BtnMainOtherUsersCourses" HorizontalAlignment="Left" Margin="421,0,0,2" VerticalAlignment="Bottom" Width="284" Height="43" FontSize="18" Click="BtnMainOtherUsersCourses_Click">
