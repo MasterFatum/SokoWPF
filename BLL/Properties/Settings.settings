@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="FtpServerAddress" Type="System.String" Scope="User">
-      <Value Profile="(Default)">school.fckrasnodar.ru</Value>
+      <Value Profile="(Default)">172.20.2.221</Value>
     </Setting>
     <Setting Name="FtpServerPortInside" Type="System.String" Scope="User">
       <Value Profile="(Default)">21</Value>

@@ -25,7 +25,7 @@ namespace BLL.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("school.fckrasnodar.ru")]
+        [global::System.Configuration.DefaultSettingValueAttribute("172.20.2.221")]
         public string FtpServerAddress {
             get {
                 return ((string)(this["FtpServerAddress"]));
