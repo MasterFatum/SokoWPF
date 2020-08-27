@@ -11,7 +11,6 @@ namespace BLL.Concrete
         public string Host { get; } = Properties.Settings.Default.FtpServerAddress;
         public string Username { get; } = Properties.Settings.Default.FtpServerUsername;
         public string Password { get; } = Properties.Settings.Default.FtpServerPassword;
-        public FtpWebResponse FtpResponse { get; private set; }
         public FtpWebRequest FtpRequest { get; private set; }
         public bool UseSsl { get; } = Properties.Settings.Default.FtpUseSsl;
 
@@ -117,11 +116,9 @@ namespace BLL.Concrete
                                     }
                                 }
                             }
-
                         }
                     }
                 }
-                
             }
             catch (Exception ex)
             {
@@ -129,7 +126,6 @@ namespace BLL.Concrete
             }
             return false;
         }
-
 
         //Метод протокола FTP DELE для удаления файла с FTP-сервера 
         public void DeleteFile(string path, string fileName)
@@ -145,7 +141,6 @@ namespace BLL.Concrete
                 {
                     ftpResponse.Close();
                 }
-                
             }
             catch (Exception ex)
             {
@@ -165,14 +160,15 @@ namespace BLL.Concrete
                 ftpRequest.EnableSsl = UseSsl;
                 ftpRequest.Method = WebRequestMethods.Ftp.MakeDirectory;
 
-                FtpWebResponse ftpResponse = (FtpWebResponse)ftpRequest.GetResponse();
-                ftpResponse.Close();
+                using (FtpWebResponse ftpResponse = (FtpWebResponse) ftpRequest.GetResponse())
+                {
+                    ftpResponse.Close();
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            
         }
 
         //Метод протокола FTP RMD для удаления каталога с FTP-сервера 
@@ -185,8 +181,10 @@ namespace BLL.Concrete
                 ftpRequest.EnableSsl = UseSsl;
                 ftpRequest.Method = WebRequestMethods.Ftp.RemoveDirectory;
 
-                FtpWebResponse ftpResponse = (FtpWebResponse)ftpRequest.GetResponse();
-                ftpResponse.Close();
+                using (FtpWebResponse ftpResponse = (FtpWebResponse)ftpRequest.GetResponse())
+                {
+                    ftpResponse.Close();
+                }
             }
             catch (Exception ex)
             {
@@ -195,41 +193,44 @@ namespace BLL.Concrete
             
         }
 
-        
         //Просмотр файлов в директории
         public List<string> DirectoryListing(string path)
         {
             try
             {
-                FtpWebRequest request = (FtpWebRequest)WebRequest.Create("ftp://" + Host + "/" + path);
+                FtpWebRequest request = (FtpWebRequest) WebRequest.Create("ftp://" + Host + "/" + path);
                 request.Credentials = new NetworkCredential(Username, Password);
 
                 request.Method = WebRequestMethods.Ftp.ListDirectory;
 
-                FtpWebResponse response = (FtpWebResponse)request.GetResponse();
-                Stream responseStream = response.GetResponseStream();
-
-                List<string> result = new List<string>();
-                if (responseStream != null)
-
+                using (FtpWebResponse response = (FtpWebResponse) request.GetResponse())
                 {
-                    StreamReader reader = new StreamReader(responseStream);
-
-                    while (!reader.EndOfStream)
+                    using (Stream responseStream = response.GetResponseStream())
                     {
-                        result.Add(reader.ReadLine());
+                        List<string> result = new List<string>();
+                        if (responseStream != null)
+
+                        {
+                            using (StreamReader reader = new StreamReader(responseStream))
+                            {
+                                while (!reader.EndOfStream)
+                                {
+                                    result.Add(reader.ReadLine());
+                                }
+
+                                reader.Close();
+                            }
+                        }
+
+                        return result;
                     }
-                    reader.Close();
                 }
-
-                response.Close();
-
-                return result;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+
             return null;
         }
 
@@ -259,8 +260,6 @@ namespace BLL.Concrete
             {
                 MessageBox.Show(ex.Message);
             }
-            
         }
-
     }
 }

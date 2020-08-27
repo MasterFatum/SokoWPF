@@ -12,7 +12,7 @@ namespace BLL.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.9.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.5.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -25,7 +25,7 @@ namespace BLL.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("172.20.2.221")]
+        [global::System.Configuration.DefaultSettingValueAttribute("93.189.41.9")]
         public string FtpServerAddress {
             get {
                 return ((string)(this["FtpServerAddress"]));
@@ -61,7 +61,7 @@ namespace BLL.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("anonymous")]
+        [global::System.Configuration.DefaultSettingValueAttribute("u127574")]
         public string FtpServerUsername {
             get {
                 return ((string)(this["FtpServerUsername"]));
@@ -73,7 +73,7 @@ namespace BLL.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("sko@fckrasnodar.ru")]
+        [global::System.Configuration.DefaultSettingValueAttribute("0etbNPmJtKXc")]
         public string FtpServerPassword {
             get {
                 return ((string)(this["FtpServerPassword"]));

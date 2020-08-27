@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="FtpServerAddress" Type="System.String" Scope="User">
-      <Value Profile="(Default)">172.20.2.221</Value>
+      <Value Profile="(Default)">93.189.41.9</Value>
     </Setting>
     <Setting Name="FtpServerPortInside" Type="System.String" Scope="User">
       <Value Profile="(Default)">21</Value>
@@ -12,10 +12,10 @@
       <Value Profile="(Default)">2121</Value>
     </Setting>
     <Setting Name="FtpServerUsername" Type="System.String" Scope="User">
-      <Value Profile="(Default)">anonymous</Value>
+      <Value Profile="(Default)">u127574</Value>
     </Setting>
     <Setting Name="FtpServerPassword" Type="System.String" Scope="User">
-      <Value Profile="(Default)">sko@fckrasnodar.ru</Value>
+      <Value Profile="(Default)">0etbNPmJtKXc</Value>
     </Setting>
     <Setting Name="FtpUseSsl" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>

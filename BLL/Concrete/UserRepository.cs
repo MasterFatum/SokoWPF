@@ -10,7 +10,7 @@ namespace BLL.Concrete
 {
     public class UserRepository : IUserRepository
     {
-        SokoContext sokoContext = new SokoContext();
+        readonly SokoContext sokoContext = new SokoContext();
 
         public void AddUser(Users user)
         {
