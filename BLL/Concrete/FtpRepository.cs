@@ -29,36 +29,32 @@ namespace BLL.Concrete
 
                 FtpRequest.EnableSsl = UseSsl;
 
-                //Файлы будут копироваться в кталог программы
-                FileStream downloadedFile = new FileStream(localPath, FileMode.Create, FileAccess.ReadWrite);
-
-                FtpResponse = (FtpWebResponse)FtpRequest.GetResponse();
-
-                //Получаем входящий поток
-                Stream responseStream = FtpResponse.GetResponseStream();
-
                 //Буфер для считываемых данных
                 byte[] buffer = new byte[1024];
 
-                if (responseStream != null)
+                using (var ftpResponse = (FtpWebResponse)FtpRequest.GetResponse())
                 {
-                    int size;
-
-                    while ((size = responseStream.Read(buffer, 0, 1024)) > 0)
+                    using (var responseStream = ftpResponse.GetResponseStream())
                     {
-                        downloadedFile.Write(buffer, 0, size);
-                    }
+                        using (var downloadedFile = new FileStream(localPath, FileMode.OpenOrCreate, FileAccess.ReadWrite))
+                        {
+                            if (responseStream != null)
+                            {
+                                int size;
 
-                    FtpResponse.Close();
-                    downloadedFile.Close();
-                    responseStream.Close();
+                                while ((size = responseStream.Read(buffer, 0, 1024)) > 0)
+                                {
+                                    downloadedFile.Write(buffer, 0, size);
+                                }
+                            }
+                        }
+                    }
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-            }
-            
+            } 
         }
 
         //Загрузка файла на сервер
@@ -66,32 +62,72 @@ namespace BLL.Concrete
         {
             try
             {
-                FileStream uploadedFile = new FileStream(fileName, FileMode.Open, FileAccess.Read);
+                FtpWebRequest request = (FtpWebRequest)WebRequest.Create("ftp://" + Host + "/" + path + "/" + fileNameGuid + ".zip");
+                request.Credentials = new NetworkCredential(Username, Password);
+                request.EnableSsl = UseSsl;
+                request.Method = WebRequestMethods.Ftp.UploadFile;
 
-                FtpRequest = (FtpWebRequest)WebRequest.Create("ftp://" + Host + "/" + path + "/" + fileNameGuid + ".zip");
-                FtpRequest.Credentials = new NetworkCredential(Username, Password);
-                FtpRequest.EnableSsl = UseSsl;
-                FtpRequest.Method = WebRequestMethods.Ftp.UploadFile;
 
-                //Буфер для загружаемых данных
-                byte[] fileToBytes = new byte[uploadedFile.Length];
+                using (FileStream uploadedFile = new FileStream(fileName, FileMode.Open, FileAccess.Read))
 
-                //Считываем данные в буфер
-                uploadedFile.Read(fileToBytes, 0, fileToBytes.Length);
+                using (Stream writer = request.GetRequestStream())
+                {
+                    uploadedFile.CopyTo(writer);
+                }
 
-                uploadedFile.Close();
-
-                //Поток для загрузки файла 
-                Stream writer = FtpRequest.GetRequestStream();
-
-                writer.Write(fileToBytes, 0, fileToBytes.Length);
-                writer.Close();
+                using (var response = (FtpWebResponse)request.GetResponse())
+                {
+                    MessageBox.Show($"Результат загрузки файла: {response.StatusDescription}");
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            
+        }
+
+        //Проверка на существование директории
+        public bool ExistDirectory(string directory)
+        {
+            try
+            {
+                FtpWebRequest request = (FtpWebRequest)WebRequest.Create("ftp://" + Host);
+
+                request.Method = WebRequestMethods.Ftp.ListDirectory;
+
+                request.Credentials = new NetworkCredential(Username, Password);
+
+                request.EnableSsl = UseSsl;
+
+                using (FtpWebResponse response = (FtpWebResponse)request.GetResponse())
+                {
+                    using (Stream responseStream = response.GetResponseStream())
+                    {
+                        if (responseStream != null)
+                        {
+                            using (StreamReader reader = new StreamReader(responseStream))
+                            {
+                                string line;
+
+                                while ((line = reader.ReadLine()) != null)
+                                {
+                                    if (directory == line)
+                                    {
+                                        return true;
+                                    }
+                                }
+                            }
+
+                        }
+                    }
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return false;
         }
 
 
@@ -105,8 +141,11 @@ namespace BLL.Concrete
                 FtpRequest.EnableSsl = UseSsl;
                 FtpRequest.Method = WebRequestMethods.Ftp.DeleteFile;
 
-                FtpWebResponse ftpResponse = (FtpWebResponse)FtpRequest.GetResponse();
-                ftpResponse.Close();
+                using (var ftpResponse = (FtpWebResponse)FtpRequest.GetResponse())
+                {
+                    ftpResponse.Close();
+                }
+                
             }
             catch (Exception ex)
             {
@@ -156,49 +195,7 @@ namespace BLL.Concrete
             
         }
 
-        //Проверка на существование директории
-        public bool ExistDirectory(string directory)
-        {
-            try
-            {
-                FtpWebRequest request = (FtpWebRequest)WebRequest.Create("ftp://" + Host);
-
-                request.Method = WebRequestMethods.Ftp.ListDirectory;
-
-                request.Credentials = new NetworkCredential(Username, Password);
-
-                request.EnableSsl = UseSsl;
-
-                FtpWebResponse response = (FtpWebResponse)request.GetResponse();
-
-                Stream responseStream = response.GetResponseStream();
-
-                if (responseStream != null)
-                {
-                    StreamReader reader = new StreamReader(responseStream);
-
-                    string line;
-
-                    while ((line = reader.ReadLine()) != null)
-                    {
-                        if (directory == line)
-                        {
-                            return true;
-                        }
-                    }
-
-                    reader.Close();
-                    
-                }
-                response.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            return false;
-        }
-
+        
         //Просмотр файлов в директории
         public List<string> DirectoryListing(string path)
         {

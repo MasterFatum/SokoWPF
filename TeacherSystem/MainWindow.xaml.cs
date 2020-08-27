@@ -94,22 +94,11 @@ namespace TeacherSystem
                 Hyperlink = items.Hyperlink;
                 FileName = items.FileName;
 
-                //if (!String.IsNullOrEmpty(Evaluation.ToString()))
-                //{
-                //    BtnMainEdit.IsEnabled = false;
-                //    BtnMainDelete.IsEnabled = false;
-                //}
-                //else
-                //{
-                //    BtnMainEdit.IsEnabled = true;
-                //    BtnMainDelete.IsEnabled = true;
-                //}
             }
             catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-
         }
 
         private void BtnMainDelete_Click(object sender, RoutedEventArgs e)

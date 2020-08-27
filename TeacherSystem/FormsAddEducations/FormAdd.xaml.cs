@@ -55,7 +55,7 @@ namespace UserSystem.FormsAddEducations
                 {
                     FileNameGuid = null;
                 }
-                
+
                 Courses courses = new Courses
                 {
                     UserId = UserIdDirectory,
@@ -66,14 +66,14 @@ namespace UserSystem.FormsAddEducations
                     Hyperlink = TxbxHyperlink.Text.Trim(),
                     FileName = FileNameGuid
                 };
-                
+
                 if (TxbxFilePath.Text != String.Empty)
                 {
                     if (!ftpRepository.ExistDirectory(UserIdDirectory.ToString()))
                     {
                         ftpRepository.CreateDirectory(UserIdDirectory.ToString());
                     }
-                    
+
                     Task task = new Task(() => ftpRepository.UploadFile("/" + UserIdDirectory + "/", FilePath, FileNameGuid));
                     task.Start();
                 }
