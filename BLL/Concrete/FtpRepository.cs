@@ -208,6 +208,7 @@ namespace BLL.Concrete
                     using (Stream responseStream = response.GetResponseStream())
                     {
                         List<string> result = new List<string>();
+
                         if (responseStream != null)
 
                         {

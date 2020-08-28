@@ -95,7 +95,6 @@ namespace Bll.Concrete
 
         public IEnumerable<Courses> GetCoursesByUserId(int userId)
         {
-
             try
             {
                 IQueryable<Courses> courseses = new SokoContext().Courses.Where(u => u.UserId == userId);

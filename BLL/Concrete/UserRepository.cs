@@ -59,7 +59,6 @@ namespace BLL.Concrete
             {
                 MessageBox.Show(ex.Message);
             }
-            
         }
 
         public void EditUser(int id, string lastname, string firstname, string middlename, string position, string email)
@@ -206,8 +205,8 @@ namespace BLL.Concrete
             Users userId = null;
 
             try
-            {
-                  userId = sokoContext.Users.Where(l => l.Lastname == lastname).Where(f => f.Firstname == firstname)
+            { 
+                userId = sokoContext.Users.Where(l => l.Lastname == lastname).Where(f => f.Firstname == firstname)
                     .FirstOrDefault(m => m.Middlename == middlename);
             }
             catch (Exception ex)
