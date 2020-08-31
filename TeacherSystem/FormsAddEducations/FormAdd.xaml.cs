@@ -97,7 +97,7 @@ namespace UserSystem.FormsAddEducations
             {
                 long fileLength = new FileInfo(openFileDialog.FileName).Length;
 
-                if (fileLength > 52428800)
+                if (fileLength > 26214400)
                 {
                     MessageBox.Show("Размер файла превышает допустимый! Размер файла не должен превышать 50 MB.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
                 }
