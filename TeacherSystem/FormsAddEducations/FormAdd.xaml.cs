@@ -99,7 +99,7 @@ namespace UserSystem.FormsAddEducations
 
                 if (fileLength > 26214400)
                 {
-                    MessageBox.Show("Размер файла превышает допустимый! Размер файла не должен превышать 50 MB.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    MessageBox.Show("Размер файла превышает допустимый! Размер файла не должен превышать 25 MB.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
                 }
                 else
                 {

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Navigation;
 using Bll.Concrete;
@@ -94,7 +95,8 @@ namespace AdminSystem.Forms
             if (saveFile.ShowDialog() == true)
             {
                 string fileLocalPath = saveFile.FileName;
-                ftpRepository.DownloadFile(UserId.ToString(), fileLocalPath, FileName);
+                Task task = new Task(() => ftpRepository.DownloadFile(UserId.ToString(), fileLocalPath, FileName));
+                task.Start();
             }
         }
     }

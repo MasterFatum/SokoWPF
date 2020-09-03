@@ -48,6 +48,7 @@ namespace BLL.Concrete
                             }
                         }
                     }
+                    MessageBox.Show($"Результат скачивания файла: {ftpResponse.StatusDescription}");
                 }
             }
             catch (Exception ex)
