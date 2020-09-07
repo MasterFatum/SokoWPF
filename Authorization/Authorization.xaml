@@ -40,7 +40,7 @@
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
-        <CheckBox x:Name="ChkBoxSaveUser" Content="Запомнить пользователя" Margin="95,283,95,0" VerticalAlignment="Top" FontSize="16" TabIndex="3"/>
+        <CheckBox x:Name="ChkBoxSaveUser" Content="Запомнить пользователя" Margin="95,283,86,0" VerticalAlignment="Top" FontSize="16" TabIndex="3"/>
         <PasswordBox x:Name="TxbxPassword" HorizontalAlignment="Left" Margin="89,223,0,0" VerticalAlignment="Top" Width="286" Height="34" FontSize="18" TabIndex="2">
             <PasswordBox.Effect>
                 <DropShadowEffect/>
