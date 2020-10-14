@@ -55,7 +55,7 @@
             <ComboBox.Effect>
                 <DropShadowEffect/>
             </ComboBox.Effect>
-            <ComboBoxItem IsSelected="True" Content="Внутренняя сеть"/>
+            <ComboBoxItem Content="Внутренняя сеть"/>
             <ComboBoxItem Content="Внешняя сеть"/>
         </ComboBox>
 

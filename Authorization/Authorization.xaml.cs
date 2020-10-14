@@ -16,7 +16,7 @@ namespace Authorization
         public MainWindow()
         {
             InitializeComponent();
-            
+
             if (Properties.Settings.Default.IsSaveUser)
             {
                 TxbxLogin.Text = Properties.Settings.Default.Username;
@@ -38,87 +38,96 @@ namespace Authorization
         private void BtnAuthorize_Click(object sender, RoutedEventArgs e)
         {
 
-            try
+            if (CbxSetConnectionString.SelectedIndex != - 1)
             {
-                switch (((ComboBoxItem)CbxAuthorizeAs.SelectedItem).Content.ToString())
+                try
                 {
+                    switch (((ComboBoxItem)CbxAuthorizeAs.SelectedItem).Content.ToString())
+                    {
 
 
-                    //АВТОРИЗАЦИЯ ПОЛЬЗОВАТЕЛЯ
-                    case "Преподаватель":
-                        Users user = userRepository.ValidationUser(TxbxLogin.Text.Trim(), TxbxPassword.Password);
+                        //АВТОРИЗАЦИЯ ПОЛЬЗОВАТЕЛЯ
+                        case "Преподаватель":
+                            Users user = userRepository.ValidationUser(TxbxLogin.Text.Trim(), TxbxPassword.Password);
 
-                        if (user != null)
-                        {
-
-                            if (ChkBoxSaveUser.IsChecked == true)
+                            if (user != null)
                             {
-                                Properties.Settings.Default.Username = TxbxLogin.Text.Trim();
-                                Properties.Settings.Default.Password = TxbxPassword.Password.Trim();
-                                Properties.Settings.Default.IsSaveUser = true;
 
-                                Properties.Settings.Default.Save();
+                                if (ChkBoxSaveUser.IsChecked == true)
+                                {
+                                    Properties.Settings.Default.Username = TxbxLogin.Text.Trim();
+                                    Properties.Settings.Default.Password = TxbxPassword.Password.Trim();
+                                    Properties.Settings.Default.IsSaveUser = true;
+
+                                    Properties.Settings.Default.Save();
+                                }
+                                if (ChkBoxSaveUser.IsChecked == false)
+                                {
+                                    Properties.Settings.Default.Username = String.Empty;
+                                    Properties.Settings.Default.Password = String.Empty;
+                                    Properties.Settings.Default.IsSaveUser = false;
+
+                                    Properties.Settings.Default.Save();
+                                }
+
+
+                                Visibility = Visibility.Collapsed;
+                                Visibility = Visibility.Hidden;
+                                new TeacherSystem.MainWindow(user).ShowDialog();
                             }
-                            if (ChkBoxSaveUser.IsChecked == false)
+                            else
                             {
-                                Properties.Settings.Default.Username = String.Empty;
-                                Properties.Settings.Default.Password = String.Empty;
-                                Properties.Settings.Default.IsSaveUser = false;
-
-                                Properties.Settings.Default.Save();
+                                MessageBox.Show("Неправильный логин или пароль!", "Ошибка", MessageBoxButton.OK,
+                                    MessageBoxImage.Information);
                             }
+                            break;
 
+                        //АВТОРИЗАЦИЯ АДМИНИСТРАТОРА
+                        case "Администратор":
+                            Users userAdmin = userRepository.ValidationAdmin(TxbxLogin.Text.Trim(), TxbxPassword.Password);
 
-                            Visibility = Visibility.Collapsed;
-                            Visibility = Visibility.Hidden;
-                            new TeacherSystem.MainWindow(user).ShowDialog();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Неправильный логин или пароль!", "Ошибка", MessageBoxButton.OK,
-                                MessageBoxImage.Information);
-                        }
-                        break;
-
-                    //АВТОРИЗАЦИЯ АДМИНИСТРАТОРА
-                    case "Администратор":
-                        Users userAdmin = userRepository.ValidationAdmin(TxbxLogin.Text.Trim(), TxbxPassword.Password);
-
-                        if (userAdmin != null)
-                        {
-                            if (ChkBoxSaveUser.IsChecked == true)
+                            if (userAdmin != null)
                             {
-                                Properties.Settings.Default.Username = TxbxLogin.Text.Trim();
-                                Properties.Settings.Default.Password = TxbxPassword.Password.Trim();
-                                Properties.Settings.Default.IsSaveUser = true;
+                                if (ChkBoxSaveUser.IsChecked == true)
+                                {
+                                    Properties.Settings.Default.Username = TxbxLogin.Text.Trim();
+                                    Properties.Settings.Default.Password = TxbxPassword.Password.Trim();
+                                    Properties.Settings.Default.IsSaveUser = true;
 
-                                Properties.Settings.Default.Save();
+                                    Properties.Settings.Default.Save();
+                                }
+                                if (ChkBoxSaveUser.IsChecked == false)
+                                {
+                                    Properties.Settings.Default.Username = String.Empty;
+                                    Properties.Settings.Default.Password = String.Empty;
+                                    Properties.Settings.Default.IsSaveUser = false;
+
+                                    Properties.Settings.Default.Save();
+                                }
+
+                                Visibility = Visibility.Collapsed;
+                                Visibility = Visibility.Hidden;
+                                new AdminSystem.MainWindow(userAdmin).ShowDialog();
                             }
-                            if (ChkBoxSaveUser.IsChecked == false)
+                            else
                             {
-                                Properties.Settings.Default.Username = String.Empty;
-                                Properties.Settings.Default.Password = String.Empty;
-                                Properties.Settings.Default.IsSaveUser = false;
-
-                                Properties.Settings.Default.Save();
+                                MessageBox.Show("Неправильный логин или пароль!", "Ошибка", MessageBoxButton.OK,
+                                    MessageBoxImage.Information);
                             }
-
-                            Visibility = Visibility.Collapsed;
-                            Visibility = Visibility.Hidden;
-                            new AdminSystem.MainWindow(userAdmin).ShowDialog();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Неправильный логин или пароль!", "Ошибка", MessageBoxButton.OK,
-                                MessageBoxImage.Information);
-                        }
-                        break;
+                            break;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    Application.Current.Shutdown();
                 }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Выберите тип подключения к сети!", "", MessageBoxButton.OK, MessageBoxImage.Asterisk);
             }
+
         }
 
         private void AuthorizeForm_Closing(object sender, System.ComponentModel.CancelEventArgs e)

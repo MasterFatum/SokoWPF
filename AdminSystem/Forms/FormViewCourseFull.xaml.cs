@@ -51,7 +51,19 @@ namespace AdminSystem.Forms
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Close();
+            if (TxBlSetRating.Text == " Сохранить")
+            {
+                MessageBoxResult result = MessageBox.Show("Баллы не были сохранены! Вы действительно хотите выйти?", "", MessageBoxButton.YesNo,
+                    MessageBoxImage.Question);
+                if (result == MessageBoxResult.Yes)
+                {
+                    Close();
+                }
+            }
+            if (TxBlSetRating.Text == " Назначить баллы")
+            {
+                Close();
+            }
         }
 
         private void SetRating_Click(object sender, RoutedEventArgs e)
