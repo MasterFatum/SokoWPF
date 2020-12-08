@@ -3,7 +3,6 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:AdminSystem"
         mc:Ignorable="d"
         Title="Система управления качеством образования (Интерфейс администратора)" Height="600.78" Width="1067.308" WindowStartupLocation="CenterScreen" Closing="Window_Closing" Loaded="Window_Loaded" ResizeMode="CanMinimize">
     <Grid>
@@ -29,7 +28,7 @@
         <GroupBox Header="Пользователи системы" HorizontalAlignment="Left" Height="470" Margin="10,0,0,75" VerticalAlignment="Bottom" Width="1041">
             <DataGrid Name="DataGridAllUsers" IsReadOnly="True" HorizontalAlignment="Left" Margin="0,0,-2,2" Width="1031" MouseDoubleClick="DataGridAllUsers_MouseDoubleClick" FontSize="16"/>
         </GroupBox>
-        <TextBox Name="TxbxSearch"  HorizontalAlignment="Left" Height="44" Margin="393,509,0,0" VerticalAlignment="Top" Width="291" FontSize="18">
+        <TextBox Name="TxbxSearch"  HorizontalAlignment="Left" Height="44" Margin="393,509,0,0" VerticalAlignment="Top" Width="291" FontSize="18" TextChanged="TxbxSearch_TextChanged">
             <TextBox.Effect>
                 <DropShadowEffect/>
             </TextBox.Effect>

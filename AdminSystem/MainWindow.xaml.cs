@@ -114,7 +114,16 @@ namespace AdminSystem
 
         private void BtnSummaryStatement_Click(object sender, RoutedEventArgs e)
         {
-            new FormSummaryStatement().ShowDialog();
+            new FormChooseSheet().ShowDialog();
+        }
+
+        private void TxbxSearch_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+            if (TxbxSearch.Text.Length == 1)
+            {
+                TxbxSearch.Text = TxbxSearch.Text.ToUpper();
+                TxbxSearch.Select(TxbxSearch.Text.Length, 0);
+            }
         }
     }
 }
