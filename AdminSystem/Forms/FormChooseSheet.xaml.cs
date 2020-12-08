@@ -19,5 +19,10 @@ namespace AdminSystem.Forms
         {
             new FormSummaryStatement().ShowDialog();
         }
+
+        private void BtnGeneral_Click(object sender, RoutedEventArgs e)
+        {
+            new FormSummaryStatementGeneral().ShowDialog();
+        }
     }
 }

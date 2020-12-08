@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Выберите ведомость" Height="194.167" Width="260.333" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Button x:Name="BtnGeneral" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="222" Height="35" FontSize="18">
+        <Button x:Name="BtnGeneral" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="222" Height="35" FontSize="18" Click="BtnGeneral_Click">
             <StackPanel Orientation="Horizontal">
                 <Image Source="../Source/User Group_32px.png" Height="29"/>
                 <TextBlock Text=" Общая" Height="26"/>

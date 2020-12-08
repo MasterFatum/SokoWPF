@@ -66,6 +66,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Forms\FormSummaryStatementGeneral.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Forms\FormUsersManager.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -91,6 +95,9 @@
     </Compile>
     <Compile Include="Forms\FormSummaryStatement.xaml.cs">
       <DependentUpon>FormSummaryStatement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormSummaryStatementGeneral.xaml.cs">
+      <DependentUpon>FormSummaryStatementGeneral.xaml</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormUsersManager.xaml.cs">
       <DependentUpon>FormUsersManager.xaml</DependentUpon>
