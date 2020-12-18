@@ -85,7 +85,7 @@ namespace UserSystem.FormsAddEducations
         {
             try
             {
-                var items = DataGridOtherUsersCategory.CurrentItem as Courses;
+                var items = DataGridOtherUsersCategory.CurrentItem as Course;
 
                 if (items == null)
                 {

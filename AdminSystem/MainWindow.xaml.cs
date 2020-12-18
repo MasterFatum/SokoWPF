@@ -26,7 +26,7 @@ namespace AdminSystem
         public string Position { get; set; }
         public string Email { get; set; }
 
-        public MainWindow(Users user)
+        public MainWindow(User user)
         {
             InitializeComponent();
 
@@ -59,7 +59,7 @@ namespace AdminSystem
         {
             try
             {
-                var items = DataGridAllUsers.CurrentItem as Users;
+                var items = DataGridAllUsers.CurrentItem as User;
 
                 if (items == null)
                 {
@@ -96,7 +96,7 @@ namespace AdminSystem
             {
                 viewSource.Filter = o =>
                 {
-                    Users u = o as Users;
+                    User u = o as User;
 
                     return u.Lastname.ToString().Contains(TxbxSearch.Text.Trim());
 

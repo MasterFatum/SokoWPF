@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AdminSystem.Forms"
         mc:Ignorable="d"
-        Title="Общая сводная ведомость" Height="463.713" Width="800" WindowStartupLocation="CenterScreen">
+        Title="Общая сводная ведомость" Height="463.713" Width="800" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
     <Grid>
-        <Button x:Name="BtnClose" HorizontalAlignment="Left" Margin="637,382,0,0" VerticalAlignment="Top" Width="134" Height="35" RenderTransformOrigin="0.9,0.199" FontSize="18" Click="BtnClose_Click">
+        <Button x:Name="BtnClose" Margin="0,0,21,10" RenderTransformOrigin="0.9,0.199" FontSize="18" Click="BtnClose_Click" HorizontalAlignment="Right" Width="134" Height="35" VerticalAlignment="Bottom">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
@@ -16,7 +16,16 @@
                 <TextBlock Text=" Закрыть" Height="26"/>
             </StackPanel>
         </Button>
-        <DataGrid HorizontalAlignment="Left" Height="364" Margin="10,10,0,0" VerticalAlignment="Top" Width="761"/>
+        <DataGrid x:Name="DataGridTable" Margin="10,10,21,60" IsReadOnly="True" FontSize="16" FontWeight="Bold" FontStyle="Italic"/>
+        <Button x:Name="BtnExportToExcel" Margin="11,0,0,10" RenderTransformOrigin="0.9,0.199" FontSize="18" HorizontalAlignment="Left" Width="176" Height="35" VerticalAlignment="Bottom" Click="BtnExportToExcel_Click">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+            <StackPanel Orientation="Horizontal">
+                <Image Source="../Source/Microsoft Excel_32px.png" Height="29"/>
+                <TextBlock Text=" Экспорт в Excel" Height="26"/>
+            </StackPanel>
+        </Button>
 
     </Grid>
 </Window>

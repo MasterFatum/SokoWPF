@@ -48,7 +48,7 @@ namespace Authorization
 
                         //АВТОРИЗАЦИЯ ПОЛЬЗОВАТЕЛЯ
                         case "Преподаватель":
-                            Users user = userRepository.ValidationUser(TxbxLogin.Text.Trim(), TxbxPassword.Password);
+                            User user = userRepository.ValidationUser(TxbxLogin.Text.Trim(), TxbxPassword.Password);
 
                             if (user != null)
                             {
@@ -84,7 +84,7 @@ namespace Authorization
 
                         //АВТОРИЗАЦИЯ АДМИНИСТРАТОРА
                         case "Администратор":
-                            Users userAdmin = userRepository.ValidationAdmin(TxbxLogin.Text.Trim(), TxbxPassword.Password);
+                            User userAdmin = userRepository.ValidationAdmin(TxbxLogin.Text.Trim(), TxbxPassword.Password);
 
                             if (userAdmin != null)
                             {

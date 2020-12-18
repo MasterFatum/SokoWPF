@@ -1,6 +1,6 @@
 namespace BLL.Entities
 {
-    public class Courses
+    public class Course
     {
 
         public int Id { get; set; }

@@ -56,7 +56,7 @@ namespace UserSystem.FormsAddEducations
                     FileNameGuid = null;
                 }
 
-                Courses courses = new Courses
+                Course course = new Course
                 {
                     UserId = UserIdDirectory,
                     Category = SelectedCategory,
@@ -77,7 +77,7 @@ namespace UserSystem.FormsAddEducations
                     Task task = new Task(() => ftpRepository.UploadFile("/" + UserIdDirectory + "/", FilePath, FileNameGuid));
                     task.Start();
                 }
-                courseRepository.AddCourse(courses, TxbxTitle, TxbxDescription, TxbxHyperlink, TxbxFilePath);
+                courseRepository.AddCourse(course, TxbxTitle, TxbxDescription, TxbxHyperlink, TxbxFilePath);
             }
             else
             {

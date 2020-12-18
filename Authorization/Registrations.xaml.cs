@@ -42,7 +42,7 @@ namespace Authorization
                 {
                     if (PwdBox.Password != String.Empty && PwdBox.Password.Equals(PwdBoxReplase.Password))
                     {
-                        Users user = new Users();
+                        User user = new User();
                         user.Lastname = TxbxLastname.Text.Trim();
                         user.Firstname = TxbxFirstname.Text.Trim();
                         user.Middlename = TxbxMiddlename.Text.Trim();

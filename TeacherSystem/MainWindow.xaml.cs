@@ -17,7 +17,7 @@ namespace TeacherSystem
         OtherRepository otherRepository = new OtherRepository();
         FtpRepository ftpRepository = new FtpRepository();
 
-        public MainWindow(Users user)
+        public MainWindow(User user)
         {
             InitializeComponent();
 
@@ -68,7 +68,7 @@ namespace TeacherSystem
 
         private void BtnMainUpdate_Click(object sender, RoutedEventArgs e)
         {
-            IEnumerable<Courses> allCourseses = courseRepository.GetCoursesByUserId(Convert.ToInt32(TxbxUserId.Text));
+            IEnumerable<Course> allCourseses = courseRepository.GetCoursesByUserId(Convert.ToInt32(TxbxUserId.Text));
             DataGridMain.ItemsSource = allCourseses;
             CbxMainShowCategory.SelectedIndex = -1;
             otherRepository.SettingDataGridUsers(DataGridMain);
@@ -78,7 +78,7 @@ namespace TeacherSystem
         {
             try
             {
-                var items = DataGridMain.CurrentItem as Courses;
+                var items = DataGridMain.CurrentItem as Course;
 
                 if (items == null)
                 {
@@ -140,7 +140,7 @@ namespace TeacherSystem
         {
             try
             {
-                var items = DataGridMain.CurrentItem as Courses;
+                var items = DataGridMain.CurrentItem as Course;
 
                 if (items == null)
                 {
@@ -198,17 +198,17 @@ namespace TeacherSystem
 
         private void DataGridMain_LoadingRow(object sender, DataGridRowEventArgs e)
         {
-            Courses courses = (Courses)e.Row.DataContext;
+            Course course = (Course)e.Row.DataContext;
 
-            if (courses.Evaluation == null)
+            if (course.Evaluation == null)
             {
                 e.Row.Background = orange;
             }
-            if (courses.Evaluation != null && courses.DateEdit == null)
+            if (course.Evaluation != null && course.DateEdit == null)
             {
                 e.Row.Background = white;
             }
-            if (courses.Evaluation != null && courses.DateEdit != null)
+            if (course.Evaluation != null && course.DateEdit != null)
             {
                 e.Row.Background = green;
             }

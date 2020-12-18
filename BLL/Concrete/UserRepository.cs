@@ -12,12 +12,12 @@ namespace BLL.Concrete
     {
         readonly SokoContext sokoContext = new SokoContext();
 
-        public void AddUser(Users user)
+        public void AddUser(User user)
         {
             
             try
             {
-                Users userExists = sokoContext.Users.FirstOrDefault(em => em.Email == user.Email);
+                User userExists = sokoContext.Users.FirstOrDefault(em => em.Email == user.Email);
 
                 if (userExists == null)
                 {
@@ -43,7 +43,7 @@ namespace BLL.Concrete
         {
             try
             {
-                Users user = sokoContext.Users.Find(id);
+                User user = sokoContext.Users.Find(id);
 
                 if (user != null)
                 {
@@ -118,32 +118,74 @@ namespace BLL.Concrete
             }
         }
 
-        public IEnumerable<Users> GetAllUser()
+        public IEnumerable<User> GetAllUser()
         {
-            IEnumerable<Users> users = sokoContext.Users.ToList();
+            try
+            {
+                IEnumerable<User> users = sokoContext.Users.ToList();
 
-            return users;
+                return users;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            return null;
+        }
+
+        public IEnumerable<UserEvaluationSummary> GetAllUsersName()
+        {
+            try
+            {
+                IEnumerable<UserEvaluationSummary> users = sokoContext.Users
+                    .Select(x => new UserEvaluationSummary
+                    {
+                        LastName = x.Lastname,
+                        FirstName = x.Firstname,
+                        MidName = x.Middlename,
+                        EvaluationSum = x.Courses.Sum(y => y.Evaluation)
+                    })
+                    .ToList();
+
+                return users;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            return null;
         }
 
         public List<String> GetFioUsers()
         {
-            List<Users> users = sokoContext.Users.OrderBy(l => l.Lastname).ToList();
-
-            List<String> userFio  = new List<string>();
-
-            foreach (var user in users)
+            try
             {
-                userFio.Add(String.Format($"{user.Lastname} {user.Firstname} {user.Middlename}"));
+                List<User> users = sokoContext.Users.OrderBy(l => l.Lastname).ToList();
+
+                List<String> userFio = new List<string>();
+
+                foreach (var user in users)
+                {
+                    userFio.Add(String.Format($"{user.Lastname} {user.Firstname} {user.Middlename}"));
+                }
+
+                return userFio;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
 
-            return userFio;
+            return null;
         }
 
-        public Users ValidationUser(string username, string password)
+        public User ValidationUser(string username, string password)
         {
             try
             {
-                Users user = null;
+                User user = null;
 
                 var findUser = sokoContext.Users.FirstOrDefault(u => u.Email == username);
 
@@ -165,21 +207,30 @@ namespace BLL.Concrete
             return null;
         }
 
-        public Users ValidationAdmin(string username, string password)
+        public User ValidationAdmin(string username, string password)
         {
-            Users user = null;
-            
-            var findUser = sokoContext.Users.Where(p => p.Privilege == "Admin").FirstOrDefault(u => u.Email == username);
-
-            if (findUser != null)
+            try
             {
-                if (findUser.Password == password)
+                User user = null;
+
+                var findUser = sokoContext.Users.Where(p => p.Privilege == "Admin").FirstOrDefault(u => u.Email == username);
+
+                if (findUser != null)
                 {
-                    user = findUser;
+                    if (findUser.Password == password)
+                    {
+                        user = findUser;
+                    }
                 }
+
+                return user;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
 
-            return user;
+            return null;
         }
 
         public void SokoDispose()
@@ -202,7 +253,7 @@ namespace BLL.Concrete
 
         public int GetUserIdByFio(string lastname, string firstname, string middlename)
         {
-            Users userId = null;
+            User userId = null;
 
             try
             { 
@@ -220,5 +271,12 @@ namespace BLL.Concrete
             }
             return 0;
         }
+    }
+    public class UserEvaluationSummary
+    {
+        public string LastName { get; set; }
+         public string FirstName { get; set; }
+        public string MidName { get; set; }
+        public int? EvaluationSum { get; set; }
     }
 }

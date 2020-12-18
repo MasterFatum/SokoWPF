@@ -48,11 +48,11 @@ namespace UserSystem.FormsAddEducations
 
         private void BtnEditSave_Click(object sender, RoutedEventArgs e)
         {
-            Courses courses = null;
+            Course course = null;
 
             if (TxbxFilePath.Text == String.Empty)
             {
-                courses = new Courses
+                course = new Course
                 {
                     Id = Id,
                     UserId = UserIdEdit,
@@ -71,7 +71,7 @@ namespace UserSystem.FormsAddEducations
                 FileNameOld = FilePath;
                 FilePath = FileNameGuid;
 
-                courses = new Courses
+                course = new Course
                 {
                     Id = Id,
                     UserId = UserIdEdit,
@@ -91,7 +91,7 @@ namespace UserSystem.FormsAddEducations
                 
             }
 
-            courseRepository.EditCourse(courses);
+            courseRepository.EditCourse(course);
             Close();
             
         }

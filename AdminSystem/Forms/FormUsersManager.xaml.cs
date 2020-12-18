@@ -51,7 +51,7 @@ namespace AdminSystem.Forms
         {
             try
             {
-                var users = DataGridAllUsers.CurrentItem as Users;
+                var users = DataGridAllUsers.CurrentItem as User;
 
                 if (users == null)
                 {
@@ -197,7 +197,7 @@ namespace AdminSystem.Forms
                     
                     TxBlAddUser.Text = " Добавить";
 
-                    Users user = new Users();
+                    User user = new User();
 
                     user.Firstname = TxbxFirstname.Text.Trim();
                     user.Lastname = TxbxLastname.Text.Trim();

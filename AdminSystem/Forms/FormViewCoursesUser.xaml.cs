@@ -81,7 +81,7 @@ namespace AdminSystem.Forms
         {
             try
             {
-                var items = DataGridUserCourses.CurrentItem as Courses;
+                var items = DataGridUserCourses.CurrentItem as Course;
 
                 if (items == null)
                 {
@@ -133,17 +133,17 @@ namespace AdminSystem.Forms
 
         private void DataGridUserCourses_LoadingRow(object sender, DataGridRowEventArgs e)
         {
-            Courses courses = (Courses) e.Row.DataContext;
+            Course course = (Course) e.Row.DataContext;
 
-            if (courses.Evaluation == null)
+            if (course.Evaluation == null)
             {
                 e.Row.Background = orange;
             }
-            if (courses.Evaluation != null && courses.DateEdit == null)
+            if (course.Evaluation != null && course.DateEdit == null)
             {
                 e.Row.Background = white;
             }
-            if (courses.Evaluation != null && courses.DateEdit != null)
+            if (course.Evaluation != null && course.DateEdit != null)
             {
                 e.Row.Background = green;
             }

@@ -7,27 +7,29 @@ namespace BLL.Abstract
 {
     interface ICourseRepository
     {
-        void AddCourse(Courses courses, TextBox title, TextBox description, TextBox hyperlink, TextBox dataFileName);
+        void AddCourse(Course course, TextBox title, TextBox description, TextBox hyperlink, TextBox dataFileName);
 
         void DeleteCourse(int id, int userId);
 
-        void EditCourse(Courses courses);
+        void EditCourse(Course course);
 
-        IEnumerable<Courses> GetAllCategory();
+        IEnumerable<Course> GetAllCategory();
 
-        IEnumerable<Courses> GetCoursesByUserId(int userId);
+        IEnumerable<Course> GetCoursesByUserId(int userId);
 
-        IEnumerable<Courses> GetCoursesByCategory(int userId, string position);
+        IEnumerable<Course> GetCoursesByCategory(int userId, string position);
 
-        IEnumerable<Courses> GetCoursesByFio(string lastname, string firstname, string middlename);
+        IEnumerable<Course> GetCoursesByFio(string lastname, string firstname, string middlename);
 
-        IEnumerable<Courses> GetCoursesByFio(string lastname, string firstname, string middlename, string category);
+        IEnumerable<Course> GetCoursesByFio(string lastname, string firstname, string middlename, string category);
 
         void SetRatingCourse(int userId, int id, int rating, string evaluating);
 
         string AllRating(int userId);
 
-        IEnumerable<Courses> GetSummaryStatementByFio(string lastname, string firstname, string middlename);
+        IEnumerable<Course> GetSummaryStatementByFio(string lastname, string firstname, string middlename);
+
+        void ExportToExcel(DataGrid dataGrid);
 
     }
 }

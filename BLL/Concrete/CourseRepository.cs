@@ -4,9 +4,16 @@ using System.Linq;
 using System.Windows;
 using System.Data.Entity.Migrations;
 using System.Windows.Controls;
+using System.Windows.Forms;
 using BLL;
 using BLL.Abstract;
 using BLL.Entities;
+using DataGrid = System.Windows.Controls.DataGrid;
+using MessageBox = System.Windows.MessageBox;
+using SaveFileDialog = Microsoft.Win32.SaveFileDialog;
+using TextBox = System.Windows.Controls.TextBox;
+using Excel = Microsoft.Office.Interop.Excel;
+using Microsoft.Office.Interop.Excel;
 
 namespace Bll.Concrete
 {
@@ -14,11 +21,13 @@ namespace Bll.Concrete
     {
         SokoContext sokoContext = new SokoContext();
 
-        public void AddCourse(Courses courses, TextBox title, TextBox description, TextBox hyperlink, TextBox dataFileName)
+        SaveFileDialog saveFile;
+
+        public void AddCourse(Course course, TextBox title, TextBox description, TextBox hyperlink, TextBox dataFileName)
         {
             try
             {
-                sokoContext.Courses.Add(courses);
+                sokoContext.Courses.Add(course);
                 sokoContext.SaveChanges();
                 MessageBox.Show("Запись успешно добавлена!", "Добавление записи", MessageBoxButton.OK,
                     MessageBoxImage.Information);
@@ -38,11 +47,11 @@ namespace Bll.Concrete
         {
             try
             {
-                Courses courses = sokoContext.Courses.Where(u => u.UserId == userId).FirstOrDefault(c => c.Id == id);
+                Course course = sokoContext.Courses.Where(u => u.UserId == userId).FirstOrDefault(c => c.Id == id);
 
-                if (courses != null)
+                if (course != null)
                 {
-                    sokoContext.Courses.Remove(courses);
+                    sokoContext.Courses.Remove(course);
                     sokoContext.SaveChanges();
                     MessageBox.Show("Запись успешно удалена!", "Удаление записи", MessageBoxButton.OK,
                         MessageBoxImage.Information);
@@ -55,19 +64,19 @@ namespace Bll.Concrete
             }
         }
 
-        public void EditCourse(Courses courses)
+        public void EditCourse(Course course)
         {
             try
             {
-                Courses courseEdit = sokoContext.Courses.Where(u => u.UserId == courses.UserId)
-                    .FirstOrDefault(c => c.Id == courses.Id);
+                Course courseEdit = sokoContext.Courses.Where(u => u.UserId == course.UserId)
+                    .FirstOrDefault(c => c.Id == course.Id);
 
                 if (courseEdit != null)
                 {
-                    courseEdit.Title = courses.Title;
-                    courseEdit.Description = courses.Description;
-                    courseEdit.Hyperlink = courses.Hyperlink;
-                    courseEdit.FileName = courses.FileName;
+                    courseEdit.Title = course.Title;
+                    courseEdit.Description = course.Description;
+                    courseEdit.Hyperlink = course.Hyperlink;
+                    courseEdit.FileName = course.FileName;
 
                     if (courseEdit.Evaluation != null)
                     {
@@ -88,16 +97,16 @@ namespace Bll.Concrete
             }
         }
 
-        public IEnumerable<Courses> GetAllCategory()
+        public IEnumerable<Course> GetAllCategory()
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Courses> GetCoursesByUserId(int userId)
+        public IEnumerable<Course> GetCoursesByUserId(int userId)
         {
             try
             {
-                IQueryable<Courses> courseses = new SokoContext().Courses.Where(u => u.UserId == userId);
+                IQueryable<Course> courseses = new SokoContext().Courses.Where(u => u.UserId == userId);
 
                 return courseses.ToList();
             }
@@ -108,9 +117,9 @@ namespace Bll.Concrete
             return null;
         }
 
-        public IEnumerable<Courses> GetCoursesByCategory(int userId, string category)
+        public IEnumerable<Course> GetCoursesByCategory(int userId, string category)
         {
-            IQueryable<Courses> courseses = null;
+            IQueryable<Course> courseses = null;
 
             try
             {
@@ -135,14 +144,14 @@ namespace Bll.Concrete
             return null;
         }
 
-        public IEnumerable<Courses> GetCoursesByFio(string lastname, string firstname, string middlename, string category)
+        public IEnumerable<Course> GetCoursesByFio(string lastname, string firstname, string middlename, string category)
         {
             try
             {
-                Users userId = sokoContext.Users.OrderBy(l => l.Lastname).Where(l => l.Lastname == lastname).Where(f => f.Firstname == firstname)
+                User userId = sokoContext.Users.OrderBy(l => l.Lastname).Where(l => l.Lastname == lastname).Where(f => f.Firstname == firstname)
                     .FirstOrDefault(m => m.Middlename == middlename);
 
-                IEnumerable<Courses> courseses = sokoContext.Courses.Where(u => u.UserId == userId.Id)
+                IEnumerable<Course> courseses = sokoContext.Courses.Where(u => u.UserId == userId.Id)
                     .Where(c => c.Category == category);
 
                 return courseses.ToList();
@@ -154,14 +163,14 @@ namespace Bll.Concrete
             return null;
         }
 
-        public IEnumerable<Courses> GetCoursesByFio(string lastname, string firstname, string middlename)
+        public IEnumerable<Course> GetCoursesByFio(string lastname, string firstname, string middlename)
         {
             try
             {
-                Users userId = sokoContext.Users.Where(l => l.Lastname == lastname).Where(f => f.Firstname == firstname)
+                User userId = sokoContext.Users.Where(l => l.Lastname == lastname).Where(f => f.Firstname == firstname)
                     .FirstOrDefault(m => m.Middlename == middlename);
 
-                IEnumerable<Courses> courseses = sokoContext.Courses.Where(u => u.UserId == userId.Id);
+                IEnumerable<Course> courseses = sokoContext.Courses.Where(u => u.UserId == userId.Id);
 
                 return courseses.ToList();
             }
@@ -176,7 +185,7 @@ namespace Bll.Concrete
         {
             try
             {
-                Courses course = sokoContext.Courses.Where(u => u.UserId == userId).FirstOrDefault(c => c.Id == id);
+                Course course = sokoContext.Courses.Where(u => u.UserId == userId).FirstOrDefault(c => c.Id == id);
 
                 if (course != null)
                 {
@@ -208,18 +217,18 @@ namespace Bll.Concrete
             return null;
         }
 
-        public IEnumerable<Courses> GetSummaryStatementByFio(string lastname, string firstname, string middlename)
+        public IEnumerable<Course> GetSummaryStatementByFio(string lastname, string firstname, string middlename)
         {
             try
             {
-                Users userId = sokoContext.Users.Where(l => l.Lastname == lastname).Where(f => f.Firstname == firstname)
+                User userId = sokoContext.Users.Where(l => l.Lastname == lastname).Where(f => f.Firstname == firstname)
                     .FirstOrDefault(m => m.Middlename == middlename);
 
                 var summary = sokoContext.Courses.Where(u => u.UserId == userId.Id).GroupBy(c => c.Category).Select(c => new
                 {
                     category = c.Key,
                     evaluation = c.Sum(e => e.Evaluation)
-                }).AsEnumerable().Select(an => new Courses { Category = an.category, Evaluation = an.evaluation });
+                }).AsEnumerable().Select(an => new Course { Category = an.category, Evaluation = an.evaluation });
 
                 return summary.ToList();
 
@@ -229,6 +238,32 @@ namespace Bll.Concrete
                 MessageBox.Show(ex.Message);
             }
             return null;
+        }
+
+        public void ExportToExcel(DataGrid dataGrid)
+        {
+
+            Excel.Application excel = new Excel.Application();
+            excel.Visible = true; 
+            Workbook workbook = excel.Workbooks.Add(System.Reflection.Missing.Value);
+            Worksheet sheet1 = (Worksheet)workbook.Sheets[1];
+
+            for (int j = 0; j < dataGrid.Columns.Count; j++) 
+            {
+                Range myRange = (Range)sheet1.Cells[1, j + 1];
+                sheet1.Cells[1, j + 1].Font.Bold = true; 
+                sheet1.Columns[j + 1].ColumnWidth = 15; 
+                myRange.Value2 = dataGrid.Columns[j].Header;
+            }
+            for (int i = 0; i < dataGrid.Columns.Count; i++)
+            { 
+                for (int j = 0; j < dataGrid.Items.Count; j++)
+                {
+                    TextBlock b = dataGrid.Columns[i].GetCellContent(dataGrid.Items[j]) as TextBlock;
+                    Range myRange = (Range)sheet1.Cells[j + 2, i + 1];
+                    myRange.Value2 = b.Text;
+                }
+            }
         }
     }
 }
